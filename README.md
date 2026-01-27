@@ -1,4 +1,4 @@
-# VGDC_FALL_26
+# A short intro to git for people that are new to it (source https://www.reddit.com/r/git/comments/1h4gtf/working_with_a_team_for_the_first_time/)
 Upstream is the repository that you forked from. It can be a good idea to add this repo as a remote on your local checkout to make it easier to fetch changes "from upstream" to work with. The name "upstream" is just a convention, and you could easily call it "organization_repo" or "wonderimpornium" or whatever you'd like.
 
 To rebase is to rewrite history. It's one of those polarizing concepts in the git world because it's awesomely powerful and cool. Some folks feel like you shouldn't rebase ever since it has the possibility to fuck up everything. Other folks (like myself) engage in rebasing multiple times a day, sometimes with multiple partners. With great power comes great responsibility, yadda yadda yadda.
