@@ -10,10 +10,12 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
-		velocity.y = -400
-		velocity.x += rotation * 100 
-
-	# Handle jump.
+		
+		velocity += Vector2(cos(deg_to_rad(90 - rotation_degrees)) * 200, 
+		sin(deg_to_rad(90 - rotation_degrees)) * -400)
+		print(velocity.y)
+	# Handle jump
+	
 	if Input.is_action_pressed("ui_right"):
 		rotate(1 * delta)
 	elif Input.is_action_pressed("ui_left"):
