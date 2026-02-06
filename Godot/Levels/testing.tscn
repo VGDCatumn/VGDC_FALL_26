@@ -11,11 +11,13 @@ size = Vector2(1120.5, 124)
 size = Vector2(915.25, 503)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7g5p"]
-radius = 40.112343
+radius = 37.0
 
 [node name="Testing" type="Node2D" unique_id=488097887]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=247718308]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1369962554]
 position = Vector2(576.75, 557)
@@ -51,7 +53,7 @@ scale = Vector2(0.1769723, 0.17636023)
 texture = ExtResource("2_k6mlf")
 
 [node name="10019598MuscularManSittingOnAChairRemovebgPreview" type="Sprite2D" parent="BallMan" unique_id=918184012]
-position = Vector2(-1.999999, -77.875)
+position = Vector2(-0.9999991, -81)
 scale = Vector2(0.18995097, 0.19648694)
 texture = ExtResource("3_6fp6m")
 
