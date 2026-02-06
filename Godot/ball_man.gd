@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		 
 
 	else:
-		
+		$AnimationPlayer.play("bounce_animation")
 		#Bounce effect
 		if Input.is_action_pressed("ui_down") and bounce_count < 3 and !Input.is_key_pressed(KEY_SHIFT):
 			velocity.y = -min(abs(total_velocity) * bounce_multiplier, max_bounce_speed)
@@ -57,7 +57,10 @@ func _physics_process(delta: float) -> void:
 		sin(deg_to_rad(90 - rotation_degrees)) * -400)
 		print(velocity.y)
 				
-
+	if is_on_wall():
+		velocity.x = -prev_velocity.x
+	if is_on_ceiling():
+		velocity.y = -prev_velocity.y
 	# Handle jump
 	
 	if Input.is_action_pressed("ui_right"):
@@ -65,6 +68,10 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("ui_left"):
 		rotate(-1 * delta)
 	
+	if velocity.x != 0:
+		prev_velocity.x = velocity.x
+	if velocity.y != 0:
+		prev_velocity.y = velocity.y
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

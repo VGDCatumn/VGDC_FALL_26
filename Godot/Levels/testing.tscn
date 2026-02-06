@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Levels/testing.gd" id="1_enxv6"]
+[ext_resource type="Script" path="res://Levels/testing.gd" id="1_enxv6"]
 [ext_resource type="Script" uid="uid://cirs83pkny51f" path="res://ball_man.gd" id="1_k6mlf"]
 [ext_resource type="Texture2D" uid="uid://dbeoqdnrf4kod" path="res://Sprites/71WpxMEK-uL._AC_UF894_1000_QL80_-removebg-preview.png" id="2_k6mlf"]
 [ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/10019598-muscular-man-sitting-on-a-chair-removebg-preview.png" id="3_6fp6m"]
@@ -16,7 +16,7 @@ radius = 37.0
 
 [sub_resource type="Animation" id="Animation_6fp6m"]
 length = 0.001
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,8 +56,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_enxv6"]
 resource_name = "bounce_animation"
-length = 0.8
-loop_mode = 1
+length = 0.27
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -133,18 +132,19 @@ shape = SubResource("RectangleShape2D_6fp6m")
 position = Vector2(151, 433)
 script = ExtResource("1_k6mlf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BallMan" unique_id=463927563]
-shape = SubResource("CircleShape2D_a7g5p")
-
 [node name="71WpxMekUL_AcUf8941000Ql80RemovebgPreview" type="Sprite2D" parent="BallMan" unique_id=1194263613]
 position = Vector2(0, -1)
 scale = Vector2(0.1769723, 0.17636023)
 texture = ExtResource("2_k6mlf")
 
 [node name="10019598MuscularManSittingOnAChairRemovebgPreview" type="Sprite2D" parent="BallMan" unique_id=918184012]
-position = Vector2(-0.9999991, -81)
+position = Vector2(-1.999999, -77.875)
 scale = Vector2(0.18995097, 0.19648694)
 texture = ExtResource("3_6fp6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallMan" unique_id=463927563]
+position = Vector2(1, -8)
+shape = SubResource("CircleShape2D_a7g5p")
 
 [node name="Camera2D" type="Camera2D" parent="BallMan" unique_id=32884667]
 
