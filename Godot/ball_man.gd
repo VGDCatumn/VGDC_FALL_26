@@ -8,7 +8,7 @@ var prev_velocity : Vector2
 
 
 var gravity := 1200.0
-var slam_force := 50.0        # Extra downward push when pressing down
+var slam_force := 500.0        # Extra downward push when pressing down
 var bounce_multiplier := 0.85   # Energy retained on bounce
 var max_fall_speed := 2500.0
 var max_bounce_speed := 100.0
@@ -23,26 +23,23 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
-		if velocity.y >= 0 and Input.is_action_pressed("ui_down") and bounce_count < 3:
+		if velocity.y >= 0 and Input.is_action_pressed("ui_down"):
 			velocity.y += slam_force * delta
 			total_velocity = velocity.y
+			if $AnimationPlayer.assigned_animation != "stretch":
+				$AnimationPlayer.play("stretch")
 		velocity.y = min(velocity.y, max_fall_speed)
 		
-		print(total_velocity)
-		 
+		
 
 	else:
 		$AnimationPlayer.play("bounce_animation")
 		#Bounce effect
-		if Input.is_action_pressed("ui_down") and bounce_count < 3 and !Input.is_key_pressed(KEY_SHIFT):
-			velocity.y = -min(abs(total_velocity) * bounce_multiplier, max_bounce_speed)
-			bounce_count += 1
-			
-		else:
+		
+		
 			#If down is not pressed then bounce is reduced by 0.85 pre bSounce
-			velocity.y = -abs(total_velocity) * 0.6
-			bounce_count = 0
+		velocity.y = -abs(total_velocity) * 0.45
+		bounce_count = 0
 		
 		
 		#Resets velocity.y if it gets too low to the ground
@@ -50,17 +47,18 @@ func _physics_process(delta: float) -> void:
 			if total_velocity < 400:
 				total_velocity = 400
 			else:
-				total_velocity = min(400, velocity.y)
+				total_velocity = min(500, velocity.y)
 			
-			
-		velocity += Vector2(cos(deg_to_rad(90 - rotation_degrees)) * 200, 
+		velocity += Vector2(cos(deg_to_rad(90 - rotation_degrees)) * 400, 
 		sin(deg_to_rad(90 - rotation_degrees)) * -400)
-		print(velocity.y)
+		
 				
 	if is_on_wall():
-		velocity.x = -prev_velocity.x
+		#Causes velocity to reverse when hitting a wall, then reduces by the constant
+		velocity.x = -prev_velocity.x * 0.7
 	if is_on_ceiling():
-		velocity.y = -prev_velocity.y
+		#Causes velocity to reverse when hitting a ceiling, then reduces by the constant
+		velocity.y = -prev_velocity.y * 0.7
 	# Handle jump
 	
 	if Input.is_action_pressed("ui_right"):
