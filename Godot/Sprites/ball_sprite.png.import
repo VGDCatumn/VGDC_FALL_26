@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbeoqdnrf4kod"
-path="res://.godot/imported/71WpxMEK-uL._AC_UF894_1000_QL80_-removebg-preview.png-7dc6adcf3ea7e090c4b6ab307bcc86bf.ctex"
+path="res://.godot/imported/ball_sprite.png-c6a8d05d0829b13229d91ccb344cc507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/71WpxMEK-uL._AC_UF894_1000_QL80_-removebg-preview.png"
-dest_files=["res://.godot/imported/71WpxMEK-uL._AC_UF894_1000_QL80_-removebg-preview.png-7dc6adcf3ea7e090c4b6ab307bcc86bf.ctex"]
+source_file="res://Sprites/ball_sprite.png"
+dest_files=["res://.godot/imported/ball_sprite.png-c6a8d05d0829b13229d91ccb344cc507.ctex"]
 
 [params]
 

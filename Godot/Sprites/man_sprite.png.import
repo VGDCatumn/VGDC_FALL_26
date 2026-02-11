@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rwe300snjop3"
-path="res://.godot/imported/10019598-muscular-man-sitting-on-a-chair-removebg-preview.png-9b779ef37b6aca435d67ee0ec57ab4d2.ctex"
+path="res://.godot/imported/man_sprite.png-3ad1e2ecce2098c50d02c3c8ba06419a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/10019598-muscular-man-sitting-on-a-chair-removebg-preview.png"
-dest_files=["res://.godot/imported/10019598-muscular-man-sitting-on-a-chair-removebg-preview.png-9b779ef37b6aca435d67ee0ec57ab4d2.ctex"]
+source_file="res://Sprites/man_sprite.png"
+dest_files=["res://.godot/imported/man_sprite.png-3ad1e2ecce2098c50d02c3c8ba06419a.ctex"]
 
 [params]
 
