@@ -4,22 +4,27 @@
 [ext_resource type="Script" uid="uid://cirs83pkny51f" path="res://ball_man.gd" id="1_k6mlf"]
 [ext_resource type="Texture2D" uid="uid://dbeoqdnrf4kod" path="res://Sprites/ball_sprite.png" id="2_k6mlf"]
 [ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/man_sprite.png" id="3_6fp6m"]
-[ext_resource type="AudioStream" uid="uid://bvioti255t7sd" path="res://SFX/moving-stone-v2.mp3" id="5_a7g5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
-size = Vector2(1778, 124)
+size = Vector2(1120.5, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7g5p"]
 size = Vector2(906.0276, 131)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymqfe"]
-size = Vector2(1041.0137, 565.5)
+size = Vector2(906.0276, 565.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p40x3"]
+size = Vector2(704.50684, 1340.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sys8"]
+size = Vector2(2039.0004, 353)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xqxn"]
-size = Vector2(192.0138, 1098.7501)
+size = Vector2(827.0001, 358.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mui3k"]
-size = Vector2(321.32874, 36)
+size = Vector2(406.08563, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yoly"]
 size = Vector2(264.25, 208.81906)
@@ -28,7 +33,46 @@ size = Vector2(264.25, 208.81906)
 size = Vector2(142.64575, 45.127884)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xygf2"]
-size = Vector2(1790.0139, 565.5)
+size = Vector2(1207, 516.8153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am1oe"]
+size = Vector2(375.44885, 23.021837)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm8sa"]
+size = Vector2(461.57013, 27.683258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfuir"]
+size = Vector2(366, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5y3s"]
+size = Vector2(1055.5, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncnwt"]
+size = Vector2(252, 897)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j43rf"]
+size = Vector2(2009, 1647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tx2a"]
+size = Vector2(326, 14.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2ew0"]
+size = Vector2(371, 18.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv3lf"]
+size = Vector2(384.5, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_551ac"]
+size = Vector2(366, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utpyw"]
+size = Vector2(534, 1745)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lb3i"]
+size = Vector2(511.5, 254.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nngh"]
+size = Vector2(3301.5, 84.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7g5p"]
 radius = 37.0
@@ -39,7 +83,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/path = NodePath("71WpxMekUL_AcUf8941000Ql80RemovebgPreview:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,7 +95,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/path = NodePath("71WpxMekUL_AcUf8941000Ql80RemovebgPreview:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -63,7 +107,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("man_sprite:position")
+tracks/2/path = NodePath("10019598MuscularManSittingOnAChairRemovebgPreview:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -75,7 +119,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/path = NodePath("10019598MuscularManSittingOnAChairRemovebgPreview:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -91,7 +135,7 @@ length = 0.27
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/path = NodePath("71WpxMekUL_AcUf8941000Ql80RemovebgPreview:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -103,7 +147,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/path = NodePath("71WpxMekUL_AcUf8941000Ql80RemovebgPreview:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -115,7 +159,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("man_sprite:position")
+tracks/2/path = NodePath("10019598MuscularManSittingOnAChairRemovebgPreview:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -127,7 +171,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/path = NodePath("10019598MuscularManSittingOnAChairRemovebgPreview:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -143,7 +187,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ball_sprite:scale")
+tracks/0/path = NodePath("71WpxMekUL_AcUf8941000Ql80RemovebgPreview:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -155,7 +199,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ball_sprite:position")
+tracks/1/path = NodePath("71WpxMekUL_AcUf8941000Ql80RemovebgPreview:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -167,7 +211,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("man_sprite:position")
+tracks/2/path = NodePath("10019598MuscularManSittingOnAChairRemovebgPreview:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -179,7 +223,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/path = NodePath("10019598MuscularManSittingOnAChairRemovebgPreview:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -204,7 +248,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1369962554]
-position = Vector2(248, 557)
+position = Vector2(576.75, 557)
 shape = SubResource("RectangleShape2D_enxv6")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=926389555]
@@ -213,22 +257,27 @@ rotation = -0.36826447
 shape = SubResource("RectangleShape2D_a7g5p")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1536975334]
-position = Vector2(2097.4932, 438)
+position = Vector2(2030, 438)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_ymqfe")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=258119121]
-position = Vector2(2556, -329)
+position = Vector2(2789.7466, 273)
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_2xqxn")
+shape = SubResource("RectangleShape2D_p40x3")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=1041093268]
+position = Vector2(-861.5, 640)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_6sys8")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=395597530]
-position = Vector2(-578, 58)
+position = Vector2(-398.5, -347.99997)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_2xqxn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2014599128]
-position = Vector2(1750.0001, -131)
+position = Vector2(1710.4897, -146.32509)
 rotation = 0.3700098
 shape = SubResource("RectangleShape2D_mui3k")
 
@@ -243,34 +292,86 @@ rotation = -0.09250247
 shape = SubResource("RectangleShape2D_x7n8j")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1749007629]
-position = Vector2(728.0069, -453)
+position = Vector2(573.7124, -428.6586)
+rotation = -0.008726646
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_xygf2")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=456724541]
+position = Vector2(2266.2593, -325.42108)
+rotation = -0.30892333
+shape = SubResource("RectangleShape2D_am1oe")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=603224267]
+position = Vector2(2215.5313, -675.3007)
+rotation = 0.17802358
+shape = SubResource("RectangleShape2D_pm8sa")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=623405294]
+position = Vector2(1352, -211)
+shape = SubResource("RectangleShape2D_hfuir")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=102780039]
+position = Vector2(1694.25, -730)
+shape = SubResource("RectangleShape2D_k5y3s")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=684096007]
+position = Vector2(3220, -731.5)
+shape = SubResource("RectangleShape2D_ncnwt")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=468936142]
+position = Vector2(-2792.5, -232.5)
+shape = SubResource("RectangleShape2D_j43rf")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=2021206783]
+position = Vector2(941, -955)
+shape = SubResource("RectangleShape2D_3tx2a")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=1946080141]
+position = Vector2(-209, -1060.125)
+shape = SubResource("RectangleShape2D_e2ew0")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=302559810]
+position = Vector2(431, -994)
+shape = SubResource("RectangleShape2D_mv3lf")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D" unique_id=1324504857]
+position = Vector2(-810, -1120.5)
+shape = SubResource("RectangleShape2D_551ac")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D" unique_id=1453141542]
+position = Vector2(-3520, -1908)
+shape = SubResource("RectangleShape2D_utpyw")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D" unique_id=566574157]
+position = Vector2(-2011, -2083)
+shape = SubResource("RectangleShape2D_1lb3i")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D" unique_id=1442681143]
+position = Vector2(-136.75, -2231.75)
+shape = SubResource("RectangleShape2D_4nngh")
 
 [node name="BallMan" type="CharacterBody2D" parent="." unique_id=4296076]
 position = Vector2(151, 433)
 script = ExtResource("1_k6mlf")
 
-[node name="ball_sprite" type="Sprite2D" parent="BallMan" unique_id=1194263613]
+[node name="71WpxMekUL_AcUf8941000Ql80RemovebgPreview" type="Sprite2D" parent="BallMan" unique_id=1194263613]
 position = Vector2(0, -1)
 scale = Vector2(0.1769723, 0.17636023)
 texture = ExtResource("2_k6mlf")
 
-[node name="man_sprite" type="Sprite2D" parent="BallMan" unique_id=918184012]
+[node name="10019598MuscularManSittingOnAChairRemovebgPreview" type="Sprite2D" parent="BallMan" unique_id=918184012]
 position = Vector2(-1.999999, -77.875)
 scale = Vector2(0.18995097, 0.19648694)
 texture = ExtResource("3_6fp6m")
 
-[node name="player_CollisionShape2D" type="CollisionShape2D" parent="BallMan" unique_id=463927563]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallMan" unique_id=463927563]
 position = Vector2(1, -8)
 shape = SubResource("CircleShape2D_a7g5p")
 
 [node name="Camera2D" type="Camera2D" parent="BallMan" unique_id=32884667]
+zoom = Vector2(0.5, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BallMan" unique_id=1121858593]
 libraries/ = SubResource("AnimationLibrary_a7g5p")
 autoplay = &"bounce_animation"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BallMan" unique_id=456266818]
-stream = ExtResource("5_a7g5p")
-parameters/looping = true
