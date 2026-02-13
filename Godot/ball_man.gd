@@ -66,7 +66,7 @@ func slam_down(delta):
 func handle_floor_bounce():
 	# Play bounce animation
 	$AnimationPlayer.play("bounce_animation")
-	
+	$Boing.play()
 	# Bounce player off the ground, based on their current speed
 	velocity.y = -abs(total_velocity) * 0.45
 	
@@ -144,3 +144,8 @@ func wobble_rotate(delta):
 	else:
 		rotation = lerp_angle(rotation, start_angle, delta * 1)
 	
+
+
+func _on_person_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Physical"):
+		$Ow.play()
