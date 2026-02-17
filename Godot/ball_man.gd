@@ -9,6 +9,7 @@ var max_fall_speed := 2500.0
 
 # Variables created by Ben
 var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with walls and ceiling 
+var ceiling_bounce_multiplier = 0.25
 
 
 func _physics_process(delta: float) -> void:
@@ -18,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_ceiling():
 		# handle bounce collision with ceiling
-		handle_ceiling_bounce(wall_bounce_multiplier)
+		handle_ceiling_bounce(ceiling_bounce_multiplier)
 		
 	if is_on_wall():
 		# handle bounce collisions with wall and ceiling
@@ -99,7 +100,7 @@ func clamp_x_speed():
 
 # Handle bounces off walls 
 # Edited make the ceiling bounce its own function - Nick
-func handle_wall_bounce(wall_bounce_multiplier):
+func handle_wall_bounce(ceiling_bounce_multiplier):
 	# Record prev_velocity before a collision.
 	# When collision occurs, engine sets velocity in that direction = 0
 	# Manually set the velocity in the opposite direction with the prev_velocity
@@ -122,7 +123,7 @@ func handle_ceiling_bounce(wall_bounce_multiplier):
 	
 	# Plays ball bounce animation, but bounces on wrong side
 	# needs to change to unqine animation
-	$AnimationPlayer.play("bounce_animation")
+	$AnimationPlayer.play("Ceiling_animation")
 	#Causes y velocity to reverse when hitting a ceiling, then reduces by the constant
 	velocity.y = -prev_velocity.y * wall_bounce_multiplier
 		
@@ -175,7 +176,10 @@ func wobble_rotate(delta):
 		rotation = lerp_angle(rotation, start_angle, delta * 1)
 	
 
-
+# man enters collision 
 func _on_person_body_entered(body: Node2D) -> void:
+	
+	
+	# play ow audio
 	if body.is_in_group("Physical"):
 		$Ow.play()
