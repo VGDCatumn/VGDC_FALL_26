@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://duoojr5lkmj1k"]
+
+[ext_resource type="Script" uid="uid://cirs83pkny51f" path="res://Scripts/ball_man.gd" id="1_gc4hn"]
+[ext_resource type="Texture2D" uid="uid://dbeoqdnrf4kod" path="res://Sprites/ball_sprite.png" id="2_s6csc"]
+[ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/man_sprite.png" id="3_vn324"]
+[ext_resource type="AudioStream" uid="uid://bsswpijfubaja" path="res://Audio/Boing - Marcy.mp3" id="4_adqab"]
+[ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/Ow - Marcy.mp3" id="5_j2sbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7g5p"]
+radius = 37.0
+
+[sub_resource type="Animation" id="Animation_6fp6m"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="Animation" id="Animation_enxv6"]
+resource_name = "bounce_animation"
+length = 0.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13144214, 0.26666668, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-1, 14.000002), Vector2(0, -1), Vector2(0, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.6666667),
+"transitions": PackedFloat32Array(-2, 1, -2, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.34528247, 0.0966229), Vector2(0.1769723, 0.17636023), Vector2(0.34528247, 0.0966229)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13259514, 0.26864928, 0.6675877),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(0, -56), Vector2(-2, -77.875), Vector2(0, -59)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="Animation" id="Animation_a7g5p"]
+resource_name = "stretch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.162, 0.226)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(-2, -77.875), Vector2(-2, -90)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694), Vector2(0.18, 0.226)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7g5p"]
+_data = {
+&"RESET": SubResource("Animation_6fp6m"),
+&"bounce_animation": SubResource("Animation_enxv6"),
+&"stretch": SubResource("Animation_a7g5p")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymqfe"]
+radius = 24.0
+height = 106.0
+
+[node name="BallMan" type="CharacterBody2D" unique_id=742937550 groups=["PLAYER"]]
+script = ExtResource("1_gc4hn")
+
+[node name="ball_sprite" type="Sprite2D" parent="." unique_id=1196626458]
+position = Vector2(0, -1)
+scale = Vector2(0.1769723, 0.17636023)
+texture = ExtResource("2_s6csc")
+
+[node name="man_sprite" type="Sprite2D" parent="." unique_id=357147493]
+position = Vector2(-1.999999, -77.875)
+scale = Vector2(0.18995097, 0.19648694)
+texture = ExtResource("3_vn324")
+
+[node name="BallCollider" type="CollisionShape2D" parent="." unique_id=1579468439]
+position = Vector2(1, -8)
+shape = SubResource("CircleShape2D_a7g5p")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1215970789]
+zoom = Vector2(0.75, 0.75)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1948293760]
+libraries/ = SubResource("AnimationLibrary_a7g5p")
+autoplay = &"bounce_animation"
+
+[node name="Boing" type="AudioStreamPlayer" parent="." unique_id=785118483]
+stream = ExtResource("4_adqab")
+pitch_scale = 1.64
+
+[node name="Ow" type="AudioStreamPlayer" parent="." unique_id=1064186559]
+stream = ExtResource("5_j2sbk")
+pitch_scale = 0.8
+
+[node name="Person" type="Area2D" parent="." unique_id=1446714225]
+
+[node name="PersonCollider" type="CollisionShape2D" parent="Person" unique_id=1717170985]
+position = Vector2(1, -83)
+shape = SubResource("CapsuleShape2D_ymqfe")
+
+[connection signal="body_entered" from="Person" to="." method="_on_person_body_entered"]
