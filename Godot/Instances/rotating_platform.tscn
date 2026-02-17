@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cu3gpl8nth35v"]
 
-[ext_resource type="Script" uid="uid://cnt3p6wu0ote7" path="res://Modular Level Stuff/rotating_platform.gd" id="1_s8fd4"]
+[ext_resource type="Script" uid="uid://cnt3p6wu0ote7" path="res://Scripts/rotating_platform.gd" id="1_s8fd4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iy68"]
 size = Vector2(526, 42.5)

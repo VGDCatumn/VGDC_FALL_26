@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk7tj4o35c6c1"]
 
-[ext_resource type="Script" uid="uid://c6b2wm1pjthvp" path="res://UI/credits.gd" id="1_ng644"]
+[ext_resource type="Script" uid="uid://c6b2wm1pjthvp" path="res://UI/UI_Scripts/credits.gd" id="1_ng644"]
 [ext_resource type="LabelSettings" uid="uid://c2nqfq8x5717y" path="res://UI/title_text.tres" id="2_uuuvy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ng644"]

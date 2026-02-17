@@ -1,9 +1,9 @@
-extends StaticBody2D
+extends Node2D
 
-@export var rotateCounterclockwise = true
-var bumperSpeed = 8
-var start_angle
-var end_angle
+@export var rotateCounterclockwise : bool = true
+var bumperSpeed : float = 8
+var start_angle : float
+var end_angle : float
 
 
 # Called when the node enters the scene tree for the first time.

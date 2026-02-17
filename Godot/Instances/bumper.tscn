@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dphjpd3qh7e0"]
+
+[ext_resource type="Script" uid="uid://dnwuix1sn1h2m" path="res://Scripts/bumper.gd" id="1_i3btg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2ws"]
+size = Vector2(545, 52)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_byn7s"]
+radius = 27.0
+height = 663.56274
+
+[node name="Bumper" type="Node2D" unique_id=1163924999]
+script = ExtResource("1_i3btg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=748503427]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1916725529]
+position = Vector2(318, 138)
+rotation = 0.5235988
+shape = SubResource("RectangleShape2D_xe2ws")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=675906871]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=99381711]
+position = Vector2(249, 143)
+rotation = -1.0471976
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_byn7s")
