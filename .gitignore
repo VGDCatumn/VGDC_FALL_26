@@ -17,3 +17,7 @@ mono_crash.*.json
 
 #manual
 .DS_Store
+<<<<<<< HEAD
+=======
+testing.tscn
+>>>>>>> 313df74 (Added testing.tscn to .gitignore)
