@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/man_sprite.png" id="3_vn324"]
 [ext_resource type="AudioStream" uid="uid://bsswpijfubaja" path="res://Audio/Boing - Marcy.mp3" id="4_adqab"]
 [ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/Ow - Marcy.mp3" id="5_j2sbk"]
+[ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector-arrow.tscn" id="6_s6csc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7g5p"]
 radius = 37.0
@@ -214,4 +215,7 @@ pitch_scale = 0.8
 position = Vector2(1, -83)
 shape = SubResource("CapsuleShape2D_ymqfe")
 
+[node name="VectorArrow" parent="." unique_id=1007273149 instance=ExtResource("6_s6csc")]
+
+[connection signal="send_velocity_vector" from="." to="VectorArrow" method="_on_ball_man_send_velocity_vector"]
 [connection signal="body_entered" from="Person" to="." method="_on_person_body_entered"]

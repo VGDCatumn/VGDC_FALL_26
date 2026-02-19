@@ -11,22 +11,25 @@ var max_fall_speed := 2500.0
 var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with walls and ceiling 
 var ceiling_bounce_multiplier = 0.25
 var is_dev_mode_enabled : bool = false
+signal send_velocity_vector (position : Vector2, velocity : Vector2) # send signal to directional arrow node
 
 
 func _physics_process(delta: float) -> void:
 	# toggle dev mode
 	if Input.is_action_just_pressed("dev_mode"):
 		is_dev_mode_enabled = !is_dev_mode_enabled
-		print("Developer Mode Enabled")
+		print("Developer Mode toggled")
 	
 	if (is_dev_mode_enabled):
-		# apply developer cheat, move omnidirectionally
 		dev_movement_mode(delta)
 	else:
-		# apply regular player movement 
 		regular_movement_mode(delta)
+		
+	# for testing, this stays on always. 
+	# eventually add way to toggle arrow later
+	display_vector_arrow()
 
-	
+# dev tool to move omnidirectionally
 func dev_movement_mode(delta):
 	var move_speed = 1000 * delta
 	
@@ -40,9 +43,15 @@ func dev_movement_mode(delta):
 	if Input.is_action_pressed("move_right"):
 		position.x += move_speed
 	
-	velocity = Vector2(0,0)
-	wobble_rotate(delta)
+	velocity = Vector2(0,0) # reset velocity for exiting 
+	$AnimationPlayer.stop() # stop any animations
+	wobble_rotate(delta) # apply rotation, this is cosemetic it doesn't change movement
 	
+func display_vector_arrow():
+	send_velocity_vector.emit(position, velocity)
+	
+
+# apply regular player movement 
 func regular_movement_mode(delta):
 	# clamps X Velocity
 	clamp_x_speed()
