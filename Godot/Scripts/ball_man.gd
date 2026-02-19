@@ -10,10 +10,40 @@ var max_fall_speed := 2500.0
 # Variables created by Ben
 var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with walls and ceiling 
 var ceiling_bounce_multiplier = 0.25
+var is_dev_mode_enabled : bool = false
 
 
 func _physics_process(delta: float) -> void:
+	# toggle dev mode
+	if Input.is_action_just_pressed("dev_mode"):
+		is_dev_mode_enabled = !is_dev_mode_enabled
+		print("Developer Mode Enabled")
 	
+	if (is_dev_mode_enabled):
+		# apply developer cheat, move omnidirectionally
+		dev_movement_mode(delta)
+	else:
+		# apply regular player movement 
+		regular_movement_mode(delta)
+
+	
+func dev_movement_mode(delta):
+	var move_speed = 1000 * delta
+	
+	# handle WASD movement to move omnidirectionally
+	if Input.is_action_pressed("move_up"):
+		position.y -= move_speed
+	if Input.is_action_pressed("move_down"):
+		position.y += move_speed
+	if Input.is_action_pressed("move_left"):
+		position.x -= move_speed
+	if Input.is_action_pressed("move_right"):
+		position.x += move_speed
+	
+	velocity = Vector2(0,0)
+	wobble_rotate(delta)
+	
+func regular_movement_mode(delta):
 	# clamps X Velocity
 	clamp_x_speed()
 	
@@ -40,7 +70,6 @@ func _physics_process(delta: float) -> void:
 	 # Move character
 	move_and_slide()
 	
-	
 
 ### CUSTOM MOVEMENT FUNCTIONS
 func handle_fall(delta):
@@ -49,7 +78,7 @@ func handle_fall(delta):
 	velocity.y += gravity * delta
 	
 	# slam down only when ball is already falling and user presses down
-	if velocity.y >= 0 and Input.is_action_pressed("ui_down"):
+	if velocity.y >= 0 and Input.is_action_pressed("move_down"):
 		slam_down(delta)
 	
 	# cap the max velocity in downwards y direction
@@ -129,9 +158,9 @@ func handle_ceiling_bounce(wall_bounce_multiplier):
 		
 # Manual rotation, use left/right to tilt player
 func manual_rotate(delta):
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		rotate(1 * delta)
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("move_left"):
 		rotate(-1 * delta)
 	
 	# play audio when manual rotating
@@ -143,11 +172,11 @@ func manual_rotate_sound(delta):
 	
 	var vol_increase_rate = 0.8; # 0.5 means increase volume by 50% each second 
 	
-	if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_left") :
+	if Input.is_action_just_pressed("move_right") or Input.is_action_just_pressed("ui_left") :
 		$AudioStreamPlayer2D.play()
 		$AudioStreamPlayer2D.set_volume_linear(0);
 		
-	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_right") or Input.is_action_pressed("ui_left"):
 		var volume = $AudioStreamPlayer2D.get_volume_linear()
 		volume += vol_increase_rate * delta
 		volume = clampf(volume, 0, 1.5) # cap volume to be 0% to 150%
@@ -168,9 +197,9 @@ func wobble_rotate(delta):
 	var end_angle_right = PI * .35
 	var end_angle_left = PI * -.35
 	
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		rotation = lerp_angle(rotation, end_angle_right, delta * 2)
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("move_left"):
 		rotation = lerp_angle(rotation, end_angle_left, delta * 2)
 	else:
 		rotation = lerp_angle(rotation, start_angle, delta * 1)

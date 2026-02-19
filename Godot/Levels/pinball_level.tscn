@@ -144,7 +144,7 @@ rotation = 0.5235988
 shape = SubResource("RectangleShape2D_ii1t7")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_byn7s")]
-position = Vector2(645, -848)
+position = Vector2(651, -848)
 
 [node name="Bumper" parent="." unique_id=1163924999 instance=ExtResource("2_ss614")]
 position = Vector2(-814, 711)

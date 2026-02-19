@@ -203,4 +203,4 @@ shape = SubResource("RectangleShape2D_4nngh")
 position = Vector2(-1169, 313)
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(151, 433)
+position = Vector2(1490, -860)
