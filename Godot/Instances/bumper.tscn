@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dphjpd3qh7e0"]
 
 [ext_resource type="Script" uid="uid://dnwuix1sn1h2m" path="res://Scripts/bumper.gd" id="1_i3btg"]
+[ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector-arrow.tscn" id="2_s4apx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2ws"]
 size = Vector2(545, 52)
@@ -26,3 +27,7 @@ position = Vector2(249, 143)
 rotation = -1.0471976
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_byn7s")
+
+[node name="VectorArrow" parent="." unique_id=1007273149 instance=ExtResource("2_s4apx")]
+
+[connection signal="send_bumper_vector" from="." to="VectorArrow" method="_on_bumper_send_bumper_vector"]
