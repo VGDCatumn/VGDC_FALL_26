@@ -17,4 +17,5 @@ mono_crash.*.json
 
 #manual
 .DS_Store
+testing.tscn
 Godot/Levels/testing.tscn
