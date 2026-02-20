@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://db70dai06rnqn"]
+[gd_scene format=3 uid="uid://cdutx8mocx77o"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_enxv6"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="3_6fp6m"]
+[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_di1g1"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_qhuka"]
+[ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="3_45jnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -181,9 +182,9 @@ size = Vector2(364.62012, 171.91528)
 size = Vector2(441.75, 696.6643)
 
 [node name="Testing" type="Node2D" unique_id=488097887]
-script = ExtResource("1_enxv6")
+script = ExtResource("1_di1g1")
 
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_qhuka")]
 position = Vector2(-2585, 269)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
@@ -562,5 +563,5 @@ position = Vector2(2192.3523, -3575.4731)
 rotation = -0.22881274
 shape = SubResource("RectangleShape2D_4nngh")
 
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-687, 246)
+[node name="Rotating Platform" parent="StaticBody2D" unique_id=205255195 instance=ExtResource("3_45jnj")]
+position = Vector2(-1741, -806)

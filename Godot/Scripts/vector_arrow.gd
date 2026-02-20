@@ -5,6 +5,11 @@ var pointDirection : Vector2
 func _on_ball_man_send_velocity_vector(position : Vector2, velocity: Vector2) -> void:
 	point_arrow(position, velocity)
 	scale_arrow(velocity)
+	
+func _on_bumper_send_bumper_vector(position: Vector2, direction: Vector2) -> void:
+	point_arrow(position, direction)
+	scale = Vector2(1,1)
+
 
 func point_arrow(start_pos : Vector2, direction : Vector2):
 	# add position and directional vector so origin of look_at is current position

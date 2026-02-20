@@ -5,6 +5,7 @@ var bumperSpeed : float = 8
 var start_angle : float
 var end_angle : float
 
+signal send_bumper_vector(position : Vector2, direction: Vector2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,11 +24,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# flipper logic
+	# bumper logic
 	if (Input.is_action_pressed("ui_accept")):
 		activateBumper(delta)
 	else:
 		deactivateBumper(delta)
+
+	# display direction arrow pointing in direction of bump
+	var bumperDirection = position + Vector2(cos(rotation),-sin(rotation))
+	send_bumper_vector.emit(position, bumperDirection)
 
 func activateBumper(delta):
 	rotation = lerp_angle(rotation, end_angle, delta * bumperSpeed)

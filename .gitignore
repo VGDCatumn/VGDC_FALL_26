@@ -18,3 +18,4 @@ mono_crash.*.json
 #manual
 .DS_Store
 testing.tscn
+
