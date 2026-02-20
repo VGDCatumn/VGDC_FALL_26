@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_enxv6"]
+[ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="2_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="3_6fp6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
@@ -184,7 +185,7 @@ size = Vector2(441.75, 696.6643)
 script = ExtResource("1_enxv6")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-2585, 269)
+position = Vector2(-2511, 267)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
 
@@ -220,6 +221,19 @@ FALL AFTER
 TWO BOUNCES"
 horizontal_alignment = 1
 
+[node name="Label5" type="Label" parent="Node2D" unique_id=1354945320]
+z_index = -1
+offset_left = -2306.0
+offset_top = -364.0
+offset_right = -883.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 64
+text = "This is testing.tscn.
+It is a copy of level_chasm.
+You are given this template to test level ideas.
+Any changes will NOT affect the git repository.
+You are free to edit this scene as you please."
+
 [node name="Label4" type="Label" parent="Node2D" unique_id=519132103]
 offset_left = -901.0
 offset_top = -4277.0
@@ -228,6 +242,9 @@ offset_bottom = -4096.0
 theme_override_font_sizes/font_size = 128
 text = "CAMERA ZOOMS OUT OVER CHASM"
 horizontal_alignment = 1
+
+[node name="Rotating Platform" parent="Node2D" unique_id=205255195 instance=ExtResource("2_2xqxn")]
+position = Vector2(-1759, -837)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3
@@ -561,6 +578,3 @@ shape = SubResource("RectangleShape2D_5kaj0")
 position = Vector2(2192.3523, -3575.4731)
 rotation = -0.22881274
 shape = SubResource("RectangleShape2D_4nngh")
-
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-687, 246)
