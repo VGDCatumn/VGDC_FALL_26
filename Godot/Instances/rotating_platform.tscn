@@ -6,10 +6,10 @@
 size = Vector2(526, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkrf5"]
-size = Vector2(167.5, 36.75)
+size = Vector2(185.75, 36.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpdny"]
-size = Vector2(164.5, 38.75)
+size = Vector2(186.5, 38.75)
 
 [node name="Rotating Platform" type="StaticBody2D" unique_id=205255195]
 script = ExtResource("1_s8fd4")
@@ -21,21 +21,21 @@ shape = SubResource("RectangleShape2D_2iy68")
 [node name="Right" type="Area2D" parent="." unique_id=1949827136]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=817398860]
-position = Vector2(-142, -25)
+position = Vector2(-151.125, -25)
 shape = SubResource("RectangleShape2D_mkrf5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Right" unique_id=868565651]
-position = Vector2(138, 16)
+position = Vector2(148, 14)
 shape = SubResource("RectangleShape2D_mkrf5")
 
 [node name="Left" type="Area2D" parent="." unique_id=948253957]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Left" unique_id=776929645]
-position = Vector2(-142, 16)
+position = Vector2(-152, 16)
 shape = SubResource("RectangleShape2D_fpdny")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Left" unique_id=748603566]
-position = Vector2(137.75, -25)
+position = Vector2(148.75, -25)
 shape = SubResource("RectangleShape2D_fpdny")
 
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]

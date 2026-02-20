@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_enxv6"]
-[ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="2_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="3_6fp6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
@@ -199,8 +198,5 @@ shape = SubResource("RectangleShape2D_1lb3i")
 position = Vector2(-136.75, -2231.75)
 shape = SubResource("RectangleShape2D_4nngh")
 
-[node name="Rotating Platform" parent="StaticBody2D" unique_id=205255195 instance=ExtResource("2_2xqxn")]
-position = Vector2(-1169, 313)
-
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(1490, -860)
+position = Vector2(-687, 246)
