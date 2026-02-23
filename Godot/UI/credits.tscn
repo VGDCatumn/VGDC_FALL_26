@@ -52,7 +52,7 @@ Placeholder
 Placeholder
 Placeholder
 Supporter
-Placeholder"
+Level Design"
 label_settings = SubResource("LabelSettings_ng644")
 
 [node name="Divider" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=421602750]
