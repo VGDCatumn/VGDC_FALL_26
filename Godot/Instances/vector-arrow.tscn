@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ehqfyyxqfg4g"]
+
+[ext_resource type="Script" uid="uid://dy12e3a1cw3gb" path="res://Scripts/vector_arrow.gd" id="1_6br37"]
+[ext_resource type="Texture2D" uid="uid://dpr0e4370qsi" path="res://Sprites/vector-arrow-sprite.png" id="2_puemu"]
+
+[node name="VectorArrow" type="Node2D" unique_id=1007273149]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_6br37")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=150959856]
+position = Vector2(134, 0)
+texture = ExtResource("2_puemu")
+offset = Vector2(100, 0)
