@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://d2jwllqcv5r6g"]
+
+[ext_resource type="Script" uid="uid://ddhkpefoy7gkn" path="res://Instances/spring.gd" id="1_64j03"]
+[ext_resource type="Texture2D" uid="uid://ce36p74onqrda" path="res://Sprites/Mushroom.png" id="2_imch3"]
+[ext_resource type="AudioStream" uid="uid://bw5aiqvt6c7dg" path="res://Audio/Shroom!.mp3" id="3_be82h"]
+
+[sub_resource type="Animation" id="Animation_imch3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mushroom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mushroom:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mushroom:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_be82h"]
+resource_name = "boing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mushroom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mushroom:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mushroom:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4l75h"]
+_data = {
+&"RESET": SubResource("Animation_imch3"),
+&"boing": SubResource("Animation_be82h")
+}
+
+[node name="Spring" type="Area2D" unique_id=261987189]
+script = ExtResource("1_64j03")
+
+[node name="Mushroom" type="Sprite2D" parent="." unique_id=1878082602]
+position = Vector2(3, 18)
+texture = ExtResource("2_imch3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=345560907]
+visible = false
+position = Vector2(1, 144)
+polygon = PackedVector2Array(-148, -158, -149, -195, -59, -273, 53, -275, 145, -203, 149, -151)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=621702132]
+libraries/ = SubResource("AnimationLibrary_4l75h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=403355208]
+stream = ExtResource("3_be82h")
+volume_db = 10.0
+pitch_scale = 1.64
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

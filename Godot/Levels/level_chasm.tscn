@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_qhuka"]
 [ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="3_45jnj"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/crumbling_platform.tscn" id="4_400cn"]
+[ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/spring.tscn" id="5_23em2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -560,3 +561,7 @@ position = Vector2(-2178, -3978.9998)
 rotation = 0.17453292
 scale = Vector2(1.1, 1.1)
 can_take = 2
+
+[node name="Spring" parent="StaticBody2D" unique_id=261987189 instance=ExtResource("5_23em2")]
+position = Vector2(-4259, -2437)
+spring_power = 1.4
