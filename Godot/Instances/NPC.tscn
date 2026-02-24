@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bv2dadkb4j6tm"]
+
+[ext_resource type="Script" uid="uid://6aktp3njyrp0" path="res://Instances/npc.gd" id="1_yieg6"]
+[ext_resource type="Texture2D" uid="uid://bt0vyc8is552u" path="res://Sprites/morsh.png" id="2_rsl6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxm2j"]
+size = Vector2(237, 143)
+
+[node name="Npc" type="Node2D" unique_id=652284848]
+position = Vector2(421, 261)
+script = ExtResource("1_yieg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=155660874]
+position = Vector2(-2, 3)
+scale = Vector2(0.3754717, 0.3754717)
+texture = ExtResource("2_rsl6y")
+
+[node name="speakZone" type="Area2D" parent="." unique_id=287097051]
+position = Vector2(-1, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="speakZone" unique_id=1979070103]
+position = Vector2(2, -24)
+shape = SubResource("RectangleShape2D_xxm2j")
+
+[node name="Label" type="Label" parent="." unique_id=747627364]
+offset_right = 40.0
+offset_bottom = 23.0
