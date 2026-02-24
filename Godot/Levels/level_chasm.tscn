@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_qhuka"]
 [ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="3_45jnj"]
+[ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/crumbling_platform.tscn" id="4_400cn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -129,15 +130,6 @@ size = Vector2(347.9392, 629.19135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agsoa"]
 size = Vector2(441.75, 1143.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7faet"]
-size = Vector2(564.875, 92.8125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqesj"]
-size = Vector2(109.49072, 398.40625)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrwym"]
-size = Vector2(315.10938, 109.86987)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42r63"]
 size = Vector2(264.79126, 151.93677)
@@ -470,20 +462,6 @@ shape = SubResource("RectangleShape2D_ycp61")
 position = Vector2(-1618, -3165)
 shape = SubResource("RectangleShape2D_agsoa")
 
-[node name="CollisionShape2D55" type="CollisionShape2D" parent="StaticBody2D" unique_id=1478298881]
-position = Vector2(-3569.4375, -3786.4063)
-shape = SubResource("RectangleShape2D_7faet")
-
-[node name="CollisionShape2D57" type="CollisionShape2D" parent="StaticBody2D" unique_id=1915377297]
-position = Vector2(-2888, -3938)
-rotation = 1.3345478
-shape = SubResource("RectangleShape2D_bqesj")
-
-[node name="CollisionShape2D56" type="CollisionShape2D" parent="StaticBody2D" unique_id=1778910302]
-position = Vector2(-2250.9268, -3988.8613)
-rotation = 0.07729212
-shape = SubResource("RectangleShape2D_rrwym")
-
 [node name="CollisionShape2D49" type="CollisionShape2D" parent="StaticBody2D" unique_id=859259048]
 position = Vector2(-2266.6096, -2114.3535)
 rotation = 0.052161712
@@ -565,3 +543,20 @@ shape = SubResource("RectangleShape2D_4nngh")
 
 [node name="Rotating Platform" parent="StaticBody2D" unique_id=205255195 instance=ExtResource("3_45jnj")]
 position = Vector2(-1741, -806)
+
+[node name="Crumbling Platform" parent="StaticBody2D" unique_id=2007738548 instance=ExtResource("4_400cn")]
+position = Vector2(-3567, -3767)
+scale = Vector2(1.1, 1.1)
+can_take = 2
+
+[node name="Crumbling Platform2" parent="StaticBody2D" unique_id=1081258891 instance=ExtResource("4_400cn")]
+position = Vector2(-2876, -3927)
+rotation = -0.17453292
+scale = Vector2(1.1, 1.1)
+can_take = 2
+
+[node name="Crumbling Platform3" parent="StaticBody2D" unique_id=935468724 instance=ExtResource("4_400cn")]
+position = Vector2(-2178, -3978.9998)
+rotation = 0.17453292
+scale = Vector2(1.1, 1.1)
+can_take = 2

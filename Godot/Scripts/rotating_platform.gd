@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	if rotation_degrees == 35 or rotation_degrees == -35:
 		torque = 0
 		
-	print(torque)
+	
 	torque = move_toward(torque, 0, damping * delta)
 	# print("total", torque * delta)
 func _on_area_2d_body_entered(body: Node2D) -> void:
