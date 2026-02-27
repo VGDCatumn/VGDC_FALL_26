@@ -6,9 +6,10 @@ var prev_velocity : Vector2
 var gravity := 1200.0			# Gravity is 2x on a slam down
 var bounce_multiplier := 0.85   	# Energy retained on bounce
 var max_fall_speed := 2500.0 
+var is_on_platform = false
 
 # Variables created by Ben
-var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with walls and ceiling 
+var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with walls
 var ceiling_bounce_multiplier = 0.25
 var is_dev_mode_enabled : bool = false
 signal send_velocity_vector (position : Vector2, velocity : Vector2) # send signal to directional arrow node
@@ -56,6 +57,17 @@ func regular_movement_mode(delta):
 	# clamps X Velocity
 	clamp_x_speed()
 	
+	# Move character
+	move_and_slide()
+
+	# Checks if surface is a rotating platform
+	rotating_platform_check()
+	
+	if is_on_platform:	#Checks if ball bounced off of a platform
+		# Sets all platform bounces to floor bounces by default
+		
+		handle_floor_bounce()
+		
 	if is_on_ceiling():
 		# handle bounce collision with ceiling
 		handle_ceiling_bounce(ceiling_bounce_multiplier)
@@ -65,22 +77,35 @@ func regular_movement_mode(delta):
 		handle_wall_bounce(wall_bounce_multiplier)
 	
 	if not is_on_floor():
+		# handle falling when it mid air
 		handle_fall(delta) # apply gravity and handle slam down
 		#print("Not on ground")
-
 		
 	else:
 		handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
-		#print("I am on ground")
-	
+
 	# rotate player with left/right
 	wobble_rotate(delta)
-
-	 # Move character
-	move_and_slide()
 	
+	is_on_platform = false
 
 ### CUSTOM MOVEMENT FUNCTIONS
+
+#Checks the object that ball bounced off of to see if it was a platform
+#If so changes is_on_platform to true -Nick
+func rotating_platform_check():
+	var collision;
+	var slide_count = get_slide_collision_count()
+
+	#Detects what ball collided with and stores value in collider
+	if slide_count > 0:
+		collision = get_slide_collision(0)
+		var collider = collision.get_collider()
+
+	#If the surface was a 
+		if collider.is_in_group("rotating_platform"):
+			is_on_platform = true
+
 func handle_fall(delta):
 	#print("IS FALLING")
 	# increase velocity towards ground if not on floor
@@ -150,6 +175,11 @@ func handle_wall_bounce(ceiling_bounce_multiplier):
 	
 	#Causes x velocity to reverse when hitting a wall, then reduces by the constant
 	velocity.x = -prev_velocity.x * wall_bounce_multiplier
+	if(velocity.x > 0):
+		$AnimationPlayer.play("wall_bounce_animation_right")
+	else:
+		$AnimationPlayer.play("wall_bounce_animation_left")
+		
 
 
 # Handles bounces off the ceiling 

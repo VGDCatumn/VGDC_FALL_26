@@ -186,7 +186,7 @@ size = Vector2(441.75, 696.6643)
 script = ExtResource("1_enxv6")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-2511, 267)
+position = Vector2(221, -3379)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
 
