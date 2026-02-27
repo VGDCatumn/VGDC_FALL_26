@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4anoj2hvgqbq"]
 
 [ext_resource type="Script" uid="uid://bsy8bw3quct2w" path="res://Scripts/crumbling_platform.gd" id="1_ojxnl"]
+[ext_resource type="Texture2D" uid="uid://bc7knb12fk8u1" path="res://Sprites/Wood.jpg" id="2_yew5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfgg5"]
 size = Vector2(520, 48)
@@ -222,6 +223,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3amb1"]
 size = Vector2(262, 42.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yew5o"]
+radius = 18.027756
+
 [node name="Crumbling Platform" type="StaticBody2D" unique_id=2007738548]
 script = ExtResource("1_ojxnl")
 
@@ -239,13 +243,69 @@ libraries/ = SubResource("AnimationLibrary_tfgg5")
 position = Vector2(-131, -6)
 shape = SubResource("RectangleShape2D_3amb1")
 
+[node name="Wood" type="Sprite2D" parent="Left" unique_id=1134325968]
+position = Vector2(0.125, 0)
+scale = Vector2(0.4269984, 0.12142856)
+texture = ExtResource("2_yew5o")
+
 [node name="Right" type="CollisionShape2D" parent="." unique_id=2075667694]
 position = Vector2(133, -7)
 shape = SubResource("RectangleShape2D_3amb1")
 
+[node name="Wood" type="Sprite2D" parent="Right" unique_id=466974975]
+position = Vector2(7.450581e-09, 0.9999999)
+scale = Vector2(0.4269984, 0.12142856)
+texture = ExtResource("2_yew5o")
+
 [node name="Downtime" type="Timer" parent="." unique_id=1869191870]
 wait_time = 5.0
 one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=613299527]
+position = Vector2(0, 27)
+emitting = false
+amount = 100
+lifetime = 0.25
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(264, 50)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 900)
+initial_velocity_min = 1.0
+initial_velocity_max = 200.0
+scale_amount_min = 10.0
+scale_amount_max = 15.0
+color = Color(0.74509805, 0.57254905, 0.39607844, 0.4117647)
+hue_variation_min = -0.5
+hue_variation_max = 0.5
+
+[node name="Continous" type="CPUParticles2D" parent="." unique_id=1629922324]
+position = Vector2(0, 27)
+emitting = false
+amount = 2
+lifetime = 0.75
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(264, 50)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 900)
+initial_velocity_min = 1.0
+initial_velocity_max = 50.0
+scale_amount_min = 10.0
+scale_amount_max = 15.0
+color = Color(0.74509805, 0.57254905, 0.39607844, 0.4117647)
+hue_variation_min = -0.5
+hue_variation_max = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821935022]
+visible = false
+position = Vector2(-241, -6)
+shape = SubResource("CircleShape2D_yew5o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1744426836]
+visible = false
+position = Vector2(267, -8)
+shape = SubResource("CircleShape2D_yew5o")
 
 [connection signal="body_entered" from="PlayerDetecter" to="." method="_on_player_detecter_body_entered"]
 [connection signal="timeout" from="Downtime" to="." method="_on_downtime_timeout"]

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="2_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="3_6fp6m"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/spring.tscn" id="4_enxv6"]
+[ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/crumbling_platform.tscn" id="5_a7g5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -582,3 +583,7 @@ shape = SubResource("RectangleShape2D_4nngh")
 
 [node name="Spring" parent="." unique_id=261987189 instance=ExtResource("4_enxv6")]
 position = Vector2(-2124, 481)
+spring_power = 1.0
+
+[node name="Crumbling Platform" parent="." unique_id=2007738548 instance=ExtResource("5_a7g5p")]
+position = Vector2(-1516, 328)

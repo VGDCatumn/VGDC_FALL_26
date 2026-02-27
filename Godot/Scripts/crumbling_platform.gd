@@ -12,7 +12,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if $Continous.emitting == false:
+		if HP == 1 and open == false:
+			$Continous.emitting = true
 
 
 func _on_player_detecter_body_entered(body: Node2D) -> void:
@@ -20,19 +22,24 @@ func _on_player_detecter_body_entered(body: Node2D) -> void:
 		if open == false:
 			HP -= 1
 			$AnimationPlayer.play("Shake")
+			
 			if HP <= 0:
 				$AnimationPlayer.play("Open")
+				$Continous.emitting = false
 				open = true
 				$Downtime.start()
 				await $AnimationPlayer.animation_finished
-				$Left.disabled = true
 				$Right.disabled = true
+				$Left.disabled = true
+			else:
+				$CPUParticles2D.emitting = true
 
 
 func _on_downtime_timeout() -> void:
 	$AnimationPlayer.play("close")
 	await $AnimationPlayer.animation_finished
+	
 	open = false
-	$Left.disabled = false
-	$Right.disabled = false
 	HP = can_take
+	$Right.disabled = false
+	$Left.disabled = false
