@@ -166,11 +166,117 @@ tracks/3/keys = {
 "values": [Vector2(0.18995097, 0.19648694), Vector2(0.18, 0.226)]
 }
 
+[sub_resource type="Animation" id="Animation_vn324"]
+resource_name = "wall_bounce_animation_left"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-8.499995, -3), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.1196495, 0.16077998), Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(-10.499995, -79.875), Vector2(-2, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694), Vector2(0.16238113, 0.19648694), Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="Animation" id="Animation_s6csc"]
+resource_name = "wall_bounce_animation_right"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(5.4025555, -12.700081), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.1196495, 0.16077998), Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(5.8376074, -83.87499), Vector2(-2, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694), Vector2(0.16238113, 0.19648694), Vector2(0.18995097, 0.19648694)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a7g5p"]
 _data = {
 &"RESET": SubResource("Animation_6fp6m"),
 &"bounce_animation": SubResource("Animation_enxv6"),
-&"stretch": SubResource("Animation_a7g5p")
+&"stretch": SubResource("Animation_a7g5p"),
+&"wall_bounce_animation_left": SubResource("Animation_vn324"),
+&"wall_bounce_animation_right": SubResource("Animation_s6csc")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymqfe"]
@@ -191,7 +297,7 @@ scale = Vector2(0.18995097, 0.19648694)
 texture = ExtResource("3_vn324")
 
 [node name="BallCollider" type="CollisionShape2D" parent="." unique_id=1579468439]
-position = Vector2(1, -8)
+position = Vector2(1, -12)
 shape = SubResource("CircleShape2D_a7g5p")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1215970789]
