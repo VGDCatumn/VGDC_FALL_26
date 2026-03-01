@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 var prev_velocity : Vector2
 var gravity := 1200.0			# Gravity is 2x on a slam down
-var bounce_multiplier := 0.85   	# Energy retained on bounce
-var max_fall_speed := 2500.0 
-var is_on_platform = false
+var max_x_velocity := 1500.0
+var max_y_velocity := 2500.0
 
-# Variables created by Ben
-var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with walls
-var ceiling_bounce_multiplier = 0.25
+# Define how much velocity is retained after a surface bounce
+var floor_bounce_multiplier := 0.45 # this variable is very precise, +/- 0.05
+var wall_bounce_multiplier := 0.50
+var ceiling_bounce_multiplier := 0.15
+
+# Developer Tool Varaibles 
 var is_dev_mode_enabled : bool = false
 signal send_velocity_vector (position : Vector2, velocity : Vector2) # send signal to directional arrow node
 signal send_bounce (velocity : Vector2) # send signal to bounce audio player
@@ -46,159 +48,94 @@ func dev_movement_mode(delta):
 	prev_velocity = Vector2(0,0)
 	$AnimationPlayer.stop() # stop any animations
 	wobble_rotate(delta) # apply rotation, this is cosemetic it doesn't change movement
-	
+
 func display_vector_arrow():
 	send_velocity_vector.emit(position, velocity)
-	
 
 # apply regular player movement 
 func regular_movement_mode(delta):
-	# clamps X Velocity
-	clamp_x_speed()
-	
-	# Move character
-	move_and_slide()
+	wobble_rotate(delta) # rotate player with left/right
+	prev_velocity = velocity # store previous velocity because collisions set velocity = 0
+	move_and_slide() # Move character with built-in Godot collisions
 
-	# Checks if surface is a rotating platform
-	rotating_platform_check()
+	# Determine bounce category based off built-in Godot collision functions
+	if is_on_floor(): handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
+	if is_on_wall(): handle_wall_bounce() # handle bounce collisions with wall
+	if is_on_ceiling(): handle_ceiling_bounce() # handle bounce collision with ceiling
+	else: handle_fall(delta) # apply gravity and handle slam down
 	
-	if is_on_platform:	#Checks if ball bounced off of a platform
-		# Sets all platform bounces to floor bounces by default
-		
-		handle_floor_bounce()
-		
-	if is_on_ceiling():
-		# handle bounce collision with ceiling
-		handle_ceiling_bounce(ceiling_bounce_multiplier)
-		
-	if is_on_wall():
-		# handle bounce collisions with wall and ceiling
-		handle_wall_bounce(wall_bounce_multiplier)
-	
-	if not is_on_floor():
-		# handle falling when it mid air
-		handle_fall(delta) # apply gravity and handle slam down
-		#print("Not on ground")
-		
-	else:
-		handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
-
-	# rotate player with left/right
-	wobble_rotate(delta)
-	
-	is_on_platform = false
+	clamp_velocity()
 
 ### CUSTOM MOVEMENT FUNCTIONS
 
-#Checks the object that ball bounced off of to see if it was a platform
-#If so changes is_on_platform to true -Nick
-func rotating_platform_check():
-	var collision
-	var slide_count = get_slide_collision_count()
-
-	#Detects what ball collided with and stores value in collider
-	if slide_count > 0:
-		collision = get_slide_collision(0)
-		var collider = collision.get_collider()
-
-	#If the surface was a 
-		if collider.is_in_group("rotating_platform"):
-			is_on_platform = true
-
+# Handles logic to apply velocity in the positive y direction (downwards)
 func handle_fall(delta):
-	#print("IS FALLING")
 	# increase velocity towards ground if not on floor
 	velocity.y += gravity * delta
 	
 	# slam down only when ball is already falling and user presses down
 	if velocity.y >= 0 and Input.is_action_pressed("move_down"):
 		slam_down(delta)
-	
-	# cap the max velocity in downwards y direction
-	# This should be looked at some more -- Ben
-	velocity.y = min(velocity.y, max_fall_speed)
 
 # Increase downwards velocity when holding down 
 func slam_down(delta):
-	# play stretch animation
+	# Double the gravity applied to the ball 
+	velocity.y += gravity * delta
+	
+	# Play stretch animation
 	if $AnimationPlayer.assigned_animation != "stretch":
 		$AnimationPlayer.play("stretch")
 	
-	# double the gravity applied to the ball 
-	velocity.y += gravity * delta
-	
-	# I'm not sure what this line does -- Ben
-	# It seems to give the ball more bouncing power
-	prev_velocity.y = velocity.y
-	
 # Handle ball physics on ground collisions
-func handle_floor_bounce():
-	$AnimationPlayer.play("bounce_animation") # Play bounce animation
+func handle_floor_bounce():	
+	# Adjust x velocity based on floor normal
+	# This fixes "speed ramping" but makes horizontal movement feel really bad
+	# Leave this commented for future reference - Ben
+	# var floor_normal = get_floor_normal()
+	# velocity.x = velocity.reflect(floor_normal).normalized().x
 	
-	# Bounce player off the ground, based on their current speed
-	velocity.y = -abs(prev_velocity.y) * 0.45
+	# Bounce player up (negative y), based on their speed right before the bounce
+	velocity.y += -abs(prev_velocity.y) * floor_bounce_multiplier
 	
-	# Cap upwards velocity to 500
-	prev_velocity.y = min(velocity.y, 500)
-		
-	# Add velocity in direction of rotation, during a bounce
-	# Velocity in the x direction is noticeably greater
-	# --> this allows for more horizontal control
-	# Added a min bounce cap rotation bounces, so if
-	# you're facing sideways you don't gain infite momentum -Nick
+	# Add velocity in direction of rotation on a bounce
+	# Velocity in the x direction is noticeably greater --> for more horizontal control
 	velocity.x += cos(PI/2 - rotation) * 800
-	velocity.y += min(-300, sin(PI/2 - rotation) * -400)
+	velocity.y += sin(PI/2 - rotation) * -400
 	
-	#records the velocity after a bounce
-	prev_velocity = velocity
+	# Play bounce animation
+	$AnimationPlayer.play("bounce_animation")
 	
-	emit_signal("send_bounce", velocity) 
-	
-# Makes sure X speed is within bound
-# Make to stop high velocity glitch
-# But there might be a better way to solve it -Nick
-func clamp_x_speed():
-	#Bounds the speed of vertical bounds to be between the constants - Nick
-	velocity.x = clamp(velocity.x, -1500, 1500)
+	print("Bouncing on floor")
 
-# Handle bounces off walls 
-# Edited make the ceiling bounce its own function - Nick
-func handle_wall_bounce(ceiling_bounce_multiplier):
-	# Record prev_velocity before a collision.
-	# When collision occurs, engine sets velocity in that direction = 0
-	# Manually set the velocity in the opposite direction with the prev_velocity
-	
-	# Sets X velocity that of previous collision
-	# There were random cases where it velocity wasn't save
-	# This aims to fix that - Nick
-	velocity.x = prev_velocity.x
-	
-	#Causes x velocity to reverse when hitting a wall, then reduces by the constant
+func handle_wall_bounce():	
+	# Invert x velocity to bounce away from wall
+	# THIS IS STILL PRONE TO BUGS / NOT ENOUGH VELOCITY IN OPPOSITE DIRECITON - Ben 
 	velocity.x = -prev_velocity.x * wall_bounce_multiplier
+	
+	# Play animation based on what direction you bounce towards
 	if(velocity.x > 0):
 		$AnimationPlayer.play("wall_bounce_animation_right")
 	else:
 		$AnimationPlayer.play("wall_bounce_animation_left")
-		
-	emit_signal("send_bounce", velocity)
-		
-
-
-# Handles bounces off the ceiling 
-# There was talk off a head bonk mechanic idk if we're still doing that - Nick
-func handle_ceiling_bounce(wall_bounce_multiplier):
-	# Sets Y velocity that of previous collision
-	velocity.y = prev_velocity.y
 	
-	# Plays ball bounce animation, but bounces on wrong side
-	# needs to change to unqine animation
-	$AnimationPlayer.play("Ceiling_animation")
+	print("Bouncing on wall")
+
+func handle_ceiling_bounce():
 	#Causes y velocity to reverse when hitting a ceiling, then reduces by the constant
-	velocity.y = -prev_velocity.y * wall_bounce_multiplier
+	velocity.y = -prev_velocity.y * ceiling_bounce_multiplier
 	
-	emit_signal("send_bounce", velocity)
+	$AnimationPlayer.play("Ceiling_animation") # Plays ball bounce animation
 	
-		
+	print("Bouncing on ceiling")
+	
+func clamp_velocity():
+	# Clamping velocity.x reduces possibility of "speed ramping" 
+	velocity.x = clampf(velocity.x, -max_x_velocity, max_x_velocity)
+	# Clamping velocity.y is required for pinball bumpers to work
+	velocity.y = clampf(velocity.y, -max_y_velocity, max_y_velocity)
+
+### ROTATION FUNCTIONS
+
 # Manual rotation, use left/right to tilt player
 func manual_rotate(delta):
 	if Input.is_action_pressed("move_right"):
@@ -246,7 +183,8 @@ func wobble_rotate(delta):
 		rotation = lerp_angle(rotation, end_angle_left, delta * 2)
 	else:
 		rotation = lerp_angle(rotation, start_angle, delta * 1)
-	
+
+### MISCELLANEOUS FUNCTIONS
 
 # man enters collision 
 func _on_person_body_entered(body: Node2D) -> void:

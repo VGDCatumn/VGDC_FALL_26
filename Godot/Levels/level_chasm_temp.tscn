@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dgjc4wsslmwwq"]
+[gd_scene format=3 uid="uid://b1l5g7tu5tam8"]
 
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_qhuka"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="11_jt8vq"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/crumbling_platform.tscn" id="13_870hm"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
