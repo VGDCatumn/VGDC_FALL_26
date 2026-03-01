@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cu3gpl8nth35v"]
 
 [ext_resource type="Script" uid="uid://cnt3p6wu0ote7" path="res://Scripts/rotating_platform.gd" id="1_s8fd4"]
+[ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="2_inhej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iy68"]
 size = Vector2(526, 42.5)
@@ -37,6 +38,12 @@ shape = SubResource("RectangleShape2D_fpdny")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Left" unique_id=748603566]
 position = Vector2(148.75, -25)
 shape = SubResource("RectangleShape2D_fpdny")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=263940001]
+texture_repeat = 2
+position = Vector2(79, -230)
+texture = ExtResource("2_inhej")
+polygon = PackedVector2Array(-347.5255, 199.86372, 186.47449, 199.86372, 185.47449, 242.86372, -347.5255, 245.86372)
 
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]

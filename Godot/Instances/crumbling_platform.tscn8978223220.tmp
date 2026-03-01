@@ -259,7 +259,7 @@ position = Vector2(-241, -6)
 shape = SubResource("CircleShape2D_yew5o")
 
 [node name="Hinge_Right" type="CollisionShape2D" parent="." unique_id=1744426836]
-position = Vector2(273, -6)
+position = Vector2(244, -6)
 shape = SubResource("CircleShape2D_yew5o")
 
 [node name="Downtime" type="Timer" parent="." unique_id=1869191870]
@@ -268,7 +268,7 @@ one_shot = true
 
 [node name="Regen" type="Timer" parent="." unique_id=934125125]
 wait_time = 5.0
-one_shot = true
+autostart = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=613299527]
 position = Vector2(0, 27)

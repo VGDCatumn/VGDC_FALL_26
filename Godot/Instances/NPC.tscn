@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv2dadkb4j6tm"]
 
-[ext_resource type="Script" uid="uid://6aktp3njyrp0" path="res://Instances/npc.gd" id="1_yieg6"]
+[ext_resource type="Script" uid="uid://6aktp3njyrp0" path="res://Scripts/npc.gd" id="1_yieg6"]
 [ext_resource type="Texture2D" uid="uid://bt0vyc8is552u" path="res://Sprites/morsh.png" id="2_rsl6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxm2j"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2jwllqcv5r6g"]
 
-[ext_resource type="Script" uid="uid://ddhkpefoy7gkn" path="res://Instances/spring.gd" id="1_64j03"]
+[ext_resource type="Script" uid="uid://ddhkpefoy7gkn" path="res://Scripts/spring.gd" id="1_64j03"]
 [ext_resource type="Texture2D" uid="uid://ce36p74onqrda" path="res://Sprites/Mushroom.png" id="2_imch3"]
 [ext_resource type="AudioStream" uid="uid://bw5aiqvt6c7dg" path="res://Audio/Shroom!.mp3" id="3_be82h"]
 

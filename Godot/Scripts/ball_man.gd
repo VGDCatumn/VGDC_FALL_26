@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 var prev_velocity : Vector2
 var gravity := 1200.0			# Gravity is 2x on a slam down
 var bounce_multiplier := 0.85   	# Energy retained on bounce
@@ -13,7 +11,7 @@ var wall_bounce_multiplier = 0.5			# force to multiply by when collidiing with w
 var ceiling_bounce_multiplier = 0.25
 var is_dev_mode_enabled : bool = false
 signal send_velocity_vector (position : Vector2, velocity : Vector2) # send signal to directional arrow node
-
+signal send_bounce (velocity : Vector2) # send signal to bounce audio player
 
 func _physics_process(delta: float) -> void:
 	# toggle dev mode
@@ -45,6 +43,7 @@ func dev_movement_mode(delta):
 		position.x += move_speed
 	
 	velocity = Vector2(0,0) # reset velocity for exiting 
+	prev_velocity = Vector2(0,0)
 	$AnimationPlayer.stop() # stop any animations
 	wobble_rotate(delta) # apply rotation, this is cosemetic it doesn't change movement
 	
@@ -94,7 +93,7 @@ func regular_movement_mode(delta):
 #Checks the object that ball bounced off of to see if it was a platform
 #If so changes is_on_platform to true -Nick
 func rotating_platform_check():
-	var collision;
+	var collision
 	var slide_count = get_slide_collision_count()
 
 	#Detects what ball collided with and stores value in collider
@@ -134,9 +133,8 @@ func slam_down(delta):
 	
 # Handle ball physics on ground collisions
 func handle_floor_bounce():
-	# Play bounce animation
-	$AnimationPlayer.play("bounce_animation")
-	$Boing.play()
+	$AnimationPlayer.play("bounce_animation") # Play bounce animation
+	
 	# Bounce player off the ground, based on their current speed
 	velocity.y = -abs(prev_velocity.y) * 0.45
 	
@@ -153,6 +151,8 @@ func handle_floor_bounce():
 	
 	#records the velocity after a bounce
 	prev_velocity = velocity
+	
+	emit_signal("send_bounce", velocity) 
 	
 # Makes sure X speed is within bound
 # Make to stop high velocity glitch
@@ -180,12 +180,13 @@ func handle_wall_bounce(ceiling_bounce_multiplier):
 	else:
 		$AnimationPlayer.play("wall_bounce_animation_left")
 		
+	emit_signal("send_bounce", velocity)
+		
 
 
 # Handles bounces off the ceiling 
 # There was talk off a head bonk mechanic idk if we're still doing that - Nick
 func handle_ceiling_bounce(wall_bounce_multiplier):
-	
 	# Sets Y velocity that of previous collision
 	velocity.y = prev_velocity.y
 	
@@ -194,6 +195,9 @@ func handle_ceiling_bounce(wall_bounce_multiplier):
 	$AnimationPlayer.play("Ceiling_animation")
 	#Causes y velocity to reverse when hitting a ceiling, then reduces by the constant
 	velocity.y = -prev_velocity.y * wall_bounce_multiplier
+	
+	emit_signal("send_bounce", velocity)
+	
 		
 # Manual rotation, use left/right to tilt player
 func manual_rotate(delta):
@@ -246,8 +250,7 @@ func wobble_rotate(delta):
 
 # man enters collision 
 func _on_person_body_entered(body: Node2D) -> void:
-	
-	
 	# play ow audio
 	if body.is_in_group("Physical"):
-		$Ow.play()
+		# $Ow.play() TURN OFF FOR DEMO
+		pass
