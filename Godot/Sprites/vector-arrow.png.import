@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc7knb12fk8u1"
-path="res://.godot/imported/Wood.jpg-1ad3ea77bf6477b068f5b0ccde45c486.ctex"
+uid="uid://dpr0e4370qsi"
+path="res://.godot/imported/vector-arrow.png-8975c69c5355353f4c4f9af59eab129d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Wood.jpg"
-dest_files=["res://.godot/imported/Wood.jpg-1ad3ea77bf6477b068f5b0ccde45c486.ctex"]
+source_file="res://Sprites/vector-arrow.png"
+dest_files=["res://.godot/imported/vector-arrow.png-8975c69c5355353f4c4f9af59eab129d.ctex"]
 
 [params]
 

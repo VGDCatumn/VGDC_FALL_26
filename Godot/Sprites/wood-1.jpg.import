@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxqqcp68hhdh4"
-path="res://.godot/imported/StarDust.png-3ec2c40e45d25d6be7f085169d5e3ebb.ctex"
+uid="uid://bc7knb12fk8u1"
+path="res://.godot/imported/wood-1.jpg-a970758f7febe33fae1bee191ec31bcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/StarDust.png"
-dest_files=["res://.godot/imported/StarDust.png-3ec2c40e45d25d6be7f085169d5e3ebb.ctex"]
+source_file="res://Sprites/wood-1.jpg"
+dest_files=["res://.godot/imported/wood-1.jpg-a970758f7febe33fae1bee191ec31bcb.ctex"]
 
 [params]
 

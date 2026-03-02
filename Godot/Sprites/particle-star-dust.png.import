@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbeoqdnrf4kod"
-path="res://.godot/imported/ball_sprite.png-c6a8d05d0829b13229d91ccb344cc507.ctex"
+uid="uid://dxqqcp68hhdh4"
+path="res://.godot/imported/particle-star-dust.png-40c93e222e20298fd869b9b2a0827a49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ball_sprite.png"
-dest_files=["res://.godot/imported/ball_sprite.png-c6a8d05d0829b13229d91ccb344cc507.ctex"]
+source_file="res://Sprites/particle-star-dust.png"
+dest_files=["res://.godot/imported/particle-star-dust.png-40c93e222e20298fd869b9b2a0827a49.ctex"]
 
 [params]
 

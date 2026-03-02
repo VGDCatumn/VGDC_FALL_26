@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bash6u3rnebn4"]
 
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_byn7s"]
-[ext_resource type="PackedScene" uid="uid://dphjpd3qh7e0" path="res://Instances/bumper.tscn" id="2_ss614"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_byn7s"]
+[ext_resource type="PackedScene" uid="uid://dphjpd3qh7e0" path="res://Instances/platform_bumper.tscn" id="2_ss614"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ss614"]
 size = Vector2(1219.4932, 93)

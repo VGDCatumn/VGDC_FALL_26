@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4anoj2hvgqbq"]
 
-[ext_resource type="Script" uid="uid://bsy8bw3quct2w" path="res://Scripts/crumbling_platform.gd" id="1_ojxnl"]
-[ext_resource type="Texture2D" uid="uid://bc7knb12fk8u1" path="res://Sprites/Wood.jpg" id="2_yew5o"]
+[ext_resource type="Script" uid="uid://bsy8bw3quct2w" path="res://Scripts/platform_trapdooor.gd" id="1_ojxnl"]
+[ext_resource type="Texture2D" uid="uid://bc7knb12fk8u1" path="res://Sprites/wood-1.jpg" id="2_yew5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfgg5"]
 size = Vector2(520, 48)
@@ -226,7 +226,7 @@ _data = {
 &"close": SubResource("Animation_2cort")
 }
 
-[node name="Crumbling Platform" type="StaticBody2D" unique_id=2007738548]
+[node name="Trapdoor" type="StaticBody2D" unique_id=2007738548]
 script = ExtResource("1_ojxnl")
 
 [node name="PlayerDetecter" type="Area2D" parent="." unique_id=1072985801]

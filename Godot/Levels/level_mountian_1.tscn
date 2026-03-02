@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwffcab06wreq"]
 
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="1_mulwg"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_mulwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_potlq"]
 size = Vector2(7756.501, 831.50006)

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cdutx8mocx77o"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/testing.gd" id="1_di1g1"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_qhuka"]
-[ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/rotating_platform.tscn" id="3_45jnj"]
-[ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/crumbling_platform.tscn" id="4_400cn"]
-[ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/spring.tscn" id="5_23em2"]
+[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]
+[ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/platform_rotating.tscn" id="3_45jnj"]
+[ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="4_400cn"]
+[ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_23em2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
