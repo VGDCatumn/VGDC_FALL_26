@@ -27,13 +27,14 @@ signal send_velocity_vector (position : Vector2, velocity : Vector2) # send sign
 signal send_bounce (velocity : Vector2) # send signal to bounce audio player
 
 func _physics_process(delta: float) -> void:
-	# Toggle dev mode
+	# Toggle dev mode if tab is pressed
 	if Input.is_action_just_pressed("dev_mode"): is_dev_mode_enabled = !is_dev_mode_enabled
 	
 	# Apply appropriate movement mode
 	if (is_dev_mode_enabled): dev_movement_mode(delta)
 	else: regular_movement_mode(delta)
 	
+	# Auxillary tools that depend on player movement
 	draw_vector_arrow()
 	draw_trail()
 	emit_signal("update_stats", position, velocity, start_fall_height, end_fall_height) # send player stats to display on UI 
@@ -54,15 +55,19 @@ func dev_movement_mode(delta):
 	
 	velocity = Vector2(0,0) # reset velocity for exiting 
 	prev_velocity = Vector2(0,0)
+	has_aerial_movement = false # stop aerial movement in case it was leftover
 	$AnimationPlayer.stop() # stop any animations
 	wobble_rotate(delta) # apply rotation, this is cosemetic it doesn't change movement
 
-	# Draw an arrow from the player in the direction of velocity
+# Draw an arrow from the player in the direction of velocity
 func draw_vector_arrow():
 	send_velocity_vector.emit(position, velocity)
 
 # Draw a trail in world using player position
 func draw_trail():
+	# I tried making Line2D a child of the player, which didn't work intially
+	# Maybe a fix for later, set Line2D global_position = 0,0,0 
+	
 	# Retrieve reference to the Line2D node, which should be a child of the current level
 	var trail = get_parent().get_node("Line2D") 
 	if (trail == null): return # prevents error when scene does not contain trail
@@ -91,12 +96,11 @@ func regular_movement_mode(delta):
 	if is_on_ceiling(): handle_ceiling_bounce() # handle bounce collision with ceiling
 	else: handle_fall(delta) # apply gravity and handle slam down
 	
-	# Give player horizontal movement at all times based on rotation
-	handle_aerial_movement(delta)
+	calculate_fall_height() # set fall_height variables
+	print_bounce_info() # debugging tool to print bounce stats
+	handle_aerial_movement(delta) # give player air control
 	
-	calculate_fall_height()
 	# Give player an opportunity to shoot up if they fall down a great distance
-	# has_recovery_bounce is set in handle_fall
 	if (has_recovery_bounce): handle_recovery_bounce()
 
 ### CUSTOM MOVEMENT FUNCTIONS
@@ -143,7 +147,6 @@ func handle_floor_bounce():
 
 	emit_signal("send_bounce", velocity) # send bounce info to Audio_Bounce node
 	$AnimationPlayer.play("bounce_animation") # Play bounce animation
-	print("Bouncing on floor")
 	
 
 func handle_wall_bounce():	
@@ -162,12 +165,9 @@ func handle_wall_bounce():
 		pass
 	
 	emit_signal("send_bounce", velocity)
-	print("Bouncing on wall")
 
 func handle_ceiling_bounce():
-	#Causes y velocity to reverse when hitting a ceiling, then reduces by the constant
-	# velocity.y = -prev_velocity.y * ceiling_bounce_multiplier
-	
+	#Causes y velocity to reverse when hitting a ceiling, then reduces by the constant	
 	var collision = get_last_slide_collision()
 	var normal = collision.get_normal()
 	velocity = prev_velocity.bounce(normal) * ceiling_bounce_multiplier
@@ -175,7 +175,19 @@ func handle_ceiling_bounce():
 	$AnimationPlayer.play("Ceiling_animation") # Plays ball bounce animation
 	
 	emit_signal("send_bounce", velocity)
-	print("Bouncing on ceiling")
+
+# Print bounce info to output
+func print_bounce_info():
+	var output
+	if is_on_floor(): output = "Bouncing on floor"
+	elif is_on_wall(): output = "Bouncing on wall"
+	elif is_on_ceiling(): output = "Bouncing on ceiling"
+	else: return # end function if no bounce occurs
+	output += "\n\tFall Height: " + str(int(last_fall_height))
+	output += "\n\tAerial velocity given: " + str(int(aerial_velocity_given))
+	output += "\n\tPrevious Velocity: " + str(prev_velocity)
+	output += "\n\tAfter Velocity: " + str(velocity)
+	print(output)
 
 # Contrict max player velocity in x and y direction
 func clamp_velocity():
@@ -185,7 +197,7 @@ func clamp_velocity():
 	velocity.y = clampf(velocity.y, -max_y_velocity, max_y_velocity)
 
 # WIP -- PRONE TO CHANGE -- VARIABLES NEED TWEAKING
-# Apply velocity to the player on the x axis based on current rotation
+# Give player x-axis velocity based on current rotation
 # aerial_velocity_multipler = 0 --> no aerial movement
 # aerial_velocity_multipler = 60 --> slight, imperceptible aerial movement
 # aerial_velocity_multipler = 1200 --> major aerial movement
@@ -219,22 +231,23 @@ func handle_aerial_movement(delta):
 # start_fall_height = apex of jump (this gets reset when you hit the floor)
 # end_fall_height = current y level
 func calculate_fall_height():
-	# store the hightest position (the apex) during a jump in start_fall_height
+	# Store start_fall_height and end_fall_height
 	if (position.y < start_fall_height):
 		start_fall_height = position.y
-	
 	end_fall_height = position.y 
 	
-	# Store height of last fall
+	# Store last_fall_height on floor bounce
 	if is_on_floor():
-		start_fall_height = position.y # Reset jump height
 		var fall_height = end_fall_height - start_fall_height
 		if (fall_height > 0): 
 			last_fall_height = fall_height 
+		start_fall_height = position.y # Reset jump height
 
 func handle_recovery_bounce():
-	has_wobble_rotation = false
-	velocity = Vector2.ZERO
+	has_wobble_rotation = false # swap to manual rotation movement
+	velocity = Vector2.ZERO # stop player movement completely, every frame you are in a recovery
+	
+	# if player releasees the slam down button, they launch in the direction they are pointing
 	if (Input.is_action_just_released("move_down")):
 		var launch_direction = -transform.y
 		velocity = launch_direction * last_fall_height
@@ -248,18 +261,13 @@ func handle_recovery_bounce():
 
 # Manual rotation, use left/right to tilt player
 func manual_rotate(delta):
-	if Input.is_action_pressed("move_right"):
-		rotate(1 * delta)
-	elif Input.is_action_pressed("move_left"):
-		rotate(-1 * delta)
-	
-	# play audio when manual rotating
-	manual_rotate_sound(delta) 
-	
+	if Input.is_action_pressed("move_right"): rotate(1 * delta)
+	elif Input.is_action_pressed("move_left"): rotate(-1 * delta)
+	manual_rotate_sound(delta) # play audio when manual rotating
+
+# Play concrete_sliding audio when player is rotating manually
+# Volume level starts as 0, increases the longer you turn  
 func manual_rotate_sound(delta):
-	# Play concrete_sliding audio only when player starts rotating
-	# Volume level starts as 0, increases the longer you turn  
-	
 	var vol_increase_rate = 0.8; # 0.5 means increase volume by 50% each second 
 	
 	if Input.is_action_just_pressed("move_right") or Input.is_action_just_pressed("move_left") :
