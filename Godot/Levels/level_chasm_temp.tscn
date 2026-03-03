@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b1l5g7tu5tam8"]
+[gd_scene format=3 uid="uid://dgjc4wsslmwwq"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
+[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]
 [ext_resource type="Texture2D" uid="uid://btycbjc8h7oi0" path="res://Sprites/rock-2.png" id="4_qxvo5"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_rkulv"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="11_jt8vq"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="13_vabag"]
 
 [sub_resource type="Curve" id="Curve_870hm"]
@@ -868,7 +868,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("13_vabag")]
-visible = false
 
 [connection signal="body_entered" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_exited"]

@@ -6,9 +6,9 @@ var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
 
 # Define how much velocity is retained after a surface bounce
-var floor_bounce_multiplier := 0.45 # this variable is very precise, +/- 0.05
+var floor_bounce_multiplier := 0.50 # this variable is very precise, +/- 0.05
 var wall_bounce_multiplier := 0.50
-var ceiling_bounce_multiplier := 0.15
+var ceiling_bounce_multiplier := 0.50
 
 # Auxillary movement variables
 var has_wobble_rotation := true
@@ -16,7 +16,7 @@ var has_recovery_bounce := false
 var has_aerial_movement := false
 var aerial_velocity_given = 0 # track total change in x velocity from current jump
 var start_fall_height := 0.0 # apex height of jump
-var end_fall_height := 0.0
+var end_fall_height := 0.0 
 var last_fall_height := 0.0
 var recovery_fall_threshold = 1000
 
@@ -74,6 +74,7 @@ func draw_trail():
 	# Remove old points from trail (this is not frame independent)
 	if trail.get_point_count() > max_trail_points or (!has_aerial_movement and trail.get_point_count() > 0): 
 		trail.remove_point(0)
+		
 
 # apply regular player movement 
 func regular_movement_mode(delta):
@@ -92,6 +93,8 @@ func regular_movement_mode(delta):
 	
 	# Give player horizontal movement at all times based on rotation
 	handle_aerial_movement(delta)
+	
+	calculate_fall_height()
 	# Give player an opportunity to shoot up if they fall down a great distance
 	# has_recovery_bounce is set in handle_fall
 	if (has_recovery_bounce): handle_recovery_bounce()
@@ -99,6 +102,7 @@ func regular_movement_mode(delta):
 ### CUSTOM MOVEMENT FUNCTIONS
 
 # Handles logic to apply velocity in the positive y direction (downwards)
+# Called every frame that that player is not colliding with a surface
 func handle_fall(delta):
 	# Increase velocity towards ground if not on floor
 	velocity.y += gravity * delta
@@ -106,12 +110,6 @@ func handle_fall(delta):
 	# Slam down only when ball is already falling and user presses down
 	if velocity.y >= 0 and Input.is_action_pressed("move_down"):
 		slam_down(delta)
-	
-	# Record fall height variables
-	if (position.y < start_fall_height):
-		# store the hightest position (the apex) during a jump in start_fall_height
-		start_fall_height = position.y
-	end_fall_height = position.y 
 
 # Increase downwards velocity when holding down 
 func slam_down(delta):
@@ -121,7 +119,7 @@ func slam_down(delta):
 	# increment the y down velocity of prev_velocity
 	# this does not change any player velocity
 	# it boosts the power of a bounce when slam_down is held
-	prev_velocity = velocity + Vector2(0,100)
+	prev_velocity = velocity + Vector2(0,200)
 	
 	# Play stretch animation
 	if $AnimationPlayer.assigned_animation != "stretch":
@@ -132,31 +130,18 @@ func handle_floor_bounce():
 	# Adjust x velocity based on floor normal
 	# This fixes "speed ramping" but makes horizontal movement feel really bad
 	# Leave this commented for future reference - Ben
-	var floor_normal = get_floor_normal()
-	velocity = prev_velocity.bounce(floor_normal) * floor_bounce_multiplier
+	# var floor_normal = get_floor_normal()
+	# velocity = prev_velocity.bounce(floor_normal) * floor_bounce_multiplier
 	
 	# Bounce player up (negative y), based on their speed right before the bounce
-	# velocity.y += -abs(prev_velocity.y) * floor_bounce_multiplier
+	velocity.y += -abs(prev_velocity.y) * floor_bounce_multiplier
 	
 	# Add velocity in direction of rotation on a bounce
 	# Velocity in the x direction is noticeably greater --> for more horizontal control
 	velocity.x += cos(PI/2 - rotation) * 800
 	velocity.y += sin(PI/2 - rotation) * -400
-	
-	# Store height of last fall
-	var fall_height = end_fall_height - start_fall_height
-	if (fall_height > 0): 
-		last_fall_height = fall_height 
-	start_fall_height = position.y # Reset jump height for auxillary functions
-	
-	has_aerial_movement = false # Reset aerial movement qualifier
-	aerial_velocity_given = 0 # Reset aerial velocity given counter
-	
-	if (Input.is_action_pressed("move_down") and last_fall_height > recovery_fall_threshold): 
-		has_recovery_bounce = true
-	else:
-		emit_signal("send_bounce", velocity) # send bounce info to Audio_Bounce node
-	
+
+	emit_signal("send_bounce", velocity) # send bounce info to Audio_Bounce node
 	$AnimationPlayer.play("bounce_animation") # Play bounce animation
 	print("Bouncing on floor")
 	
@@ -208,7 +193,7 @@ func handle_aerial_movement(delta):
 	var aerial_velocity_multipler := 60.0 # Give player the slightest amount of aerial_movement
 	var aerial_assistance := 0.0 # determines total change in x velocity
 	# max amount in either +/- x direction that aerial assistance can give you
-	var aerial_velocity_given_max := 300 
+	var aerial_velocity_given_max := 1000 
 	
 	# If player falls far enough, they gain aerial movement
 	if (end_fall_height - start_fall_height > recovery_fall_threshold): has_aerial_movement = true
@@ -222,9 +207,31 @@ func handle_aerial_movement(delta):
 	velocity.x += aerial_assistance
 	aerial_velocity_given += aerial_assistance
 	
+	if is_on_floor():
+		has_aerial_movement = false # Reset aerial movement qualifier
+		aerial_velocity_given = 0 # Reset aerial velocity given counter
+	
 	# print("Aerial Assistance: " + str(aerial_assistance))
 	# print("Aerial Assistance Given: " + str(aerial_velocity_given))
+
+		
+# Record fall height variables
+# start_fall_height = apex of jump (this gets reset when you hit the floor)
+# end_fall_height = current y level
+func calculate_fall_height():
+	# store the hightest position (the apex) during a jump in start_fall_height
+	if (position.y < start_fall_height):
+		start_fall_height = position.y
 	
+	end_fall_height = position.y 
+	
+	# Store height of last fall
+	if is_on_floor():
+		start_fall_height = position.y # Reset jump height
+		var fall_height = end_fall_height - start_fall_height
+		if (fall_height > 0): 
+			last_fall_height = fall_height 
+
 func handle_recovery_bounce():
 	has_wobble_rotation = false
 	velocity = Vector2.ZERO
