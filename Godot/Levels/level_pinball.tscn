@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bash6u3rnebn4"]
 
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/ball_man.tscn" id="2_byn7s"]
-[ext_resource type="PackedScene" uid="uid://dphjpd3qh7e0" path="res://Instances/bumper.tscn" id="2_ss614"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_byn7s"]
+[ext_resource type="PackedScene" uid="uid://dphjpd3qh7e0" path="res://Instances/platform_bumper.tscn" id="2_ss614"]
+[ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="3_k1jji"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss614"]
-size = Vector2(1219.4932, 93)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jji"]
+size = Vector2(1481.7964, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmpp4"]
 size = Vector2(939.63574, 93)
@@ -12,8 +13,14 @@ size = Vector2(939.63574, 93)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii1t7"]
 size = Vector2(397.619, 93)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss614"]
+size = Vector2(1470.0414, 93)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byn7s"]
-size = Vector2(113.92871, 4724.9683)
+size = Vector2(113.92871, 2856.4941)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jijly"]
+size = Vector2(58.146973, 1057.2485)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7ca4"]
 size = Vector2(86.46126, 506.86182)
@@ -44,9 +51,9 @@ size = Vector2(113.92871, 4358.615)
 [node name="StaticBody2D_Walls" type="StaticBody2D" parent="." unique_id=173456309]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D_Walls" unique_id=1129480526]
-position = Vector2(-942.00446, 1076.1233)
+position = Vector2(-828.4238, 1141.6991)
 rotation = 0.5235988
-shape = SubResource("RectangleShape2D_ss614")
+shape = SubResource("RectangleShape2D_k1jji")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D_Walls" unique_id=171920916]
 position = Vector2(1657.9999, -3356)
@@ -64,14 +71,19 @@ rotation = 0.5235988
 shape = SubResource("RectangleShape2D_ii1t7")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D_Walls" unique_id=102357788]
-position = Vector2(931, 1076.8075)
+position = Vector2(822.50946, 1139.4446)
 rotation = -0.5235988
 shape = SubResource("RectangleShape2D_ss614")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D_Walls" unique_id=1732418820]
-position = Vector2(-1476.6676, -1553.8738)
+position = Vector2(-1480.2335, -2488.104)
 rotation = -0.0038169113
 shape = SubResource("RectangleShape2D_byn7s")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D_Walls" unique_id=429964845]
+position = Vector2(-1448.909, 325.50958)
+rotation = -0.0038169113
+shape = SubResource("RectangleShape2D_jijly")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D_Walls" unique_id=1846683644]
 position = Vector2(-1117.8024, 312.2641)
@@ -156,3 +168,7 @@ position = Vector2(-1173, -2364)
 position = Vector2(787.00006, 697.00006)
 rotation = 2.0943952
 rotateCounterclockwise = false
+
+[node name="Spring" parent="." unique_id=261987189 instance=ExtResource("3_k1jji")]
+position = Vector2(1658, 944)
+spring_power = 3600
