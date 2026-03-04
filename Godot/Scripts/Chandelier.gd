@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var impulse_multiplier = .01
+@export var impulse_multiplier = .35
 
 
 var in_vel = 0;
@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
-		in_vel = body.velocity
+		in_vel = body.prev_velocity
 		print("INVEL: "+str(in_vel))
 
 
@@ -26,4 +26,4 @@ func _on_collision_body_exited(body: Node2D) -> void:
 		print("OUTVEL: "+str(body.velocity))
 		var impulse = in_vel - body.velocity
 		print("Impulse: " + str(impulse))
-		apply_impulse(impulse*impulse_multiplier, body.position	)
+		apply_impulse(impulse*impulse_multiplier, body.global_position - global_position	)
