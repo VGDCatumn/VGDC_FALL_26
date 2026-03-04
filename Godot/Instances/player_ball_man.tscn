@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://cirs83pkny51f" path="res://Scripts/player_ball_man.gd" id="1_gc4hn"]
 [ext_resource type="Texture2D" uid="uid://dbeoqdnrf4kod" path="res://Sprites/ball-sprite.png" id="2_s6csc"]
 [ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/man-sprite.png" id="3_vn324"]
-[ext_resource type="Script" uid="uid://l5dgjgdxq02i" path="res://Scripts/player_camera_2d.gd" id="5_adqab"]
+[ext_resource type="Script" path="res://Scripts/player_camera_2d.gd" id="5_adqab"]
 [ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/marcy-ow.mp3" id="5_j2sbk"]
 [ext_resource type="AudioStream" uid="uid://cqlwvy11gjw81" path="res://Audio/bounce-soft-1.mp3" id="6_adqab"]
 [ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector_arrow.tscn" id="6_s6csc"]
-[ext_resource type="Script" uid="uid://chllwsbegxpvy" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
+[ext_resource type="Script" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
 [ext_resource type="AudioStream" uid="uid://bvioti255t7sd" path="res://Audio/moving-stone-2.mp3" id="9_cjflg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymqfe"]
@@ -291,12 +291,14 @@ z_index = 1
 script = ExtResource("1_gc4hn")
 
 [node name="ball_sprite" type="Sprite2D" parent="." unique_id=1196626458]
+visible = false
 z_index = 1
 position = Vector2(0, -1)
 scale = Vector2(0.1769723, 0.17636023)
 texture = ExtResource("2_s6csc")
 
 [node name="man_sprite" type="Sprite2D" parent="." unique_id=357147493]
+visible = false
 z_index = 1
 position = Vector2(-1.999999, -77.875)
 scale = Vector2(0.18995097, 0.19648694)
