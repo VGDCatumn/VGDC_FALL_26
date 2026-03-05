@@ -286,6 +286,15 @@ _data = {
 &"wall_bounce_animation_right": SubResource("Animation_s6csc")
 }
 
+[sub_resource type="Gradient" id="Gradient_cjflg"]
+offsets = PackedFloat32Array(0, 0.18373494, 0.6295181)
+colors = PackedColorArray(1, 1, 1, 1, 0.7070707, 0.7070707, 0.7070707, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2gjm8"]
+gradient = SubResource("Gradient_cjflg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="BallMan" type="CharacterBody2D" unique_id=742937550 groups=["PLAYER"]]
 z_index = 1
 script = ExtResource("1_gc4hn")
@@ -336,6 +345,13 @@ parameters/looping = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1948293760]
 libraries/ = SubResource("AnimationLibrary_a7g5p")
 autoplay = &"bounce_animation"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=559485854]
+position = Vector2(0, -52)
+color = Color(1, 0.9019608, 0.9019608, 1)
+energy = 0.7
+texture = SubResource("GradientTexture2D_2gjm8")
+texture_scale = 12.0
 
 [connection signal="send_bounce" from="." to="Audio_Bounce" method="_on_ball_man_send_bounce"]
 [connection signal="send_velocity_vector" from="." to="VectorArrow" method="_on_ball_man_send_velocity_vector"]
