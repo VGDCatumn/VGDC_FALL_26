@@ -46,13 +46,14 @@ theme_override_constants/separation = 20
 layout_mode = 2
 text = "Level Design
 Programming
+Github Owner
+Level Design
 Placeholder
 Placeholder
-Placeholder
-Placeholder
-Placeholder
-Supporter
-Level Design"
+Programming
+NPCs
+Level Design
+Music"
 label_settings = SubResource("LabelSettings_ng644")
 
 [node name="Divider" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=421602750]
@@ -69,7 +70,8 @@ Noon
 Rai
 Nick
 Leo
-Tomas"
+Tomas
+Matthew"
 label_settings = SubResource("LabelSettings_uuuvy")
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=858904126]

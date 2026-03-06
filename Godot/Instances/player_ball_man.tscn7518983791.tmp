@@ -1,0 +1,342 @@
+[gd_scene format=3 uid="uid://duoojr5lkmj1k"]
+
+[ext_resource type="Script" uid="uid://cirs83pkny51f" path="res://Scripts/player_ball_man.gd" id="1_gc4hn"]
+[ext_resource type="Texture2D" uid="uid://dbeoqdnrf4kod" path="res://Sprites/ball-sprite.png" id="2_s6csc"]
+[ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/man-sprite.png" id="3_vn324"]
+[ext_resource type="Script" uid="uid://l5dgjgdxq02i" path="res://Scripts/player_camera_2d.gd" id="5_adqab"]
+[ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/marcy-ow.mp3" id="5_j2sbk"]
+[ext_resource type="AudioStream" uid="uid://cqlwvy11gjw81" path="res://Audio/bounce-soft-1.mp3" id="6_adqab"]
+[ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector_arrow.tscn" id="6_s6csc"]
+[ext_resource type="Script" uid="uid://chllwsbegxpvy" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
+[ext_resource type="AudioStream" uid="uid://bvioti255t7sd" path="res://Audio/moving-stone-2.mp3" id="9_cjflg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymqfe"]
+radius = 24.0
+height = 106.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7g5p"]
+radius = 37.0
+
+[sub_resource type="Animation" id="Animation_6fp6m"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="Animation" id="Animation_enxv6"]
+resource_name = "bounce_animation"
+length = 0.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13144214, 0.26666668, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-1, 14.000002), Vector2(0, -1), Vector2(0, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.6666667),
+"transitions": PackedFloat32Array(-2, 1, -2, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.34528247, 0.0966229), Vector2(0.1769723, 0.17636023), Vector2(0.34528247, 0.0966229)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13259514, 0.26864928, 0.6675877),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(0, -56), Vector2(-2, -77.875), Vector2(0, -59)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="Animation" id="Animation_a7g5p"]
+resource_name = "stretch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.162, 0.226)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(-2, -77.875), Vector2(-2, -90)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.099999994, 0.43333334),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694), Vector2(0.18, 0.226)]
+}
+
+[sub_resource type="Animation" id="Animation_vn324"]
+resource_name = "wall_bounce_animation_left"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-8.499995, -3), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.1196495, 0.16077998), Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(-10.499995, -79.875), Vector2(-2, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694), Vector2(0.16238113, 0.19648694), Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="Animation" id="Animation_s6csc"]
+resource_name = "wall_bounce_animation_right"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(5.4025555, -12.700081), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.1196495, 0.16077998), Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(5.8376074, -83.87499), Vector2(-2, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06468406, 0.1980174),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694), Vector2(0.16238113, 0.19648694), Vector2(0.18995097, 0.19648694)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7g5p"]
+_data = {
+&"RESET": SubResource("Animation_6fp6m"),
+&"bounce_animation": SubResource("Animation_enxv6"),
+&"stretch": SubResource("Animation_a7g5p"),
+&"wall_bounce_animation_left": SubResource("Animation_vn324"),
+&"wall_bounce_animation_right": SubResource("Animation_s6csc")
+}
+
+[node name="BallMan" type="CharacterBody2D" unique_id=742937550 groups=["PLAYER"]]
+z_index = 1
+script = ExtResource("1_gc4hn")
+
+[node name="ball_sprite" type="Sprite2D" parent="." unique_id=1196626458]
+z_index = 1
+position = Vector2(0, -1)
+scale = Vector2(0.1769723, 0.17636023)
+texture = ExtResource("2_s6csc")
+
+[node name="man_sprite" type="Sprite2D" parent="." unique_id=357147493]
+z_index = 1
+position = Vector2(-1.999999, -77.875)
+scale = Vector2(0.18995097, 0.19648694)
+texture = ExtResource("3_vn324")
+
+[node name="Person" type="Area2D" parent="." unique_id=1446714225]
+
+[node name="PersonCollider" type="CollisionShape2D" parent="Person" unique_id=1717170985]
+position = Vector2(1, -83)
+shape = SubResource("CapsuleShape2D_ymqfe")
+
+[node name="BallCollider" type="CollisionShape2D" parent="." unique_id=1579468439]
+position = Vector2(1, -12)
+shape = SubResource("CircleShape2D_a7g5p")
+
+[node name="VectorArrow" parent="." unique_id=1007273149 instance=ExtResource("6_s6csc")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1215970789]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("5_adqab")
+
+[node name="Audio_Bounce" type="AudioStreamPlayer" parent="." unique_id=399042148]
+stream = ExtResource("6_adqab")
+volume_db = -15.0
+script = ExtResource("6_vn324")
+
+[node name="Audio_Ow" type="AudioStreamPlayer" parent="." unique_id=1064186559]
+stream = ExtResource("5_j2sbk")
+volume_db = -15.26
+pitch_scale = 0.8
+
+[node name="Audio_Concrete" type="AudioStreamPlayer" parent="." unique_id=873910821]
+stream = ExtResource("9_cjflg")
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1948293760]
+libraries/ = SubResource("AnimationLibrary_a7g5p")
+autoplay = &"bounce_animation"
+
+[connection signal="send_bounce" from="." to="Audio_Bounce" method="_on_ball_man_send_bounce"]
+[connection signal="send_velocity_vector" from="." to="VectorArrow" method="_on_ball_man_send_velocity_vector"]
+[connection signal="body_entered" from="Person" to="." method="_on_person_body_entered"]
