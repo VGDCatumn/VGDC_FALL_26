@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgjc4wsslmwwq"]
 
-[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_di1g1"]
+[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]
 [ext_resource type="Texture2D" uid="uid://btycbjc8h7oi0" path="res://Sprites/rock-2.png" id="4_qxvo5"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_rkulv"]
@@ -11,8 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="11_jt8vq"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
-[ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="13_vabag"]
+[ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
 
 [sub_resource type="Curve" id="Curve_870hm"]
 _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -254,14 +255,31 @@ size = Vector2(364.62012, 171.91528)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nngh"]
 size = Vector2(441.75, 696.6643)
 
+[sub_resource type="Gradient" id="Gradient_v8crf"]
+offsets = PackedFloat32Array(0, 0.13554217, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5451807, 0.5451807, 0.5451807, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7s22q"]
+gradient = SubResource("Gradient_v8crf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vabag"]
 size = Vector2(6110.5415, 2743.1304)
 
 [node name="Chasm" type="Node2D" unique_id=488097887]
 script = ExtResource("1_di1g1")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1821769112]
+offset_left = -11562.0
+offset_top = -8021.0
+offset_right = 10762.0
+offset_bottom = 4270.0
+color = Color(0.09019608, 0.10980392, 0.11764706, 1)
+metadata/_edit_lock_ = true
+
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_qhuka")]
-position = Vector2(-2585, 269)
+position = Vector2(-1914, 364)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=332287160]
 width = 30.0
@@ -273,6 +291,7 @@ antialiased = true
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3
 collision_mask = 3
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms_Static" unique_id=1369962554]
 position = Vector2(576.75, 557)
@@ -721,6 +740,7 @@ position = Vector2(-1768, -842)
 position = Vector2(3, -3327)
 
 [node name="Textures_Polygon" type="Node2D" parent="." unique_id=1570680729]
+metadata/_edit_group_ = true
 
 [node name="Rock_Foundation" type="Polygon2D" parent="Textures_Polygon" unique_id=254722450]
 texture_repeat = 2
@@ -834,6 +854,14 @@ position = Vector2(3402.0002, -4453)
 scale = Vector2(1.8687391, 1.8687391)
 texture = ExtResource("11_jt8vq")
 
+[node name="PointLight2D" type="PointLight2D" parent="Textures_Sprite/Trophy" unique_id=790746658]
+position = Vector2(-0.78565836, -19.531746)
+scale = Vector2(1.0190759, 1.3876435)
+color = Color(0.9661613, 0.84549683, 0.67214304, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_7s22q")
+texture_scale = 5.67
+
 [node name="GrumpyCat" type="Sprite2D" parent="Textures_Sprite" unique_id=1750750901]
 position = Vector2(-2692.5522, -1593.8005)
 rotation = -0.07886209
@@ -868,6 +896,14 @@ autoplay = true
 parameters/looping = true
 
 [node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("13_vabag")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1019431545]
+color = Color(0.9856015, 0.8393236, 0.7695522, 1)
+energy = 0.75
+blend_mode = 1
+
+[node name="Torch" parent="." unique_id=1613385677 instance=ExtResource("14_7s22q")]
+position = Vector2(-574, 967)
 
 [connection signal="body_entered" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_exited"]
