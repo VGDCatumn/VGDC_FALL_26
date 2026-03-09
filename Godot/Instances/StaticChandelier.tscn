@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bhbrqax60syjh"]
+
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_g7mb2"]
+[ext_resource type="Script" uid="uid://d3f1eqn0p8bfm" path="res://Scripts/static_chandelier.gd" id="1_x2d14"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x2d14"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86u72"]
+size = Vector2(902.5, 91.25)
+
+[node name="StaticChandelier" type="StaticBody2D" unique_id=1347616992]
+script = ExtResource("1_x2d14")
+
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_g7mb2")]
+position = Vector2(-36, -169)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=993715557]
+scale = Vector2(0.7, 0.7)
+texture = SubResource("CompressedTexture2D_x2d14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=424374051]
+position = Vector2(0, 593.625)
+shape = SubResource("RectangleShape2D_86u72")

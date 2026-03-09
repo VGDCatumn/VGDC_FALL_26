@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/marcy-ow.mp3" id="5_j2sbk"]
 [ext_resource type="AudioStream" uid="uid://cqlwvy11gjw81" path="res://Audio/bounce-soft-1.mp3" id="6_adqab"]
 [ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector_arrow.tscn" id="6_s6csc"]
-[ext_resource type="Script" uid="uid://chllwsbegxpvy" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
+[ext_resource type="Script" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
 [ext_resource type="AudioStream" uid="uid://bvioti255t7sd" path="res://Audio/moving-stone-2.mp3" id="9_cjflg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymqfe"]

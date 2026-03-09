@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://mf77x41qkpkd"]
+
+[ext_resource type="Script" uid="uid://btv1dhnhh2led" path="res://Scripts/Chandelier.gd" id="1_mxme6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iknic"]
+size = Vector2(109, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85567"]
+size = Vector2(740, 89.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_468tx"]
+size = Vector2(740, 89.5)
+
+[node name="Chandelier" type="StaticBody2D" unique_id=145211400]
+
+[node name="Base" type="CollisionShape2D" parent="." unique_id=146272046]
+shape = SubResource("RectangleShape2D_iknic")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Base" unique_id=1772087855]
+position = Vector2(1, -2)
+node_a = NodePath("../..")
+node_b = NodePath("../../Platform")
+
+[node name="Platform" type="RigidBody2D" parent="." unique_id=1783496786]
+position = Vector2(0, 539)
+script = ExtResource("1_mxme6")
+impulse_multiplier = 0.5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform" unique_id=200683039]
+scale = Vector2(1.9200013, 1)
+shape = SubResource("RectangleShape2D_85567")
+
+[node name="Collision" type="Area2D" parent="Platform/CollisionShape2D2" unique_id=2129184202]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/CollisionShape2D2/Collision" unique_id=1914514712]
+z_index = 4
+scale = Vector2(1.03, 1.5)
+shape = SubResource("RectangleShape2D_468tx")
+
+[connection signal="body_entered" from="Platform/CollisionShape2D2/Collision" to="Platform" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Platform/CollisionShape2D2/Collision" to="Platform" method="_on_collision_body_exited"]

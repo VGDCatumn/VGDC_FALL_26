@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_enxv6"]
-[ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/platform_rotating.tscn" id="2_2xqxn"]
+[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_enxv6"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_6fp6m"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_enxv6"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="5_a7g5p"]
+[ext_resource type="PackedScene" uid="uid://mf77x41qkpkd" path="res://Instances/chandelier.tscn" id="6_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
@@ -124,9 +124,6 @@ size = Vector2(54.31546, 148.00174)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rk17o"]
 size = Vector2(86.987076, 76.372574)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_468tx"]
-size = Vector2(511.5, 117.4375)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycp61"]
 size = Vector2(347.9392, 629.19135)
 
@@ -188,7 +185,12 @@ size = Vector2(441.75, 696.6643)
 script = ExtResource("1_enxv6")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-1734, 292)
+light_mask = 2
+position = Vector2(-6600, 484)
+
+[node name="Camera2D" parent="BallMan" index="5" unique_id=1215970789]
+zoom = Vector2(1, 1)
+target_zoom = Vector2(1, 1)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
 
@@ -471,12 +473,6 @@ rotation = -2.8053179
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_rk17o")
 
-[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D" unique_id=2066708436]
-position = Vector2(-2494.9998, -1545)
-rotation = -0.15384316
-scale = Vector2(1.2144043, 0.52159667)
-shape = SubResource("RectangleShape2D_468tx")
-
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D" unique_id=399484624]
 position = Vector2(-2817.8423, -677.9971)
 rotation = 0.47479096
@@ -586,7 +582,20 @@ rotation = 0.29747632
 [node name="Crumbling Platform" parent="." unique_id=2007738548 instance=ExtResource("5_a7g5p")]
 position = Vector2(-511, 505)
 
-[node name="Rotating Platform" parent="." unique_id=205255195 instance=ExtResource("2_2xqxn")]
-position = Vector2(-1759, -837)
-
 [node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("6_ymqfe")]
+
+[node name="Chandelier" parent="." unique_id=145211400 instance=ExtResource("6_2xqxn")]
+position = Vector2(-5279, 1382)
+
+[node name="Chandelier2" parent="." unique_id=610071864 instance=ExtResource("6_2xqxn")]
+position = Vector2(-6392, 812)
+
+[node name="PinJoint2D" parent="Chandelier2/Base" parent_id_path=PackedInt32Array(610071864, 146272046) index="0" unique_id=1772087855]
+node_a = NodePath("../../../Chandelier2")
+
+[node name="Platform" parent="Chandelier2" index="1" unique_id=1783496786]
+impulse_multiplier = 0.4
+
+[editable path="BallMan"]
+[editable path="Chandelier"]
+[editable path="Chandelier2"]
