@@ -326,6 +326,8 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1215970789]
 zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 script = ExtResource("5_adqab")
 
 [node name="Audio_Bounce" type="AudioStreamPlayer" parent="." unique_id=399042148]

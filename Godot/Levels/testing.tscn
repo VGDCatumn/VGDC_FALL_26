@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_enxv6"]
+[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_enxv6"]
 [ext_resource type="PackedScene" uid="uid://cu3gpl8nth35v" path="res://Instances/platform_rotating.tscn" id="2_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_6fp6m"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_enxv6"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="5_a7g5p"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
+[ext_resource type="PackedScene" uid="uid://cxescjus6uf28" path="res://Instances/Portal.tscn" id="7_2xqxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -183,6 +184,10 @@ size = Vector2(364.62012, 171.91528)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nngh"]
 size = Vector2(441.75, 696.6643)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85567"]
+resource_local_to_scene = true
+size = Vector2(48, 355)
 
 [node name="Testing2" type="Node2D" unique_id=488097887]
 script = ExtResource("1_enxv6")
@@ -590,3 +595,25 @@ position = Vector2(-511, 505)
 position = Vector2(-1759, -837)
 
 [node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("6_ymqfe")]
+
+[node name="Portal2" parent="." unique_id=287228058 instance=ExtResource("7_2xqxn")]
+position = Vector2(-619, -1555)
+
+[node name="Entrance" parent="Portal2" index="0" unique_id=699017365]
+position = Vector2(-731, -39)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" parent="Portal2/Entrance" index="0" unique_id=1711387770]
+shape = SubResource("RectangleShape2D_85567")
+
+[node name="Exit" parent="Portal2" index="1" unique_id=1870804118]
+position = Vector2(1317, -2828)
+rotation = 1.5707964
+
+[node name="CollisionShape2D2" parent="Portal2/Exit" index="0" unique_id=1416048210]
+shape = SubResource("RectangleShape2D_85567")
+
+[node name="Portal" parent="." unique_id=1909274045 instance=ExtResource("7_2xqxn")]
+position = Vector2(-1593, -1239)
+
+[editable path="Portal2"]

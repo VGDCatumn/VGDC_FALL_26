@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cxescjus6uf28"]
+
+[ext_resource type="Script" uid="uid://bpgnih60esj5f" path="res://Scripts/exit.gd" id="1_bevds"]
+[ext_resource type="Script" uid="uid://ca5qgomy4y8bi" path="res://Scripts/entrance.gd" id="1_hqmqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn4vi"]
+resource_local_to_scene = true
+size = Vector2(48, 355)
+
+[node name="Portal" type="Node2D" unique_id=287228058]
+
+[node name="Entrance" type="Area2D" parent="." unique_id=699017365]
+position = Vector2(-475, -17)
+script = ExtResource("1_hqmqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance" unique_id=1711387770]
+shape = SubResource("RectangleShape2D_wn4vi")
+metadata/_edit_lock_ = true
+
+[node name="Exit" type="Area2D" parent="." unique_id=1870804118]
+position = Vector2(250, 0)
+script = ExtResource("1_bevds")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Exit" unique_id=1416048210]
+shape = SubResource("RectangleShape2D_wn4vi")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Entrance" to="Entrance" method="_on_body_entered"]
+[connection signal="sending" from="Entrance" to="Exit" method="_on_entrance_sending"]
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="sending" from="Exit" to="Entrance" method="_on_exit_sending"]
