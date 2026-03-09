@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mf77x41qkpkd"]
 
-[ext_resource type="Script" uid="uid://btv1dhnhh2led" path="res://Scripts/Chandelier.gd" id="1_mxme6"]
+[ext_resource type="Script" uid="uid://btv1dhnhh2led" path="res://Scripts/platform_chandelier.gd" id="1_mxme6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iknic"]
 size = Vector2(109, 89)

@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/marcy-ow.mp3" id="5_j2sbk"]
 [ext_resource type="AudioStream" uid="uid://cqlwvy11gjw81" path="res://Audio/bounce-soft-1.mp3" id="6_adqab"]
 [ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector_arrow.tscn" id="6_s6csc"]
-[ext_resource type="Script" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
+[ext_resource type="Script" uid="uid://chllwsbegxpvy" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
 [ext_resource type="AudioStream" uid="uid://bvioti255t7sd" path="res://Audio/moving-stone-2.mp3" id="9_cjflg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymqfe"]
@@ -325,7 +325,7 @@ shape = SubResource("CircleShape2D_a7g5p")
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1215970789]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.75, 0.75)
 script = ExtResource("5_adqab")
 
 [node name="Audio_Bounce" type="AudioStreamPlayer" parent="." unique_id=399042148]

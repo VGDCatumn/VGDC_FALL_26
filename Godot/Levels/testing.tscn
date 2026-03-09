@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
-[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_enxv6"]
+[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_enxv6"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_6fp6m"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_enxv6"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="5_a7g5p"]
-[ext_resource type="PackedScene" uid="uid://mf77x41qkpkd" path="res://Instances/chandelier.tscn" id="6_2xqxn"]
+[ext_resource type="PackedScene" uid="uid://mf77x41qkpkd" path="res://Instances/platform_chandelier.tscn" id="6_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
@@ -185,12 +185,7 @@ size = Vector2(441.75, 696.6643)
 script = ExtResource("1_enxv6")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-light_mask = 2
-position = Vector2(-6600, 484)
-
-[node name="Camera2D" parent="BallMan" index="5" unique_id=1215970789]
-zoom = Vector2(1, 1)
-target_zoom = Vector2(1, 1)
+position = Vector2(-6050, 1020)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
 
@@ -596,6 +591,5 @@ node_a = NodePath("../../../Chandelier2")
 [node name="Platform" parent="Chandelier2" index="1" unique_id=1783496786]
 impulse_multiplier = 0.4
 
-[editable path="BallMan"]
 [editable path="Chandelier"]
 [editable path="Chandelier2"]

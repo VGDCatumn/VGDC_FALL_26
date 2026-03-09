@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhbrqax60syjh"]
 
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_g7mb2"]
-[ext_resource type="Script" uid="uid://d3f1eqn0p8bfm" path="res://Scripts/static_chandelier.gd" id="1_x2d14"]
+[ext_resource type="Script" uid="uid://d3f1eqn0p8bfm" path="res://Scripts/platform_chandelier_static.gd" id="1_x2d14"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x2d14"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
