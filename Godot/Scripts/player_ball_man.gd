@@ -4,6 +4,7 @@ var prev_velocity : Vector2
 var gravity := 1200.0			# Gravity is 2x on a slam down
 var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
+var cap_velocity := false
 
 # Define how much velocity is retained after a surface bounce
 var floor_bounce_multiplier := 0.50 # this variable is very precise, +/- 0.05
@@ -36,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Auxillary tools that depend on player movement
 	draw_vector_arrow()
-	draw_trail()
+	# draw_trail()
 	emit_signal("update_stats", position, velocity, start_fall_height, end_fall_height) # send player stats to display on UI 
 
 # dev tool to move omnidirectionally
@@ -87,7 +88,10 @@ func regular_movement_mode(delta):
 	else: manual_rotate(delta)
 		
 	prev_velocity = velocity # store previous velocity because collisions set velocity = 0
-	clamp_velocity()
+	
+	if cap_velocity:
+		clamp_velocity()
+
 	move_and_slide() # Move character with built-in Godot collisions
 
 	# Determine bounce category based off built-in Godot collision functions
@@ -147,6 +151,9 @@ func handle_floor_bounce():
 
 	emit_signal("send_bounce", velocity) # send bounce info to Audio_Bounce node
 	$AnimationPlayer.play("bounce_animation") # Play bounce animation
+	if not cap_velocity: # if statement for debugging
+		print("CAPPING")
+		cap_velocity = true
 	
 
 func handle_wall_bounce():	
