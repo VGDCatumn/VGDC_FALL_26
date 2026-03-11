@@ -11,11 +11,10 @@ position = Vector2(-562, -1343)
 [node name="ProceduralBridge" parent="." unique_id=1145272515 instance=ExtResource("1_rrajs")]
 position = Vector2(-1035, 222)
 plank_count = 5
-joint_softness = 11
-impulse_multiplier = 1.0
+impulse_multiplier = 0.75
 
 [node name="StaticBody2D" parent="ProceduralBridge" index="0" unique_id=398348427]
-position = Vector2(-1148, -1020)
+position = Vector2(-1165, -1060)
 
 [node name="StaticBody2D2" parent="ProceduralBridge" index="1" unique_id=1044340548]
 position = Vector2(1395, -1066)
