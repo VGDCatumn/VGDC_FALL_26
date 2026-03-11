@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cnhdw06ycxxd0"]
+
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_or3ad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1miol"]
+size = Vector2(177.5, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or3ad"]
+size = Vector2(351, 80)
+
+[node name="PlatformRicketyBridge" type="Node2D" unique_id=2077362676]
+
+[node name="Anchor1" type="StaticBody2D" parent="." unique_id=1313784074]
+position = Vector2(-567, 53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor1" unique_id=689899903]
+shape = SubResource("RectangleShape2D_1miol")
+metadata/_edit_lock_ = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=188255804]
+position = Vector2(-567, 53)
+node_a = NodePath("../Anchor1")
+node_b = NodePath("../Plank1")
+softness = 1.44
+metadata/_edit_lock_ = true
+
+[node name="Anchor2" type="StaticBody2D" parent="." unique_id=680948952]
+position = Vector2(465, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor2" unique_id=559782562]
+shape = SubResource("RectangleShape2D_1miol")
+metadata/_edit_lock_ = true
+
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_or3ad")]
+position = Vector2(-37, -494)
+
+[node name="Plank1" type="RigidBody2D" parent="." unique_id=1964384353]
+position = Vector2(-268, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank1" unique_id=1633484510]
+shape = SubResource("RectangleShape2D_or3ad")
+metadata/_edit_lock_ = true
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="." unique_id=153096140]
+position = Vector2(-49, 182)
+node_a = NodePath("../Plank1")
+node_b = NodePath("../Plank2")
+softness = 1.18
+
+[node name="Plank2" type="RigidBody2D" parent="." unique_id=533182718]
+position = Vector2(168, 174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plank2" unique_id=1745277696]
+shape = SubResource("RectangleShape2D_or3ad")
+metadata/_edit_lock_ = true

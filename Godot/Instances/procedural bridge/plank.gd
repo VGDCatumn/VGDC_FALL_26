@@ -1,12 +1,11 @@
 extends RigidBody2D
 
-@export var impulse_multiplier = .35
+var impulse_multiplier := 0.35
+var in_vel : Vector2
 
-
-var in_vel := 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,10 +19,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("INVEL: "+str(in_vel))
 
 
-func _on_collision_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
 		print("IMPULSE")		
 		print("OUTVEL: "+str(body.velocity))
 		var impulse = in_vel - body.velocity
 		print("Impulse: " + str(impulse))
-		apply_impulse(impulse*impulse_multiplier, body.global_position - global_position	)
+		self.apply_impulse(impulse*impulse_multiplier, body.global_position - self.global_position	)

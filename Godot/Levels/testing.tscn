@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
-[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_enxv6"]
+[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_enxv6"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_6fp6m"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_enxv6"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="5_a7g5p"]
-[ext_resource type="PackedScene" uid="uid://mf77x41qkpkd" path="res://Instances/platform_chandelier.tscn" id="6_2xqxn"]
+[ext_resource type="PackedScene" uid="uid://chueiu70q7l41" path="res://Instances/procedural bridge/plank.tscn" id="6_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
@@ -185,7 +185,7 @@ size = Vector2(441.75, 696.6643)
 script = ExtResource("1_enxv6")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-6050, 1020)
+position = Vector2(-1666, -137)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
 
@@ -223,10 +223,10 @@ horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="Node2D" unique_id=1354945320]
 z_index = -1
-offset_left = -2306.0
-offset_top = -364.0
-offset_right = -883.0
-offset_bottom = 167.0
+offset_left = -2380.0
+offset_top = -495.0
+offset_right = -957.0
+offset_bottom = 36.0
 theme_override_font_sizes/font_size = 64
 text = "This is testing.tscn.
 It is a copy of level_chasm.
@@ -579,17 +579,6 @@ position = Vector2(-511, 505)
 
 [node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("6_ymqfe")]
 
-[node name="Chandelier" parent="." unique_id=145211400 instance=ExtResource("6_2xqxn")]
-position = Vector2(-5279, 1382)
-
-[node name="Chandelier2" parent="." unique_id=610071864 instance=ExtResource("6_2xqxn")]
-position = Vector2(-6392, 812)
-
-[node name="PinJoint2D" parent="Chandelier2/Base" parent_id_path=PackedInt32Array(610071864, 146272046) index="0" unique_id=1772087855]
-node_a = NodePath("../../../Chandelier2")
-
-[node name="Platform" parent="Chandelier2" index="1" unique_id=1783496786]
-impulse_multiplier = 0.4
-
-[editable path="Chandelier"]
-[editable path="Chandelier2"]
+[node name="plank" parent="." unique_id=1782918330 instance=ExtResource("6_2xqxn")]
+position = Vector2(-2033, 274)
+rotation = -1.5708275

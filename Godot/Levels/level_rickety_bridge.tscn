@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dvxdw1ixattx"]
+
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_1e68y"]
+[ext_resource type="PackedScene" uid="uid://p8rhmmye75ha" path="res://Instances/procedural bridge/procedural bridge.tscn" id="1_rrajs"]
+
+[node name="LevelRicketyBridge" type="Node2D" unique_id=285898334]
+
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_1e68y")]
+position = Vector2(-562, -1343)
+
+[node name="ProceduralBridge" parent="." unique_id=1145272515 instance=ExtResource("1_rrajs")]
+position = Vector2(-1035, 222)
+plank_count = 5
+joint_softness = 11
+impulse_multiplier = 1.0
+
+[node name="StaticBody2D" parent="ProceduralBridge" index="0" unique_id=398348427]
+position = Vector2(-1148, -1020)
+
+[node name="StaticBody2D2" parent="ProceduralBridge" index="1" unique_id=1044340548]
+position = Vector2(1395, -1066)
+
+[editable path="ProceduralBridge"]
