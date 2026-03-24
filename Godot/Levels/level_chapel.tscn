@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b5o8ugjygl2jd" path="res://Scripts/windmill.gd" id="1_8qiq3"]
 [ext_resource type="Script" uid="uid://b6rx5q53bydxi" path="res://Scripts/windmill_wing.gd" id="2_icpcy"]
-[ext_resource type="Script" uid="uid://b7bhe6hovty6n" path="res://Scripts/organ_keys.gd" id="2_kybqk"]
+[ext_resource type="Script" path="res://Scripts/organ_keys.gd" id="2_kybqk"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_kybqk"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_423jg"]
-[ext_resource type="Script" uid="uid://diuyrq1q3j441" path="res://Scripts/wall_bouncy.gd" id="6_423jg"]
+[ext_resource type="Script" path="res://Scripts/wall_bouncy.gd" id="6_423jg"]
+[ext_resource type="PackedScene" path="res://Instances/platform_chandelier.tscn" id="7_kigi5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axhnk"]
 size = Vector2(9961.588, 831.50006)
@@ -93,9 +94,6 @@ size = Vector2(657.1155, 537.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kigi5"]
 size = Vector2(122.55774, 698.9375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w7yv"]
-size = Vector2(120.037994, 665.6984)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vt0k"]
 size = Vector2(409.11554, 236.375)
@@ -413,18 +411,6 @@ shape = SubResource("RectangleShape2D_1j4rq")
 position = Vector2(-6005, -6225.5313)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_kigi5")
-
-[node name="CollisionShape2D167" type="CollisionShape2D" parent="Static Collisions" unique_id=226328446]
-position = Vector2(-4272.619, -6201.5293)
-rotation = 0.7876966
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_5w7yv")
-
-[node name="CollisionShape2D168" type="CollisionShape2D" parent="Static Collisions" unique_id=595547043]
-position = Vector2(-4790, -6045.9995)
-rotation = 1.6245553
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_5w7yv")
 
 [node name="CollisionShape2D166" type="CollisionShape2D" parent="Static Collisions" unique_id=362030967]
 position = Vector2(-6657.5576, -4904.1875)
@@ -761,6 +747,9 @@ script = ExtResource("6_423jg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1849901497]
 position = Vector2(-6058.75, -6211.5)
 shape = SubResource("RectangleShape2D_t6ncy")
+
+[node name="Chandelier" parent="." unique_id=145211400 instance=ExtResource("7_kigi5")]
+position = Vector2(-4565, -6856)
 
 [connection signal="body_entered" from="Moving Collisions/Organ_Keys" to="Moving Collisions/Organ_Keys" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
