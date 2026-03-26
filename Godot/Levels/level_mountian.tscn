@@ -382,7 +382,7 @@ scale = Vector2(0.9999993, 0.9999993)
 shape = SubResource("RectangleShape2D_7erb0")
 
 [node name="CollisionShape2D86" type="CollisionShape2D" parent="Platforms_Static" unique_id=1493603354]
-position = Vector2(5305.9634, -1501.586)
+position = Vector2(5399.9634, -1525)
 rotation = 1.3420908
 scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_l8gi8")
@@ -448,19 +448,19 @@ scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_8kyku")
 
 [node name="CollisionShape2D87" type="CollisionShape2D" parent="Platforms_Static" unique_id=975558907]
-position = Vector2(4944, -1395.7596)
+position = Vector2(5038, -1419.1736)
 rotation = 0.96709436
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_dshhh")
 
 [node name="CollisionShape2D119" type="CollisionShape2D" parent="Platforms_Static" unique_id=1058141439]
-position = Vector2(5004, -1327)
+position = Vector2(5098, -1350.414)
 rotation = 1.6829302
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_jr65f")
 
 [node name="CollisionShape2D120" type="CollisionShape2D" parent="Platforms_Static" unique_id=533187920]
-position = Vector2(5329.0005, -1414)
+position = Vector2(5423.0005, -1437.414)
 rotation = 1.1855912
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_rxowj")
@@ -484,7 +484,7 @@ scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_cccwg")
 
 [node name="CollisionShape2D81" type="CollisionShape2D" parent="Platforms_Static" unique_id=1137472816]
-position = Vector2(6322.644, -1521.0323)
+position = Vector2(6322.644, -1521.0325)
 rotation = 1.5946903
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_3wejo")
@@ -521,12 +521,12 @@ rotation = 0.5739536
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spring2" parent="Platforms_Special" unique_id=735998768 instance=ExtResource("2_0j81s")]
-position = Vector2(6320, -1328)
+position = Vector2(6320, -1328.0001)
 rotation = 3.1415927
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spring4" parent="Platforms_Special" unique_id=1943408066 instance=ExtResource("2_0j81s")]
-position = Vector2(6326.9995, -1701.9999)
+position = Vector2(6326.9995, -1702)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spring3" parent="Platforms_Special" unique_id=330492104 instance=ExtResource("2_0j81s")]

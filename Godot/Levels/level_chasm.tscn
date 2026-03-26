@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="11_jt8vq"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
+[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Levels/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
 [ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
@@ -262,6 +263,9 @@ colors = PackedColorArray(1, 1, 1, 1, 0.5451807, 0.5451807, 0.5451807, 1, 0, 0, 
 gradient = SubResource("Gradient_v8crf")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdhgj"]
+size = Vector2(8722.896, 6853.9883)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkd8"]
 size = Vector2(6110.5415, 2743.1304)
@@ -885,6 +889,7 @@ texture = ExtResource("10_870hm")
 color = Color(0.9856015, 0.8393236, 0.7695522, 1)
 energy = 0.75
 blend_mode = 1
+script = ExtResource("12_7s22q")
 
 [node name="ColorRect_Background" type="ColorRect" parent="Lighting" unique_id=872672583]
 z_index = -10
@@ -940,7 +945,16 @@ position = Vector2(2860.0002, -959)
 rotation = -0.39476323
 scale = Vector2(0.99999994, 0.99999994)
 
+[node name="Trigger_Chasm_Lighting" type="Area2D" parent="." unique_id=305317851]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Chasm_Lighting" unique_id=504903081]
+position = Vector2(-1234.8417, -1876.2329)
+rotation = 0.036861345
+shape = SubResource("RectangleShape2D_fdhgj")
+
 [node name="Trigger_Camera_Zoom" type="Area2D" parent="." unique_id=1816445527]
+visible = false
 position = Vector2(0, -3700)
 script = ExtResource("13_jt8vq")
 
@@ -950,5 +964,7 @@ rotation = 0.30864188
 shape = SubResource("RectangleShape2D_8mkd8")
 metadata/_edit_lock_ = true
 
+[connection signal="body_entered" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_entered"]
+[connection signal="body_exited" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_exited"]
 [connection signal="body_entered" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_exited"]
