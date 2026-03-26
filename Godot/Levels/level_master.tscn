@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bpbyfevspkhhv"]
+
+[ext_resource type="PackedScene" uid="uid://dgjc4wsslmwwq" path="res://Levels/level_chasm.tscn" id="1_q24hh"]
+[ext_resource type="PackedScene" uid="uid://bwffcab06wreq" path="res://Levels/level_mountian.tscn" id="2_hxsbd"]
+
+[node name="LevelMaster" type="Node2D" unique_id=1479141605]
+
+[node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
+
+[node name="LevelMountian" parent="." unique_id=847851098 instance=ExtResource("2_hxsbd")]
+position = Vector2(-507, -4787)
