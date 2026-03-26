@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
 [ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
-[ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="13_vabag"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
 
 [sub_resource type="Curve" id="Curve_870hm"]
@@ -216,14 +215,8 @@ size = Vector2(463.33414, 115.722244)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvr8f"]
 size = Vector2(697.21875, 291.625)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_30rf5"]
-size = Vector2(191.60938, 1215.625)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aopc1"]
 size = Vector2(697.21875, 114.3125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51q7j"]
-size = Vector2(697.21875, 162.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcpwx"]
 size = Vector2(415.875, 82.210815)
@@ -270,14 +263,6 @@ size = Vector2(6110.5415, 2743.1304)
 [node name="LevelChasm" type="Node2D" unique_id=488097887]
 script = ExtResource("1_di1g1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1821769112]
-offset_left = -11562.0
-offset_top = -8021.0
-offset_right = 10762.0
-offset_bottom = 4270.0
-color = Color(0.09019608, 0.10980392, 0.11764706, 1)
-metadata/_edit_lock_ = true
-
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_qhuka")]
 position = Vector2(-1914, 364)
 
@@ -287,6 +272,12 @@ width_curve = SubResource("Curve_870hm")
 default_color = Color(0.8156863, 1, 1, 1)
 gradient = SubResource("Gradient_870hm")
 antialiased = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1565946089]
+stream = ExtResource("12_1vapn")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
 
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3
@@ -642,17 +633,9 @@ shape = SubResource("RectangleShape2D_1vapn")
 position = Vector2(143.21875, -2250.1875)
 shape = SubResource("RectangleShape2D_rvr8f")
 
-[node name="CollisionShape2D62" type="CollisionShape2D" parent="Platforms_Static" unique_id=1666021013]
-position = Vector2(3382, -4447)
-shape = SubResource("RectangleShape2D_30rf5")
-
 [node name="CollisionShape2D59" type="CollisionShape2D" parent="Platforms_Static" unique_id=1054976760]
 position = Vector2(3004, -3953.1563)
 shape = SubResource("RectangleShape2D_aopc1")
-
-[node name="CollisionShape2D61" type="CollisionShape2D" parent="Platforms_Static" unique_id=1996676747]
-position = Vector2(3004, -4979)
-shape = SubResource("RectangleShape2D_51q7j")
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="Platforms_Static" unique_id=1141691232]
 position = Vector2(1170.6041, -3358.2024)
@@ -711,32 +694,32 @@ position = Vector2(2192, -3585)
 rotation = -0.22881274
 shape = SubResource("RectangleShape2D_4nngh")
 
-[node name="Platforms_Moving" type="Node2D" parent="." unique_id=1603431409]
+[node name="Platforms_Special" type="Node2D" parent="." unique_id=1603431409]
 
-[node name="Spring" parent="Platforms_Moving" unique_id=261987189 instance=ExtResource("5_rkulv")]
+[node name="Spring" parent="Platforms_Special" unique_id=261987189 instance=ExtResource("5_rkulv")]
 position = Vector2(-4216, -2526.9998)
 rotation = -0.2705035
 
-[node name="Spring2" parent="Platforms_Moving" unique_id=525811 instance=ExtResource("5_rkulv")]
+[node name="Spring2" parent="Platforms_Special" unique_id=525811 instance=ExtResource("5_rkulv")]
 position = Vector2(-4894, -3447.9998)
 rotation = 0.55881643
 spring_power = 1400
 
-[node name="Spring3" parent="Platforms_Moving" unique_id=1534864374 instance=ExtResource("5_rkulv")]
+[node name="Spring3" parent="Platforms_Special" unique_id=1534864374 instance=ExtResource("5_rkulv")]
 position = Vector2(-2922, -3427)
 rotation = 0.23804712
 
-[node name="Spring4" parent="Platforms_Moving" unique_id=1168788945 instance=ExtResource("5_rkulv")]
+[node name="Spring4" parent="Platforms_Special" unique_id=1168788945 instance=ExtResource("5_rkulv")]
 position = Vector2(358.99976, -2459)
 rotation = 0.23804738
 
-[node name="Trapdoor" parent="Platforms_Moving" unique_id=2007738548 instance=ExtResource("13_870hm")]
+[node name="Trapdoor" parent="Platforms_Special" unique_id=2007738548 instance=ExtResource("13_870hm")]
 position = Vector2(748, -992)
 
-[node name="Trapdoor2" parent="Platforms_Moving" unique_id=1710643573 instance=ExtResource("13_870hm")]
+[node name="Trapdoor2" parent="Platforms_Special" unique_id=1710643573 instance=ExtResource("13_870hm")]
 position = Vector2(-1768, -842)
 
-[node name="Trapdoor3" parent="Platforms_Moving" unique_id=1002376200 instance=ExtResource("13_870hm")]
+[node name="Trapdoor3" parent="Platforms_Special" unique_id=1002376200 instance=ExtResource("13_870hm")]
 position = Vector2(3, -3327)
 
 [node name="Textures_Polygon" type="Node2D" parent="." unique_id=1570680729]
@@ -880,6 +863,63 @@ rotation = -1.6225293
 scale = Vector2(0.48958203, 0.9497001)
 texture = ExtResource("10_870hm")
 
+[node name="Lighting" type="Node2D" parent="." unique_id=401589430]
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight_Darkness" type="DirectionalLight2D" parent="Lighting" unique_id=1019431545]
+color = Color(0.9856015, 0.8393236, 0.7695522, 1)
+energy = 0.75
+blend_mode = 1
+
+[node name="ColorRect_Background" type="ColorRect" parent="Lighting" unique_id=872672583]
+z_index = -10
+offset_left = -5968.0
+offset_top = -5047.0
+offset_right = 3449.0
+offset_bottom = 1740.0
+color = Color(0.078431375, 0.078431375, 0.10980392, 1)
+metadata/_edit_lock_ = true
+
+[node name="Torch" parent="Lighting" unique_id=1613385677 instance=ExtResource("14_7s22q")]
+position = Vector2(-812.00006, 633.00006)
+rotation = 0.57828945
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch2" parent="Lighting" unique_id=1065431374 instance=ExtResource("14_7s22q")]
+position = Vector2(1346, -358)
+rotation = -0.045754433
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch4" parent="Lighting" unique_id=751080555 instance=ExtResource("14_7s22q")]
+position = Vector2(48.999878, -1388.0001)
+rotation = 0.13002837
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch5" parent="Lighting" unique_id=113312753 instance=ExtResource("14_7s22q")]
+position = Vector2(-2574.0002, -954.00006)
+rotation = 0.40692377
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch6" parent="Lighting" unique_id=1141834236 instance=ExtResource("14_7s22q")]
+position = Vector2(-2275, -2100)
+rotation = -0.061820626
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch7" parent="Lighting" unique_id=1228168018 instance=ExtResource("14_7s22q")]
+position = Vector2(-1095.0001, -3138.9998)
+rotation = 0.9543667
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch8" parent="Lighting" unique_id=1929910136 instance=ExtResource("14_7s22q")]
+position = Vector2(1409.0001, -2977)
+rotation = -0.1102708
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch3" parent="Lighting" unique_id=1144969547 instance=ExtResource("14_7s22q")]
+position = Vector2(2860.0002, -959)
+rotation = -0.39476323
+scale = Vector2(0.99999994, 0.99999994)
+
 [node name="Trigger_Camera_Zoom" type="Area2D" parent="." unique_id=1816445527]
 position = Vector2(0, -3700)
 script = ExtResource("13_jt8vq")
@@ -888,22 +928,6 @@ script = ExtResource("13_jt8vq")
 position = Vector2(-869.4666, -328.6704)
 rotation = 0.30864188
 shape = SubResource("RectangleShape2D_vabag")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1565946089]
-stream = ExtResource("12_1vapn")
-volume_db = -15.0
-autoplay = true
-parameters/looping = true
-
-[node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("13_vabag")]
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1019431545]
-color = Color(0.9856015, 0.8393236, 0.7695522, 1)
-energy = 0.75
-blend_mode = 1
-
-[node name="Torch" parent="." unique_id=1613385677 instance=ExtResource("14_7s22q")]
-position = Vector2(-574, 967)
 
 [connection signal="body_entered" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_exited"]
