@@ -19,6 +19,11 @@ run/main_scene="uid://bufcv4ada62b7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [global_group]
 
 Physical="Makes the guy go ow"
