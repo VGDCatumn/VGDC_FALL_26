@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bi1y5jywamacu"]
+
+[ext_resource type="Script" uid="uid://cmyf4bijry20b" path="res://Scripts/platform_trampoline.gd" id="1_tesa8"]
+[ext_resource type="Texture2D" uid="uid://c7vxoomytx2yi" path="res://Sprites/woolTexture.png" id="1_ukaof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tesa8"]
+size = Vector2(225, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yimsn"]
+size = Vector2(19.326183, 10.5985985)
+
+[node name="PlatformBouncy" type="StaticBody2D" unique_id=730826749]
+position = Vector2(-541, -76)
+
+[node name="Carpet" type="Sprite2D" parent="." unique_id=339377703]
+position = Vector2(-112.99999, -179.99995)
+scale = Vector2(0.501112, 0.501112)
+texture = ExtResource("1_ukaof")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1300094320]
+position = Vector2(-0.5, -64)
+shape = SubResource("RectangleShape2D_tesa8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=220208388]
+position = Vector2(0, 44.99997)
+script = ExtResource("1_tesa8")
+
+[node name="Collider" type="CollisionShape2D" parent="Area2D" unique_id=353615375]
+position = Vector2(0, -177.99998)
+scale = Vector2(11.693978, 11.693978)
+shape = SubResource("RectangleShape2D_yimsn")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
