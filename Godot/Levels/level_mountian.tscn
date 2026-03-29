@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_3745l"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="2_0j81s"]
-[ext_resource type="Script" uid="uid://cswex5v20fyms" path="res://Levels/wall_bouncy.gd" id="3_0j81s"]
+[ext_resource type="Script" uid="uid://cswex5v20fyms" path="res://Scripts/wall_bouncy.gd" id="3_0j81s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ui3te"]
-size = Vector2(4424.001, 166.1875)
+size = Vector2(3164.0005, 166.1875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0whg0"]
 size = Vector2(798.24097, 185.35088)
@@ -65,7 +65,7 @@ size = Vector2(702.5133, 782.61444)
 size = Vector2(919.31506, 271.24457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vpjl"]
-size = Vector2(906.2514, 3650.2312)
+size = Vector2(906.2514, 561.8535)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43dke"]
 size = Vector2(180.25478, 967.3767)
@@ -163,12 +163,12 @@ size = Vector2(49, 1064)
 [node name="LevelMountian1" type="Node2D" unique_id=847851098]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_3745l")]
-position = Vector2(4219, 712)
+position = Vector2(4965, 694)
 
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=620585538]
 
 [node name="CollisionShape2D67" type="CollisionShape2D" parent="Platforms_Static" unique_id=265221828]
-position = Vector2(5379, 850.90625)
+position = Vector2(6009, 850.90625)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_ui3te")
 
@@ -298,7 +298,7 @@ scale = Vector2(0.99999905, 0.99999905)
 shape = SubResource("RectangleShape2D_l75dm")
 
 [node name="CollisionShape2D96" type="CollisionShape2D" parent="Platforms_Static" unique_id=634241118]
-position = Vector2(-2861, -3927.0005)
+position = Vector2(-1325.3792, -3764.5698)
 rotation = 1.6761796
 scale = Vector2(0.99999917, 0.99999917)
 shape = SubResource("RectangleShape2D_5vpjl")

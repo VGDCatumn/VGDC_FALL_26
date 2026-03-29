@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgjc4wsslmwwq"]
 
-[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_di1g1"]
+[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]
 [ext_resource type="Texture2D" uid="uid://btycbjc8h7oi0" path="res://Sprites/rock-2.png" id="4_qxvo5"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_rkulv"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="11_jt8vq"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
-[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Levels/ambient_light_chasm.gd" id="12_7s22q"]
+[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
-[ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
 
 [sub_resource type="Curve" id="Curve_870hm"]
@@ -223,7 +223,7 @@ size = Vector2(463.33414, 115.722244)
 size = Vector2(697.21875, 291.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aopc1"]
-size = Vector2(697.21875, 114.3125)
+size = Vector2(2004.6094, 114.3125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcpwx"]
 size = Vector2(415.875, 82.210815)
@@ -292,7 +292,6 @@ parameters/looping = true
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3
 collision_mask = 3
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms_Static" unique_id=1369962554]
 position = Vector2(576.75, 557)
@@ -657,7 +656,7 @@ position = Vector2(143.21875, -2250.1875)
 shape = SubResource("RectangleShape2D_rvr8f")
 
 [node name="CollisionShape2D59" type="CollisionShape2D" parent="Platforms_Static" unique_id=1054976760]
-position = Vector2(3004, -3953.1563)
+position = Vector2(3657.6953, -3953.1563)
 shape = SubResource("RectangleShape2D_aopc1")
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="Platforms_Static" unique_id=1141691232]
@@ -887,7 +886,7 @@ texture = ExtResource("10_870hm")
 
 [node name="DirectionalLight_Darkness" type="DirectionalLight2D" parent="Lighting" unique_id=1019431545]
 color = Color(0.9856015, 0.8393236, 0.7695522, 1)
-energy = 0.75
+energy = 0.0
 blend_mode = 1
 script = ExtResource("12_7s22q")
 

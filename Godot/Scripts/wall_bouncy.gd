@@ -13,9 +13,9 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.is_in_group("PLAYER")):
-		body.wall_bounce_multiplier = 1
+		body.wall_bounce_multiplier *= 2
 
 
 func _on_body_exited(body):
 	if (body.is_in_group("PLAYER")):
-		body.wall_bounce_multiplier = 0.5
+		body.wall_bounce_multiplier *= 0.5
