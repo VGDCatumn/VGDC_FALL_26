@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bpbyfevspkhhv"]
+
+[ext_resource type="PackedScene" uid="uid://dgjc4wsslmwwq" path="res://Levels/level_chasm.tscn" id="1_q24hh"]
+[ext_resource type="PackedScene" uid="uid://bwffcab06wreq" path="res://Levels/level_mountian.tscn" id="2_hxsbd"]
+[ext_resource type="PackedScene" uid="uid://bphbftddarv4d" path="res://Levels/level_village.tscn" id="3_hxsbd"]
+[ext_resource type="PackedScene" uid="uid://sg2q1paaiks" path="res://Levels/level_chapel.tscn" id="4_ybcgk"]
+
+[node name="LevelMaster" type="Node2D" unique_id=1479141605]
+
+[node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
+
+[node name="LevelMountian" parent="." unique_id=847851098 instance=ExtResource("2_hxsbd")]
+position = Vector2(-1053, -4779)
+
+[node name="LevelVillage" parent="." unique_id=763794867 instance=ExtResource("3_hxsbd")]
+position = Vector2(-13826, -8746)
+
+[node name="LevelChapel" parent="." unique_id=203127601 instance=ExtResource("4_ybcgk")]
+position = Vector2(3091, -29780)

@@ -122,7 +122,7 @@ func handle_fall(delta):
 # Increase downwards velocity when holding down 
 func slam_down(delta):
 	# Double the gravity applied to the ball 
-	velocity.y += gravity * delta
+	velocity.y += 2 * gravity * delta
 	
 	# increment the y down velocity of prev_velocity
 	# this does not change any player velocity
