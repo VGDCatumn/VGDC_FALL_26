@@ -1,6 +1,4 @@
-[gd_scene format=3 uid="uid://cnhdw06ycxxd0"]
-
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_or3ad"]
+[gd_scene format=3 uid="uid://c3rr4etwwf63v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1miol"]
 size = Vector2(177.5, 153)
@@ -30,9 +28,6 @@ position = Vector2(465, 49)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor2" unique_id=559782562]
 shape = SubResource("RectangleShape2D_1miol")
 metadata/_edit_lock_ = true
-
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_or3ad")]
-position = Vector2(-37, -494)
 
 [node name="Plank1" type="RigidBody2D" parent="." unique_id=1964384353]
 position = Vector2(-268, 176)
