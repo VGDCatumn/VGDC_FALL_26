@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
 
 [sub_resource type="Curve" id="Curve_870hm"]

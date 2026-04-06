@@ -4,7 +4,7 @@ var prev_velocity : Vector2
 var gravity := 1200.0			# Gravity is 2x on a slam down
 var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
-var cap_velocity := false
+var cap_velocity := true
 
 # Define how much velocity is retained after a surface bounce
 var floor_bounce_multiplier := 0.50 # this variable is very precise, +/- 0.05

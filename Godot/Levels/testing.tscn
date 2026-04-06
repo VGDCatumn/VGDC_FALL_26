@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://db70dai06rnqn"]
 
-[ext_resource type="Script" path="res://Scripts/level_testing.gd" id="1_enxv6"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_6fp6m"]
+[ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_enxv6"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_enxv6"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="5_a7g5p"]
+[ext_resource type="PackedScene" uid="uid://c3dmq7x62dp7m" path="res://Instances/experimental_player_ball_man.tscn" id="6_1yoly"]
 [ext_resource type="PackedScene" uid="uid://chueiu70q7l41" path="res://Instances/procedural bridge/plank.tscn" id="6_2xqxn"]
-[ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -184,9 +183,6 @@ size = Vector2(441.75, 696.6643)
 [node name="Testing2" type="Node2D" unique_id=488097887]
 script = ExtResource("1_enxv6")
 
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_6fp6m")]
-position = Vector2(-1666, -137)
-
 [node name="Node2D" type="Node2D" parent="." unique_id=345842558]
 
 [node name="Label" type="Label" parent="Node2D" unique_id=1835999058]
@@ -220,19 +216,6 @@ text = "TRAPDOORS
 FALL AFTER
 TWO BOUNCES"
 horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="Node2D" unique_id=1354945320]
-z_index = -1
-offset_left = -2380.0
-offset_top = -495.0
-offset_right = -957.0
-offset_bottom = 36.0
-theme_override_font_sizes/font_size = 64
-text = "This is testing.tscn.
-It is a copy of level_chasm.
-You are given this template to test level ideas.
-Any changes will NOT affect the git repository.
-You are free to edit this scene as you please."
 
 [node name="Label4" type="Label" parent="Node2D" unique_id=519132103]
 offset_left = -901.0
@@ -577,8 +560,9 @@ rotation = 0.29747632
 [node name="Crumbling Platform" parent="." unique_id=2007738548 instance=ExtResource("5_a7g5p")]
 position = Vector2(-511, 505)
 
-[node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("6_ymqfe")]
-
 [node name="plank" parent="." unique_id=1782918330 instance=ExtResource("6_2xqxn")]
 position = Vector2(-2033, 274)
 rotation = -1.5708275
+
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("6_1yoly")]
+position = Vector2(-1521, 83)
