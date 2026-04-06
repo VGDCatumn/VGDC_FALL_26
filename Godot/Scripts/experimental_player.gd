@@ -1,15 +1,14 @@
 extends CharacterBody2D
 
-var prev_velocity: Vector2
 var gravity := 1200.0 # Gravity is 2x on a slam down
 var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
+var min_y_bounce := 100.0
 var cap_velocity := true
 
 # Define how much velocity is retained after a surface bounce
 var floor_bounce_multiplier := 0.50 # this variable is very precise, +/- 0.05
-var wall_bounce_multiplier := 0.50
-var ceiling_bounce_multiplier := 0.50
+var alt_bounce_multiplier := 0.50
 
 # Auxillary movement variables
 var has_wobble_rotation := true
@@ -55,7 +54,6 @@ func dev_movement_mode(delta):
 		position.x += move_speed
 	
 	velocity = Vector2(0, 0) # reset velocity for exiting
-	prev_velocity = Vector2(0, 0)
 	has_aerial_movement = false # stop aerial movement in case it was leftover
 	$AnimationPlayer.stop() # stop any animations
 	wobble_rotate(delta) # apply rotation, this is cosemetic it doesn't change movement
@@ -85,14 +83,11 @@ func draw_trail():
 func regular_movement_mode(delta):
 	if (has_wobble_rotation): wobble_rotate(delta) # rotate player with left/right
 	else: manual_rotate(delta)
-		
-	prev_velocity = velocity # store previous velocity because collisions set velocity = 0
-	
+			
 	if cap_velocity:
 		clamp_velocity()
 
-	move_and_slide() # Move character with built-in Godot collisions
-
+	
 	# Determine bounce category based off built-in Godot collision functions
 	if is_on_floor(): handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
 	if is_on_wall(): handle_wall_bounce() # handle bounce collisions with wall

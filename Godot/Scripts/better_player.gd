@@ -5,11 +5,11 @@ var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
 var min_y_bounce := 50
 var cap_velocity := true
+var impulse_multiplier := 0.75
 
 # Define how much velocity is retained after a surface bounce
 var floor_bounce_multiplier := 0.50 # this variable is very precise, +/- 0.05
-var wall_bounce_multiplier := 0.50
-var ceiling_bounce_multiplier := 0.50
+var alt_bounce_multiplier := 0.50
 
 # Auxillary movement variables
 var has_wobble_rotation := true
@@ -17,12 +17,12 @@ var has_wobble_rotation := true
 # Developer Tool Varaibles 
 var is_dev_mode_enabled: bool = false
 
-var last_collision: KinematicCollision2D = null
-
+signal update_stats(position: Vector2, velocity: Vector2)
 
 func _ready() -> void:
 	floor_max_angle = deg_to_rad(45) # same as default
 	velocity = Vector2.ZERO
+
 
 func _physics_process(delta: float) -> void:
 	# Toggle dev mode if tab is pressed
@@ -31,7 +31,10 @@ func _physics_process(delta: float) -> void:
 	# Apply appropriate movement mode
 	if (is_dev_mode_enabled): dev_movement_mode(delta)
 	else: regular_movement_mode(delta)
+
+	emit_signal("update_stats", position, velocity)
 	
+
 # dev tool to move omnidirectionally
 func dev_movement_mode(delta):
 	var move_speed = 1000 * delta
@@ -55,23 +58,27 @@ func regular_movement_mode(delta):
 	if (has_wobble_rotation): wobble_rotate(delta) # rotate player with left/right
 	else: manual_rotate(delta)
 	
-	clamp_velocity()
+	if cap_velocity:
+		clamp_velocity()
 
-	last_collision = move_and_collide(velocity * delta)
+	var result = move_and_collide(velocity * delta)
 
-	if last_collision:
-		if last_bounce_on_floor():
-			handle_floor_bounce()
+	if result:
+		if last_bounce_on_floor(result):
+			handle_floor_bounce(result)
 		else:
-			handle_non_floor_bounce()
+			handle_non_floor_bounce(result)
+		handle_impulse(result)
 	else: handle_fall(delta)
 	
-	print_bounce_info() # debugging tool to print bounce stats
+	
+	print_bounce_info(result) # debugging tool to print bounce stats
+
 
 ### CUSTOM MOVEMENT FUNCTIONS
 
-func last_bounce_on_floor():
-	return last_collision.get_angle() <= floor_max_angle + 0.01
+func last_bounce_on_floor(collision: KinematicCollision2D):
+	return collision.get_angle() <= floor_max_angle + 0.01
 
 # Handles logic to apply velocity in the positive y direction (downwards)
 # Called every frame that that player is not colliding with a surface
@@ -83,14 +90,16 @@ func handle_fall(delta):
 	if velocity.y >= 0 and Input.is_action_pressed("move_down"):
 		slam_down(delta)
 
+
 # Increase downwards velocity when holding down 
 func slam_down(delta):
 	# Double the gravity applied to the ball 
 	velocity.y += 2 * gravity * delta
 	
+
 # Handle ball physics on ground collisions
-func handle_floor_bounce():
-	velocity.y = - abs(velocity.y) * floor_bounce_multiplier + last_collision.get_collider_velocity().y
+func handle_floor_bounce(collision: KinematicCollision2D):
+	velocity.y = min(-abs(velocity.y) * floor_bounce_multiplier, min_y_bounce) + collision.get_collider_velocity().y
 	
 	# Add velocity in direction of rotation on a bounce
 	# Velocity in the x direction is noticeably greater --> for more horizontal control
@@ -100,21 +109,31 @@ func handle_floor_bounce():
 	emit_signal("send_bounce", velocity) # send bounce info to Audio_Bounce node
 	$AnimationPlayer.play("bounce_animation") # Play bounce animation
 	
-func handle_non_floor_bounce():
-	velocity = velocity.bounce(last_collision.get_normal()) * wall_bounce_multiplier
+
+func handle_non_floor_bounce(collision: KinematicCollision2D):
+	velocity = velocity.bounce(collision.get_normal()) * alt_bounce_multiplier
 	emit_signal("send_bounce", velocity)
 
+
+func handle_impulse(collision: KinematicCollision2D):
+	var object = collision.get_collider()
+	if object.is_class("RigidBody2D"):
+		var obj_global_position = object.get("global_position")
+		object.call("apply_impulse", velocity.bounce(collision.get_normal()) * impulse_multiplier, global_position - obj_global_position)
+
+
 # Print bounce info to output
-func print_bounce_info():
+func print_bounce_info(collision: KinematicCollision2D):
 	var output
-	if last_collision:
-		if last_bounce_on_floor():
+	if collision:
+		if last_bounce_on_floor(collision):
 			output = "\nFLOOR BOUNCE"
 		else:
 			output = "\nWALL BOUNCE"
 	else: return # end function if no bounce occurs
 	output += "\n\tVelocity: " + str(velocity)
 	print(output)
+
 
 # Contrict max player velocity in x and y direction
 func clamp_velocity():
@@ -125,11 +144,13 @@ func clamp_velocity():
 
 ### ROTATION FUNCTIONS
 
+
 # Manual rotation, use left/right to tilt player
 func manual_rotate(delta):
 	if Input.is_action_pressed("move_right"): rotate(1 * delta)
 	elif Input.is_action_pressed("move_left"): rotate(-1 * delta)
 	manual_rotate_sound(delta) # play audio when manual rotating
+
 
 # Play concrete_sliding audio when player is rotating manually
 # Volume level starts as 0, increases the longer you turn  

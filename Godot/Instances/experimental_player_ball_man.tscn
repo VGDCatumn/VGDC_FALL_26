@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cynbkne4hanwc" path="res://Scripts/better_player.gd" id="1_jd1fq"]
 [ext_resource type="Texture2D" uid="uid://dbeoqdnrf4kod" path="res://Sprites/ball-sprite.png" id="2_k2awd"]
 [ext_resource type="Texture2D" uid="uid://rwe300snjop3" path="res://Sprites/man-sprite.png" id="3_td82x"]
-[ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector_arrow.tscn" id="4_ittbj"]
 [ext_resource type="Script" uid="uid://l5dgjgdxq02i" path="res://Scripts/player_camera_2d.gd" id="5_dax2h"]
 [ext_resource type="AudioStream" uid="uid://cqlwvy11gjw81" path="res://Audio/bounce-soft-1.mp3" id="6_4sr8e"]
 [ext_resource type="Script" path="res://Scripts/sfx_bounce.gd" id="7_2tv35"]
@@ -286,7 +285,7 @@ _data = {
 &"wall_bounce_animation_right": SubResource("Animation_s6csc")
 }
 
-[node name="BallMan" type="CharacterBody2D" unique_id=742937550 groups=["PLAYER"]]
+[node name="EBM" type="CharacterBody2D" unique_id=742937550 groups=["PLAYER"]]
 z_index = 1
 script = ExtResource("1_jd1fq")
 
@@ -311,9 +310,6 @@ shape = SubResource("CapsuleShape2D_ymqfe")
 [node name="BallCollider" type="CollisionShape2D" parent="." unique_id=1579468439]
 position = Vector2(1, -12)
 shape = SubResource("CircleShape2D_a7g5p")
-
-[node name="VectorArrow" parent="." unique_id=1007273149 instance=ExtResource("4_ittbj")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1215970789]
 zoom = Vector2(0.75, 0.75)
