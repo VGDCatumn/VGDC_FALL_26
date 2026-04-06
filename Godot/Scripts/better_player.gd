@@ -3,7 +3,7 @@ extends CharacterBody2D
 var gravity := 1200.0 # Gravity is 2x on a slam down
 var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
-var min_y_bounce := 50
+var min_y_bounce := 200
 var cap_velocity := true
 var impulse_multiplier := 0.75
 
