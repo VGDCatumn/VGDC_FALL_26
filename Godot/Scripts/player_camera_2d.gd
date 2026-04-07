@@ -2,7 +2,7 @@ extends Camera2D
 
 @export var zoom_speed = 3.0  
 
-var target_zoom = Vector2(0.5,0.5) # initialize with default zoom
+@export var target_zoom = Vector2(0.5,0.5) # initialize with default zoom
 
 func _process(delta):
 	# Smoothly interpolate current zoom to target

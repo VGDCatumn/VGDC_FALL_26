@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://chueiu70q7l41"]
+
+[ext_resource type="Script" uid="uid://d04r2dj2orpxf" path="res://Instances/procedural bridge/plank.gd" id="1_1u1gj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1gj"]
+size = Vector2(342.5, 55.5)
+
+[node name="plank" type="RigidBody2D" unique_id=1782918330]
+script = ExtResource("1_1u1gj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992162990]
+shape = SubResource("RectangleShape2D_1u1gj")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=679967527]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=902048552]
+scale = Vector2(1.03, 1.5)
+shape = SubResource("RectangleShape2D_1u1gj")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

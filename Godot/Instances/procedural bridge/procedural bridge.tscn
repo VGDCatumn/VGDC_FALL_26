@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://p8rhmmye75ha"]
+
+[ext_resource type="Script" uid="uid://cds0elgpbl70o" path="res://Instances/procedural bridge/procedural_bridge.gd" id="1_omxbb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omxbb"]
+radius = 34.525352
+
+[node name="ProceduralBridge" type="Node2D" unique_id=1145272515 node_paths=PackedStringArray("anchor1", "anchor2")]
+script = ExtResource("1_omxbb")
+anchor1 = NodePath("StaticBody2D")
+anchor2 = NodePath("StaticBody2D2")
+plank_count = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=398348427]
+position = Vector2(78, 70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=452116908]
+shape = SubResource("CircleShape2D_omxbb")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1044340548]
+position = Vector2(1084, 587)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1449696768]
+shape = SubResource("CircleShape2D_omxbb")
+metadata/_edit_lock_ = true

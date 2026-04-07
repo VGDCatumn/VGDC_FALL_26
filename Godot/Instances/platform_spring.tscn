@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2jwllqcv5r6g"]
 
 [ext_resource type="Script" uid="uid://ddhkpefoy7gkn" path="res://Scripts/platform_spring.gd" id="1_64j03"]
-[ext_resource type="Texture2D" uid="uid://ce36p74onqrda" path="res://Sprites/mushroom.png" id="2_imch3"]
+[ext_resource type="Texture2D" uid="uid://ce36p74onqrda" path="res://Sprites/Mushroom.png" id="2_imch3"]
 [ext_resource type="AudioStream" uid="uid://bw5aiqvt6c7dg" path="res://Audio/marcy-shroom.mp3" id="3_be82h"]
 
 [sub_resource type="Animation" id="Animation_imch3"]
@@ -89,6 +89,16 @@ _data = {
 &"boing": SubResource("Animation_be82h")
 }
 
+[sub_resource type="Gradient" id="Gradient_7x7pt"]
+offsets = PackedFloat32Array(0.04819277, 0.2379518, 0.6927711)
+colors = PackedColorArray(1, 1, 1, 1, 0.7033639, 0.7033639, 0.7033639, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bp63c"]
+gradient = SubResource("Gradient_7x7pt")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9956522, 0.002173913)
+
 [node name="Spring" type="Area2D" unique_id=261987189]
 script = ExtResource("1_64j03")
 
@@ -107,5 +117,19 @@ libraries/ = SubResource("AnimationLibrary_4l75h")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=403355208]
 stream = ExtResource("3_be82h")
 pitch_scale = 1.64
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2059024319]
+position = Vector2(1, 25.750011)
+scale = Vector2(0.7874999, 1.0078125)
+color = Color(0.87423605, 0.33323154, 0.22697899, 1)
+energy = 0.8
+texture = SubResource("GradientTexture2D_bp63c")
+texture_scale = 5.0
+
+[node name="SHOULD BE OFF" type="DirectionalLight2D" parent="." unique_id=64045579]
+visible = false
+position = Vector2(-153, 77)
+scale = Vector2(0.5796874, 0.8156249)
+blend_mode = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
