@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
+var prev_velocity: Vector2
 var gravity := 1200.0 # Gravity is 2x on a slam down
 var max_x_velocity := 1500.0
 var max_y_velocity := 2500.0
-var min_y_bounce := 100.0
+var min_y_bounce := 200
 var cap_velocity := true
 
 # Define how much velocity is retained after a surface bounce
 var floor_bounce_multiplier := 0.50 # this variable is very precise, +/- 0.05
-var alt_bounce_multiplier := 0.50
+var wall_bounce_multiplier := 0.50
+var ceiling_bounce_multiplier := 0.50
 
 # Auxillary movement variables
 var has_wobble_rotation := true
@@ -25,6 +27,23 @@ var is_dev_mode_enabled: bool = false
 signal update_stats(position: Vector2, velocity: Vector2, start_fall_height: float, end_fall_height: float) # pass to UI elements
 signal send_velocity_vector(position: Vector2, velocity: Vector2) # send signal to directional arrow node
 signal send_bounce(velocity: Vector2) # send signal to bounce audio player
+
+func _ready():
+	floor_block_on_wall = true
+	floor_constant_speed = false
+	floor_max_angle = deg_to_rad(45)
+	floor_snap_length = 0.0
+	floor_stop_on_slope = false
+	max_slides = 2
+	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
+	platform_floor_layers = 0x01
+	platform_on_leave = CharacterBody2D.PLATFORM_ON_LEAVE_DO_NOTHING
+	platform_wall_layers = 0x00
+	safe_margin = 0.08
+	slide_on_ceiling = false
+	up_direction = Vector2.UP
+	velocity = Vector2.ZERO
+
 
 func _physics_process(delta: float) -> void:
 	# Toggle dev mode if tab is pressed
@@ -54,6 +73,7 @@ func dev_movement_mode(delta):
 		position.x += move_speed
 	
 	velocity = Vector2(0, 0) # reset velocity for exiting
+	prev_velocity = Vector2(0, 0)
 	has_aerial_movement = false # stop aerial movement in case it was leftover
 	$AnimationPlayer.stop() # stop any animations
 	wobble_rotate(delta) # apply rotation, this is cosemetic it doesn't change movement
@@ -83,15 +103,16 @@ func draw_trail():
 func regular_movement_mode(delta):
 	if (has_wobble_rotation): wobble_rotate(delta) # rotate player with left/right
 	else: manual_rotate(delta)
-			
+		
+	prev_velocity = velocity # store previous velocity because collisions set velocity = 0
+	
 	if cap_velocity:
 		clamp_velocity()
 
-	
+	if (move_and_slide()): # Move character with built-in Godot collisions
+		if is_on_floor(): handle_floor_bounce()
+		else: handle_wall_bounce()
 	# Determine bounce category based off built-in Godot collision functions
-	if is_on_floor(): handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
-	if is_on_wall(): handle_wall_bounce() # handle bounce collisions with wall
-	if is_on_ceiling(): handle_ceiling_bounce() # handle bounce collision with ceiling
 	else: handle_fall(delta) # apply gravity and handle slam down
 	
 	calculate_fall_height() # set fall_height variables
@@ -129,25 +150,27 @@ func slam_down(delta):
 	
 # Handle ball physics on ground collisions
 func handle_floor_bounce():
+	print("\nBetween velocity:\t", velocity)
+	print("\nprev velocity??:\t", get_last_motion())
 	# Adjust x velocity based on floor normal
 	# This fixes "speed ramping" but makes horizontal movement feel really bad
 	# Leave this commented for future reference - Ben
 	# var floor_normal = get_floor_normal()
 	# velocity = prev_velocity.bounce(floor_normal) * floor_bounce_multiplier
 	# Bounce player up (negative y), based on their speed right before the bounce
-	velocity.y += -abs(prev_velocity.y) * floor_bounce_multiplier
+	var bounce_boost = sin(PI / 2 - rotation) * -400
+	velocity.y = min((-abs(prev_velocity.y) * floor_bounce_multiplier + bounce_boost), -min_y_bounce)
 	
 	# Add velocity in direction of rotation on a bounce
 	# Velocity in the x direction is noticeably greater --> for more horizontal control
 	velocity.x += cos(PI / 2 - rotation) * 800
-	velocity.y += sin(PI / 2 - rotation) * -400
 
 	emit_signal("send_bounce", velocity) # send bounce info to Audio_Bounce node
 	$AnimationPlayer.play("bounce_animation") # Play bounce animation
 	if not cap_velocity: # if statement for debugging
 		print("CAPPING")
 		cap_velocity = true
-	
+
 
 func handle_wall_bounce():
 	# Invert x velocity to bounce away from wall
@@ -163,16 +186,6 @@ func handle_wall_bounce():
 	else:
 		# $AnimationPlayer.play("wall_bounce_animation_left")
 		pass
-	
-	emit_signal("send_bounce", velocity)
-
-func handle_ceiling_bounce():
-	#Causes y velocity to reverse when hitting a ceiling, then reduces by the constant	
-	var collision = get_last_slide_collision()
-	var normal = collision.get_normal()
-	velocity = prev_velocity.bounce(normal) * ceiling_bounce_multiplier
-	
-	$AnimationPlayer.play("Ceiling_animation") # Plays ball bounce animation
 	
 	emit_signal("send_bounce", velocity)
 

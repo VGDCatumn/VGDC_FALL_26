@@ -967,3 +967,5 @@ metadata/_edit_lock_ = true
 [connection signal="body_exited" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_exited"]
 [connection signal="body_entered" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_exited"]
+
+[editable path="BallMan"]

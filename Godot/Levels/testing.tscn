@@ -182,6 +182,12 @@ size = Vector2(364.62012, 171.91528)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nngh"]
 size = Vector2(441.75, 696.6643)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_468tx"]
+size = Vector2(945.0093, 87)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xqxn"]
+radius = 238.03362
+
 [node name="Testing2" type="Node2D" unique_id=488097887]
 script = ExtResource("1_enxv6")
 
@@ -555,6 +561,23 @@ position = Vector2(2192.3523, -3575.4731)
 rotation = -0.22881274
 shape = SubResource("RectangleShape2D_4nngh")
 
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D" unique_id=60229876]
+position = Vector2(-2433, -1226.0001)
+rotation = 0.6981317
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_468tx")
+
+[node name="CollisionShape2D66" type="CollisionShape2D" parent="StaticBody2D" unique_id=1188702130]
+position = Vector2(-992, -1289.0001)
+rotation = -0.6981317
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_468tx")
+
+[node name="CollisionShape2D67" type="CollisionShape2D" parent="StaticBody2D" unique_id=361695816]
+position = Vector2(-1753, -1038)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_468tx")
+
 [node name="Spring" parent="." unique_id=261987189 instance=ExtResource("4_enxv6")]
 position = Vector2(-2646, 343.00006)
 rotation = 0.29747632
@@ -568,8 +591,16 @@ position = Vector2(-511, 505)
 position = Vector2(-3858, 174)
 rotation = -1.5708275
 
-[node name="EBM" parent="." unique_id=742937550 instance=ExtResource("6_1yoly")]
-position = Vector2(-1567, 107)
-
 [node name="Chandelier" parent="." unique_id=145211400 instance=ExtResource("7_2xqxn")]
-position = Vector2(-1692, -704)
+position = Vector2(-6408, -1348)
+
+[node name="EBM" parent="." unique_id=742937550 instance=ExtResource("6_1yoly")]
+position = Vector2(-2246, 90)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=377553230]
+position = Vector2(-1490, 93)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1557936199]
+shape = SubResource("CircleShape2D_2xqxn")
+metadata/_edit_lock_ = true
