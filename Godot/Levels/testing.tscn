@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="5_a7g5p"]
 [ext_resource type="PackedScene" uid="uid://chueiu70q7l41" path="res://Instances/procedural bridge/plank.tscn" id="6_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
+[ext_resource type="PackedScene" uid="uid://c5sm1pdblh0ce" path="res://Instances/goat.tscn" id="7_2xqxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -93,9 +94,6 @@ size = Vector2(354.36542, 445.83447)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fp6m"]
 size = Vector2(201.08528, 87.30864)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p02xa"]
-size = Vector2(250.31485, 87.30864)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4u0d"]
 size = Vector2(186.09506, 542.02893)
@@ -248,7 +246,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1369962554]
-position = Vector2(576.75, 557)
+position = Vector2(-426, 528)
 shape = SubResource("RectangleShape2D_enxv6")
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="StaticBody2D" unique_id=1209400564]
@@ -405,11 +403,6 @@ shape = SubResource("RectangleShape2D_mv3lf")
 position = Vector2(713, -1020)
 rotation = 0.38213205
 shape = SubResource("RectangleShape2D_6fp6m")
-
-[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D" unique_id=778401892]
-position = Vector2(-970, 464)
-rotation = 0.38213205
-shape = SubResource("RectangleShape2D_p02xa")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D" unique_id=46466392]
 position = Vector2(2133, -812)
@@ -579,6 +572,7 @@ position = Vector2(-511, 505)
 
 [node name="UI_Stats" parent="." unique_id=804815919 instance=ExtResource("6_ymqfe")]
 
-[node name="plank" parent="." unique_id=1782918330 instance=ExtResource("6_2xqxn")]
-position = Vector2(-2033, 274)
-rotation = -1.5708275
+[node name="Goat" parent="." unique_id=1914039509 instance=ExtResource("7_2xqxn")]
+position = Vector2(-111, 123)
+scale = Vector2(0.5, 0.5)
+buck_strength = 3

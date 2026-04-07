@@ -17,6 +17,70 @@ height = 106.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7g5p"]
 radius = 37.0
 
+[sub_resource type="Animation" id="Animation_2gjm8"]
+resource_name = "Parry"
+length = 0.46666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13144214, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-1, 14.000002), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [Vector2(0.1769723, 0.17636023), Vector2(0.34528247, 0.0966229), Vector2(0.1769723, 0.17636023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("man_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13259514, 0.26864928),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.999999, -77.875), Vector2(0, -56), Vector2(-2, -77.875)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("man_sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.18995097, 0.19648694)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 6.283185307179586]
+}
+
 [sub_resource type="Animation" id="Animation_6fp6m"]
 length = 0.001
 loop_mode = 2
@@ -67,6 +131,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.18995097, 0.19648694)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_enxv6"]
@@ -279,12 +355,111 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a7g5p"]
 _data = {
+&"Parry": SubResource("Animation_2gjm8"),
 &"RESET": SubResource("Animation_6fp6m"),
 &"bounce_animation": SubResource("Animation_enxv6"),
 &"stretch": SubResource("Animation_a7g5p"),
 &"wall_bounce_animation_left": SubResource("Animation_vn324"),
 &"wall_bounce_animation_right": SubResource("Animation_s6csc")
 }
+
+[sub_resource type="Animation" id="Animation_2sw1s"]
+resource_name = "Cooldown"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9033127, 0.24480921, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("man_sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9033127, 0.24480921, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dssyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("man_sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oc5vy"]
+resource_name = "TurnToRed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.9033127, 0.24480921, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("man_sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.9033127, 0.24480921, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p00sv"]
+_data = {
+&"Cooldown": SubResource("Animation_2sw1s"),
+&"RESET": SubResource("Animation_dssyn"),
+&"TurnToRed": SubResource("Animation_oc5vy")
+}
+
+[sub_resource type="Curve" id="Curve_2gjm8"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.9921875, 0.08558977), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_2sw1s"]
+offsets = PackedFloat32Array(0, 0.95739913, 0.99327356)
+colors = PackedColorArray(0.7421339, 0, 0.11511543, 1, 0.74304944, 0.5799677, 3.85046e-07, 1, 0.8305601, 0.5755754, 0.01769284, 1)
 
 [node name="BallMan" type="CharacterBody2D" unique_id=742937550 groups=["PLAYER"]]
 z_index = 1
@@ -324,6 +499,10 @@ stream = ExtResource("6_adqab")
 volume_db = -15.0
 script = ExtResource("6_vn324")
 
+[node name="Parry" type="AudioStreamPlayer" parent="." unique_id=1458626539]
+stream = ExtResource("8_2gjm8")
+volume_db = -15.0
+
 [node name="Audio_Ow" type="AudioStreamPlayer" parent="." unique_id=1064186559]
 stream = ExtResource("5_j2sbk")
 volume_db = -15.26
@@ -336,6 +515,28 @@ parameters/looping = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1948293760]
 libraries/ = SubResource("AnimationLibrary_a7g5p")
 autoplay = &"bounce_animation"
+
+[node name="ParryCheck" type="RayCast2D" parent="." unique_id=1306554587]
+position = Vector2(1, 37)
+target_position = Vector2(2.0000246, 103)
+
+[node name="SpriteColorChange" type="AnimationPlayer" parent="." unique_id=1443131448]
+libraries/ = SubResource("AnimationLibrary_p00sv")
+
+[node name="Fire" type="CPUParticles2D" parent="." unique_id=2027105654]
+emitting = false
+amount = 50
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(0, -1)
+spread = 35.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 25.0
+scale_amount_max = 25.0
+scale_amount_curve = SubResource("Curve_2gjm8")
+color_ramp = SubResource("Gradient_2sw1s")
 
 [connection signal="send_bounce" from="." to="Audio_Bounce" method="_on_ball_man_send_bounce"]
 [connection signal="send_velocity_vector" from="." to="VectorArrow" method="_on_ball_man_send_velocity_vector"]
