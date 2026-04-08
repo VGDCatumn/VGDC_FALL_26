@@ -60,6 +60,7 @@ func _on_buckline_body_entered(body: Node2D) -> void:
 			
 			
 func switch_side(facing):
+	$AnimationPlayer.play("RESET")
 	if facing == -1:
 		side = -1
 		$HeadCollision/CollisionShape2D.disabled = false
@@ -70,7 +71,9 @@ func switch_side(facing):
 		
 		$Buckline/CollisionShape2D.disabled = false
 		$Buckline/CollisionShape2D2.disabled = true
-		
+		$Head.offset = Vector2(125,50)
+		$Head.position = Vector2(-96,-28)
+		$Head.rotation = 0
 		$Body.flip_h = false
 		$Head.flip_h = false
 	else:
@@ -83,6 +86,8 @@ func switch_side(facing):
 		
 		$Buckline/CollisionShape2D.disabled = true
 		$Buckline/CollisionShape2D2.disabled = false
-		
+		$Head.offset = Vector2(-125,50)
+		$Head.position = Vector2(96,-28)
+		$Head.rotation = 0
 		$Body.flip_h = true
 		$Head.flip_h = true
