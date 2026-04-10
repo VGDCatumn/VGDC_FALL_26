@@ -8,7 +8,7 @@ var player_ref: Node2D
 
 func _ready() -> void:
 	$Timer.wait_time = clamp_timer
-	$Timer.one_shot = true 
+	$Timer.one_shot = true
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
@@ -32,5 +32,3 @@ func _on_body_entered(body: Node2D) -> void:
 #Once the timer runs out reapplies max y velocity (jump height) to player
 func _on_timer_timeout() -> void:
 	player_ref.max_y_velocity = prev_max_velocity
-
-	
