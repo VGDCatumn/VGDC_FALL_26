@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cu3gpl8nth35v"]
 
-[ext_resource type="Script" uid="uid://cnt3p6wu0ote7" path="res://Scripts/platform_rotating.gd" id="1_s8fd4"]
+[ext_resource type="Script" path="res://Scripts/platform_rotating.gd" id="1_s8fd4"]
 [ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="2_inhej"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_o6sxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iy68"]
 size = Vector2(526, 42.5)
@@ -28,6 +29,9 @@ shape = SubResource("RectangleShape2D_mkrf5")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Right" unique_id=868565651]
 position = Vector2(148, 14)
 shape = SubResource("RectangleShape2D_mkrf5")
+
+[node name="BallMan" parent="Right" unique_id=742937550 instance=ExtResource("2_o6sxk")]
+position = Vector2(-41, -276)
 
 [node name="Left" type="Area2D" parent="." unique_id=948253957]
 
