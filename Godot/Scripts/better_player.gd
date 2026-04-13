@@ -80,7 +80,7 @@ var cap_velocity := true
 var impulse_multiplier := 0.75
 
 
-var collision: KinematicCollision2D # store the last collision
+var collision: KinematicCollision2D = null # store the last collision
 var on_floor := false # custom flag to replace is_on_floor()
 var on_surface := false # custom summated flag to replace is_on_wall() is_on_ceiling()
 
@@ -148,12 +148,16 @@ func regular_movement_mode(delta):
 	
 	if cap_velocity:
 		clamp_velocity()
+	
+	if debugging: print("Snap 1")
+	snap_to_surface()
 
 	# store the result of move_and_collide to set flags and alter velocity
 	collision = move_and_collide(velocity * delta)
 	# set floor_bounce and surface_bounce
 	set_flags()
 	# manually snap to surface if nessesary
+	if debugging: print("Snap 2")
 	snap_to_surface()
 	# if we would stop too soon (e.g. we hit a steep sloop that's not a wall)
 	handle_clipping(delta)
@@ -238,6 +242,10 @@ func handle_impulse():
 func snap_to_surface():
 	if on_surface:
 		var offset = collision.get_normal().normalized() * collision.get_depth()
+		if debugging:
+			print("\nSNAPPING")
+			print("\tOffset:\t", offset)
+			print("\tOffset Dist:\t", offset.length())
 		position += offset
 
 # if character couldn't move we override the bounce angle and move at an increased angle
