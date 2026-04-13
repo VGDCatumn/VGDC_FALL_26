@@ -9,7 +9,7 @@
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(7217, -13707)
+position = Vector2(-7688, -27791)
 
 [node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
 
@@ -20,4 +20,4 @@ position = Vector2(-1053, -4779)
 position = Vector2(-13826, -8746)
 
 [node name="LevelChapel" parent="." unique_id=203127601 instance=ExtResource("4_ybcgk")]
-position = Vector2(10034, -14766)
+position = Vector2(8246, -17678)
