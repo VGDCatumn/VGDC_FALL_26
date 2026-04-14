@@ -31,4 +31,7 @@ position = Vector2(0, -177.99998)
 scale = Vector2(11.693978, 11.693978)
 shape = SubResource("RectangleShape2D_yimsn")
 
+[node name="Timer" type="Timer" parent="Area2D" unique_id=1257867113]
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
