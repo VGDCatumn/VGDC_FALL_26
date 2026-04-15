@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b6ytgwwmrmlbe"]
+
+[ext_resource type="Script" uid="uid://c12ttj22cqd3f" path="res://Dialogue/dialoguenpc.gd" id="1_je2oo"]
+[ext_resource type="Texture2D" uid="uid://dor7lafughopj" path="res://Sprites/speech_sprite.png.png" id="2_jx425"]
+
+[node name="Dialogue" type="Control" unique_id=806464691]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 162.0
+offset_top = 219.0
+offset_right = 162.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_je2oo")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1350576316]
+layout_mode = 0
+offset_left = -432.0
+offset_top = -693.0
+offset_right = 95.0
+offset_bottom = -408.0
+texture = ExtResource("2_jx425")
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=1317721781]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 145.0
+offset_top = 99.0
+offset_right = 361.24994
+offset_bottom = 230.25
+scale = Vector2(1.6, 1.6)
+text = "Test
+"
+
+[node name="Timer" type="Timer" parent="." unique_id=310634425]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
