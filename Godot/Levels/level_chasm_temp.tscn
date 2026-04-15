@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://kfiu574p3mgk"]
+[gd_scene format=3 uid="uid://pmlw1oudkl37"]
 
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]

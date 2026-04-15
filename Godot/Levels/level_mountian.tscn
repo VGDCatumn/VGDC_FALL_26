@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://bwffcab06wreq"]
+[gd_scene format=3 uid="uid://xnlojxojghtk"]
 
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_3745l"]
+[ext_resource type="Script" uid="uid://cwj1lbvaqiyt" path="res://Levels/level_mountian.gd" id="1_nv01e"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="2_0j81s"]
-[ext_resource type="Script" uid="uid://cswex5v20fyms" path="res://Scripts/wall_bouncy.gd" id="3_0j81s"]
+[ext_resource type="Script" path="res://Scripts/wall_bouncy.gd" id="3_0j81s"]
+[ext_resource type="Texture2D" uid="uid://b1btuec21ow6m" path="res://Sprites/Snow0205_6_350.webp" id="4_tta0r"]
+[ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="5_o57bd"]
+[ext_resource type="Texture2D" uid="uid://cwo5mxproucdr" path="res://Sprites/pngtree-domestic-bird-rooster-png-image_11918833.png" id="7_1rgwy"]
+[ext_resource type="AudioStream" uid="uid://by5clmspv3uhe" path="res://Audio/rudy_rooster_crowing-shelley-1948282641.mp3" id="8_cccwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ui3te"]
 size = Vector2(3164.0005, 166.1875)
@@ -160,7 +165,11 @@ size = Vector2(97.647, 573.07715)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1q4s"]
 size = Vector2(49, 1064)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dshhh"]
+radius = 176.55594
+
 [node name="LevelMountian1" type="Node2D" unique_id=847851098]
+script = ExtResource("1_nv01e")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_3745l")]
 position = Vector2(4965, 694)
@@ -543,5 +552,113 @@ script = ExtResource("3_0j81s")
 position = Vector2(51, -108.40744)
 shape = SubResource("RectangleShape2D_c1q4s")
 
+[node name="Textures_Polygon" type="Node2D" parent="." unique_id=197595778]
+
+[node name="Rock_1" type="Polygon2D" parent="Textures_Polygon" unique_id=996727193]
+texture_repeat = 2
+position = Vector2(3326, 2041)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(1101, -1102, 2360, -1106, 3041, -1107, 4247, -1112, 4991, -923, 5044, -4036, 4719, -4068, 4709, -4080, 4373, -3976, 4266, -3719, 4284, -3709, 4715, -3261, 4718, -3262, 4724, -1168, 4278, -1277, 3968, -1274, 3457, -1405, 3287, -1751, 3231, -1819, 2891, -1447, 2956, -1386, 2955, -1271, 2803, -1271, 2808, -1296, 2332, -1435, 2308, -1345, 1942, -1309, 1946.6812, -1276.5548, 1101, -1272)
+
+[node name="Rock_2" type="Polygon2D" parent="Textures_Polygon" unique_id=1178683719]
+texture_repeat = 2
+position = Vector2(3326, 2041)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(3312, -2810, 3450, -2705, 3542, -2589, 3548, -2593, 4046, -2314, 4151, -2395, 3975, -2623, 3966, -2613, 3594, -2734, 3471, -2893)
+
+[node name="Rock_3" type="Polygon2D" parent="Textures_Polygon" unique_id=2095917550]
+texture_repeat = 2
+position = Vector2(3326, 2041)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(724, -3071, 827, -2644, 808, -2591, 920, -2555, 1084, -3019)
+
+[node name="Rock_4" type="Polygon2D" parent="Textures_Polygon" unique_id=1244221654]
+texture_repeat = 2
+position = Vector2(3326, 2041)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(1758, -3588, 2349, -3720, 2390, -3549, 2357, -3537, 2360, -3524, 1896, -3332, 1895, -3318, 1649, -3344, 1640, -3336, 1570, -3435, 1762, -3566)
+
+[node name="Rock_5" type="Polygon2D" parent="Textures_Polygon" unique_id=542261892]
+texture_repeat = 2
+position = Vector2(3326, 2041)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(3069, -3622, 3073, -3535, 3058, -3495, 2999, -3472, 2921, -3520, 2929, -3591, 2964, -3645)
+
+[node name="Rock_6" type="Polygon2D" parent="Textures_Polygon" unique_id=1421732596]
+texture_repeat = 2
+position = Vector2(3326, 2041)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(1452, -4874, 2191, -4581, 2610, -4557, 2606, -4438, 2618, -4394, 2084, -4249, 1371, -4730, 1423, -4784)
+
+[node name="Rock_7" type="Polygon2D" parent="Textures_Polygon" unique_id=760578542]
+texture_repeat = 2
+position = Vector2(1248, 2497)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(2820, -4982, 2815, -4870, 2802, -4869, 2354, -4512, 1566, -4454, 1563, -4468, 1156, -4577, 1161, -4602, 1153, -4603, 1160, -4723, 1496, -4702, 2446, -5013, 2458, -4986, 2462, -5007)
+
+[node name="Rock_8" type="Polygon2D" parent="Textures_Polygon" unique_id=922119921]
+texture_repeat = 2
+position = Vector2(1248, 2497)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(-1092, -4066, -530, -4005, -9, -4059, 18, -3885, -274, -3146, -304, -3034, -982, -3205, -977, -3237, -1111, -3887)
+
+[node name="Rock_9" type="Polygon2D" parent="Textures_Polygon" unique_id=977638641]
+texture_repeat = 2
+position = Vector2(1248, 2497)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(-1788, -4089, -1547, -4601, -1596, -4673, -1596, -5312, -1598, -5540, -1601, -5662, -1780, -5681, -1777, -5155, -1907, -4472, -1949, -4200, -1936, -4200, -1947, -4163)
+
+[node name="Rock_10" type="Polygon2D" parent="Textures_Polygon" unique_id=2135689752]
+texture_repeat = 2
+position = Vector2(1248, 2497)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(-584, -5155, -377, -5158, -401, -6316, -602, -6298)
+
+[node name="Rock_11" type="Polygon2D" parent="Textures_Polygon" unique_id=1711951597]
+texture_repeat = 2
+position = Vector2(1248, 2497)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(-1859, -6278, -2320, -5745, -2361, -5791, -2899, -5844, -2807, -6749, -2253, -6686, -1768, -6468, -1851, -6273)
+
+[node name="Rock_12" type="Polygon2D" parent="Textures_Polygon" unique_id=531377847]
+texture_repeat = 2
+position = Vector2(1248, 2497)
+texture = ExtResource("4_tta0r")
+polygon = PackedVector2Array(5999, -2184, 6258, -2207, 6275.258, -2150.098, 6295, -2085, 6247, -2055, 5990, -2034, 5947, -2066, 5950, -2153)
+
+[node name="Wood2" type="Sprite2D" parent="Textures_Polygon" unique_id=1062917747]
+position = Vector2(6822.405, -842.5947)
+rotation = -0.22689278
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_o57bd")
+
+[node name="Wood3" type="Sprite2D" parent="Textures_Polygon" unique_id=1205301902]
+position = Vector2(6723.4053, -819.595)
+rotation = -0.22689278
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_o57bd")
+
+[node name="Wood4" type="Sprite2D" parent="Textures_Polygon" unique_id=1323051302]
+position = Vector2(6624.0005, -796.00024)
+rotation = -0.22689278
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_o57bd")
+
+[node name="bird" type="Sprite2D" parent="." unique_id=446996967]
+position = Vector2(6218, 691)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_1rgwy")
+flip_h = true
+
+[node name="Rooster" type="Area2D" parent="bird" unique_id=1771473245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird/Rooster" unique_id=1392920782]
+position = Vector2(6, 0)
+shape = SubResource("CircleShape2D_dshhh")
+
+[node name="Screm" type="AudioStreamPlayer" parent="bird" unique_id=274898612]
+stream = ExtResource("8_cccwg")
+
 [connection signal="body_entered" from="Platforms_Special/Wall_Bouncy" to="Platforms_Special/Wall_Bouncy" method="_on_body_entered"]
 [connection signal="body_exited" from="Platforms_Special/Wall_Bouncy" to="Platforms_Special/Wall_Bouncy" method="_on_body_exited"]
+[connection signal="body_entered" from="bird/Rooster" to="." method="_on_rooster_body_entered"]
