@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cdutx8mocx77o"]
+[gd_scene format=3 uid="uid://dgjc4wsslmwwq"]
 
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/banana-peel.png" id="9_1vapn"]
 [ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
-[ext_resource type="Script" path="res://Scripts/ambient_light_chasm.gd" id="12_7s22q"]
+[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
 [ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
@@ -860,6 +860,7 @@ scale = Vector2(0.48958203, 0.9497001)
 texture = ExtResource("10_870hm")
 
 [node name="Lighting" type="Node2D" parent="." unique_id=401589430]
+visible = false
 
 [node name="DirectionalLight_Darkness" type="DirectionalLight2D" parent="Lighting" unique_id=1019431545]
 color = Color(0.9856015, 0.8393236, 0.7695522, 1)
