@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_wsm7b"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="3_0j7k5"]
 [ext_resource type="PackedScene" path="res://Instances/NPC.tscn" id="4_1bfll"]
-[ext_resource type="Script" path="res://Levels/area_2d.gd" id="5_ofl31"]
-[ext_resource type="Script" path="res://Levels/trigger_zoom_large.gd" id="6_ydkre"]
+[ext_resource type="Script" uid="uid://btw5dhdxaosrd" path="res://Scripts/tools/trigger_camera_zoom.gd" id="5_ofl31"]
+[ext_resource type="Script" uid="uid://cki0k01jlh75e" path="res://Scripts/tools/trigger_zoom_large.gd" id="6_ydkre"]
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="7_a75ix"]
-[ext_resource type="Script" path="res://Levels/trigger_quick_zoom.gd" id="8_b37w0"]
+[ext_resource type="Script" uid="uid://dah81ir5afas8" path="res://Scripts/tools/trigger_quick_zoom.gd" id="8_b37w0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birg6"]
 size = Vector2(2462, 797.75)

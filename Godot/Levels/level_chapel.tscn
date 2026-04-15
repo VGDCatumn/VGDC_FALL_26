@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://m17y1bugpkr3"]
 
-[ext_resource type="Script" path="res://Scripts/windmill.gd" id="1_8qiq3"]
+[ext_resource type="Script" uid="uid://b5o8ugjygl2jd" path="res://Scripts/windmill.gd" id="1_8qiq3"]
 [ext_resource type="PackedScene" uid="uid://p8rhmmye75ha" path="res://Instances/procedural bridge/procedural bridge.tscn" id="2_1y6fy"]
-[ext_resource type="Script" path="res://Scripts/windmill_wing.gd" id="2_icpcy"]
-[ext_resource type="Script" path="res://Scripts/organ_keys.gd" id="2_kybqk"]
+[ext_resource type="Script" uid="uid://b6rx5q53bydxi" path="res://Scripts/windmill_wing.gd" id="2_icpcy"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_kybqk"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="4_423jg"]
+[ext_resource type="PackedScene" uid="uid://cvxtd17oyq8s6" path="res://Instances/piano.tscn" id="5_doqjc"]
 [ext_resource type="Script" uid="uid://cswex5v20fyms" path="res://Scripts/wall_bouncy.gd" id="6_423jg"]
-[ext_resource type="PackedScene" path="res://Instances/platform_chandelier.tscn" id="7_kigi5"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="9_1kuye"]
+[ext_resource type="PackedScene" uid="uid://mf77x41qkpkd" path="res://Instances/platform_chandelier.tscn" id="7_kigi5"]
+[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="9_1kuye"]
+[ext_resource type="Texture2D" uid="uid://ddm6l04yhechm" path="res://Sprites/camera_sign.png" id="10_doqjc"]
+[ext_resource type="Texture2D" uid="uid://b1btuec21ow6m" path="res://Sprites/Snow0205_6_350.webp" id="11_t6ncy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpu43"]
 size = Vector2(2058.25, 525.87506)
@@ -90,9 +92,6 @@ size = Vector2(184.23105, 435.65717)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kigi5"]
 size = Vector2(122.55774, 698.9375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vt0k"]
-size = Vector2(409.11554, 236.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6jdn"]
 size = Vector2(798.55774, 236.375)
@@ -265,9 +264,6 @@ size = Vector2(2473.0002, 28.109375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tuqh"]
 size = Vector2(529.4331, 95.786446)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d2qf"]
-size = Vector2(45, 412.75003)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ncy"]
 size = Vector2(133.5, 829)
 
@@ -438,11 +434,6 @@ position = Vector2(-9413.974, -7980)
 rotation = 0.26311082
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_kigi5")
-
-[node name="CollisionShape2D166" type="CollisionShape2D" parent="StaticCollisions" unique_id=362030967]
-position = Vector2(-10057.974, -6805.1875)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_8vt0k")
 
 [node name="CollisionShape2D168" type="CollisionShape2D" parent="StaticCollisions" unique_id=1696006652]
 position = Vector2(-9260.253, -6351)
@@ -826,16 +817,6 @@ script = ExtResource("2_icpcy")
 
 [node name="Chapel" type="Node2D" parent="SpecialCollisions" unique_id=1484175070]
 
-[node name="OrganKeys" type="Area2D" parent="SpecialCollisions/Chapel" unique_id=910015880]
-position = Vector2(-10056.417, -6924)
-script = ExtResource("2_kybqk")
-
-[node name="CollisionShape2D138" type="CollisionShape2D" parent="SpecialCollisions/Chapel/OrganKeys" unique_id=1051514921]
-position = Vector2(0, 1)
-rotation = -1.5707964
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_2d2qf")
-
 [node name="Spring" parent="SpecialCollisions/Chapel" unique_id=261987189 instance=ExtResource("4_423jg")]
 position = Vector2(-9292.974, -6600)
 rotation = -0.41978014
@@ -847,6 +828,9 @@ rotation = 0.5906817
 [node name="Spring4" parent="SpecialCollisions/Chapel" unique_id=467499131 instance=ExtResource("4_423jg")]
 position = Vector2(-10515.974, -8488)
 rotation = 1.0439528
+
+[node name="Piano" parent="SpecialCollisions/Chapel" unique_id=2007828519 instance=ExtResource("5_doqjc")]
+position = Vector2(-10113, -6703)
 
 [node name="BounceWall" type="Area2D" parent="SpecialCollisions/Chapel" unique_id=1714699741]
 position = Vector2(-9494.974, -7957.4688)
@@ -916,7 +900,21 @@ position = Vector2(-1552.4883, -3736.019)
 shape = SubResource("RectangleShape2D_5oubu")
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="SpecialCollisions/Chapel/OrganKeys" to="SpecialCollisions/Chapel/OrganKeys" method="_on_body_entered"]
+[node name="TextureSprites" type="Node2D" parent="." unique_id=2019596695]
+
+[node name="CameraSign" type="Sprite2D" parent="TextureSprites" unique_id=1704469316]
+position = Vector2(-356.00003, -5248.0005)
+rotation = -0.20797104
+texture = ExtResource("10_doqjc")
+
+[node name="TexturePolygons" type="Node2D" parent="." unique_id=265890255]
+z_index = -1
+
+[node name="Polygon2D" type="Polygon2D" parent="TexturePolygons" unique_id=2048320710]
+texture_repeat = 2
+texture = ExtResource("11_t6ncy")
+polygon = PackedVector2Array(6858, 1525, 6844, -8849, 4443, -8766, 4526, -3737, 4211, -3388, 4155, -3048, 3799, -3004, 3818, -2856, 4066, -2515, 4005, -2158, 4351, -2107, 4548, -1702, 4564, -1277, 4254, -1176, 4127, -1073, 4209, -850, 3924, -600, 3836, -514, 3632, -414, 3969, -226, 3947, 546, 3417, 677, 3304, 584, 2841, 714, 1505, 725, 1490, 1492, 4615, 1486)
+
 [connection signal="body_entered" from="SpecialCollisions/Chapel/BounceWall" to="SpecialCollisions/Chapel/BounceWall" method="_on_body_entered"]
 [connection signal="body_exited" from="SpecialCollisions/Chapel/BounceWall" to="SpecialCollisions/Chapel/BounceWall" method="_on_body_exited"]
 [connection signal="body_entered" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_entered"]

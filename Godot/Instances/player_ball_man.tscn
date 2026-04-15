@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://beu3hj4ldqaep" path="res://Audio/marcy-ow.mp3" id="5_j2sbk"]
 [ext_resource type="AudioStream" uid="uid://bsswpijfubaja" path="res://Audio/marcy-boing.mp3" id="6_cjflg"]
 [ext_resource type="PackedScene" uid="uid://ehqfyyxqfg4g" path="res://Instances/vector_arrow.tscn" id="6_s6csc"]
-[ext_resource type="Script" uid="uid://chllwsbegxpvy" path="res://Scripts/sfx_bounce.gd" id="6_vn324"]
+[ext_resource type="Script" uid="uid://chllwsbegxpvy" path="res://Scripts/tools/sfx_bounce.gd" id="6_vn324"]
 [ext_resource type="AudioStream" uid="uid://d0wxuunrje3w5" path="res://Audio/parry-ultrakill.mp3" id="8_2gjm8"]
 [ext_resource type="AudioStream" uid="uid://bvioti255t7sd" path="res://Audio/moving-stone-2.mp3" id="9_cjflg"]
 
