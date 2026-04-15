@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bi1y5jywamacu"]
 
+[ext_resource type="Script" uid="uid://ctrshqg8an3ex" path="res://Scripts/tools/trampoline_var.gd" id="1_frsjm"]
 [ext_resource type="Script" uid="uid://cmyf4bijry20b" path="res://Scripts/platform_trampoline.gd" id="1_tesa8"]
 [ext_resource type="Texture2D" uid="uid://c7vxoomytx2yi" path="res://Sprites/woolTexture.png" id="1_ukaof"]
 
@@ -47,7 +48,8 @@ _data = {
 }
 
 [node name="PlatformBouncy" type="StaticBody2D" unique_id=730826749]
-script = ExtResource("1_tesa8")
+position = Vector2(-541, -76)
+script = ExtResource("1_frsjm")
 
 [node name="Carpet" type="Sprite2D" parent="." unique_id=339377703]
 position = Vector2(-112.99999, -179.99995)
@@ -60,18 +62,20 @@ centered = false
 position = Vector2(-0.5, -102.5)
 shape = SubResource("RectangleShape2D_tesa8")
 
-[node name="Detecter" type="Area2D" parent="." unique_id=220208388]
+[node name="Area2D" type="Area2D" parent="." unique_id=220208388]
 position = Vector2(0, 44.99997)
+script = ExtResource("1_tesa8")
 
-[node name="Collider" type="CollisionShape2D" parent="Detecter" unique_id=353615375]
+[node name="Collider" type="CollisionShape2D" parent="Area2D" unique_id=353615375]
 position = Vector2(0, -177.99998)
 scale = Vector2(11.693978, 11.693978)
 shape = SubResource("RectangleShape2D_yimsn")
 
-[node name="Timer" type="Timer" parent="." unique_id=1257867113]
+[node name="Timer" type="Timer" parent="Area2D" unique_id=1257867113]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353392493]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=353392493]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_y16r3")
 
-[connection signal="body_entered" from="Detecter" to="." method="_on_detecter_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

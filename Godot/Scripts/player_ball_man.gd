@@ -84,6 +84,12 @@ func draw_trail():
 		trail.remove_point(0)
 		
 
+# Checks if a surface is on a bonucible surface (not in the no_bounce group)
+func is_bouncy_surface() -> bool:
+	var collision = get_last_slide_collision()
+	return collision and not collision.get_collider().is_in_group("no_bounce")
+	#Returns true if on a bouncy surface and false when not a bouncy surface
+	
 # apply regular player movement 
 func regular_movement_mode(delta):
 	if (has_wobble_rotation): wobble_rotate(delta) # rotate player with left/right
@@ -96,8 +102,11 @@ func regular_movement_mode(delta):
 
 	move_and_slide() # Move character with built-in Godot collisions
 
+	
 	# Determine bounce category based off built-in Godot collision functions
-	if is_on_floor(): handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
+	if is_on_floor(): 
+		if is_bouncy_surface():
+			handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
 	if is_on_wall(): handle_wall_bounce() # handle bounce collisions with wall
 	if is_on_ceiling(): handle_ceiling_bounce() # handle bounce collision with ceiling
 	else: handle_fall(delta) # apply gravity and handle slam down
