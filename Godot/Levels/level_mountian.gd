@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,10 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/level_village.tscn")
-
-
-
-func _on_credits_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/credits.tscn")
+func _on_rooster_body_entered(body: Node2D) -> void:
+	
+	if body.is_in_group("PLAYER"):
+		$bird/Screm.play()

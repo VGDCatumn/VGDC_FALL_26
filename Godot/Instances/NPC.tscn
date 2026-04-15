@@ -1,27 +1,31 @@
 [gd_scene format=3 uid="uid://bv2dadkb4j6tm"]
 
-[ext_resource type="Script" uid="uid://6aktp3njyrp0" path="res://Scripts/npc.gd" id="1_yieg6"]
-[ext_resource type="Texture2D" uid="uid://bt0vyc8is552u" path="res://Sprites/morsh.png" id="2_rsl6y"]
+[ext_resource type="Script" uid="uid://6aktp3njyrp0" path="res://Instances/npc.gd" id="1_yieg6"]
+[ext_resource type="Texture2D" uid="uid://bt0vyc8is552u" path="res://Sprites/placeholder_sprite.png" id="2_rsl6y"]
+[ext_resource type="PackedScene" uid="uid://b6ytgwwmrmlbe" path="res://Dialogue/dialogue.tscn" id="3_rsl6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxm2j"]
-size = Vector2(237, 143)
+size = Vector2(1275, 445.375)
 
 [node name="Npc" type="Node2D" unique_id=652284848]
-position = Vector2(421, 261)
+position = Vector2(0, -6)
 script = ExtResource("1_yieg6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=155660874]
-position = Vector2(-2, 3)
-scale = Vector2(0.3754717, 0.3754717)
+position = Vector2(-35.312527, -114.312515)
+scale = Vector2(0.90330184, 0.9033017)
 texture = ExtResource("2_rsl6y")
 
 [node name="speakZone" type="Area2D" parent="." unique_id=287097051]
-position = Vector2(-1, 4)
+position = Vector2(-1, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="speakZone" unique_id=1979070103]
-position = Vector2(2, -24)
+position = Vector2(-35.5, -225.3125)
 shape = SubResource("RectangleShape2D_xxm2j")
 
-[node name="Label" type="Label" parent="." unique_id=747627364]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Dialogue" parent="." unique_id=806464691 instance=ExtResource("3_rsl6y")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="speakZone" to="." method="_on_speak_zone_body_entered"]
+[connection signal="body_exited" from="speakZone" to="." method="_on_speak_zone_body_exited"]
+[connection signal="dialogue_finished" from="Dialogue" to="." method="_on_dialogue_dialogue_finished"]

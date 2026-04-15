@@ -1,7 +1,8 @@
 extends AudioStreamPlayer
 
 ### CATEGORIZE BOUNCE SFX
-
+var funny = true
+var funny_bounce = preload("res://Audio/marcy-boing.mp3")
 var bounce_soft_sounds = [
 	preload("res://Audio/bounce-soft-1.mp3"),
 	preload("res://Audio/bounce-soft-2.mp3"),
@@ -20,12 +21,17 @@ func _on_ball_man_send_bounce(velocity: Vector2) -> void:
 	var magnitude = velocity.length()
 	
 	# soft bounce
-	if (magnitude < 1600):
-		# pick a random soft audio as the AudioPlayer stream
-		self.stream = bounce_soft_sounds.pick_random() 
-	# hard bounce
+	if funny == false:
+		if (magnitude < 1600):
+			# pick a random soft audio as the AudioPlayer stream
+			self.stream = bounce_soft_sounds.pick_random() 
+		# hard bounce
+		else:
+			self.stream = bounce_hard_sounds.pick_random() 
+			
+		# Play audio
+		self.play()
 	else:
-		self.stream = bounce_hard_sounds.pick_random() 
-		
-	# Play audio
-	self.play()
+		self.stream = funny_bounce
+		self.pitch_scale = 1.7
+		self.play()

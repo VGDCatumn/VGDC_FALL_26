@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt0vyc8is552u"
-path="res://.godot/imported/morsh.png-1f893ec5d85d939324d2b9bebdd0e170.ctex"
+uid="uid://bm4h1lqadmtb0"
+path="res://.godot/imported/Banana_PNG_Clipart.png-60b3af870007454ae51baca6e8e19b25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/morsh.png"
-dest_files=["res://.godot/imported/morsh.png-1f893ec5d85d939324d2b9bebdd0e170.ctex"]
+source_file="res://Sprites/Banana_PNG_Clipart.png"
+dest_files=["res://.godot/imported/Banana_PNG_Clipart.png-60b3af870007454ae51baca6e8e19b25.ctex"]
 
 [params]
 

@@ -118,6 +118,8 @@ libraries/ = SubResource("AnimationLibrary_4l75h")
 stream = ExtResource("3_be82h")
 pitch_scale = 1.64
 
+[node name="Timer" type="Timer" parent="." unique_id=1979168379]
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2059024319]
 position = Vector2(1, 25.750011)
 scale = Vector2(0.7874999, 1.0078125)
@@ -133,3 +135,4 @@ scale = Vector2(0.5796874, 0.8156249)
 blend_mode = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

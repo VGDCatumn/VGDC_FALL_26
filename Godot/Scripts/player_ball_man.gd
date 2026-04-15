@@ -20,6 +20,8 @@ var start_fall_height := 0.0 # apex height of jump
 var end_fall_height := 0.0 
 var last_fall_height := 0.0
 var recovery_fall_threshold = 1000
+var parry_strength := 1.5
+var about_to_parry := false
 
 # Developer Tool Varaibles 
 var is_dev_mode_enabled : bool = false
@@ -82,6 +84,12 @@ func draw_trail():
 		trail.remove_point(0)
 		
 
+# Checks if a surface is on a bonucible surface (not in the no_bounce group)
+func is_bouncy_surface() -> bool:
+	var collision = get_last_slide_collision()
+	return collision and not collision.get_collider().is_in_group("no_bounce")
+	#Returns true if on a bouncy surface and false when not a bouncy surface
+	
 # apply regular player movement 
 func regular_movement_mode(delta):
 	if (has_wobble_rotation): wobble_rotate(delta) # rotate player with left/right
@@ -94,8 +102,11 @@ func regular_movement_mode(delta):
 
 	move_and_slide() # Move character with built-in Godot collisions
 
+	
 	# Determine bounce category based off built-in Godot collision functions
-	if is_on_floor(): handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
+	if is_on_floor(): 
+		if is_bouncy_surface():
+			handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
 	if is_on_wall(): handle_wall_bounce() # handle bounce collisions with wall
 	if is_on_ceiling(): handle_ceiling_bounce() # handle bounce collision with ceiling
 	else: handle_fall(delta) # apply gravity and handle slam down
@@ -103,7 +114,7 @@ func regular_movement_mode(delta):
 	calculate_fall_height() # set fall_height variables
 	print_bounce_info() # debugging tool to print bounce stats
 	handle_aerial_movement(delta) # give player air control
-	
+	check_for_parry()
 	# Give player an opportunity to shoot up if they fall down a great distance
 	if (has_recovery_bounce): handle_recovery_bounce()
 
@@ -142,8 +153,11 @@ func handle_floor_bounce():
 	# velocity = prev_velocity.bounce(floor_normal) * floor_bounce_multiplier
 	
 	# Bounce player up (negative y), based on their speed right before the bounce
+
 	velocity.y += -abs(prev_velocity.y) * floor_bounce_multiplier
-	
+
+		
+		
 	# Add velocity in direction of rotation on a bounce
 	# Velocity in the x direction is noticeably greater --> for more horizontal control
 	velocity.x += cos(PI/2 - rotation) * 800
@@ -242,12 +256,19 @@ func calculate_fall_height():
 	if (position.y < start_fall_height):
 		start_fall_height = position.y
 	end_fall_height = position.y 
-	
+	var fall_height = end_fall_height - start_fall_height
 	# Store last_fall_height on floor bounce
+	if fall_height > recovery_fall_threshold:
+		$SpriteColorChange.play("TurnToRed")
+		$Fire.emitting = true
 	if is_on_floor():
-		var fall_height = end_fall_height - start_fall_height
+		if $SpriteColorChange.current_animation == "TurnToRed":
+			$SpriteColorChange.play("Cooldown")
+			$Fire.emitting = false
 		if (fall_height > 0): 
 			last_fall_height = fall_height 
+			#detects if the player can parry and parries if they can
+			ground_parry(fall_height)
 		start_fall_height = position.y # Reset jump height
 
 func handle_recovery_bounce():
@@ -258,7 +279,7 @@ func handle_recovery_bounce():
 	if (Input.is_action_just_released("move_down")):
 		var launch_direction = -transform.y
 		velocity = launch_direction * last_fall_height
-
+		
 		# Revert to normal movement
 		has_wobble_rotation = true
 		has_recovery_bounce = false
@@ -317,3 +338,20 @@ func _on_person_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Physical"):
 		# $Audio_Ow.play() # TURN OFF FOR DEMO
 		pass
+
+func check_for_parry():
+	if $ParryCheck.is_colliding():
+		if Input.is_action_just_pressed("move_down"):
+			about_to_parry = true
+			#detects whether or not someone can parry the ground once it hits, minus the fall height which is calculated later
+
+func ground_parry(fall_height):
+	if fall_height >= recovery_fall_threshold:
+		if about_to_parry == true:
+			var launch_direction = -transform.y
+			velocity = launch_direction * fall_height 
+			velocity.y *= parry_strength
+			$AnimationPlayer.play("Parry")
+			has_aerial_movement = true
+			$Parry.play()
+	about_to_parry = false
