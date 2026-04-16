@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://nn5c5y6i6rcm"]
+
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_gqh4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otmkg"]
+size = Vector2(723, 374)
+
+[node name="LevelMoonV2" type="Node2D" unique_id=1292622103]
+
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_gqh4e")]
+position = Vector2(0, -128)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1070917389]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=664890595]
+position = Vector2(-6.5, 177)
+shape = SubResource("RectangleShape2D_otmkg")

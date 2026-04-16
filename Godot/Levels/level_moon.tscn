@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/level_moon.gd" id="1_birg6"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_wsm7b"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="3_0j7k5"]
-[ext_resource type="PackedScene" path="res://Instances/NPC.tscn" id="4_1bfll"]
+[ext_resource type="PackedScene" uid="uid://bv2dadkb4j6tm" path="res://Instances/NPC.tscn" id="4_1bfll"]
 [ext_resource type="Script" uid="uid://btw5dhdxaosrd" path="res://Scripts/tools/trigger_camera_zoom.gd" id="5_ofl31"]
 [ext_resource type="Script" uid="uid://cki0k01jlh75e" path="res://Scripts/tools/trigger_zoom_large.gd" id="6_ydkre"]
 [ext_resource type="Texture2D" uid="uid://cl1wb0ivlwuqy" path="res://Sprites/trophy.webp" id="7_a75ix"]
@@ -449,7 +449,7 @@ shape = SubResource("RectangleShape2D_7m87y")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticCollisions" unique_id=1164946788]
 position = Vector2(-1922.0002, -1637.0001)
-rotation = -0.71873903
+rotation = -0.718739
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_54lmr")
 
@@ -465,7 +465,7 @@ shape = SubResource("RectangleShape2D_l748r")
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticCollisions" unique_id=191282547]
 position = Vector2(6478.3115, -5728.944)
 rotation = 0.19024087
-scale = Vector2(0.9999997, 0.9999997)
+scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_ps8l2")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticCollisions" unique_id=1205696323]
