@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bphbftddarv4d" path="res://Levels/level_village.tscn" id="3_hxsbd"]
 [ext_resource type="PackedScene" uid="uid://m17y1bugpkr3" path="res://Levels/level_chapel.tscn" id="4_ybcgk"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_lachh"]
-[ext_resource type="PackedScene" uid="uid://b5mrlvmhiayva" path="res://Levels/level_moon.tscn" id="6_jty1k"]
+[ext_resource type="PackedScene" uid="uid://nn5c5y6i6rcm" path="res://Levels/level_moon_v2.tscn" id="6_jty1k"]
 
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
@@ -23,5 +23,5 @@ position = Vector2(-13826, -8746)
 [node name="LevelChapel" parent="." unique_id=203127601 instance=ExtResource("4_ybcgk")]
 position = Vector2(8246, -17678)
 
-[node name="LevelMoon" parent="." unique_id=219423493 instance=ExtResource("6_jty1k")]
-position = Vector2(5327, -32425)
+[node name="LevelMoonV2" parent="." unique_id=1292622103 instance=ExtResource("6_jty1k")]
+position = Vector2(0, -38000)
