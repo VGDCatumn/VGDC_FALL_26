@@ -10,7 +10,7 @@
 size = Vector2(366.56253, 93.51544)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3e4a"]
-size = Vector2(85.66625, 33.75555)
+size = Vector2(85.66625, 44.34601)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8jaq"]
 size = Vector2(770.75323, 164.40585)
@@ -25,7 +25,7 @@ size = Vector2(702.2231, 45.158085)
 size = Vector2(2166, 492.99997)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yklj0"]
-size = Vector2(422.5094, 65.37485)
+size = Vector2(412.98737, 64.287735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8yfa"]
 size = Vector2(320.8605, 170.25752)
@@ -37,10 +37,10 @@ size = Vector2(320.8605, 251.06107)
 size = Vector2(320.8605, 225.10477)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42fc2"]
-size = Vector2(320.8605, 170.25752)
+size = Vector2(320.8605, 27.961716)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvmp8"]
-size = Vector2(504.6239, 170.25752)
+size = Vector2(996.00995, 170.25752)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1jtq"]
 size = Vector2(322.39255, 174.10007)
@@ -190,13 +190,13 @@ size = Vector2(783.9707, 46.22683)
 size = Vector2(1969.4197, 53.22105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cknu2"]
-size = Vector2(1991.3131, 46.22683)
+size = Vector2(157.34538, 283.23026)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grvuj"]
 size = Vector2(1412.7491, 156.67307)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5d7s"]
-size = Vector2(538.83167, 82.23619)
+size = Vector2(591.9669, 210.03793)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7j6u"]
 size = Vector2(290.66534, 1141.4314)
@@ -240,8 +240,14 @@ size = Vector2(143.00931, 267.5249)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xh2x"]
 size = Vector2(1117.8329, 84.276535)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecw0b"]
+size = Vector2(135.42719, 46.423546)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gveq3"]
 size = Vector2(525.34125, 115.10508)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psdw5"]
+size = Vector2(140.67062, 117.552536)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qv53x"]
 size = Vector2(1121.4974, 97.03871)
@@ -326,7 +332,7 @@ scale = Vector2(4.887336, 7.4183855)
 shape = SubResource("RectangleShape2D_cy8gr")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=363069967]
-position = Vector2(2365.3489, -596.2814)
+position = Vector2(2402.0886, -610.18335)
 rotation = 1.2090576
 scale = Vector2(4.887336, 7.418384)
 shape = SubResource("RectangleShape2D_s3e4a")
@@ -353,8 +359,8 @@ position = Vector2(-16.999939, -920.5)
 shape = SubResource("RectangleShape2D_c3mc4")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1725447567]
-position = Vector2(-2400.404, -2351.2715)
-rotation = -0.12440594
+position = Vector2(-2423.9932, -2352.3853)
+rotation = -0.12440596
 scale = Vector2(4.887336, 7.418385)
 shape = SubResource("RectangleShape2D_yklj0")
 
@@ -371,19 +377,19 @@ scale = Vector2(4.887335, 7.4183855)
 shape = SubResource("RectangleShape2D_gsr3b")
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1856279455]
-position = Vector2(-2303.255, 749.4015)
-rotation = -0.5408592
+position = Vector2(-2650.0002, 976)
+rotation = 0.0024289745
 scale = Vector2(4.8873353, 7.4183855)
 shape = SubResource("RectangleShape2D_yja4e")
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=730865363]
-position = Vector2(-1370.0002, 1425)
+position = Vector2(-1245, 945.0001)
 rotation = 0.45739353
-scale = Vector2(4.8873353, 7.4183855)
+scale = Vector2(4.8873353, 7.418386)
 shape = SubResource("RectangleShape2D_42fc2")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1879775223]
-position = Vector2(230.8597, 1794.9663)
+position = Vector2(-968.9057, 1844.4194)
 rotation = -0.04119578
 scale = Vector2(4.8873353, 7.4183855)
 shape = SubResource("RectangleShape2D_yvmp8")
@@ -492,7 +498,7 @@ shape = SubResource("RectangleShape2D_jeygt")
 [node name="Spring" parent="Collisions/Sky_Island_5" unique_id=350678254 instance=ExtResource("2_axhnk")]
 position = Vector2(65.16681, -488.75705)
 rotation = -0.42755404
-spring_power = 2000
+spring_power = 2200
 
 [node name="Sky_Island_4" type="StaticBody2D" parent="Collisions" unique_id=1471046125]
 position = Vector2(1682.7966, -4962.137)
@@ -544,7 +550,7 @@ shape = SubResource("RectangleShape2D_aqbfk")
 position = Vector2(-30, 0)
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Collisions/Sky_Island_2" unique_id=693814539]
-position = Vector2(-1483.6483, -1983.342)
+position = Vector2(-1535, -1981)
 rotation = -2.960809
 shape = SubResource("RectangleShape2D_5qhkr")
 
@@ -560,7 +566,7 @@ rotation = 0.9726798
 shape = SubResource("RectangleShape2D_l58bv")
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Collisions/Sky_Island_2" unique_id=1872719490]
-position = Vector2(-1292.2013, -1792.0641)
+position = Vector2(-1343.553, -1789.722)
 rotation = 0.8249125
 scale = Vector2(1.5187079, 3.9123878)
 shape = SubResource("RectangleShape2D_2rrxn")
@@ -708,8 +714,8 @@ scale = Vector2(0.32852313, -1.3617824)
 shape = SubResource("RectangleShape2D_63ld4")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Collisions/Building_3" unique_id=769608338]
-position = Vector2(5299.096, -1505)
-scale = Vector2(0.32852313, -1.3617824)
+position = Vector2(5264.4995, -1378.9999)
+rotation = 0.51017106
 shape = SubResource("RectangleShape2D_cknu2")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="Collisions/Building_3" unique_id=1407760641]
@@ -718,8 +724,9 @@ scale = Vector2(1, -1.405)
 shape = SubResource("RectangleShape2D_grvuj")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Collisions/Building_3" unique_id=1632243487]
-position = Vector2(5559, -3017)
-scale = Vector2(0.99999994, -1.405)
+position = Vector2(5554.5083, -3031.7961)
+rotation = -0.24143678
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_c5d7s")
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="Collisions/Building_3" unique_id=1424621385]
@@ -816,9 +823,18 @@ position = Vector2(-104.113525, -2535)
 scale = Vector2(0.96814734, 2.8003051)
 shape = SubResource("RectangleShape2D_7xh2x")
 
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="Collisions/Building_5" unique_id=61087131]
+position = Vector2(-95.00015, -3307)
+scale = Vector2(0.96814734, 2.8003051)
+shape = SubResource("RectangleShape2D_ecw0b")
+
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="Collisions/Building_5" unique_id=1474366271]
 position = Vector2(-1710.6707, -1619.5525)
 shape = SubResource("RectangleShape2D_gveq3")
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="Collisions/Building_5" unique_id=766509566]
+position = Vector2(-2194, -1939)
+shape = SubResource("RectangleShape2D_psdw5")
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="Collisions/Building_5" unique_id=1465499175]
 position = Vector2(217.43199, -2907.6655)
