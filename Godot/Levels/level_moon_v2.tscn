@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://s5i0hw1lvfdl" path="res://Scripts/level_moon_v_2.gd" id="1_ahcuu"]
 [ext_resource type="Texture2D" uid="uid://e7n2vr0bs5tw" path="res://Sprites/moon.png" id="2_otmkg"]
+[ext_resource type="Texture2D" uid="uid://c78xbnhipxyit" path="res://Sprites/comet.png" id="4_8673m"]
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
+[ext_resource type="Texture2D" uid="uid://b1bfiwpr3gpa1" path="res://Sprites/saturn.png" id="5_0uarr"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo.png" id="5_p3huw"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="6_4lyc8"]
+[ext_resource type="Texture2D" uid="uid://dne1ao17n7qwx" path="res://Sprites/tractor_beam.png" id="6_lyyhm"]
+[ext_resource type="Texture2D" uid="uid://cggox2rpjcr0p" path="res://Sprites/jupiter.png" id="8_8673m"]
+[ext_resource type="Texture2D" uid="uid://g5etdfa8jhmk" path="res://Sprites/uranus.png" id="9_lyyhm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otmkg"]
 radius = 4700.0
@@ -40,6 +45,9 @@ size = Vector2(534, 150)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0s5t"]
 size = Vector2(1830.9314, 463.11243)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0kkj"]
+size = Vector2(534, 252.58276)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c11c3"]
 size = Vector2(534, 150)
 
@@ -48,7 +56,7 @@ size = Vector2(534, 150)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8673m"]
 radius = 153.29614
-height = 440.16162
+height = 398.63574
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3huw"]
 size = Vector2(371.84534, 186.45892)
@@ -63,19 +71,16 @@ size = Vector2(611.07983, 928.96484)
 size = Vector2(663.36163, 534.14355)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23p15"]
-size = Vector2(379.41992, 150)
+size = Vector2(376.42725, 132.60938)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t201x"]
-size = Vector2(379.41992, 150)
+size = Vector2(379.41992, 530.3804)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_186mc"]
-size = Vector2(612.6062, 334.59375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0kkj"]
-size = Vector2(379.41992, 150)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fivh"]
+size = Vector2(892.94104, 233.94629)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7crhs"]
-size = Vector2(636.29395, 150)
+size = Vector2(694.99, 148.76147)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24efb"]
 size = Vector2(2143.1501, 163.22498)
@@ -120,20 +125,20 @@ radius = 231.07791
 radius = 90.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhxqv"]
-radius = 47.765625
-height = 765.9624
+radius = 40.822266
+height = 796.3003
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejv5m"]
 radius = 80.31543
 height = 434.48877
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofch2"]
-radius = 9.198242
-height = 937.4863
+radius = 143.3982
+height = 1046.4746
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf7hj"]
-radius = 9.198242
-height = 937.4863
+radius = 32.000977
+height = 283.4756
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3huw"]
 radius = 164.0
@@ -144,7 +149,7 @@ radius = 254.0
 height = 866.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcuu"]
-size = Vector2(14047, 17486)
+size = Vector2(14047, 21560)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjyy0"]
 radius = 995.4828
@@ -152,8 +157,9 @@ radius = 995.4828
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l148e"]
 size = Vector2(2341.5, 1358)
 
-[node name="LevelMoonV2" type="Node2D" unique_id=1292622103]
+[node name="LevelMoonV2" type="Node2D" unique_id=1292622103 node_paths=PackedStringArray("tractor_beam")]
 script = ExtResource("1_ahcuu")
+tractor_beam = NodePath("UFO/TractorBeam")
 
 [node name="Moon" type="StaticBody2D" parent="." unique_id=1070917389]
 position = Vector2(2, -5692)
@@ -228,8 +234,8 @@ metadata/_edit_lock_ = true
 position = Vector2(-2614, -5948)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MoonFragments" unique_id=65870483]
-position = Vector2(-437, 803)
-rotation = -0.14358737
+position = Vector2(-674, 813)
+rotation = -0.31063926
 shape = SubResource("RectangleShape2D_lyyhm")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="MoonFragments" unique_id=2131019964]
@@ -239,22 +245,22 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_a0s5t")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MoonFragments" unique_id=1098679705]
-position = Vector2(-1684, 393)
+position = Vector2(-1759.6006, 573.4551)
 rotation = 0.26837498
-shape = SubResource("RectangleShape2D_lyyhm")
+shape = SubResource("RectangleShape2D_f0kkj")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MoonFragments" unique_id=512494344]
-position = Vector2(-384, -554.96045)
+position = Vector2(-593, -385.96045)
 rotation = -0.5531737
 shape = SubResource("RectangleShape2D_c11c3")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="MoonFragments" unique_id=893971384]
-position = Vector2(-314, -461.96045)
+position = Vector2(-523, -292.96045)
 rotation = -0.11235157
 shape = SubResource("RectangleShape2D_iox3k")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MoonFragments" unique_id=1855652706]
-position = Vector2(-58.002197, -620)
+position = Vector2(-281, -443)
 rotation = -0.10383253
 shape = SubResource("CapsuleShape2D_8673m")
 
@@ -277,38 +283,34 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_4lyc8")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MoonFragments" unique_id=12506760]
-position = Vector2(1586.9653, -1311.2329)
+position = Vector2(1575.9653, -1091)
 rotation = 1.4652807
 shape = SubResource("RectangleShape2D_2p50g")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="MoonFragments" unique_id=1779654118]
-position = Vector2(1155, -1045)
+position = Vector2(1144, -824.7671)
 rotation = -0.55438685
 shape = SubResource("RectangleShape2D_xmg4c")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MoonFragments" unique_id=1303353208]
-position = Vector2(-1936.8647, 190.22656)
+position = Vector2(-1990.1157, 322.36914)
 rotation = 1.5302233
 shape = SubResource("RectangleShape2D_23p15")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="MoonFragments" unique_id=1206371455]
-position = Vector2(-2152, 143)
-rotation = -0.36209035
+position = Vector2(-2146.629, 451.8579)
+rotation = -0.3620903
 shape = SubResource("RectangleShape2D_t201x")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="MoonFragments" unique_id=1223338036]
-position = Vector2(-2324, -1092)
+position = Vector2(-2195, -948)
 rotation = -0.6285373
-shape = SubResource("RectangleShape2D_186mc")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="MoonFragments" unique_id=490080186]
-position = Vector2(-2133, 408.99997)
-rotation = -2.1007345
-shape = SubResource("RectangleShape2D_f0kkj")
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_0fivh")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="MoonFragments" unique_id=319727305]
-position = Vector2(-1786, 501)
-rotation = 3.0515814
+position = Vector2(-1883.1138, 693.4707)
+rotation = -3.1362684
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_7crhs")
 
@@ -380,34 +382,47 @@ position = Vector2(-1807, -211)
 shape = SubResource("CircleShape2D_beice")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Planetarium" unique_id=155787666]
-position = Vector2(-65, -446)
+position = Vector2(-83, -562)
 shape = SubResource("CircleShape2D_nc6by")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Planetarium" unique_id=934393955]
-position = Vector2(292.00012, -565)
+position = Vector2(274.00012, -681)
 rotation = -1.8851262
 shape = SubResource("CapsuleShape2D_qhxqv")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Planetarium" unique_id=736426481]
-position = Vector2(144, -516)
+position = Vector2(126, -632)
 rotation = -1.8851262
 shape = SubResource("CapsuleShape2D_ejv5m")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Planetarium" unique_id=241216090]
-position = Vector2(-1809, -213)
-rotation = 2.9776587
+position = Vector2(-1883, -181)
+rotation = 3.008495
 shape = SubResource("CapsuleShape2D_ofch2")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Planetarium" unique_id=879351399]
-position = Vector2(175, 648)
-rotation = 1.8136369
+position = Vector2(492, 684)
+rotation = 1.9877759
 shape = SubResource("CapsuleShape2D_yf7hj")
 
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Planetarium" unique_id=721621807]
+position = Vector2(-128.00006, 556)
+rotation = 1.6119454
+shape = SubResource("CapsuleShape2D_yf7hj")
+
+[node name="Comet" type="Sprite2D" parent="Planetarium" unique_id=987712707]
+position = Vector2(151.00002, -632)
+rotation = 0.3970946
+scale = Vector2(2.8220835, 2.8220835)
+texture = ExtResource("4_8673m")
+metadata/_edit_lock_ = true
+
 [node name="UFO" type="StaticBody2D" parent="." unique_id=567435384]
-position = Vector2(601, -16878)
+position = Vector2(558, -18839)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Ufo" type="Sprite2D" parent="UFO" unique_id=1453147935]
+z_index = 1
 position = Vector2(-2.8848648e-05, -27)
 scale = Vector2(1.896, 1.896)
 texture = ExtResource("5_p3huw")
@@ -422,6 +437,9 @@ position = Vector2(-2.0000293, -16)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4lyc8")
 
+[node name="TractorBeam" type="Node2D" parent="UFO" unique_id=844001555]
+position = Vector2(13, 1362)
+
 [node name="Textures" type="Node2D" parent="." unique_id=409162680]
 metadata/_edit_lock_ = true
 
@@ -431,7 +449,7 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityTriggers/MoonGravity" unique_id=1742532390]
-position = Vector2(-16.5, -8753)
+position = Vector2(-16.5, -10790)
 shape = SubResource("RectangleShape2D_ahcuu")
 
 [node name="RegularGravity" type="Area2D" parent="GravityTriggers" unique_id=386309220]
@@ -446,21 +464,45 @@ position = Vector2(-152.75, -697)
 shape = SubResource("RectangleShape2D_l148e")
 
 [node name="ReverseGravity" type="Area2D" parent="GravityTriggers" unique_id=1052064592]
-position = Vector2(601, -16878)
+position = Vector2(558, -18839)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GravityTriggers/ReverseGravity" unique_id=1329443239]
 position = Vector2(-8.000028, 102)
 rotation = 0.018342495
 scale = Vector2(0.99999994, 0.99999994)
-polygon = PackedVector2Array(340.4103, 73.768555, 831.27454, 1861.0664, -681.36096, 1894.8154, -319.46036, 86.87402)
+polygon = PackedVector2Array(1603.1582, 811.7324, 2827.7786, 2960.6348, -2369.449, 3104.9824, -1485.9739, 887.4043)
+
+[node name="TractorBeam" type="Sprite2D" parent="GravityTriggers/ReverseGravity" unique_id=367641919]
+position = Vector2(310, 639.001)
+scale = Vector2(3.8508236, 1.708585)
+texture = ExtResource("6_lyyhm")
+offset = Vector2(-79, 378)
+
+[node name="Saturn" type="Sprite2D" parent="GravityTriggers" unique_id=733048817]
+position = Vector2(-1404.9995, -9437)
+rotation = -0.31981695
+scale = Vector2(-1.55, 1.55)
+texture = ExtResource("5_0uarr")
+metadata/_edit_lock_ = true
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_4lyc8")]
 position = Vector2(-10, -5022)
 
 [node name="Spring" parent="." unique_id=261987189 instance=ExtResource("6_4lyc8")]
 position = Vector2(581.31934, -11313)
-spring_power = 2200
+spring_power = 2500
+
+[node name="Jupiter" type="Sprite2D" parent="." unique_id=890740913]
+position = Vector2(-2612, -9379)
+scale = Vector2(1.4411383, 1.4411383)
+texture = ExtResource("8_8673m")
+
+[node name="Uranus" type="Sprite2D" parent="." unique_id=1763890961]
+position = Vector2(-3391.0002, -10280)
+rotation = 2.8681164
+scale = Vector2(0.95894957, 0.95894957)
+texture = ExtResource("9_lyyhm")
 
 [connection signal="body_entered" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_exited"]
