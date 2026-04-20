@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cvxtd17oyq8s6"]
+
+[ext_resource type="Script" uid="uid://cwdrjnqq8de7" path="res://Scripts/platform_piano.gd" id="1_6ss62"]
+[ext_resource type="Texture2D" uid="uid://bua0lgukn6cbs" path="res://Sprites/piano_1.png" id="2_2k15s"]
+[ext_resource type="AudioStream" uid="uid://c8wilbnvwgu8y" path="res://Audio/piano_note0.mp3" id="3_3w1m6"]
+[ext_resource type="AudioStream" uid="uid://5rjt5u3ikrhg" path="res://Audio/piano_note8.mp3" id="4_21gns"]
+[ext_resource type="AudioStream" uid="uid://4y3sig3j1s4n" path="res://Audio/piano_note!.mp3" id="5_gewfa"]
+[ext_resource type="AudioStream" uid="uid://dmaidj2lifmcy" path="res://Audio/piano_note@.mp3" id="6_w875a"]
+[ext_resource type="AudioStream" uid="uid://ddipo3bem4p1t" path="res://Audio/piano_note^.mp3" id="7_pw8xv"]
+[ext_resource type="AudioStream" uid="uid://8bi7gcm1ents" path="res://Audio/piano_note_.mp3" id="8_ctetu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vt0k"]
+size = Vector2(579.00006, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d2qf"]
+size = Vector2(26.5, 468)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6ss62"]
+playback_mode = 1
+streams_count = 6
+stream_0/stream = ExtResource("3_3w1m6")
+stream_1/stream = ExtResource("4_21gns")
+stream_2/stream = ExtResource("5_gewfa")
+stream_3/stream = ExtResource("6_w875a")
+stream_4/stream = ExtResource("7_pw8xv")
+stream_5/stream = ExtResource("8_ctetu")
+
+[node name="Piano" type="Node2D" unique_id=2007828519]
+script = ExtResource("1_6ss62")
+
+[node name="PianoBody" type="StaticBody2D" parent="." unique_id=1811300326]
+position = Vector2(2.9169922, -95.99951)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="CollisionShape2D166" type="CollisionShape2D" parent="PianoBody" unique_id=851225301]
+shape = SubResource("RectangleShape2D_8vt0k")
+
+[node name="PianoKeys" type="Area2D" parent="." unique_id=1382485239]
+position = Vector2(44, -236.99951)
+
+[node name="CollisionShape2D138" type="CollisionShape2D" parent="PianoKeys" unique_id=302062246]
+position = Vector2(-37.583008, 32.25)
+rotation = -1.5707964
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_2d2qf")
+
+[node name="Piano1" type="Sprite2D" parent="." unique_id=1906008332]
+position = Vector2(1.4169922, -248)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_2k15s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1574718953]
+position = Vector2(0.4169922, -301)
+stream = SubResource("AudioStreamRandomizer_6ss62")
+
+[connection signal="body_entered" from="PianoKeys" to="." method="_on_piano_keys_body_entered"]

@@ -226,17 +226,20 @@ func handle_aerial_movement(delta):
 	var aerial_velocity_multipler := 60.0 # Give player the slightest amount of aerial_movement
 	var aerial_assistance := 0.0 # determines total change in x velocity
 	# max amount in either +/- x direction that aerial assistance can give you
-	var aerial_velocity_given_max := 1000 
+	var MAX_AERIAL_VELOCITY := 800 
 	
 	# If player falls far enough, they gain aerial movement
-	if (end_fall_height - start_fall_height > recovery_fall_threshold): has_aerial_movement = true
-	# Give the player major aerial_movement
-	if has_aerial_movement: aerial_velocity_multipler *= 20 
-	# Ensure aerial velocity cap is not met 
-	if (abs(aerial_velocity_given) < aerial_velocity_given_max):
-		# Calculate change in x velocity based on player's current rotation
-		aerial_assistance = cos(PI/2 - rotation) * aerial_velocity_multipler * delta
-		
+	if (end_fall_height - start_fall_height > recovery_fall_threshold): has_aerial_movement = true 
+	
+	# Exaggerate aerial movement multiplier when player is given aerial movement
+	# This occurs when mushrooms are bounced, or when the player falls a great distance 
+	if has_aerial_movement: aerial_velocity_multipler *= 5
+	
+	# Calculate change in x velocity based on player's current rotation 
+	aerial_assistance = cos(PI/2 - rotation) * aerial_velocity_multipler * delta 
+	aerial_assistance = clamp(aerial_velocity_given + aerial_assistance, -MAX_AERIAL_VELOCITY, MAX_AERIAL_VELOCITY)
+	aerial_assistance -= aerial_velocity_given
+	
 	velocity.x += aerial_assistance
 	aerial_velocity_given += aerial_assistance
 	
@@ -246,6 +249,38 @@ func handle_aerial_movement(delta):
 	
 	# print("Aerial Assistance: " + str(aerial_assistance))
 	# print("Aerial Assistance Given: " + str(aerial_velocity_given))
+
+# This function is an attempt to make aerial movement feel less "slide-y"
+# It does this by setting the player's x velocity directly, instead of adding onto it
+# This was a failed attempt
+func handle_aerial_movement_v2(delta):
+	var x_direction = cos(PI/2 - rotation)
+	var x_velocity = abs(velocity.x)
+	var aerial_velocity = 1000
+	var apply_velocity = false
+	
+	aerial_velocity = x_direction * aerial_velocity
+		
+	# prevent overwriting a faster velocity in a direction with aerial_velocity
+	if x_direction < 0:
+		if velocity.x > aerial_velocity:
+			apply_velocity = true
+		else:
+			apply_velocity = false
+	elif x_direction >= 0:
+		if velocity.x < aerial_velocity:
+			apply_velocity = true
+		else:
+			apply_velocity = false
+			
+	# apply aerial movement
+	if (has_aerial_movement and apply_velocity):
+		velocity.x = lerpf(velocity.x, aerial_velocity, delta)
+		print(cos(PI/2 - rotation))
+		print(aerial_velocity)
+		
+	if is_on_floor():
+		has_aerial_movement = false # Reset aerial movement qualifier
 
 		
 # Record fall height variables

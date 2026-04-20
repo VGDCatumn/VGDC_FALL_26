@@ -1,13 +1,12 @@
-[gd_scene format=3 uid="uid://xnlojxojghtk"]
+[gd_scene format=3 uid="uid://bwffcab06wreq"]
 
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_3745l"]
-[ext_resource type="Script" uid="uid://cwj1lbvaqiyt" path="res://Levels/level_mountian.gd" id="1_nv01e"]
+[ext_resource type="Script" uid="uid://cwj1lbvaqiyt" path="res://Scripts/level_mountian.gd" id="1_nv01e"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="2_0j81s"]
-[ext_resource type="Script" path="res://Scripts/wall_bouncy.gd" id="3_0j81s"]
+[ext_resource type="Script" uid="uid://cswex5v20fyms" path="res://Scripts/wall_bouncy.gd" id="3_0j81s"]
 [ext_resource type="Texture2D" uid="uid://b1btuec21ow6m" path="res://Sprites/Snow0205_6_350.webp" id="4_tta0r"]
 [ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="5_o57bd"]
 [ext_resource type="Texture2D" uid="uid://cwo5mxproucdr" path="res://Sprites/pngtree-domestic-bird-rooster-png-image_11918833.png" id="7_1rgwy"]
-[ext_resource type="AudioStream" uid="uid://by5clmspv3uhe" path="res://Audio/rudy_rooster_crowing-shelley-1948282641.mp3" id="8_cccwg"]
+[ext_resource type="AudioStream" uid="uid://by5clmspv3uhe" path="res://Audio/rooster.mp3" id="8_cccwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ui3te"]
 size = Vector2(3164.0005, 166.1875)
@@ -56,6 +55,9 @@ size = Vector2(120.47073, 420.88367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53cki"]
 size = Vector2(89.02614, 211.58151)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cheau"]
+size = Vector2(120.47073, 420.88367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hiprw"]
 size = Vector2(180.25478, 569.8699)
@@ -171,9 +173,6 @@ radius = 176.55594
 [node name="LevelMountian1" type="Node2D" unique_id=847851098]
 script = ExtResource("1_nv01e")
 
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_3745l")]
-position = Vector2(4965, 694)
-
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=620585538]
 
 [node name="CollisionShape2D67" type="CollisionShape2D" parent="Platforms_Static" unique_id=265221828]
@@ -265,8 +264,8 @@ scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_tta0r")
 
 [node name="CollisionShape2D80" type="CollisionShape2D" parent="Platforms_Static" unique_id=951339562]
-position = Vector2(5891, -440.00003)
-rotation = -1.6135068
+position = Vector2(5960, -465.00003)
+rotation = -1.6095377
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_o57bd")
 
@@ -277,10 +276,16 @@ scale = Vector2(0.9999993, 0.9999993)
 shape = SubResource("RectangleShape2D_53cki")
 
 [node name="CollisionShape2D84" type="CollisionShape2D" parent="Platforms_Static" unique_id=1592099289]
-position = Vector2(5047, -687.99994)
-rotation = 1.6761796
+position = Vector2(5585, -523)
+rotation = 1.9090815
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_o57bd")
+
+[node name="CollisionShape2D97" type="CollisionShape2D" parent="Platforms_Static" unique_id=393687246]
+position = Vector2(4889, -811.9999)
+rotation = 1.6373625
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_cheau")
 
 [node name="CollisionShape2D92" type="CollisionShape2D" parent="Platforms_Static" unique_id=1905429044]
 position = Vector2(431, -1448)
@@ -493,7 +498,7 @@ scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_cccwg")
 
 [node name="CollisionShape2D81" type="CollisionShape2D" parent="Platforms_Static" unique_id=1137472816]
-position = Vector2(6322.644, -1521.0325)
+position = Vector2(6347.644, -1654.0325)
 rotation = 1.5946903
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_3wejo")
@@ -530,12 +535,12 @@ rotation = 0.5739536
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spring2" parent="Platforms_Special" unique_id=735998768 instance=ExtResource("2_0j81s")]
-position = Vector2(6320, -1328.0001)
+position = Vector2(6345, -1461.0001)
 rotation = 3.1415927
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spring4" parent="Platforms_Special" unique_id=1943408066 instance=ExtResource("2_0j81s")]
-position = Vector2(6326.9995, -1702)
+position = Vector2(6351.9995, -1835)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spring3" parent="Platforms_Special" unique_id=330492104 instance=ExtResource("2_0j81s")]
@@ -580,7 +585,7 @@ polygon = PackedVector2Array(1758, -3588, 2349, -3720, 2390, -3549, 2357, -3537,
 
 [node name="Rock_5" type="Polygon2D" parent="Textures_Polygon" unique_id=542261892]
 texture_repeat = 2
-position = Vector2(3326, 2041)
+position = Vector2(3351, 1908)
 texture = ExtResource("4_tta0r")
 polygon = PackedVector2Array(3069, -3622, 3073, -3535, 3058, -3495, 2999, -3472, 2921, -3520, 2929, -3591, 2964, -3645)
 
@@ -626,22 +631,10 @@ position = Vector2(1248, 2497)
 texture = ExtResource("4_tta0r")
 polygon = PackedVector2Array(5999, -2184, 6258, -2207, 6275.258, -2150.098, 6295, -2085, 6247, -2055, 5990, -2034, 5947, -2066, 5950, -2153)
 
-[node name="Wood2" type="Sprite2D" parent="Textures_Polygon" unique_id=1062917747]
-position = Vector2(6822.405, -842.5947)
-rotation = -0.22689278
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_o57bd")
-
 [node name="Wood3" type="Sprite2D" parent="Textures_Polygon" unique_id=1205301902]
-position = Vector2(6723.4053, -819.595)
-rotation = -0.22689278
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_o57bd")
-
-[node name="Wood4" type="Sprite2D" parent="Textures_Polygon" unique_id=1323051302]
-position = Vector2(6624.0005, -796.00024)
-rotation = -0.22689278
-scale = Vector2(0.2, 0.2)
+position = Vector2(6721.2275, -821.99835)
+rotation = -0.2595819
+scale = Vector2(0.4130506, 0.17968263)
 texture = ExtResource("5_o57bd")
 
 [node name="bird" type="Sprite2D" parent="." unique_id=446996967]

@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/banana-peel.png" id="9_1vapn"]
 [ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
-[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/ambient_light_chasm.gd" id="12_7s22q"]
+[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/tools/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
 
 [sub_resource type="Curve" id="Curve_870hm"]
@@ -264,7 +264,7 @@ size = Vector2(6110.5415, 2743.1304)
 script = ExtResource("1_di1g1")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_qhuka")]
-position = Vector2(-1914, 364)
+position = Vector2(-3857, -2582)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=332287160]
 width = 30.0
