@@ -264,7 +264,7 @@ size = Vector2(6110.5415, 2743.1304)
 script = ExtResource("1_di1g1")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_qhuka")]
-position = Vector2(-1914, 364)
+position = Vector2(-3857, -2582)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=332287160]
 width = 30.0

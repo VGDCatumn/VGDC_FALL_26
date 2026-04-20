@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://nn5c5y6i6rcm"]
 
 [ext_resource type="Script" uid="uid://s5i0hw1lvfdl" path="res://Scripts/level_moon_v_2.gd" id="1_ahcuu"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_gqh4e"]
 [ext_resource type="Texture2D" uid="uid://e7n2vr0bs5tw" path="res://Sprites/moon.png" id="2_otmkg"]
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
+[ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo.png" id="5_p3huw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otmkg"]
 radius = 4700.0
@@ -60,6 +60,14 @@ radius = 227.8618
 radius = 60.668457
 height = 933.43164
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3huw"]
+radius = 164.0
+height = 1514.0001
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lyc8"]
+radius = 254.0
+height = 866.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcuu"]
 size = Vector2(14047, 17486)
 
@@ -68,9 +76,6 @@ radius = 550.0
 
 [node name="LevelMoonV2" type="Node2D" unique_id=1292622103]
 script = ExtResource("1_ahcuu")
-
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("1_gqh4e")]
-position = Vector2(6, -4905)
 
 [node name="Moon" type="StaticBody2D" parent="." unique_id=1070917389]
 position = Vector2(2, -5692)
@@ -212,6 +217,25 @@ position = Vector2(-317.0005, -1657)
 rotation = 1.2409291
 shape = SubResource("CapsuleShape2D_4dle8")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=567435384]
+position = Vector2(2.0000288, -12094)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Ufo" type="Sprite2D" parent="StaticBody2D" unique_id=1453147935]
+position = Vector2(-2.8848648e-05, -27)
+scale = Vector2(1.896, 1.896)
+texture = ExtResource("5_p3huw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1461677556]
+position = Vector2(-2.0000288, 23)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_p3huw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1420084161]
+position = Vector2(-2.0000293, -16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4lyc8")
+
 [node name="Textures" type="Node2D" parent="." unique_id=409162680]
 metadata/_edit_lock_ = true
 
@@ -231,7 +255,19 @@ position = Vector2(2321, -6104)
 position = Vector2(124, 73)
 shape = SubResource("CircleShape2D_kjyy0")
 
+[node name="ReverseGravity" type="Area2D" parent="GravityTriggers" unique_id=1052064592]
+position = Vector2(2.0000288, -12094)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GravityTriggers/ReverseGravity" unique_id=1329443239]
+position = Vector2(-8.000028, 102)
+rotation = 0.018342495
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(340.4103, 73.768555, 831.27454, 1861.0664, -681.36096, 1894.8154, -319.46036, 86.87402)
+
 [connection signal="body_entered" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_exited"]
 [connection signal="body_entered" from="GravityTriggers/RegularGravity" to="." method="_on_regular_gravity_body_entered"]
 [connection signal="body_exited" from="GravityTriggers/RegularGravity" to="." method="_on_regular_gravity_body_exited"]
+[connection signal="body_entered" from="GravityTriggers/ReverseGravity" to="." method="_on_reverse_gravity_body_entered"]
+[connection signal="body_exited" from="GravityTriggers/ReverseGravity" to="." method="_on_reverse_gravity_body_exited"]

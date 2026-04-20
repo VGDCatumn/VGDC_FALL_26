@@ -46,7 +46,7 @@ size = Vector2(996.00995, 170.25752)
 size = Vector2(322.39255, 174.10007)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5b4l"]
-size = Vector2(405.44995, 87.82676)
+size = Vector2(440.61047, 98.03827)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_728lr"]
 size = Vector2(400.16174, 87.10063)
@@ -321,7 +321,7 @@ size = Vector2(2076.916, 86.38641)
 [node name="LevelVillage" type="Node2D" unique_id=763794867]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_lened")]
-position = Vector2(4048, 670)
+position = Vector2(9942, 160)
 
 [node name="Collisions" type="Node2D" parent="." unique_id=794495771]
 
@@ -329,7 +329,7 @@ position = Vector2(4048, 670)
 position = Vector2(0, 681)
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1395708153]
-position = Vector2(7277.528, 993.90173)
+position = Vector2(7277.8857, 1073.902)
 rotation = 0.06452298
 scale = Vector2(4.887336, 7.4183855)
 shape = SubResource("RectangleShape2D_cy8gr")
@@ -398,15 +398,15 @@ scale = Vector2(4.8873353, 7.4183855)
 shape = SubResource("RectangleShape2D_yvmp8")
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1089711061]
-position = Vector2(1746.642, 1468.3264)
+position = Vector2(1747, 1548.3267)
 rotation = -0.3491621
 scale = Vector2(4.8873353, 7.4183855)
 shape = SubResource("RectangleShape2D_b1jtq")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1954329421]
-position = Vector2(8992, 559.99976)
-rotation = -0.43963608
-scale = Vector2(4.887336, 7.418385)
+position = Vector2(8932.452, 626.3192)
+rotation = -0.43963605
+scale = Vector2(4.887336, 7.4183865)
 shape = SubResource("RectangleShape2D_l5b4l")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1072074337]
@@ -416,7 +416,7 @@ scale = Vector2(4.887336, 7.4183846)
 shape = SubResource("RectangleShape2D_728lr")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=764896342]
-position = Vector2(4335, 754.1929)
+position = Vector2(4335.358, 834.1931)
 shape = SubResource("RectangleShape2D_qy5i8")
 
 [node name="Sky_Island_6" type="StaticBody2D" parent="Collisions" unique_id=944896751]
