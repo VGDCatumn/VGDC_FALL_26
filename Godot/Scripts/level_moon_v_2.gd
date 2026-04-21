@@ -1,16 +1,23 @@
 extends Node2D
 
-
+@onready var audio : AudioStreamPlayer2D = $UFO/AudioStreamPlayer2D
 @export var tractor_beam : Node2D
 var player : CharacterBody2D
 var in_tractor_beam : bool = false
 
 func _process(delta):
 	if in_tractor_beam:
+		# move player towards center of tractor beam
+		# this should feel "floaty"
+		# this is really jank and needs to be changed
 		var distance_vector = tractor_beam.global_position - player.global_position
 		var direction = distance_vector.normalized()
 		var distance = distance_vector.length()
 		player.velocity += direction * ((distance * 1.0/16.0 * delta) ** 5)
+		
+		# play end credits song
+		if (!audio.playing):
+			audio.play()
 
 # MOON GRAVITY
 func _on_low_gravity_body_entered(body: Node2D) -> void:

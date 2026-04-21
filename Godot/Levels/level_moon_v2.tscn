@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://s5i0hw1lvfdl" path="res://Scripts/level_moon_v_2.gd" id="1_ahcuu"]
 [ext_resource type="Texture2D" uid="uid://e7n2vr0bs5tw" path="res://Sprites/moon.png" id="2_otmkg"]
+[ext_resource type="Texture2D" uid="uid://b58qyr5m4pveq" path="res://Sprites/moon_top.png" id="3_c11c3"]
 [ext_resource type="Texture2D" uid="uid://c78xbnhipxyit" path="res://Sprites/comet.png" id="4_8673m"]
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
 [ext_resource type="Texture2D" uid="uid://b1bfiwpr3gpa1" path="res://Sprites/saturn.png" id="5_0uarr"]
@@ -10,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="6_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://dne1ao17n7qwx" path="res://Sprites/tractor_beam.png" id="6_lyyhm"]
 [ext_resource type="Texture2D" uid="uid://cggox2rpjcr0p" path="res://Sprites/jupiter.png" id="8_8673m"]
+[ext_resource type="Texture2D" uid="uid://r84fhb7w7fw2" path="res://Sprites/radio.png" id="9_24efb"]
 [ext_resource type="Texture2D" uid="uid://g5etdfa8jhmk" path="res://Sprites/uranus.png" id="9_lyyhm"]
+[ext_resource type="AudioStream" uid="uid://dybfmfek16wva" path="res://Audio/soundtrack-ufo-radio.mp3" id="11_k7haq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otmkg"]
 radius = 4700.0
@@ -151,9 +154,6 @@ height = 866.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcuu"]
 size = Vector2(14047, 21560)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kjyy0"]
-radius = 995.4828
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l148e"]
 size = Vector2(2341.5, 1358)
 
@@ -163,8 +163,11 @@ tractor_beam = NodePath("UFO/TractorBeam")
 
 [node name="Moon" type="StaticBody2D" parent="." unique_id=1070917389]
 position = Vector2(2, -5692)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="MoonCollision" type="CollisionShape2D" parent="Moon" unique_id=435319542]
+visible = false
 position = Vector2(5, 5652)
 shape = SubResource("CircleShape2D_otmkg")
 
@@ -173,10 +176,15 @@ z_index = -1
 position = Vector2(-2, 5692)
 scale = Vector2(12, 12)
 texture = ExtResource("2_otmkg")
-metadata/_edit_lock_ = true
+
+[node name="MoonTop" type="Sprite2D" parent="Moon" unique_id=737329447]
+position = Vector2(-10, 1668)
+scale = Vector2(6, 6)
+texture = ExtResource("3_c11c3")
 
 [node name="SpaceShuttle" type="StaticBody2D" parent="." unique_id=1157142006]
 position = Vector2(2, -5692)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShuttle" unique_id=664890595]
 position = Vector2(-1724.0001, 893)
@@ -228,7 +236,6 @@ position = Vector2(-2809, 1185)
 rotation = -0.24892023
 scale = Vector2(6.3971934, 6.3971934)
 texture = ExtResource("4_kjyy0")
-metadata/_edit_lock_ = true
 
 [node name="MoonFragments" type="StaticBody2D" parent="." unique_id=168884156]
 position = Vector2(-2614, -5948)
@@ -417,9 +424,33 @@ scale = Vector2(2.8220835, 2.8220835)
 texture = ExtResource("4_8673m")
 metadata/_edit_lock_ = true
 
+[node name="Jupiter" type="Sprite2D" parent="Planetarium" unique_id=890740913]
+position = Vector2(-1031, 695)
+scale = Vector2(1.4411383, 1.4411383)
+texture = ExtResource("8_8673m")
+
+[node name="Uranus" type="Sprite2D" parent="Planetarium" unique_id=1763890961]
+position = Vector2(-1810.0002, -206)
+rotation = 2.8681164
+scale = Vector2(0.95894957, 0.95894957)
+texture = ExtResource("9_lyyhm")
+
+[node name="Saturn" type="Sprite2D" parent="Planetarium" unique_id=733048817]
+position = Vector2(176.00049, 637)
+rotation = 2.8217757
+scale = Vector2(1.55, -1.55)
+texture = ExtResource("5_0uarr")
+metadata/_edit_lock_ = true
+
 [node name="UFO" type="StaticBody2D" parent="." unique_id=567435384]
 position = Vector2(558, -18839)
 scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Radio" type="Sprite2D" parent="UFO" unique_id=1935176751]
+position = Vector2(600, -90)
+rotation = 0.26187912
+scale = Vector2(0.19250047, 0.19250047)
+texture = ExtResource("9_24efb")
 
 [node name="Ufo" type="Sprite2D" parent="UFO" unique_id=1453147935]
 z_index = 1
@@ -440,6 +471,12 @@ shape = SubResource("CapsuleShape2D_4lyc8")
 [node name="TractorBeam" type="Node2D" parent="UFO" unique_id=844001555]
 position = Vector2(13, 1362)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UFO" unique_id=1121155755]
+position = Vector2(584, -76)
+stream = ExtResource("11_k7haq")
+max_distance = 4000.0
+attenuation = 0.35355362
+
 [node name="Textures" type="Node2D" parent="." unique_id=409162680]
 metadata/_edit_lock_ = true
 
@@ -454,10 +491,6 @@ shape = SubResource("RectangleShape2D_ahcuu")
 
 [node name="RegularGravity" type="Area2D" parent="GravityTriggers" unique_id=386309220]
 position = Vector2(1756, -6903)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityTriggers/RegularGravity" unique_id=1112152265]
-position = Vector2(-993, -2431)
-shape = SubResource("CircleShape2D_kjyy0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GravityTriggers/RegularGravity" unique_id=1657717250]
 position = Vector2(-152.75, -697)
@@ -479,30 +512,12 @@ scale = Vector2(3.8508236, 1.708585)
 texture = ExtResource("6_lyyhm")
 offset = Vector2(-79, 378)
 
-[node name="Saturn" type="Sprite2D" parent="GravityTriggers" unique_id=733048817]
-position = Vector2(-1404.9995, -9437)
-rotation = -0.31981695
-scale = Vector2(-1.55, 1.55)
-texture = ExtResource("5_0uarr")
-metadata/_edit_lock_ = true
-
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_4lyc8")]
 position = Vector2(-10, -5022)
 
 [node name="Spring" parent="." unique_id=261987189 instance=ExtResource("6_4lyc8")]
 position = Vector2(581.31934, -11313)
 spring_power = 2500
-
-[node name="Jupiter" type="Sprite2D" parent="." unique_id=890740913]
-position = Vector2(-2612, -9379)
-scale = Vector2(1.4411383, 1.4411383)
-texture = ExtResource("8_8673m")
-
-[node name="Uranus" type="Sprite2D" parent="." unique_id=1763890961]
-position = Vector2(-3391.0002, -10280)
-rotation = 2.8681164
-scale = Vector2(0.95894957, 0.95894957)
-texture = ExtResource("9_lyyhm")
 
 [connection signal="body_entered" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_exited"]
