@@ -107,6 +107,8 @@ func regular_movement_mode(delta):
 	if is_on_floor(): 
 		if is_bouncy_surface():
 			handle_floor_bounce() # bounce ball upwards and apply velocity based on rotation angle
+		else: 
+			handle_fall(delta)
 	if is_on_wall(): handle_wall_bounce() # handle bounce collisions with wall
 	if is_on_ceiling(): handle_ceiling_bounce() # handle bounce collision with ceiling
 	else: handle_fall(delta) # apply gravity and handle slam down

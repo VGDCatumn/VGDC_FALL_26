@@ -21,10 +21,12 @@ func _on_detecter_body_entered(body: Node2D) -> void:
 		$Timer.start()
 
 		# bounce player on trampoline
-		var launch_direction = -transform.y # up direction
+		var launch_direction = -global_transform.y.normalized() # up direction
+		
 		var prev_vel = body.prev_velocity.y # player velocity
 		body.velocity.y = 0
 		body.velocity += launch_direction * (-prev_vel * trampoline_power)
+		
 		
 		
 		# give player more air control

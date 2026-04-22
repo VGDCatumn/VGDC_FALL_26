@@ -16,9 +16,10 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		$AnimationPlayer.play("boing")
 		$AudioStreamPlayer.play()
-		
 		prev_max_velocity = body.max_y_velocity #stores Player's current max y velocity 
-		body.max_y_velocity = spring_power
+		
+		if(spring_power > body.max_y_velocity):
+			body.max_y_velocity = spring_power
 		
 		
 		# get launch_direction by taking the UP vector of the spring
