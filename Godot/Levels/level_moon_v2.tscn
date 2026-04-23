@@ -7,14 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
 [ext_resource type="Texture2D" uid="uid://b1bfiwpr3gpa1" path="res://Sprites/saturn.png" id="5_0uarr"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_4lyc8"]
-[ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo.png" id="5_p3huw"]
+[ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo-1.png" id="5_p3huw"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="6_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://dne1ao17n7qwx" path="res://Sprites/tractor_beam.png" id="6_lyyhm"]
+[ext_resource type="Texture2D" uid="uid://dfmfim0rqcxlw" path="res://Sprites/space-probe-2.png" id="6_txhar"]
+[ext_resource type="Texture2D" uid="uid://hen681fi0on7" path="res://Sprites/alien-1.png" id="7_txhar"]
+[ext_resource type="Texture2D" uid="uid://d3swev05ubggd" path="res://Sprites/ufo-2.png" id="8_5hlyp"]
 [ext_resource type="Texture2D" uid="uid://cggox2rpjcr0p" path="res://Sprites/jupiter.png" id="8_8673m"]
 [ext_resource type="Texture2D" uid="uid://r84fhb7w7fw2" path="res://Sprites/radio.png" id="9_24efb"]
 [ext_resource type="Texture2D" uid="uid://g5etdfa8jhmk" path="res://Sprites/uranus.png" id="9_lyyhm"]
+[ext_resource type="Texture2D" uid="uid://snt2lck5q8j1" path="res://Sprites/alien-2.png" id="9_pgbx3"]
+[ext_resource type="Texture2D" uid="uid://i8cpa658yel5" path="res://Sprites/eagle5.png" id="10_iox3k"]
 [ext_resource type="AudioStream" uid="uid://dybfmfek16wva" path="res://Audio/soundtrack-ufo-radio.mp3" id="11_k7haq"]
 [ext_resource type="Texture2D" uid="uid://dgetxr1cutlvv" path="res://Sprites/rock-3.jpg" id="13_k7haq"]
+[ext_resource type="Texture2D" uid="uid://cdb72oouerh1f" path="res://Sprites/space-probe-1.png" id="16_wo131"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otmkg"]
 radius = 4700.0
@@ -45,9 +51,6 @@ size = Vector2(1063.9923, 204.82654)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyyhm"]
 size = Vector2(534, 150)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0s5t"]
-size = Vector2(1830.9314, 463.11243)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0kkj"]
 size = Vector2(534, 252.58276)
@@ -80,32 +83,29 @@ size = Vector2(376.42725, 132.60938)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t201x"]
 size = Vector2(379.41992, 530.3804)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fivh"]
-size = Vector2(892.94104, 233.94629)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7crhs"]
 size = Vector2(694.99, 148.76147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgbx3"]
+size = Vector2(478.05615, 619.1654)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6png0"]
+size = Vector2(841.8407, 213.80624)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58af6"]
+size = Vector2(860, 1245.9032)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24efb"]
 size = Vector2(961, 163.22498)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7haq"]
-size = Vector2(594.5751, 134.61249)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78h5g"]
 size = Vector2(1048.7256, 163.22498)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo131"]
-size = Vector2(1212.1483, 163.00034)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_txhar"]
-size = Vector2(1212.1483, 163.00034)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdi7q"]
 size = Vector2(609.637, 157.46054)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hlyp"]
-size = Vector2(879.1655, 151.02167)
+size = Vector2(617.6467, 151.02167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_186mc"]
 size = Vector2(647.8074, 173.71103)
@@ -113,8 +113,9 @@ size = Vector2(647.8074, 173.71103)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh8vx"]
 size = Vector2(143.95166, 163.22498)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgbx3"]
-size = Vector2(653.9033, 124.9996)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgbx3"]
+radius = 65.58276
+height = 186.33984
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_58af6"]
 radius = 208.00241
@@ -153,7 +154,7 @@ radius = 254.0
 height = 866.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcuu"]
-size = Vector2(14047, 21560)
+size = Vector2(17612, 21560)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l148e"]
 size = Vector2(1543.5, 1358)
@@ -245,12 +246,6 @@ position = Vector2(-674, 813)
 rotation = -0.31063926
 shape = SubResource("RectangleShape2D_lyyhm")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="MoonFragments" unique_id=2131019964]
-position = Vector2(9596.001, 2427)
-rotation = -0.1969889
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_a0s5t")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MoonFragments" unique_id=1098679705]
 position = Vector2(-1759.6006, 573.4551)
 rotation = 0.26837498
@@ -272,30 +267,30 @@ rotation = -0.10383253
 shape = SubResource("CapsuleShape2D_8673m")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="MoonFragments" unique_id=726522189]
-position = Vector2(3196.2656, -5199.212)
+position = Vector2(2625.2656, -5651.212)
 rotation = 0.003021367
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_p3huw")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="MoonFragments" unique_id=1354684110]
-position = Vector2(3013, -5195.833)
+position = Vector2(2442, -5647.833)
 rotation = -0.7147892
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_4lyc8")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="MoonFragments" unique_id=982819085]
-position = Vector2(3377.3198, -5194)
+position = Vector2(2806.3198, -5646)
 rotation = 0.73613286
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_4lyc8")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MoonFragments" unique_id=12506760]
-position = Vector2(1575.9653, -1091)
+position = Vector2(1575.9653, -1153)
 rotation = 1.4652807
 shape = SubResource("RectangleShape2D_2p50g")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="MoonFragments" unique_id=1779654118]
-position = Vector2(1144, -824.7671)
+position = Vector2(1144, -886.7671)
 rotation = -0.55438685
 shape = SubResource("RectangleShape2D_xmg4c")
 
@@ -309,17 +304,25 @@ position = Vector2(-2146.629, 451.8579)
 rotation = -0.3620903
 shape = SubResource("RectangleShape2D_t201x")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="MoonFragments" unique_id=1223338036]
-position = Vector2(-2195, -948)
-rotation = -0.6285373
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_0fivh")
-
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="MoonFragments" unique_id=319727305]
 position = Vector2(-1883.1138, 693.4707)
 rotation = -3.1362684
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_7crhs")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="MoonFragments" unique_id=1747283949]
+position = Vector2(7371.866, -668.8887)
+rotation = -0.29032698
+shape = SubResource("RectangleShape2D_pgbx3")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="MoonFragments" unique_id=1600801633]
+position = Vector2(7624, -494)
+rotation = -0.20410667
+shape = SubResource("RectangleShape2D_6png0")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="MoonFragments" unique_id=1467210039]
+position = Vector2(7945, -1112.0483)
+shape = SubResource("RectangleShape2D_58af6")
 
 [node name="MoonBase" type="StaticBody2D" parent="." unique_id=450838398]
 position = Vector2(1423, -7581)
@@ -328,24 +331,9 @@ position = Vector2(1423, -7581)
 position = Vector2(-463.5, 690.1123)
 shape = SubResource("RectangleShape2D_24efb")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="MoonBase" unique_id=1326010748]
-position = Vector2(1848, 259)
-shape = SubResource("RectangleShape2D_k7haq")
-
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="MoonBase" unique_id=2022902433]
 position = Vector2(-444.3628, -776.4873)
 shape = SubResource("RectangleShape2D_78h5g")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="MoonBase" unique_id=76352052]
-position = Vector2(2973, 698.9629)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_wo131")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="MoonBase" unique_id=115852177]
-position = Vector2(4040.0005, 392)
-rotation = -0.5235988
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_txhar")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="MoonBase" unique_id=1743358897]
 position = Vector2(-1177, 829)
@@ -360,9 +348,9 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_cdi7q")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="MoonBase" unique_id=1077471995]
-position = Vector2(-1305, -986)
-rotation = 0.5235988
-scale = Vector2(0.9999998, 0.9999998)
+position = Vector2(-1191.759, -920.6201)
+rotation = 0.52351904
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_5hlyp")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="MoonBase" unique_id=2099341061]
@@ -379,12 +367,86 @@ shape = SubResource("RectangleShape2D_yh8vx")
 position = Vector2(621, -470)
 shape = SubResource("RectangleShape2D_yh8vx")
 
-[node name="Planetarium" type="StaticBody2D" parent="." unique_id=1485183979]
-position = Vector2(-1581, -10074)
+[node name="SpaceGravitySection" type="StaticBody2D" parent="." unique_id=383440931]
+position = Vector2(4170, -7700)
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Planetarium" unique_id=1130964546]
-position = Vector2(1025.9758, 1286.5)
-shape = SubResource("RectangleShape2D_pgbx3")
+[node name="SpaceProbe1Collision" type="CollisionPolygon2D" parent="SpaceGravitySection" unique_id=8126263]
+position = Vector2(-1247, 1282)
+polygon = PackedVector2Array(396, -186, 398, -72, 278, -21, 502, 435, 371, 218, 307, 252, 264, 89, 213, 92, 119, 11, -582, 302, -595, 291, 110, -34, 101.50601, -57.35852, 74, -133, 148, -277, 184, -292, 226, -263, 270, -316, 371, -364, 433, -354, 421, -302, 372, -260, 300, -246, 300, -201)
+
+[node name="SpaceProbe1Sprite" type="Sprite2D" parent="SpaceGravitySection" unique_id=777239850]
+position = Vector2(-1253, 1275)
+rotation = -3.0490613
+scale = Vector2(1, -1)
+texture = ExtResource("16_wo131")
+
+[node name="SpaceProbe2Collision" type="CollisionPolygon2D" parent="SpaceGravitySection" unique_id=1574422296]
+position = Vector2(-9051.774, 789.04004)
+rotation = -0.2592215
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(70, -204, 65, -164, 93, -158, 39, -114, 545, 74, 504, 186, 2, -20, -153, 176, -270, 138, -288, 46, -161, -90, -566, -248, -476, -318, -78, -159, -1, -230, 45, -235)
+
+[node name="SpaceProbe2Sprite" type="Sprite2D" parent="SpaceGravitySection" unique_id=978631297]
+position = Vector2(-9052.774, 789.04004)
+rotation = 2.8823712
+scale = Vector2(0.99999994, -0.99999994)
+texture = ExtResource("6_txhar")
+
+[node name="Ufo2Collision" type="CollisionPolygon2D" parent="SpaceGravitySection" unique_id=2133556809]
+position = Vector2(15, 2081)
+polygon = PackedVector2Array(65, -199, 200, -151, 333, -158, 462, -153, 457, -130, 165, 71, -64, 138, -270, 138, -458, 140, -457, 120, -374, 56, -249, -17, -160, -134, -61, -184)
+
+[node name="Ufo2" type="Sprite2D" parent="SpaceGravitySection" unique_id=1599689673]
+z_index = 1
+position = Vector2(16, 2081)
+scale = Vector2(2.0341177, 2.0341177)
+texture = ExtResource("8_5hlyp")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="SpaceGravitySection" unique_id=148630263]
+position = Vector2(-59, 1879)
+rotation = -0.24006371
+shape = SubResource("CapsuleShape2D_pgbx3")
+
+[node name="Alien1" type="Sprite2D" parent="SpaceGravitySection" unique_id=1947534765]
+position = Vector2(-61, 1875)
+rotation = -0.33988306
+texture = ExtResource("7_txhar")
+
+[node name="Ufo3Collision" type="CollisionPolygon2D" parent="SpaceGravitySection" unique_id=1364237761]
+position = Vector2(-746.7969, -406.99268)
+rotation = 0.54362684
+polygon = PackedVector2Array(65, -199, 200, -151, 333, -158, 462, -153, 457, -130, 165, 71, -64, 138, -270, 138, -458, 140, -457, 120, -374, 56, -249, -17, -160, -134, -61, -184)
+
+[node name="Ufo3" type="Sprite2D" parent="SpaceGravitySection" unique_id=849014105]
+z_index = 1
+position = Vector2(-745.7969, -406.99268)
+rotation = 0.54362684
+scale = Vector2(2.0341177, 2.0341177)
+texture = ExtResource("8_5hlyp")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="SpaceGravitySection" unique_id=653864777]
+position = Vector2(-696, -596)
+rotation = 0.21115837
+shape = SubResource("CapsuleShape2D_pgbx3")
+
+[node name="Alien2" type="Sprite2D" parent="SpaceGravitySection" unique_id=486040828]
+position = Vector2(-672, -663)
+rotation = 0.26358932
+scale = Vector2(0.720581, 0.720581)
+texture = ExtResource("9_pgbx3")
+
+[node name="Ufo3Collision2" type="CollisionPolygon2D" parent="SpaceGravitySection" unique_id=1972748375]
+position = Vector2(3124, 4159)
+polygon = PackedVector2Array(-222, -301, -37, -512, 68, -510, 46, -366, 253, -403, 272, -363, 516, -411, 758, -144, 806, -32, 477, 238, -650, 312, -711, 174, -1399, 301, -1087, 190, -1078, 150, -1004, 105, -938, 111, -893, 80, -848, 73, -780, -5, -784, -37, -669, -122, -622, -149, -621, -182, -557, -222, -489, -236, -452, -217, -396, -260)
+
+[node name="Eagle5" type="Sprite2D" parent="SpaceGravitySection" unique_id=764753576]
+position = Vector2(2829, 4153.0005)
+rotation = -0.21619326
+scale = Vector2(2.918139, 2.918139)
+texture = ExtResource("10_iox3k")
+
+[node name="Planetarium" type="StaticBody2D" parent="." unique_id=1485183979]
+position = Vector2(-1889, -10137)
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Planetarium" unique_id=55262745]
 position = Vector2(176, 651)
@@ -453,7 +515,7 @@ texture = ExtResource("5_0uarr")
 metadata/_edit_lock_ = true
 
 [node name="UFO" type="StaticBody2D" parent="." unique_id=567435384]
-position = Vector2(558, -18839)
+position = Vector2(-12.999939, -19291)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Radio" type="Sprite2D" parent="UFO" unique_id=1935176751]
@@ -490,10 +552,10 @@ attenuation = 0.35355362
 [node name="GravityTriggers" type="Node2D" parent="." unique_id=545492738]
 
 [node name="MoonGravity" type="Area2D" parent="GravityTriggers" unique_id=1584505324]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityTriggers/MoonGravity" unique_id=1742532390]
-position = Vector2(-16.5, -10790)
+visible = false
+position = Vector2(-1, -10790)
 shape = SubResource("RectangleShape2D_ahcuu")
 
 [node name="RegularGravity" type="Area2D" parent="GravityTriggers" unique_id=386309220]
@@ -504,7 +566,7 @@ position = Vector2(-551.75, -697)
 shape = SubResource("RectangleShape2D_l148e")
 
 [node name="ReverseGravity" type="Area2D" parent="GravityTriggers" unique_id=1052064592]
-position = Vector2(558, -18839)
+position = Vector2(-12.999939, -19291)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GravityTriggers/ReverseGravity" unique_id=1329443239]
@@ -534,12 +596,6 @@ position = Vector2(-3289, -5135)
 texture = ExtResource("13_k7haq")
 polygon = PackedVector2Array(-275, 11, 232, -153, 279, -11, -230, 154)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Textures" unique_id=663698976]
-texture_repeat = 2
-position = Vector2(-4807, -6880)
-texture = ExtResource("13_k7haq")
-polygon = PackedVector2Array(-435, 153, 290, -372, 428, -186, -295, 342)
-
 [node name="Polygon2D4" type="Polygon2D" parent="Textures" unique_id=815653729]
 texture_repeat = 2
 position = Vector2(-3042, -6291)
@@ -548,21 +604,28 @@ polygon = PackedVector2Array(-429, 35, 116, -300, 196, -296, 261, -240, 295, -17
 
 [node name="Polygon2D5" type="Polygon2D" parent="Textures" unique_id=263352959]
 texture_repeat = 2
-position = Vector2(-1090, -7005)
+position = Vector2(-1090, -7067)
 texture = ExtResource("13_k7haq")
 polygon = PackedVector2Array(-803, 181, -418, -59, -443, -291, 483, -388, 548, 221, 45, 282, -524, 636)
 
-[node name="Polygon2D6" type="Polygon2D" parent="Textures" unique_id=1523937029]
+[node name="Polygon2D7" type="Polygon2D" parent="Textures" unique_id=1794762543]
 texture_repeat = 2
-position = Vector2(6995, -3538)
+position = Vector2(5102, -6942)
 texture = ExtResource("13_k7haq")
-polygon = PackedVector2Array(-955, -24, 832, -392, 930, 65, -869, 423)
+polygon = PackedVector2Array(-659, 93, -209, -45, -199, -747, 658, -755, 656, 488, -477, 697)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Textures" unique_id=117586084]
+texture_repeat = 2
+position = Vector2(-12, -11598)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-165, 95, -264, -13, -162, -94, 203, -93, 303, -7, 205, 106)
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_4lyc8")]
 position = Vector2(-10, -5022)
 
 [node name="Spring" parent="." unique_id=261987189 instance=ExtResource("6_4lyc8")]
-position = Vector2(581.31934, -11313)
+z_index = -1
+position = Vector2(10.319336, -11765)
 spring_power = 2500
 
 [connection signal="body_entered" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dmamosdmwep"
-path="res://.godot/imported/ufo.png-edea5ccf00fbfd16c0cf44e55cc6d072.ctex"
+uid="uid://dfmfim0rqcxlw"
+path="res://.godot/imported/space-probe-2.png-dc583e7f6073c104868e88e29a9b5ea4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ufo.png"
-dest_files=["res://.godot/imported/ufo.png-edea5ccf00fbfd16c0cf44e55cc6d072.ctex"]
+source_file="res://Sprites/space-probe-2.png"
+dest_files=["res://.godot/imported/space-probe-2.png-dc583e7f6073c104868e88e29a9b5ea4.ctex"]
 
 [params]
 
