@@ -232,7 +232,6 @@ scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_8673m")
 
 [node name="SpaceShuttle" type="Sprite2D" parent="SpaceShuttle" unique_id=1395312198]
-z_index = -1
 position = Vector2(-2809, 1185)
 rotation = -0.24892023
 scale = Vector2(6.3971934, 6.3971934)
@@ -523,11 +522,41 @@ offset = Vector2(-79, 378)
 [node name="Textures" type="Node2D" parent="." unique_id=409162680]
 metadata/_edit_lock_ = true
 
-[node name="Polygon2D" type="Polygon2D" parent="Textures" unique_id=575379896]
+[node name="Polygon2D" type="Polygon2D" parent="Textures" unique_id=1961437136]
 texture_repeat = 2
-position = Vector2(-3533, 186)
+position = Vector2(-4605, -5454)
 texture = ExtResource("13_k7haq")
-polygon = PackedVector2Array(-997, -5736, -540, -5603, -620, -5363, -1314, -5361, -1501, -5862, -1144, -6001, -1008, -5999)
+polygon = PackedVector2Array(-428, -221, -72, -357, 58, -361, 72, -97, 521, 31, 458, 271, -238, 273)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Textures" unique_id=727513729]
+texture_repeat = 2
+position = Vector2(-3289, -5135)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-275, 11, 232, -153, 279, -11, -230, 154)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Textures" unique_id=663698976]
+texture_repeat = 2
+position = Vector2(-4807, -6880)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-435, 153, 290, -372, 428, -186, -295, 342)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Textures" unique_id=815653729]
+texture_repeat = 2
+position = Vector2(-3042, -6291)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-429, 35, 116, -300, 196, -296, 261, -240, 295, -177, 307, -52, 294, 84, -353, 160)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Textures" unique_id=263352959]
+texture_repeat = 2
+position = Vector2(-1090, -7005)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-803, 181, -418, -59, -443, -291, 483, -388, 548, 221, 45, 282, -524, 636)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Textures" unique_id=1523937029]
+texture_repeat = 2
+position = Vector2(6995, -3538)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-955, -24, 832, -392, 930, 65, -869, 423)
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_4lyc8")]
 position = Vector2(-10, -5022)
