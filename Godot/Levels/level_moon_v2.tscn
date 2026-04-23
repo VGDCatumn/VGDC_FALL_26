@@ -156,9 +156,6 @@ height = 866.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcuu"]
 size = Vector2(17612, 21560)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l148e"]
-size = Vector2(1543.5, 1358)
-
 [node name="LevelMoonV2" type="Node2D" unique_id=1292622103 node_paths=PackedStringArray("tractor_beam")]
 script = ExtResource("1_ahcuu")
 tractor_beam = NodePath("UFO/TractorBeam")
@@ -558,13 +555,6 @@ visible = false
 position = Vector2(-1, -10790)
 shape = SubResource("RectangleShape2D_ahcuu")
 
-[node name="RegularGravity" type="Area2D" parent="GravityTriggers" unique_id=386309220]
-position = Vector2(1756, -6903)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GravityTriggers/RegularGravity" unique_id=1657717250]
-position = Vector2(-551.75, -697)
-shape = SubResource("RectangleShape2D_l148e")
-
 [node name="ReverseGravity" type="Area2D" parent="GravityTriggers" unique_id=1052064592]
 position = Vector2(-12.999939, -19291)
 scale = Vector2(0.99999994, 0.99999994)
@@ -630,7 +620,5 @@ spring_power = 2500
 
 [connection signal="body_entered" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="GravityTriggers/MoonGravity" to="." method="_on_low_gravity_body_exited"]
-[connection signal="body_entered" from="GravityTriggers/RegularGravity" to="." method="_on_regular_gravity_body_entered"]
-[connection signal="body_exited" from="GravityTriggers/RegularGravity" to="." method="_on_regular_gravity_body_exited"]
 [connection signal="body_entered" from="GravityTriggers/ReverseGravity" to="." method="_on_reverse_gravity_body_entered"]
 [connection signal="body_exited" from="GravityTriggers/ReverseGravity" to="." method="_on_reverse_gravity_body_exited"]
