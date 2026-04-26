@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b58qyr5m4pveq" path="res://Sprites/moon_top.png" id="3_c11c3"]
 [ext_resource type="Texture2D" uid="uid://c78xbnhipxyit" path="res://Sprites/comet.png" id="4_8673m"]
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
-[ext_resource type="Texture2D" uid="uid://b1bfiwpr3gpa1" path="res://Sprites/saturn.png" id="5_0uarr"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo-1.png" id="5_p3huw"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="6_4lyc8"]
@@ -21,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://dybfmfek16wva" path="res://Audio/soundtrack-ufo-radio.mp3" id="11_k7haq"]
 [ext_resource type="Texture2D" uid="uid://dgetxr1cutlvv" path="res://Sprites/rock-3.jpg" id="13_k7haq"]
 [ext_resource type="Texture2D" uid="uid://cdb72oouerh1f" path="res://Sprites/space-probe-1.png" id="16_wo131"]
+[ext_resource type="Texture2D" uid="uid://ctbqsrwfair5w" path="res://Sprites/saturn-2.png" id="19_t201x"]
 [ext_resource type="Texture2D" uid="uid://duu1yxxulpibj" path="res://Sprites/jupiter-outer.png" id="22_23p15"]
 [ext_resource type="Texture2D" uid="uid://jj8qjo6yufgb" path="res://Sprites/jupiter-inner-2.png" id="23_f0kkj"]
 [ext_resource type="Texture2D" uid="uid://h1t6lcw87tf6" path="res://Sprites/jupiter-inner.png" id="23_t201x"]
@@ -133,8 +133,9 @@ size = Vector2(860, 1245.9032)
 radius = 65.58276
 height = 186.33984
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_58af6"]
-radius = 651.03766
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0kkj"]
+radius = 557.94434
+height = 1263.6191
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_beice"]
 radius = 231.07791
@@ -177,7 +178,7 @@ script = ExtResource("1_ahcuu")
 tractor_beam = NodePath("UFO/TractorBeam")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_4lyc8")]
-position = Vector2(-10, -5022)
+position = Vector2(-10, -12192)
 
 [node name="Moon" type="StaticBody2D" parent="." unique_id=1070917389]
 position = Vector2(2, -5692)
@@ -422,6 +423,21 @@ position = Vector2(1200, 242)
 rotation = 0.15694791
 shape = SubResource("CapsuleShape2D_beice")
 
+[node name="JupiterInner" type="Sprite2D" parent="MiddleSection" unique_id=643409726]
+position = Vector2(-432.99988, -243)
+scale = Vector2(2.7735271, 2.7735271)
+texture = ExtResource("23_t201x")
+
+[node name="JupiterInner2" type="Sprite2D" parent="MiddleSection" unique_id=772440422]
+position = Vector2(-432.99988, -243)
+scale = Vector2(2.7735271, 2.7735271)
+texture = ExtResource("23_f0kkj")
+
+[node name="JupiterOuter" type="Sprite2D" parent="MiddleSection" unique_id=185191268]
+position = Vector2(-432.99988, -243)
+scale = Vector2(2.7735271, 2.7735271)
+texture = ExtResource("22_23p15")
+
 [node name="RightSection" type="StaticBody2D" parent="." unique_id=383440931]
 position = Vector2(4170, -7700)
 metadata/_edit_lock_ = true
@@ -514,24 +530,25 @@ position = Vector2(-1889, -10137)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Planetarium" unique_id=55262745]
-position = Vector2(-14, 735)
-shape = SubResource("CircleShape2D_58af6")
+position = Vector2(-4, 715)
+rotation = -1.3521615
+shape = SubResource("CapsuleShape2D_f0kkj")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Planetarium" unique_id=1074869267]
 position = Vector2(-1838.5581, -341.59082)
 shape = SubResource("CircleShape2D_beice")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Planetarium" unique_id=155787666]
-position = Vector2(-83, -562)
+position = Vector2(-129.97485, -893.9746)
 shape = SubResource("CircleShape2D_nc6by")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Planetarium" unique_id=934393955]
-position = Vector2(274.00012, -681)
+position = Vector2(227.02527, -1012.9746)
 rotation = -1.8851262
 shape = SubResource("CapsuleShape2D_qhxqv")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Planetarium" unique_id=736426481]
-position = Vector2(126, -632)
+position = Vector2(79.02515, -963.9746)
 rotation = -1.8851262
 shape = SubResource("CapsuleShape2D_ejv5m")
 
@@ -551,11 +568,10 @@ rotation = 1.5952449
 shape = SubResource("CapsuleShape2D_yf7hj")
 
 [node name="Comet" type="Sprite2D" parent="Planetarium" unique_id=987712707]
-position = Vector2(151.00002, -632)
+position = Vector2(104.02519, -963.97473)
 rotation = 0.3970946
 scale = Vector2(2.8220835, 2.8220835)
 texture = ExtResource("4_8673m")
-metadata/_edit_lock_ = true
 
 [node name="Uranus" type="Sprite2D" parent="Planetarium" unique_id=1763890961]
 position = Vector2(-1841.5583, -336.59082)
@@ -563,12 +579,11 @@ rotation = 2.8681164
 scale = Vector2(0.95894957, 0.95894957)
 texture = ExtResource("9_lyyhm")
 
-[node name="Saturn" type="Sprite2D" parent="Planetarium" unique_id=733048817]
-position = Vector2(-15.999985, 688)
-rotation = 2.8217757
-scale = Vector2(4.751714, -4.751714)
-texture = ExtResource("5_0uarr")
-metadata/_edit_lock_ = true
+[node name="Saturn2" type="Sprite2D" parent="Planetarium" unique_id=419283765]
+position = Vector2(-5.000122, 702.999)
+rotation = 2.7815318
+scale = Vector2(1.7451776, -1.7451776)
+texture = ExtResource("19_t201x")
 
 [node name="UFO" type="StaticBody2D" parent="." unique_id=567435384]
 position = Vector2(-12.999939, -19291)
@@ -576,13 +591,14 @@ scale = Vector2(0.99999994, 0.99999994)
 metadata/_edit_lock_ = true
 
 [node name="ReverseGravity" type="Area2D" parent="UFO" unique_id=1052064592]
+position = Vector2(9.263916, -1335)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UFO/ReverseGravity" unique_id=1329443239]
 position = Vector2(-8.000028, 102)
 rotation = 0.018342495
 scale = Vector2(0.99999994, 0.99999994)
-polygon = PackedVector2Array(1603.1582, 811.7324, 2827.7786, 2960.6348, -2369.449, 3104.9824, -1485.9739, 887.4043)
+polygon = PackedVector2Array(1603.1582, 811.7324, 3111.48, 3759.5645, -2708.598, 4081.3672, -1485.9739, 887.4043)
 
 [node name="TractorBeam" type="Sprite2D" parent="UFO/ReverseGravity" unique_id=367641919]
 position = Vector2(310, 639.001)
@@ -591,32 +607,32 @@ texture = ExtResource("6_lyyhm")
 offset = Vector2(-79, 378)
 
 [node name="Radio" type="Sprite2D" parent="UFO" unique_id=1935176751]
-position = Vector2(600, -90)
+position = Vector2(609.2639, -1425)
 rotation = 0.26187912
 scale = Vector2(0.19250047, 0.19250047)
 texture = ExtResource("9_24efb")
 
 [node name="Ufo" type="Sprite2D" parent="UFO" unique_id=1453147935]
 z_index = 1
-position = Vector2(-2.8848648e-05, -27)
+position = Vector2(9.263886, -1361.9999)
 scale = Vector2(1.896, 1.896)
 texture = ExtResource("5_p3huw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UFO" unique_id=1461677556]
-position = Vector2(-2.0000288, 23)
+position = Vector2(7.2638874, -1312)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_p3huw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="UFO" unique_id=1420084161]
-position = Vector2(-2.0000293, -16)
+position = Vector2(7.2638865, -1351)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4lyc8")
 
 [node name="TractorBeam" type="Node2D" parent="UFO" unique_id=844001555]
-position = Vector2(13, 1362)
+position = Vector2(41.263855, 751)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UFO" unique_id=1121155755]
-position = Vector2(584, -76)
+position = Vector2(593.2639, -1411)
 stream = ExtResource("11_k7haq")
 max_distance = 4000.0
 attenuation = 0.35355362
@@ -649,21 +665,6 @@ polygon = PackedVector2Array(-165, 95, -264, -13, -162, -94, 203, -93, 303, -7, 
 z_index = -1
 position = Vector2(23.319275, 7526)
 spring_power = 2500
-
-[node name="JupiterInner" type="Sprite2D" parent="." unique_id=643409726]
-position = Vector2(1110.0001, -7677)
-scale = Vector2(2.7735271, 2.7735271)
-texture = ExtResource("23_t201x")
-
-[node name="JupiterInner2" type="Sprite2D" parent="." unique_id=772440422]
-position = Vector2(1110.0001, -7677)
-scale = Vector2(2.7735271, 2.7735271)
-texture = ExtResource("23_f0kkj")
-
-[node name="JupiterOuter" type="Sprite2D" parent="." unique_id=185191268]
-position = Vector2(1110.0001, -7677)
-scale = Vector2(2.7735271, 2.7735271)
-texture = ExtResource("22_23p15")
 
 [connection signal="body_entered" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_exited"]

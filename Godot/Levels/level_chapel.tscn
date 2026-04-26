@@ -273,7 +273,7 @@ size = Vector2(8129.249, 4853.516)
 [node name="LevelChapel" type="Node2D" unique_id=203127601]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_kybqk")]
-position = Vector2(-8677, -6929)
+position = Vector2(-7910, -365.00003)
 scale = Vector2(1, 1.0005803)
 
 [node name="StaticCollisions" type="StaticBody2D" parent="." unique_id=1841922935]
