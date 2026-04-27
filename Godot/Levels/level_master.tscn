@@ -60,7 +60,7 @@ fill_to = Vector2(0, 1)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(8862, -19889)
+position = Vector2(8560, -23171)
 
 [node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
 
@@ -74,7 +74,7 @@ position = Vector2(-13826, -8746)
 position = Vector2(8246, -17678)
 
 [node name="LevelMoonV2" parent="." unique_id=1292622103 instance=ExtResource("6_jty1k")]
-position = Vector2(0, -25391)
+position = Vector2(0, -26489)
 
 [node name="ChasmBackground" type="Node2D" parent="." unique_id=1904935496]
 position = Vector2(759, -194)
@@ -170,6 +170,7 @@ z_index = -4096
 texture_filter = 1
 position = Vector2(401, -12175)
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="VillageBackground" unique_id=728539310]
 offset_left = -16626.0
@@ -287,6 +288,8 @@ texture = ExtResource("20_o0667")
 z_index = -4096
 texture_filter = 1
 position = Vector2(-803, -321)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="MountainParallax" type="Node2D" parent="MountainBackground" unique_id=1879458216]
 position = Vector2(0, -5424)
@@ -438,6 +441,7 @@ texture = ExtResource("31_w1scw")
 [node name="WindmillBackground" type="Node2D" parent="." unique_id=521253308]
 position = Vector2(27, -20000)
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="WindmillBackground" unique_id=349794507]
 z_index = -4096
@@ -520,22 +524,20 @@ texture = ExtResource("22_fkt0n")
 [node name="MoonBackground" type="Node2D" parent="." unique_id=1466517191]
 z_index = -4096
 texture_filter = 1
-position = Vector2(21, -31137)
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
+position = Vector2(21, -32899)
 
 [node name="TextureRect" type="TextureRect" parent="MoonBackground" unique_id=1170917469]
 offset_left = -17155.0
-offset_top = 2484.0
+offset_top = 3285.0
 offset_right = 13691.0
-offset_bottom = 5932.0
+offset_bottom = 6269.0
 texture = SubResource("GradientTexture2D_fkt0n")
 
 [node name="ColorRect" type="ColorRect" parent="MoonBackground" unique_id=1574427280]
 offset_left = -17203.0
 offset_top = -20550.0
 offset_right = 13640.0
-offset_bottom = 2496.0
+offset_bottom = 3353.0
 color = Color(0, 0, 0, 1)
 
 [node name="MoonParallax" type="Node2D" parent="MoonBackground" unique_id=1655761021]
