@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce36p74onqrda"
-path="res://.godot/imported/Mushroom.png-21219b8b5bbe10649237c51c38b95160.ctex"
+uid="uid://w3rndg8nc53f"
+path="res://.godot/imported/apple.png-f244e7ecb5b99913355a5f62514bf77f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mushroom.png"
-dest_files=["res://.godot/imported/Mushroom.png-21219b8b5bbe10649237c51c38b95160.ctex"]
+source_file="res://Sprites/apple.png"
+dest_files=["res://.godot/imported/apple.png-f244e7ecb5b99913355a5f62514bf77f.ctex"]
 
 [params]
 

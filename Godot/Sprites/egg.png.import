@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce36p74onqrda"
-path="res://.godot/imported/Mushroom.png-21219b8b5bbe10649237c51c38b95160.ctex"
+uid="uid://cvqrin4ey11vu"
+path="res://.godot/imported/egg.png-d82a9dfafaf1b4885d182052d47e7b38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mushroom.png"
-dest_files=["res://.godot/imported/Mushroom.png-21219b8b5bbe10649237c51c38b95160.ctex"]
+source_file="res://Sprites/egg.png"
+dest_files=["res://.godot/imported/egg.png-d82a9dfafaf1b4885d182052d47e7b38.ctex"]
 
 [params]
 

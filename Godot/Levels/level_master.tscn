@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgjc4wsslmwwq" path="res://Levels/level_chasm.tscn" id="1_q24hh"]
 [ext_resource type="PackedScene" uid="uid://bwffcab06wreq" path="res://Levels/level_mountian.tscn" id="2_hxsbd"]
 [ext_resource type="PackedScene" uid="uid://bphbftddarv4d" path="res://Levels/level_village.tscn" id="3_hxsbd"]
-[ext_resource type="PackedScene" uid="uid://sg2q1paaiks" path="res://Levels/level_chapel.tscn" id="4_ybcgk"]
+[ext_resource type="PackedScene" uid="uid://m17y1bugpkr3" path="res://Levels/level_beanstalk.tscn" id="4_ybcgk"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_lachh"]
 [ext_resource type="PackedScene" uid="uid://nn5c5y6i6rcm" path="res://Levels/level_moon_v2.tscn" id="6_jty1k"]
 [ext_resource type="Texture2D" uid="uid://cx42ayys5aytk" path="res://Sprites/Parallax/Village-Parallax/BackgroundClouds.png" id="13_msce5"]
@@ -60,7 +60,7 @@ fill_to = Vector2(0, 1)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(-6298, -18649)
+position = Vector2(8862, -19889)
 
 [node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
 
