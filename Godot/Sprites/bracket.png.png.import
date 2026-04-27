@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1stb2m5ygysq"
-path="res://.godot/imported/boot.png-f824d363f50a9e7950a26c3104432339.ctex"
+uid="uid://d0eoo63xblt7"
+path="res://.godot/imported/bracket.png.png-b481509a17643492f1f888c15be0a3a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/boot.png"
-dest_files=["res://.godot/imported/boot.png-f824d363f50a9e7950a26c3104432339.ctex"]
+source_file="res://Sprites/bracket.png.png"
+dest_files=["res://.godot/imported/bracket.png.png-b481509a17643492f1f888c15be0a3a7.ctex"]
 
 [params]
 
