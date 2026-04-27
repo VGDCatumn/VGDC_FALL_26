@@ -11,6 +11,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpu43"]
 size = Vector2(2058.25, 525.87506)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kigi5"]
+size = Vector2(10339.636, 525.87506)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik5re"]
 size = Vector2(1095, 332.875)
 
@@ -206,6 +209,12 @@ scale = Vector2(1, 1.0005803)
 position = Vector2(2534.125, 980.0625)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_gpu43")
+
+[node name="CollisionShape2D76" type="CollisionShape2D" parent="StaticCollisions" unique_id=110138479]
+position = Vector2(421, 5992)
+rotation = -1.2879174
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_kigi5")
 
 [node name="CollisionShape2D94" type="CollisionShape2D" parent="StaticCollisions" unique_id=741873580]
 position = Vector2(-13209, 29.5625)
@@ -674,6 +683,8 @@ texture = ExtResource("10_doqjc")
 
 [node name="TexturePolygons" type="Node2D" parent="." unique_id=265890255]
 z_index = -1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="TexturePolygons" unique_id=2048320710]
 texture_repeat = 2

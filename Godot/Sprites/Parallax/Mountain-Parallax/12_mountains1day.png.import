@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvq66yyfqhlod"
-path="res://.godot/imported/glacial_mountains.png-472865c245e0750c9b116859380c8592.ctex"
+uid="uid://bl8kv2ujx0b88"
+path="res://.godot/imported/12_mountains1day.png-e9556a8ec2c827ab2157089fb5c33c84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Parallax/Mountain-Parallax/glacial_mountains.png"
-dest_files=["res://.godot/imported/glacial_mountains.png-472865c245e0750c9b116859380c8592.ctex"]
+source_file="res://Sprites/Parallax/Mountain-Parallax/12_mountains1day.png"
+dest_files=["res://.godot/imported/12_mountains1day.png-e9556a8ec2c827ab2157089fb5c33c84.ctex"]
 
 [params]
 

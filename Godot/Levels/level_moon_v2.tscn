@@ -597,7 +597,7 @@ scale = Vector2(0.99999994, 0.99999994)
 metadata/_edit_lock_ = true
 
 [node name="ReverseGravity" type="Area2D" parent="UFO" unique_id=1052064592]
-position = Vector2(30.263977, -1863)
+position = Vector2(29.98285, -1708)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UFO/ReverseGravity" unique_id=1329443239]
@@ -614,32 +614,32 @@ texture = SubResource("CompressedTexture2D_t201x")
 offset = Vector2(-79, 378)
 
 [node name="Radio" type="Sprite2D" parent="UFO" unique_id=1935176751]
-position = Vector2(630.264, -1953)
+position = Vector2(629.98285, -1798)
 rotation = 0.26187912
 scale = Vector2(0.19250047, 0.19250047)
 texture = ExtResource("9_24efb")
 
 [node name="Ufo" type="Sprite2D" parent="UFO" unique_id=1453147935]
 z_index = 1
-position = Vector2(30.263947, -1889.9998)
+position = Vector2(29.982819, -1734.9998)
 scale = Vector2(1.896, 1.896)
 texture = ExtResource("5_p3huw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UFO" unique_id=1461677556]
-position = Vector2(28.263948, -1840)
+position = Vector2(27.98282, -1685)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_p3huw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="UFO" unique_id=1420084161]
-position = Vector2(28.263947, -1879)
+position = Vector2(27.982819, -1724)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4lyc8")
 
 [node name="TractorBeam" type="Node2D" parent="UFO" unique_id=844001555]
-position = Vector2(21.000061, -1028)
+position = Vector2(20.718933, -873)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UFO" unique_id=1121155755]
-position = Vector2(614.264, -1939)
+position = Vector2(613.98285, -1784)
 stream = ExtResource("11_k7haq")
 max_distance = 4000.0
 attenuation = 0.35355362
@@ -675,7 +675,7 @@ spring_power = 2500
 
 [node name="UfoBeam3" type="Sprite2D" parent="." unique_id=708107034]
 modulate = Color(0.90154254, 1.3596051, 0.9931552, 1)
-position = Vector2(25, -19420)
+position = Vector2(24.718872, -19265)
 scale = Vector2(1.8824556, 3.1383715)
 texture = ExtResource("26_7crhs")
 

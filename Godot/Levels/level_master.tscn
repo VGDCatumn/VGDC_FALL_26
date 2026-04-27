@@ -6,66 +6,68 @@
 [ext_resource type="PackedScene" uid="uid://sg2q1paaiks" path="res://Levels/level_chapel.tscn" id="4_ybcgk"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_lachh"]
 [ext_resource type="PackedScene" uid="uid://nn5c5y6i6rcm" path="res://Levels/level_moon_v2.tscn" id="6_jty1k"]
-[ext_resource type="Script" uid="uid://csriakjcmbtgn" path="res://Scripts/parallax_background.gd" id="7_2gnia"]
-[ext_resource type="Texture2D" uid="uid://c6xqly4udq81h" path="res://Sprites/Parallax/Mountain-Parallax/clouds_bg.png" id="7_mfwct"]
-[ext_resource type="Texture2D" uid="uid://cvq66yyfqhlod" path="res://Sprites/Parallax/Mountain-Parallax/glacial_mountains.png" id="8_2gnia"]
-[ext_resource type="Texture2D" uid="uid://brdrcc3uu1vpf" path="res://Sprites/Parallax/Mountain-Parallax/clouds_mg_3.png" id="9_hxgcx"]
-[ext_resource type="Texture2D" uid="uid://dnvadqieeqio" path="res://Sprites/Parallax/Mountain-Parallax/clouds_mg_2.png" id="10_0xa6d"]
-[ext_resource type="Texture2D" uid="uid://c3gtfkt8xobvi" path="res://Sprites/Parallax/Mountain-Parallax/clouds_mg_1.png" id="11_01xgm"]
+[ext_resource type="Texture2D" uid="uid://cx42ayys5aytk" path="res://Sprites/Parallax/Village-Parallax/BackgroundClouds.png" id="13_msce5"]
 [ext_resource type="Texture2D" uid="uid://c2pggwhxug44n" path="res://Sprites/Parallax/Chasm-Parallax/grey_L1.png" id="13_nn855"]
+[ext_resource type="Texture2D" uid="uid://cy5jqet5l3ww1" path="res://Sprites/Parallax/Village-Parallax/BackgroundClouds (1).png" id="14_7wxps"]
 [ext_resource type="Texture2D" uid="uid://fkrprmg7vg1x" path="res://Sprites/Parallax/Chasm-Parallax/grey_L2.png" id="14_y0lrq"]
+[ext_resource type="Texture2D" uid="uid://dt2hiy627oy6v" path="res://Sprites/Parallax/Village-Parallax/BackgroundClouds (2).png" id="15_bm11b"]
 [ext_resource type="Texture2D" uid="uid://cdexc8ywojtcw" path="res://Sprites/Parallax/Chasm-Parallax/grey_L3.png" id="15_gokxg"]
+[ext_resource type="Texture2D" uid="uid://cx8xu8m2nmph1" path="res://Sprites/Parallax/Village-Parallax/BackgroundClouds (3).png" id="16_bdnvx"]
 [ext_resource type="Texture2D" uid="uid://d065wrq7no4gh" path="res://Sprites/Parallax/Chasm-Parallax/grey_L4.png" id="16_p7gp7"]
 [ext_resource type="Texture2D" uid="uid://c2empd2vxh0pi" path="res://Sprites/Parallax/Windmill-Parallax/Clouds1.png" id="17_07lch"]
+[ext_resource type="Texture2D" uid="uid://crjt3asp1l1i6" path="res://Sprites/Parallax/Village-Parallax/Mountains00.png" id="17_75sy4"]
+[ext_resource type="Texture2D" uid="uid://caub06y7e37gi" path="res://Sprites/Parallax/Village-Parallax/Mountains01.png" id="18_joqc8"]
 [ext_resource type="Texture2D" uid="uid://bfnpnfkuivcu3" path="res://Sprites/Parallax/Windmill-Parallax/Clouds2.png" id="18_uoqpl"]
+[ext_resource type="Texture2D" uid="uid://bh8bn7km8jtr3" path="res://Sprites/Parallax/Village-Parallax/BackgroundClouds (4).png" id="19_0hsgl"]
 [ext_resource type="Texture2D" uid="uid://cxdcrtab8l8fi" path="res://Sprites/Parallax/Windmill-Parallax/Clouds3.png" id="19_arple"]
+[ext_resource type="Texture2D" uid="uid://bbwxxbrekvi12" path="res://Sprites/Parallax/Mountain-Parallax/03_mountains1day.png" id="19_o0667"]
 [ext_resource type="Texture2D" uid="uid://o6mo8kb8mf5y" path="res://Sprites/Parallax/Windmill-Parallax/Clouds4.png" id="20_dqei3"]
+[ext_resource type="Texture2D" uid="uid://5kwq6hb3bm05" path="res://Sprites/Parallax/Mountain-Parallax/05_mountains1day.png" id="20_fk5gx"]
+[ext_resource type="Texture2D" uid="uid://dhdeoexx4iiwy" path="res://Sprites/Parallax/Village-Parallax/Mountains.png" id="20_o0667"]
+[ext_resource type="Texture2D" uid="uid://b7aqlebdsptk0" path="res://Sprites/Parallax/Mountain-Parallax/06_mountains1day.png" id="21_oyd4v"]
 [ext_resource type="Texture2D" uid="uid://bwirfg06discl" path="res://Sprites/Parallax/Windmill-Parallax/Clouds5.png" id="21_rwlr2"]
 [ext_resource type="Texture2D" uid="uid://db3r5733m8itx" path="res://Sprites/Parallax/Windmill-Parallax/Clouds6.png" id="22_fkt0n"]
+[ext_resource type="Texture2D" uid="uid://qxlny8wfqenk" path="res://Sprites/Parallax/Mountain-Parallax/07_mountains1day.png" id="22_orre3"]
+[ext_resource type="Texture2D" uid="uid://bcsiyhqko4ii6" path="res://Sprites/Parallax/Mountain-Parallax/09_mountains1day.png" id="23_7ore4"]
 [ext_resource type="Texture2D" uid="uid://dwp346xrcf87d" path="res://Sprites/Parallax/Moon-Parallax/spr_stars01.png" id="23_uoqpl"]
+[ext_resource type="Texture2D" uid="uid://b0mk5rputm8qa" path="res://Sprites/Parallax/Mountain-Parallax/08_mountains1day.png" id="24_7s085"]
 [ext_resource type="Texture2D" uid="uid://b7gxvmd8uculn" path="res://Sprites/Parallax/Moon-Parallax/spr_stars02.png" id="24_arple"]
+[ext_resource type="Texture2D" uid="uid://bh25m6kdm0sf1" path="res://Sprites/Parallax/Mountain-Parallax/04_mountains1day.png" id="25_yx7na"]
+[ext_resource type="Texture2D" uid="uid://dxpffxwof07" path="res://Sprites/Parallax/Mountain-Parallax/10_mountains1day.png" id="26_ouvjf"]
+[ext_resource type="Texture2D" uid="uid://23lby7kl7d68" path="res://Sprites/Parallax/Mountain-Parallax/11_mountains1day.png" id="27_flq3i"]
+[ext_resource type="Texture2D" uid="uid://bl8kv2ujx0b88" path="res://Sprites/Parallax/Mountain-Parallax/12_mountains1day.png" id="28_vsdvh"]
+[ext_resource type="Texture2D" uid="uid://l50pc1fx0x7i" path="res://Sprites/Parallax/Mountain-Parallax/13_mountains1day.png" id="29_uirrl"]
+[ext_resource type="Texture2D" uid="uid://dtlvp0ifcaxnr" path="res://Sprites/Parallax/Mountain-Parallax/14_mountains1day.png" id="30_u5jcx"]
+[ext_resource type="Texture2D" uid="uid://tm6rd73uo25n" path="res://Sprites/Parallax/Mountain-Parallax/15_mountains1day.png" id="31_w1scw"]
 
-[sub_resource type="Gradient" id="Gradient_arple"]
-colors = PackedColorArray(0.45490196, 0.5529412, 0.63529414, 1, 0.83137256, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_fk5gx"]
+colors = PackedColorArray(0.18431373, 0.19215687, 0.3529412, 1, 0.5372549, 0.5882353, 0.6156863, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dqei3"]
-gradient = SubResource("Gradient_arple")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oyd4v"]
+gradient = SubResource("Gradient_fk5gx")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="Gradient" id="Gradient_fkt0n"]
-colors = PackedColorArray(0.6117647, 0.85490197, 0.96862745, 1, 0.03529412, 0.047058824, 0.050980393, 1)
+colors = PackedColorArray(0.18431373, 0.19215687, 0.3529412, 1, 0.03529412, 0.047058824, 0.050980393, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3ot5d"]
 gradient = SubResource("Gradient_fkt0n")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="Gradient" id="Gradient_do7ng"]
-colors = PackedColorArray(0.36862746, 0.5137255, 0.6509804, 1, 0.03529412, 0.047058824, 0.050980393, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_yee2a"]
-gradient = SubResource("Gradient_do7ng")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_mwk6t"]
-colors = PackedColorArray(0.83137256, 1, 1, 1, 0.03529412, 0.047058824, 0.050980393, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_msce5"]
-gradient = SubResource("Gradient_mwk6t")
-fill_to = Vector2(0, 1)
-
 [sub_resource type="Gradient" id="Gradient_rwlr2"]
-interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.4670487, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.8036, 0.81262, 0.82, 1, 0.78039217, 0.85882354, 0.8666667, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.69411767, 0.7607843, 0.8039216, 1, 0.78039217, 0.85882354, 0.8666667, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fkt0n"]
 gradient = SubResource("Gradient_rwlr2")
+width = 1080
+height = 1080
 fill_to = Vector2(0, 1)
 
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(3682, -4913)
+position = Vector2(-9402, -12169)
 
 [node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
 
@@ -81,109 +83,143 @@ position = Vector2(8246, -17678)
 [node name="LevelMoonV2" parent="." unique_id=1292622103 instance=ExtResource("6_jty1k")]
 position = Vector2(0, -25391)
 
-[node name="MountainBackground" type="Node2D" parent="." unique_id=1018029610]
-position = Vector2(-219, -5739)
-
-[node name="ColorRect" type="ColorRect" parent="MountainBackground" unique_id=1890767398]
+[node name="VillageBackground" type="Node2D" parent="." unique_id=858262311]
 z_index = -4096
-offset_left = -16255.0
-offset_top = -7884.0
-offset_right = 14338.0
-offset_bottom = 124.0
-color = Color(0.8305609, 1.1397399, 1.319, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="MountainBackground" unique_id=1166477328]
-z_index = -4096
-offset_left = -16213.0
-offset_top = -477.0
-offset_right = 14417.0
-offset_bottom = 1886.0
-color = Color(0.6117647, 0.85490197, 0.96862745, 1)
-
-[node name="TextureRect" type="TextureRect" parent="MountainBackground" unique_id=1144268549]
-z_index = -4096
-offset_left = -16643.0
-offset_top = -11306.0
-offset_right = 14311.0
-offset_bottom = -7800.0
-texture = SubResource("GradientTexture2D_dqei3")
-
-[node name="MountainParallax" type="Node2D" parent="MountainBackground" unique_id=938122002]
-z_index = -2
 texture_filter = 1
-position = Vector2(24, 4126)
-script = ExtResource("7_2gnia")
+position = Vector2(0, -13755)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="Parallax2D" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=497712127]
+[node name="ColorRect" type="ColorRect" parent="VillageBackground" unique_id=728539310]
+offset_left = -16626.0
+offset_top = -327.0
+offset_right = 15003.0
+offset_bottom = 10273.0
+color = Color(0.18431373, 0.19215687, 0.3529412, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VillageBackground" unique_id=173368520]
 z_index = -4096
-scale = Vector2(15, 15)
-scroll_scale = Vector2(0.01, 0)
-scroll_offset = Vector2(-1370, -5431)
-repeat_size = Vector2(384, 0)
-repeat_times = 5
-follow_viewport = false
+offset_left = -16883.0
+offset_top = -9014.0
+offset_right = 15036.0
+offset_bottom = -3889.0
+color = Color(0.45490196, 0.5529412, 0.63529414, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D" unique_id=42562391]
-texture = ExtResource("7_mfwct")
-
-[node name="Parallax2D2" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1051972393]
-z_index = -4096
-scale = Vector2(15, 15)
-scroll_scale = Vector2(0.03, 0)
-scroll_offset = Vector2(-1370, -5431)
-repeat_size = Vector2(384, 0)
-repeat_times = 5
-follow_viewport = false
-
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D2" unique_id=960182034]
-texture = ExtResource("8_2gnia")
-
-[node name="Parallax2D3" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1202875941]
-z_index = -4096
-scale = Vector2(15, 15)
-scroll_scale = Vector2(0.07, 0)
-scroll_offset = Vector2(-1370, -5431)
-repeat_size = Vector2(384, 0)
-repeat_times = 5
-follow_viewport = false
-
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D3" unique_id=700605284]
-texture = ExtResource("9_hxgcx")
-
-[node name="Parallax2D4" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1272605308]
-z_index = -4096
-scale = Vector2(15, 15)
-scroll_scale = Vector2(0.1, 0)
-scroll_offset = Vector2(-1370, -5431)
-repeat_size = Vector2(384, 0)
-repeat_times = 5
-follow_viewport = false
-
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D4" unique_id=1978867471]
-texture = ExtResource("10_0xa6d")
-
-[node name="Parallax2D5" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1692832981]
+[node name="TextureRect" type="TextureRect" parent="VillageBackground" unique_id=1969700386]
 visible = false
-z_index = -4096
-scale = Vector2(15, 15)
-scroll_scale = Vector2(0.15, 0)
-scroll_offset = Vector2(-1370, -5431)
-repeat_size = Vector2(384, 0)
-repeat_times = 5
+offset_top = 4326.0
+offset_right = 7230.0
+offset_bottom = 5838.0
+texture = SubResource("GradientTexture2D_oyd4v")
+
+[node name="VillageParallax" type="Node2D" parent="VillageBackground" unique_id=1277511355]
+
+[node name="Parallax2D" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=92483833]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-26, -2600)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D5" unique_id=670825524]
-texture = ExtResource("11_01xgm")
+[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D" unique_id=400324203]
+texture = ExtResource("13_msce5")
+
+[node name="Parallax2D2" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=845760938]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.01, 0)
+scroll_offset = Vector2(0, -1444)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D2" unique_id=527278971]
+texture = ExtResource("14_7wxps")
+
+[node name="Parallax2D3" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=745732599]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.015, 0)
+scroll_offset = Vector2(-655, -1575)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D3" unique_id=1130338434]
+texture = ExtResource("15_bm11b")
+
+[node name="Parallax2D4" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=142967195]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.02, 0)
+scroll_offset = Vector2(-2478, -1124)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D4" unique_id=70756892]
+texture = ExtResource("16_bdnvx")
+
+[node name="Parallax2D6" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=34236809]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.025, 0)
+scroll_offset = Vector2(0, -996)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="big-mountain" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D6" unique_id=451212087]
+texture = ExtResource("17_75sy4")
+
+[node name="ColorRect" type="ColorRect" parent="VillageBackground/VillageParallax/Parallax2D6" unique_id=1732660402]
+offset_top = 151.22221
+offset_right = 638.2222
+offset_bottom = 259.22223
+color = Color(0.18431373, 0.19215687, 0.3529412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D7" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=367288088]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.03, 0)
+scroll_offset = Vector2(0, 534)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D7" unique_id=239439465]
+texture = ExtResource("18_joqc8")
+
+[node name="Parallax2D5" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=477013604]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.035, 0)
+scroll_offset = Vector2(0, 813)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="small-clouds" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D5" unique_id=390234220]
+texture = ExtResource("19_0hsgl")
+
+[node name="Parallax2D8" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=58581265]
+scale = Vector2(9, 9)
+scroll_scale = Vector2(0.04, 0)
+scroll_offset = Vector2(0, 1261)
+repeat_size = Vector2(640, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D8" unique_id=1822727803]
+texture = ExtResource("20_o0667")
 
 [node name="ChasmBackground" type="Node2D" parent="." unique_id=1904935496]
 position = Vector2(759, -194)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ChasmBackground" unique_id=984836037]
 z_index = -4096
-offset_left = -7366.6367
-offset_top = -3751.682
-offset_right = 4930.8477
-offset_bottom = 1928.2395
+offset_left = -17414.0
+offset_top = -7191.0
+offset_right = 14300.0
+offset_bottom = 1928.2393
 color = Color(0.03529412, 0.047058824, 0.050980393, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="ChasmBackground" unique_id=163127462]
@@ -197,26 +233,11 @@ color = Color(0.03529412, 0.047058824, 0.050980393, 1)
 
 [node name="TextureRect" type="TextureRect" parent="ChasmBackground/ColorRect2" unique_id=119628664]
 layout_mode = 0
-offset_left = 4137.6855
+offset_left = 1043.8264
 offset_top = -180.25928
 offset_right = 7729.1914
 offset_bottom = 103.39453
 texture = SubResource("GradientTexture2D_3ot5d")
-
-[node name="TextureRect2" type="TextureRect" parent="ChasmBackground/ColorRect2" unique_id=689377506]
-layout_mode = 0
-offset_left = 2188.544
-offset_top = -180.25928
-offset_right = 3453.2463
-offset_bottom = 103.39453
-texture = SubResource("GradientTexture2D_yee2a")
-
-[node name="TextureRect3" type="TextureRect" parent="ChasmBackground/ColorRect2" unique_id=1230879188]
-layout_mode = 0
-offset_top = -180.25879
-offset_right = 2164.6528
-offset_bottom = 103.39502
-texture = SubResource("GradientTexture2D_msce5")
 
 [node name="ChasmParallax" type="Node2D" parent="ChasmBackground" unique_id=1847790542]
 position = Vector2(-1671, -391)
@@ -277,8 +298,161 @@ follow_viewport = false
 position = Vector2(-62.444447, -86.55556)
 texture = ExtResource("16_p7gp7")
 
+[node name="MountainBackground" type="Node2D" parent="." unique_id=113765634]
+z_index = -4096
+texture_filter = 1
+position = Vector2(-803, -321)
+
+[node name="MountainParallax" type="Node2D" parent="MountainBackground" unique_id=1879458216]
+position = Vector2(0, -5424)
+
+[node name="Parallax2D" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1039461639]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -3949)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D" unique_id=550979111]
+texture = ExtResource("19_o0667")
+
+[node name="Parallax2D3" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=100188122]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-3541, -3903)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D3" unique_id=2011086658]
+texture = ExtResource("20_fk5gx")
+
+[node name="Parallax2D4" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1014139432]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -3373)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D4" unique_id=1854127298]
+position = Vector2(-44, 7)
+texture = ExtResource("21_oyd4v")
+
+[node name="Parallax2D5" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=239730913]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-3558, -2583)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D5" unique_id=1252212456]
+texture = ExtResource("22_orre3")
+
+[node name="Parallax2D7" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=2050258684]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -2454)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D7" unique_id=1666920331]
+texture = ExtResource("23_7ore4")
+
+[node name="Parallax2D6" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=540969148]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -1698)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="big-cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D6" unique_id=2108205712]
+texture = ExtResource("24_7s085")
+
+[node name="Parallax2D2" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=240670229]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -2675)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="small-cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D2" unique_id=2029072516]
+texture = ExtResource("25_yx7na")
+
+[node name="Parallax2D8" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1118454193]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -1862)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D8" unique_id=517207093]
+texture = ExtResource("26_ouvjf")
+
+[node name="Parallax2D9" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=438667749]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -1275)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D9" unique_id=2111563612]
+texture = ExtResource("27_flq3i")
+
+[node name="Parallax2D10" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=2092769670]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -755)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D10" unique_id=1644051398]
+texture = ExtResource("28_vsdvh")
+
+[node name="Parallax2D11" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=470551426]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -304)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D11" unique_id=1297179280]
+texture = ExtResource("29_uirrl")
+
+[node name="Parallax2D12" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=377845177]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, -62)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D12" unique_id=2054812444]
+texture = ExtResource("30_u5jcx")
+
+[node name="Parallax2D13" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=466219182]
+scale = Vector2(12, 12)
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-2211, 248)
+repeat_size = Vector2(480, 0)
+repeat_times = 6
+follow_viewport = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D13" unique_id=386643330]
+texture = ExtResource("31_w1scw")
+
 [node name="WindmillBackground" type="Node2D" parent="." unique_id=521253308]
 position = Vector2(27, -20000)
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="WindmillBackground" unique_id=349794507]
 z_index = -4096
@@ -287,14 +461,6 @@ offset_top = -6666.0
 offset_right = 14762.0
 offset_bottom = 56.0
 color = Color(0.78039217, 0.85882354, 0.8666667, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="WindmillBackground" unique_id=1703215116]
-z_index = -4096
-offset_left = -16883.0
-offset_top = -149.0
-offset_right = 15036.0
-offset_bottom = 3025.0
-color = Color(0.45490196, 0.5529412, 0.63529414, 1)
 
 [node name="WindmillParallax" type="Node2D" parent="WindmillBackground" unique_id=1498692477]
 z_index = -4096
@@ -366,6 +532,8 @@ texture = ExtResource("22_fkt0n")
 z_index = -4096
 texture_filter = 1
 position = Vector2(21, -31137)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="MoonBackground" unique_id=1170917469]
 offset_left = -17155.0

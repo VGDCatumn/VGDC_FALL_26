@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ccne1gvc5rx"
-path="res://.godot/imported/sky.png-20bae250ccd0bedc8faa5e44a45c5e7c.ctex"
+uid="uid://cx8xu8m2nmph1"
+path="res://.godot/imported/BackgroundClouds (3).png-67c68d7e6fb45fb064e2cd8a07842ff8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Parallax/Mountain-Parallax/sky.png"
-dest_files=["res://.godot/imported/sky.png-20bae250ccd0bedc8faa5e44a45c5e7c.ctex"]
+source_file="res://Sprites/Parallax/Village-Parallax/BackgroundClouds (3).png"
+dest_files=["res://.godot/imported/BackgroundClouds (3).png-67c68d7e6fb45fb064e2cd8a07842ff8.ctex"]
 
 [params]
 
