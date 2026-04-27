@@ -160,7 +160,6 @@ radius = 79.4043
 height = 862.64844
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t201x"]
-load_path = "res://.godot/imported/ufo-beam-1.png-b30604665c5cd59c57640f1006988c2d.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3huw"]
 radius = 164.0
@@ -205,6 +204,7 @@ scale = Vector2(6, 6)
 texture = ExtResource("3_c11c3")
 
 [node name="MoonGravity" type="Area2D" parent="Moon" unique_id=1584505324]
+visible = false
 position = Vector2(-2, 5692)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/MoonGravity" unique_id=1742532390]
