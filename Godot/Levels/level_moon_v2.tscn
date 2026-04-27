@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b58qyr5m4pveq" path="res://Sprites/moon_top.png" id="3_c11c3"]
 [ext_resource type="Texture2D" uid="uid://c78xbnhipxyit" path="res://Sprites/comet.png" id="4_8673m"]
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
+[ext_resource type="Texture2D" uid="uid://dy0epnmoal2lg" path="res://Sprites/satellite-dish.png" id="4_t201x"]
 [ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo-1.png" id="5_p3huw"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="6_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://dfmfim0rqcxlw" path="res://Sprites/space-probe-2.png" id="6_txhar"]
@@ -29,6 +30,12 @@ radius = 4700.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahcuu"]
 size = Vector2(14528, 19028)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beice"]
+size = Vector2(1684.0867, 335.8465)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc6by"]
+size = Vector2(760.56445, 338.34607)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t6v2c"]
 radius = 88.03027
@@ -210,6 +217,43 @@ shape = SubResource("RectangleShape2D_ahcuu")
 [node name="MoonCollision" type="CollisionShape2D" parent="Moon/MoonGravity" unique_id=1008056579]
 position = Vector2(5, -51)
 shape = SubResource("CircleShape2D_otmkg")
+
+[node name="MoonPlatforming" type="StaticBody2D" parent="." unique_id=1147254078]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatforming" unique_id=791643062]
+position = Vector2(2967, 1805)
+shape = SubResource("RectangleShape2D_beice")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MoonPlatforming" unique_id=1076538544]
+position = Vector2(774, 1268)
+rotation = 0.5054712
+shape = SubResource("RectangleShape2D_beice")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MoonPlatforming" unique_id=1469046464]
+position = Vector2(1727, -115.00006)
+rotation = -0.4164207
+shape = SubResource("RectangleShape2D_beice")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="MoonPlatforming" unique_id=2008068794]
+position = Vector2(-773, -1038)
+rotation = 0.39066452
+shape = SubResource("RectangleShape2D_beice")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MoonPlatforming" unique_id=312134185]
+position = Vector2(611, -2011)
+rotation = -0.2389435
+shape = SubResource("RectangleShape2D_nc6by")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MoonPlatforming" unique_id=322451968]
+position = Vector2(1410.6027, -2701.6519)
+rotation = -0.90428984
+shape = SubResource("RectangleShape2D_beice")
+
+[node name="SatelliteDish" type="Sprite2D" parent="MoonPlatforming" unique_id=2053280613]
+position = Vector2(804.0416, -2824.9583)
+rotation = -1.0554087
+scale = Vector2(-1, 1)
+texture = ExtResource("4_t201x")
 
 [node name="SpaceShuttle" type="StaticBody2D" parent="." unique_id=1157142006]
 position = Vector2(2, -5692)
