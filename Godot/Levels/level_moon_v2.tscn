@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b58qyr5m4pveq" path="res://Sprites/moon_top.png" id="3_c11c3"]
 [ext_resource type="Texture2D" uid="uid://c78xbnhipxyit" path="res://Sprites/comet.png" id="4_8673m"]
 [ext_resource type="Texture2D" uid="uid://byrygi3frk3ei" path="res://Sprites/space_shuttle.png" id="4_kjyy0"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://b7dmamosdmwep" path="res://Sprites/ufo-1.png" id="5_p3huw"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="6_4lyc8"]
 [ext_resource type="Texture2D" uid="uid://dfmfim0rqcxlw" path="res://Sprites/space-probe-2.png" id="6_txhar"]
@@ -178,9 +177,6 @@ size = Vector2(134.35333, 150.88269)
 [node name="LevelMoonV2" type="Node2D" unique_id=1292622103 node_paths=PackedStringArray("tractor_beam")]
 script = ExtResource("1_ahcuu")
 tractor_beam = NodePath("UFO/TractorBeam")
-
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_4lyc8")]
-position = Vector2(-10, -12192)
 
 [node name="Moon" type="StaticBody2D" parent="." unique_id=1070917389]
 position = Vector2(2, -5692)
