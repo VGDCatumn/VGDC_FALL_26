@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dne1ao17n7qwx"
-path="res://.godot/imported/tractor_beam.png-1024eb057b96b09526630bce4ddedd1d.ctex"
+uid="uid://b7yhq8gwkrnga"
+path="res://.godot/imported/ufo-beam-3.png-fc0915c6514f4280303198e3e288810e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tractor_beam.png"
-dest_files=["res://.godot/imported/tractor_beam.png-1024eb057b96b09526630bce4ddedd1d.ctex"]
+source_file="res://Sprites/ufo-beam-3.png"
+dest_files=["res://.godot/imported/ufo-beam-3.png-fc0915c6514f4280303198e3e288810e.ctex"]
 
 [params]
 

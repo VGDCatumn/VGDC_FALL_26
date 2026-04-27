@@ -9,14 +9,11 @@ var previous_gravity : float
 
 func _process(delta):
 	if in_tractor_beam:
-		# move player towards center of tractor beam
-		# this should feel "floaty"
-		# this is really jank and needs to be changed
-		var distance_vector = tractor_beam.global_position - player.global_position
-		var direction = distance_vector.normalized()
-		var distance = distance_vector.length()
-		player.velocity += direction * 12
-		player.velocity.y = lerpf(player.velocity.y, -500.0, delta)
+		# move player towards center of tractor beam, clamp velocity to ease player in
+		var to_center = tractor_beam.global_position - player.global_position
+		player.velocity += to_center * delta
+		player.velocity = player.velocity.clampf(-300.0, 300.0)
+		
 		
 		# play end credits song
 		if (!audio.playing):
