@@ -2,14 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dbtjt3evgfr4r" path="res://Sprites/monkey-4.png" id="1_doqjc"]
 [ext_resource type="PackedScene" uid="uid://p8rhmmye75ha" path="res://Instances/procedural bridge/procedural bridge.tscn" id="2_1y6fy"]
-[ext_resource type="Texture2D" uid="uid://cxni5apvb6jud" path="res://Sprites/island-1.png" id="4_32nma"]
-[ext_resource type="Texture2D" uid="uid://cp0gloargl8mm" path="res://Sprites/grass-2.jpg" id="4_f1rbo"]
-[ext_resource type="Texture2D" uid="uid://d0eoo63xblt7" path="res://Sprites/bracket.png.png" id="5_4xpbj"]
+[ext_resource type="Texture2D" uid="uid://d0eoo63xblt7" path="res://Sprites/bracket.png" id="5_4xpbj"]
 [ext_resource type="Texture2D" uid="uid://5tld48poe18p" path="res://Sprites/tree.png" id="5_235sh"]
 [ext_resource type="Texture2D" uid="uid://dwp82rtqnxdv2" path="res://Sprites/branch-7.png" id="6_4xpbj"]
-[ext_resource type="Texture2D" uid="uid://c6je5vhemq7fp" path="res://Sprites/island-2.png" id="6_xwbgb"]
 [ext_resource type="Texture2D" uid="uid://dae4notstf8tk" path="res://Sprites/harp-2.png" id="7_f1rbo"]
-[ext_resource type="Texture2D" uid="uid://bjohrv1v3fjyu" path="res://Sprites/island-3.png" id="7_itkw0"]
 [ext_resource type="Texture2D" uid="uid://ca1pi4f6hn7lc" path="res://Sprites/branch-5.png" id="8_hhv64"]
 [ext_resource type="Texture2D" uid="uid://dqj207g1gglwx" path="res://Sprites/bean-1.png" id="8_t6ncy"]
 [ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="9_1kuye"]
@@ -31,11 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://ce6xjn3pfvotn" path="res://Sprites/boot-3.png" id="25_6mwuc"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="26_6mwuc"]
 [ext_resource type="Texture2D" uid="uid://syjnsn5l0jth" path="res://Sprites/dart-1.png" id="27_qpr4f"]
+[ext_resource type="Texture2D" uid="uid://cw2q2krd3yr6v" path="res://Sprites/mantis-1.png" id="28_fwamo"]
 [ext_resource type="Texture2D" uid="uid://mjaxxi6mi0cs" path="res://Sprites/arm-1.png" id="32_efpkb"]
-[ext_resource type="Texture2D" uid="uid://b7x08034tyx5c" path="res://Sprites/teacup-1.png" id="32_m1hkj"]
-[ext_resource type="Texture2D" uid="uid://vwcunajb0etc" path="res://Sprites/teacup-2.png" id="33_fwamo"]
-[ext_resource type="Texture2D" uid="uid://cmhyxwcxtgns6" path="res://Sprites/teacup-3.png" id="34_585fv"]
-[ext_resource type="Texture2D" uid="uid://b6ugxjvhs03p4" path="res://Sprites/teacup-4.png" id="35_qwnq4"]
+[ext_resource type="Texture2D" uid="uid://cusxwk0k4kq2p" path="res://Sprites/teacup-5.png" id="32_m1hkj"]
+[ext_resource type="Texture2D" uid="uid://bqgv5rvfem66x" path="res://Sprites/teacup-6.png" id="33_fwamo"]
+[ext_resource type="Texture2D" uid="uid://bo3fpw0y330bu" path="res://Sprites/teacup-7.png" id="34_585fv"]
+[ext_resource type="Texture2D" uid="uid://beg0tubj0ch72" path="res://Sprites/teacup-8.png" id="35_qwnq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpu43"]
 size = Vector2(4010.0002, 525.87506)
@@ -82,9 +79,6 @@ size = Vector2(1315.7417, 5123.9775)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpr4f"]
 size = Vector2(1361.9581, 1154.3977)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_32nma"]
-size = Vector2(503.08356, 129.2862)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpr4f"]
 radius = 164.95166
@@ -198,12 +192,6 @@ rotation = -0.054330755
 scale = Vector2(0.9999993, 0.9999993)
 shape = SubResource("RectangleShape2D_qpr4f")
 
-[node name="leaf" type="CollisionShape2D" parent="SpriteCollisions" unique_id=1867502512]
-position = Vector2(3041, -743.99994)
-rotation = 0.17733303
-scale = Vector2(0.9999992, 0.9999992)
-shape = SubResource("RectangleShape2D_32nma")
-
 [node name="Bean" type="StaticBody2D" parent="SpriteCollisions" unique_id=1302316556]
 position = Vector2(-1833.0001, 222)
 rotation = 0.36159727
@@ -249,6 +237,108 @@ texture = ExtResource("32_efpkb")
 position = Vector2(0, -3)
 polygon = PackedVector2Array(2098, 1993, 2131, 2058, 2219, 2082, 2369, 1650, 2511, 1573, 2331, 1300, 2379, 1205, 2581, 1200, 3141, 1399, 3206, 1365, 3216, 1298, 3087, 1215, 2956, 1150, 2869, 1057, 2580, 970, 2450, 900, 2259, 822, 2073, 649, 1981, 621, 1846, 512, 1614, 419, 1478, 305, 1210, 197, 1137, 136, 898, 8, 674, -76, 185, -456, 35, -579, -185, -722, -420, -792, -637, -838, -761, -905, -866, -1032, -898, -1135, -1085, -1364, -1212, -1461, -1479, -1731, -1962, -2059, -2964, -1390, -1511, -117, -492, 542, 561, 826, 1118, 883, 1514, 1383, 1683, 1461, 1709, 1633, 1653, 1799, 1709, 1863, 1790, 1842, 1850, 1746, 1905, 1711, 1968, 1744, 1981, 1934, 2021, 2001)
 
+[node name="treble" type="StaticBody2D" parent="SpriteCollisions" unique_id=1604285797]
+
+[node name="note7" type="CollisionPolygon2D" parent="SpriteCollisions/treble" unique_id=135853654]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(1901.0999, -4491.7744, 2007.0999, -4480.7744, 2076.0999, -4568.7744, 2050.0999, -4660.7744, 1961.0999, -4729.7744, 1920.0999, -4751.7744, 1903.0999, -4794.7744, 1887.0999, -4884.7744, 1791.0999, -4988.7744, 1645.0999, -5029.7744, 1505.0999, -4946.7744, 1429.0999, -4979.7744, 1337.0999, -5179.7744, 1173.0999, -5298.7744, 1049.0999, -5314.7744, 1044.0999, -5239.7744, 1189.0999, -5038.7744, 1470.0999, -4672.7744)
+
+[node name="Note1" type="Sprite2D" parent="SpriteCollisions/treble" unique_id=1032491935]
+position = Vector2(1618.7593, -4762.453)
+rotation = -0.80351996
+scale = Vector2(2.4839394, 2.4839394)
+texture = ExtResource("17_pf6cn")
+
+[node name="note1-quarter" type="StaticBody2D" parent="SpriteCollisions" unique_id=405523371]
+position = Vector2(1505, -2115)
+metadata/_edit_group_ = true
+
+[node name="note5" type="CollisionPolygon2D" parent="SpriteCollisions/note1-quarter" unique_id=877967410]
+position = Vector2(-1460.0999, 2336.9238)
+polygon = PackedVector2Array(1682.0999, -2279.7744, 1749.0999, -2311.7744, 1789.0999, -2372.7744, 1779.0999, -2429.7744, 1735.0999, -2467.7744, 1649.0999, -2464.7744, 1604.0999, -2420.7744, 1601.0999, -2383.7744, 1568.0999, -2364.7744, 1266.0999, -2515.9238, 1227.0999, -2509.9238, 1219.0999, -2495.7744, 1636.0999, -2284.7744)
+
+[node name="Note2" type="Sprite2D" parent="SpriteCollisions/note1-quarter" unique_id=2046445662]
+position = Vector2(57.759033, -113.30371)
+rotation = 2.2612004
+scale = Vector2(1, -1)
+texture = ExtResource("18_ftoq5")
+
+[node name="note2-eighth" type="StaticBody2D" parent="SpriteCollisions" unique_id=1964299702]
+position = Vector2(31, 216)
+metadata/_edit_group_ = true
+
+[node name="note2" type="CollisionPolygon2D" parent="SpriteCollisions/note2-eighth" unique_id=1012850900]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(588.09985, -2980.7744, 811.09985, -2654.7744, 724.09985, -2629.7744, 698.09985, -2582.7744, 700.09985, -2529.7744, 744.09985, -2486.7744, 803.09985, -2475.7744, 861.09985, -2515.7744, 891.09985, -2577.7744, 882.09985, -2619.7744, 778.09985, -2774.7744, 776.09985, -2838.7744, 808.09985, -2845.7744, 884.09985, -2814.7744, 925.09985, -2719.7744, 937.09985, -2719.7744, 942.09985, -2790.7744, 921.09985, -2859.7744, 862.09985, -2917.7744, 773.09985, -2949.7744, 655.09985, -2977.7744, 625.09985, -3003.7744)
+
+[node name="Note4" type="Sprite2D" parent="SpriteCollisions/note2-eighth" unique_id=1911510383]
+position = Vector2(810.7593, -2609.4531)
+rotation = -0.75723964
+texture = ExtResource("20_tkc8o")
+
+[node name="note3-double" type="StaticBody2D" parent="SpriteCollisions" unique_id=1890245081]
+position = Vector2(98, 101)
+metadata/_edit_group_ = true
+
+[node name="note3" type="CollisionPolygon2D" parent="SpriteCollisions/note3-double" unique_id=346057199]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(1266.0999, -3178.7744, 1266.0999, -3141.7744, 1292.0999, -3101.7744, 1348.0999, -3085.7744, 1398.0999, -3099.7744, 1426.0999, -3062.7744, 1435.0999, -3020.7744, 1478.0999, -2986.7744, 1536.0999, -2988.7744, 1575.0999, -3018.7744, 1662.0999, -3391.7744, 1480.0999, -3518.7744, 1465.0999, -3512.7744, 1401.0999, -3200.7744, 1384.7136, -3198.286, 1353.0999, -3210.7744, 1323.0999, -3210.7744, 1289.0999, -3201.7744)
+
+[node name="Note3" type="Sprite2D" parent="SpriteCollisions/note3-double" unique_id=1755900303]
+position = Vector2(1532.0001, -3103.0002)
+rotation = 0.23665577
+texture = ExtResource("19_m7c0u")
+
+[node name="note4-eighth" type="StaticBody2D" parent="SpriteCollisions" unique_id=89236837]
+metadata/_edit_group_ = true
+
+[node name="note4" type="CollisionPolygon2D" parent="SpriteCollisions/note4-eighth" unique_id=385872117]
+position = Vector2(-129.25354, 82.27429)
+polygon = PackedVector2Array(902.09985, -3714.7744, 993.09985, -3745.7744, 1021.09985, -3793.7744, 1144.0999, -3937.7744, 1149.0999, -4065.7744, 944.09985, -4269.7744, 902.09985, -4264.7744, 973.09985, -3873.7744, 897.09985, -3889.7744, 827.09985, -3833.7744, 837.09985, -3763.7744)
+
+[node name="Note6" type="Sprite2D" parent="SpriteCollisions/note4-eighth" unique_id=1289973249]
+position = Vector2(826.6056, -3925.9531)
+rotation = -0.35107303
+texture = ExtResource("20_tkc8o")
+
+[node name="note5-silent" type="StaticBody2D" parent="SpriteCollisions" unique_id=764209302]
+metadata/_edit_group_ = true
+
+[node name="note5" type="CollisionPolygon2D" parent="SpriteCollisions/note5-silent" unique_id=26001752]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(3356.0999, -4182.7744, 3534.0999, -4176.7744, 3554.0999, -4202.7744, 3472.0999, -4212.7744, 3413.0999, -4270.7744, 3403.0999, -4364.7744, 3279.0999, -4370.7744, 3265.0999, -4402.7744, 3291.0999, -4451.7744, 3263.0999, -4500.7744, 3188.0999, -4517.7744, 3112.0999, -4503.7744, 3116.0999, -4490.7744, 3183.0999, -4477.7744, 3219.0999, -4431.7744, 3203.0999, -4395.7744, 3154.0999, -4373.7744, 3160.0999, -4356.7744, 3252.0999, -4346.7744, 3332.0999, -4287.7744)
+
+[node name="Note8" type="Sprite2D" parent="SpriteCollisions/note5-silent" unique_id=1355467852]
+position = Vector2(3384, -4177.9995)
+rotation = 2.2775688
+texture = ExtResource("21_pf6cn")
+
+[node name="note6-whole" type="StaticBody2D" parent="SpriteCollisions" unique_id=651763370]
+metadata/_edit_group_ = true
+
+[node name="note6" type="CollisionShape2D" parent="SpriteCollisions/note6-whole" unique_id=747132383]
+position = Vector2(2649.511, -4092.4878)
+rotation = -1.5465997
+scale = Vector2(0.9999992, 0.9999992)
+shape = SubResource("CapsuleShape2D_qpr4f")
+
+[node name="Note9" type="Sprite2D" parent="SpriteCollisions/note6-whole" unique_id=1113100355]
+position = Vector2(2650.5115, -4095.4883)
+scale = Vector2(3.1451156, 3.1451156)
+texture = ExtResource("22_ftoq5")
+
+[node name="Mantis" type="StaticBody2D" parent="SpriteCollisions" unique_id=351682957]
+position = Vector2(23, 51)
+
+[node name="mantis" type="CollisionPolygon2D" parent="SpriteCollisions/Mantis" unique_id=803181001]
+position = Vector2(2323, -3164)
+polygon = PackedVector2Array(-201, 31, -146, 65, 82, 93, 126, 69, 145, 32, 150, -21, 109, -57, 89, -36, -21, -1, -108, 1, -201, 11)
+
+[node name="Mantis1" type="Sprite2D" parent="SpriteCollisions/Mantis" unique_id=1429503407]
+position = Vector2(2289, -3156)
+rotation = 0.57286996
+texture = ExtResource("28_fwamo")
+
 [node name="boots" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=137632393]
 position = Vector2(67.30005, -2.7216797)
 polygon = PackedVector2Array(2760, 766, 2780, 690, 2824, 652, 2572, 532, 2496, 454, 2536, 372, 2567, 367, 2624, 292, 2700, 276, 2877, 294, 3024, 270, 3264, 123, 3369, 11, 3458, -237, 3704, -213, 3951, -144, 3960, -122, 4086, -100, 4060, 260, 4129, 491, 4157, 799, 3905, 859, 3499, 928, 3123, 897)
@@ -267,39 +357,25 @@ polygon = PackedVector2Array(-446, -2201, -497, -1923, 166, -1583, 362, -1448, 5
 [node name="harp" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1991387111]
 polygon = PackedVector2Array(-442, -2200, -1164, -4412, -1152, -4547, -1095, -4628, -1029, -4660, -942, -4653, -860, -4606, -639, -4438, -566, -4414, -512, -4420, -459, -4451, -391, -4540, -118, -5014, -11, -5148, 124, -5250, 265, -5311, 409, -5331, 610, -5307, 758, -5272, 757, -5239, 692, -5204, 560, -4708, 525, -4617, 159, -2636, 162, -2599, 113, -2293, 178, -2141, 136, -1881)
 
-[node name="note1" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=877967410]
-position = Vector2(21.900146, 41.923706)
-polygon = PackedVector2Array(1682.0999, -2279.7744, 1749.0999, -2311.7744, 1789.0999, -2372.7744, 1779.0999, -2429.7744, 1735.0999, -2467.7744, 1649.0999, -2464.7744, 1604.0999, -2420.7744, 1601.0999, -2383.7744, 1568.0999, -2364.7744, 1266.0999, -2515.9238, 1227.0999, -2509.9238, 1219.0999, -2495.7744, 1636.0999, -2284.7744)
-
-[node name="note2" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1012850900]
-position = Vector2(67.90015, 156.77429)
-polygon = PackedVector2Array(588.09985, -2980.7744, 811.09985, -2654.7744, 724.09985, -2629.7744, 698.09985, -2582.7744, 700.09985, -2529.7744, 744.09985, -2486.7744, 803.09985, -2475.7744, 861.09985, -2515.7744, 891.09985, -2577.7744, 882.09985, -2619.7744, 778.09985, -2774.7744, 776.09985, -2838.7744, 808.09985, -2845.7744, 884.09985, -2814.7744, 925.09985, -2719.7744, 937.09985, -2719.7744, 942.09985, -2790.7744, 921.09985, -2859.7744, 862.09985, -2917.7744, 773.09985, -2949.7744, 655.09985, -2977.7744, 625.09985, -3003.7744)
-
-[node name="note3" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=346057199]
-position = Vector2(67.90015, 156.77429)
-polygon = PackedVector2Array(1270.0999, -3174.7744, 1270.0999, -3138.7744, 1292.0999, -3101.7744, 1348.0999, -3085.7744, 1398.0999, -3099.7744, 1426.0999, -3062.7744, 1435.0999, -3020.7744, 1478.0999, -2986.7744, 1536.0999, -2988.7744, 1575.0999, -3018.7744, 1662.0999, -3391.7744, 1480.0999, -3518.7744, 1465.0999, -3512.7744, 1401.0999, -3200.7744, 1384.7136, -3198.286, 1360.0999, -3215.7744, 1318.0999, -3219.7744, 1289.0999, -3201.7744)
-
-[node name="note4" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=385872117]
-position = Vector2(-129.25354, 82.27429)
-polygon = PackedVector2Array(902.09985, -3714.7744, 993.09985, -3745.7744, 1021.09985, -3793.7744, 1144.0999, -3937.7744, 1149.0999, -4065.7744, 944.09985, -4269.7744, 902.09985, -4264.7744, 973.09985, -3873.7744, 897.09985, -3889.7744, 827.09985, -3833.7744, 837.09985, -3763.7744)
-
-[node name="note5" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=26001752]
-position = Vector2(67.90015, 156.77429)
-polygon = PackedVector2Array(3356.0999, -4182.7744, 3534.0999, -4176.7744, 3554.0999, -4202.7744, 3472.0999, -4212.7744, 3413.0999, -4270.7744, 3403.0999, -4364.7744, 3279.0999, -4370.7744, 3265.0999, -4402.7744, 3291.0999, -4451.7744, 3263.0999, -4500.7744, 3188.0999, -4517.7744, 3112.0999, -4503.7744, 3116.0999, -4490.7744, 3183.0999, -4477.7744, 3219.0999, -4431.7744, 3203.0999, -4395.7744, 3154.0999, -4373.7744, 3160.0999, -4356.7744, 3252.0999, -4346.7744, 3332.0999, -4287.7744)
-
-[node name="note6" type="CollisionShape2D" parent="SpriteCollisions" unique_id=747132383]
-position = Vector2(2649.511, -4092.4878)
-rotation = -1.5465997
-scale = Vector2(0.9999992, 0.9999992)
-shape = SubResource("CapsuleShape2D_qpr4f")
-
-[node name="note7" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=135853654]
-position = Vector2(67.90015, 156.77429)
-polygon = PackedVector2Array(1901.0999, -4491.7744, 2007.0999, -4480.7744, 2076.0999, -4568.7744, 2050.0999, -4660.7744, 1961.0999, -4729.7744, 1920.0999, -4751.7744, 1903.0999, -4794.7744, 1887.0999, -4884.7744, 1791.0999, -4988.7744, 1645.0999, -5029.7744, 1505.0999, -4946.7744, 1429.0999, -4979.7744, 1337.0999, -5179.7744, 1173.0999, -5298.7744, 1049.0999, -5314.7744, 1044.0999, -5239.7744, 1189.0999, -5038.7744, 1470.0999, -4672.7744)
-
 [node name="teacup" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=2113050239]
 position = Vector2(67.90015, 156.77429)
-polygon = PackedVector2Array(2508.0999, -1879.7743, 2472.0999, -1967.7743, 2475.0999, -2006.7743, 2495.0999, -2025.7743, 2513.0999, -2019.7743, 2555.0999, -1986.7743, 2583.0999, -1998.7743, 2592.0999, -2071.7744, 2572.0999, -2101.7744, 2585.0999, -2115.7744, 2591.0999, -2093.7744, 2628.0999, -2075.7744, 2672.0999, -2062.7744, 2708.0999, -2060.7744, 2726.0999, -2063.7744, 2734.0999, -2080.7744, 2742.0999, -2057.7744, 2725.0999, -2036.7743, 2757.0999, -2016.7743, 2760.0999, -1985.7743, 2740.0999, -1953.7743, 2715.0999, -1928.7743, 2783.0999, -1915.7743, 2778.0999, -1888.7743, 2755.0999, -1860.7743, 2709.0999, -1846.7743, 2627.0999, -1825.7743)
+polygon = PackedVector2Array(2508.0999, -1879.7743, 2472.0999, -1967.7743, 2475.0999, -2006.7743, 2495.0999, -2025.7743, 2513.0999, -2019.7743, 2555.0999, -1986.7743, 2627.0999, -1947.7743, 2715.0999, -1928.7743, 2783.0999, -1915.7743, 2778.0999, -1888.7743, 2755.0999, -1860.7743, 2709.0999, -1846.7743, 2627.0999, -1825.7743)
+
+[node name="teacup2" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=595472732]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(2070.0999, -2294.7744, 2086.0999, -2273.7744, 2127.0999, -2255.7744, 2163.0999, -2261.7744, 2222.0999, -2262.7744, 2275.0999, -2307.7744, 2338.0999, -2345.7744, 2339.0999, -2390.7744, 2353.0999, -2418.7744, 2346.0999, -2452.7744, 2330.0999, -2470.7744, 2314.0999, -2472.7744, 2283.0999, -2432.7744, 2215.0999, -2367.7744, 2135.0999, -2323.7744, 2107.0999, -2312.7744, 2072.0999, -2305.7744)
+
+[node name="teacup3" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1275287355]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(2489.0999, -3101.7744, 2476.0999, -3095.7744, 2466.0999, -3060.7744, 2478.0999, -3018.7744, 2513.0999, -2995.7744, 2536.0999, -2976.7744, 2528.0999, -2958.7744, 2541.0999, -2944.7744, 2593.0999, -2931.7744, 2662.0999, -2896.7744, 2694.0999, -2920.7744, 2731.0999, -2922.7744, 2761.0999, -2952.7744, 2763.0999, -2977.7744, 2744.0999, -2988.7744, 2698.0999, -2990.7744, 2614.0999, -3017.7744, 2527.0999, -3063.7744)
+
+[node name="teacup4" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1902820614]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(1847.0999, -3530.7744, 1845.0999, -3508.7744, 1862.0999, -3487.7744, 1892.0999, -3479.7744, 1921.0999, -3460.7744, 1961.0999, -3476.7744, 2011.0999, -3490.7744, 2011.0999, -3509.7744, 2025.0999, -3530.7744, 2054.0999, -3557.7744, 2055.0999, -3589.7744, 2046.0999, -3609.7744, 2035.0999, -3605.7744, 2001.0999, -3579.7744, 1947.0999, -3550.7744, 1888.0999, -3534.7744)
+
+[node name="teacup5" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1729813029]
+position = Vector2(67.90015, 156.77429)
+polygon = PackedVector2Array(2770.0999, -1063.7743, 2754.0999, -1039.7743, 2762.0999, -970.7743, 2806.0999, -926.7743, 2871.0999, -860.7743, 2967.0999, -847.7743, 3069.0999, -817.7743, 3130.0999, -856.7743, 3176.0999, -884.7743, 3195.0999, -931.7743, 3176.0999, -961.7743, 3110.0999, -956.7743, 2975.0999, -970.7743, 2844.0999, -1016.7743)
 
 [node name="SpecialCollisions" type="Node2D" parent="." unique_id=1489998859]
 
@@ -359,43 +435,6 @@ position = Vector2(-3770, -3140.379)
 shape = SubResource("RectangleShape2D_5oubu")
 
 [node name="Textures" type="Node2D" parent="." unique_id=2019596695]
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="Polygon2D" type="Polygon2D" parent="Textures" unique_id=2048320710]
-visible = false
-texture_repeat = 2
-texture = ExtResource("4_f1rbo")
-polygon = PackedVector2Array(6858, 1525, 6844, -8849, 4443, -8766, 4526, -3737, 4211, -3388, 4155, -3048, 3799, -3004, 3818, -2856, 4066, -2515, 4005, -2158, 4351, -2107, 4548, -1702, 4564, -1277, 4254, -1176, 4127, -1073, 4162, -844, 3969, -226, 3947, 546, 3417, 677, 3304, 584, 2841, 714, 1505, 725, 1490, 1492, 4615, 1486)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Polygon2D2" type="Polygon2D" parent="Textures" unique_id=258807402]
-visible = false
-texture_repeat = 2
-texture = ExtResource("4_f1rbo")
-polygon = PackedVector2Array(6858, 1525, 6844, -8849, 4443, -8766, 4526, -3737, 4211, -3388, 4155, -3048, 3799, -3004, 3818, -2856, 4066, -2515, 4005, -2158, 4351, -2107, 4548, -1702, 4564, -1277, 4254, -1176, 4127, -1073, 4162, -844, 3969, -226, 3947, 546, 3417, 677, 3304, 584, 2841, 714, 1505, 725, 1490, 1492, 4615, 1486)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Island1" type="Sprite2D" parent="Textures" unique_id=2138204428]
-visible = false
-position = Vector2(8089, 7425.0005)
-scale = Vector2(21.862013, 25.894089)
-texture = ExtResource("4_32nma")
-
-[node name="Island2" type="Sprite2D" parent="Textures" unique_id=546986319]
-visible = false
-position = Vector2(8119, 6141.0005)
-scale = Vector2(21.862013, 21.862013)
-texture = ExtResource("6_xwbgb")
-
-[node name="Island3" type="Sprite2D" parent="Textures" unique_id=1142975664]
-visible = false
-position = Vector2(2550, 2714)
-rotation = -0.08617614
-scale = Vector2(21.862013, 21.862013)
-texture = ExtResource("7_itkw0")
 
 [node name="Bracket_png" type="Sprite2D" parent="Textures" unique_id=1554021904]
 position = Vector2(4073, -2515)
@@ -472,52 +511,15 @@ rotation = 0.10657769
 scale = Vector2(1.783792, 1.783792)
 texture = ExtResource("7_f1rbo")
 
-[node name="Note1" type="Sprite2D" parent="Textures" unique_id=1032491935]
-position = Vector2(1618.7593, -4762.453)
-rotation = -0.80351996
-scale = Vector2(2.4839394, 2.4839394)
-texture = ExtResource("17_pf6cn")
-
-[node name="Note2" type="Sprite2D" parent="Textures" unique_id=2046445662]
-position = Vector2(1539.759, -2408.3037)
-rotation = 2.2612004
-scale = Vector2(1, -1)
-texture = ExtResource("18_ftoq5")
-
 [node name="Note5" type="Sprite2D" parent="Textures" unique_id=1244388044]
 position = Vector2(-8.999878, -4194)
 rotation = 0.44869033
 texture = ExtResource("18_ftoq5")
 
-[node name="Note3" type="Sprite2D" parent="Textures" unique_id=1755900303]
-position = Vector2(1532.0001, -3103.0002)
-rotation = 0.23665577
-texture = ExtResource("19_m7c0u")
-
 [node name="Note7" type="Sprite2D" parent="Textures" unique_id=1048868402]
 position = Vector2(-172.99994, -3339.0002)
 rotation = -0.21560048
 texture = ExtResource("19_m7c0u")
-
-[node name="Note4" type="Sprite2D" parent="Textures" unique_id=1911510383]
-position = Vector2(810.7593, -2609.4531)
-rotation = -0.75723964
-texture = ExtResource("20_tkc8o")
-
-[node name="Note6" type="Sprite2D" parent="Textures" unique_id=1289973249]
-position = Vector2(826.6056, -3925.9531)
-rotation = -0.35107306
-texture = ExtResource("20_tkc8o")
-
-[node name="Note8" type="Sprite2D" parent="Textures" unique_id=1355467852]
-position = Vector2(3384, -4177.9995)
-rotation = 2.2775688
-texture = ExtResource("21_pf6cn")
-
-[node name="Note9" type="Sprite2D" parent="Textures" unique_id=1113100355]
-position = Vector2(2650.5115, -4095.4883)
-scale = Vector2(3.1451156, 3.1451156)
-texture = ExtResource("22_ftoq5")
 
 [node name="Monkey1" type="Sprite2D" parent="Textures" unique_id=814513513]
 position = Vector2(-8314.675, 254.57782)
@@ -577,7 +579,7 @@ texture = ExtResource("33_fwamo")
 
 [node name="Teacup3" type="Sprite2D" parent="Textures" unique_id=869941675]
 position = Vector2(2274.6567, -2245.3442)
-rotation = -0.5291811
+rotation = -0.52999216
 texture = ExtResource("34_585fv")
 
 [node name="Teacup4" type="Sprite2D" parent="Textures" unique_id=1234673244]
@@ -588,6 +590,12 @@ texture = ExtResource("35_qwnq4")
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("26_6mwuc")]
 position = Vector2(1984, 305)
+
+[node name="Teacup7" type="Sprite2D" parent="." unique_id=562522694]
+position = Vector2(3072, -851.99994)
+rotation = 0.32597423
+scale = Vector2(1.4269736, 1.4269736)
+texture = ExtResource("34_585fv")
 
 [connection signal="body_entered" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_exited"]
