@@ -60,7 +60,7 @@ fill_to = Vector2(0, 1)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(8560, -23171)
+position = Vector2(9939, -17254)
 
 [node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
 
@@ -525,6 +525,8 @@ texture = ExtResource("22_fkt0n")
 z_index = -4096
 texture_filter = 1
 position = Vector2(21, -32899)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="MoonBackground" unique_id=1170917469]
 offset_left = -17155.0
