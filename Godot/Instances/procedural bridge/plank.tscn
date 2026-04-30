@@ -7,7 +7,7 @@
 size = Vector2(390, 55.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1nfl"]
-size = Vector2(342.5, 55.5)
+size = Vector2(382.5243, 55.5)
 
 [node name="plank" type="RigidBody2D" unique_id=1782918330]
 script = ExtResource("1_1u1gj")
@@ -21,11 +21,12 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=902048552]
+position = Vector2(-4.000012, 0)
 scale = Vector2(1.03, 1.5)
 shape = SubResource("RectangleShape2D_l1nfl")
-metadata/_edit_lock_ = true
 
 [node name="Monkey1" type="Sprite2D" parent="." unique_id=1134237546]
+z_index = 1
 position = Vector2(16, 20)
 texture = ExtResource("2_1u1gj")
 metadata/_edit_lock_ = true
