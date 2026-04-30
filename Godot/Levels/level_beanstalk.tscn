@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://b15ulbmh04iqq" path="res://Sprites/ladder.png" id="39_qwnq4"]
 [ext_resource type="Texture2D" uid="uid://cuy2x31uh78ry" path="res://Sprites/birdcage-2.png" id="41_qtugp"]
 [ext_resource type="Texture2D" uid="uid://b54msb8myxx73" path="res://Sprites/chain-1.png" id="43_6s02x"]
+[ext_resource type="Texture2D" uid="uid://py6d0as04tx0" path="res://Sprites/sign-2.png" id="44_qtugp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpu43"]
 size = Vector2(4010.0002, 525.87506)
@@ -53,9 +54,6 @@ size = Vector2(915.051, 213.01755)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kigi5"]
 size = Vector2(6494.0137, 525.87506)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik5re"]
-size = Vector2(1095, 332.875)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_612if"]
 size = Vector2(1076.803, 304.4182)
 
@@ -63,10 +61,14 @@ size = Vector2(1076.803, 304.4182)
 size = Vector2(343.9998, 414.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xljgl"]
-size = Vector2(1432.1022, 258.39172)
+size = Vector2(1524.259, 258.39172)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgno"]
-size = Vector2(1865.9851, 258.39172)
+size = Vector2(1746.0007, 258.39172)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6s02x"]
+radius = 96.39502
+height = 503.5879
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtugp"]
 size = Vector2(1618, 2382.0986)
@@ -77,21 +79,6 @@ size = Vector2(564.64014, 1245.9127)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qtugp"]
 radius = 90.0
 height = 392.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtk4u"]
-size = Vector2(1960.8203, 646.3611)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7upu"]
-size = Vector2(993.718, 1365.2736)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iapvd"]
-size = Vector2(1095, 1185.7501)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcbtb"]
-size = Vector2(333.5, 1005.8751)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6auer"]
-size = Vector2(469.41785, 109.95639)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_efpkb"]
 radius = 2719.2231
@@ -118,6 +105,9 @@ size = Vector2(1082.1779, 63.457275)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oubu"]
 size = Vector2(8129.249, 5006.758)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u810j"]
+size = Vector2(4295, 7832)
 
 [node name="LevelBeanstalk" type="Node2D" unique_id=203127601]
 
@@ -146,11 +136,6 @@ rotation = -1.2879174
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_kigi5")
 
-[node name="CollisionShape2D94" type="CollisionShape2D" parent="BridgeCollisions" unique_id=741873580]
-position = Vector2(-15807, 3879.5625)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_ik5re")
-
 [node name="CollisionShape2D109" type="CollisionShape2D" parent="BridgeCollisions" unique_id=1459072992]
 position = Vector2(-15575.162, -2132.6287)
 rotation = 1.1922926
@@ -163,15 +148,22 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_5my6x")
 
 [node name="CollisionShape2D112" type="CollisionShape2D" parent="BridgeCollisions" unique_id=503467474]
-position = Vector2(-15541.939, -1951.5292)
+position = Vector2(-15524.956, -1908.6948)
 rotation = 1.1933172
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_xljgl")
 
 [node name="CollisionShape2D113" type="CollisionShape2D" parent="BridgeCollisions" unique_id=310151070]
-position = Vector2(-10999.991, -1162)
+position = Vector2(-10933.999, -1162)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_7mgno")
+
+[node name="CollisionShape2D114" type="CollisionShape2D" parent="BridgeCollisions" unique_id=846112903]
+z_index = -2
+position = Vector2(-11952.999, -1639)
+rotation = -1.8325958
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("CapsuleShape2D_6s02x")
 
 [node name="CollisionShape2D115" type="CollisionShape2D" parent="BridgeCollisions" unique_id=1682750738]
 position = Vector2(-4626.1177, 49.54901)
@@ -194,41 +186,6 @@ shape = SubResource("RectangleShape2D_6s02x")
 position = Vector2(-4622.1177, -1931.5)
 scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("CapsuleShape2D_qtugp")
-
-[node name="CollisionShape2D116" type="CollisionShape2D" parent="BridgeCollisions" unique_id=182037103]
-position = Vector2(-6054.1377, 35.786774)
-rotation = -0.52192116
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_xtk4u")
-
-[node name="CollisionShape2D120" type="CollisionShape2D" parent="BridgeCollisions" unique_id=982679713]
-position = Vector2(-7364.392, 564.7799)
-rotation = -0.26179934
-scale = Vector2(0.9999996, 0.9999996)
-shape = SubResource("RectangleShape2D_m7upu")
-
-[node name="CollisionShape2D95" type="CollisionShape2D" parent="BridgeCollisions" unique_id=1115014107]
-position = Vector2(-10219, 4303)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_iapvd")
-
-[node name="CollisionShape2D106" type="CollisionShape2D" parent="BridgeCollisions" unique_id=1982058982]
-position = Vector2(-10219, 4303)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_iapvd")
-
-[node name="CollisionShape2D97" type="CollisionShape2D" parent="BridgeCollisions" unique_id=1451665202]
-position = Vector2(-13051, 4908)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_dcbtb")
-
-[node name="CollisionShape2D155" type="CollisionShape2D" parent="BridgeCollisions" unique_id=801494405]
-position = Vector2(-5300, 4622.179)
-rotation = 0.34303918
-scale = Vector2(0.9999997, 0.9999997)
-shape = SubResource("RectangleShape2D_6auer")
-
-[node name="MiscCollisions" type="StaticBody2D" parent="." unique_id=1841922935]
 
 [node name="SpriteCollisions" type="StaticBody2D" parent="." unique_id=877606670]
 
@@ -448,6 +405,14 @@ polygon = PackedVector2Array(1847.0999, -3530.7744, 1845.0999, -3508.7744, 1862.
 position = Vector2(67.90015, 156.77429)
 polygon = PackedVector2Array(2770.0999, -1063.7743, 2754.0999, -1039.7743, 2762.0999, -970.7743, 2806.0999, -926.7743, 2871.0999, -860.7743, 2967.0999, -847.7743, 3069.0999, -817.7743, 3130.0999, -856.7743, 3176.0999, -884.7743, 3195.0999, -931.7743, 3176.0999, -961.7743, 3110.0999, -956.7743, 2975.0999, -970.7743, 2844.0999, -1016.7743)
 
+[node name="birdcage-1" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=74390146]
+position = Vector2(-10926, -1408)
+polygon = PackedVector2Array(-925, 397, -1016, 263, -964, 138, -726, 100, -558, 103, -415, -31, -387, -118, -198, -337, -135, -482, -58, -504, 75, -454, 91, -433, 146, -422, 205, -451, 197, -521, 262, -586, 283, -669, 373, -727, 478, -708, 544, -627, 658, -275, 756, -104, 766, 147, 960, 167, 1002, 268, 935, 386, 839, 454, 448, 595, -562, 541)
+
+[node name="squirrel" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1192460201]
+position = Vector2(-6193, 51)
+polygon = PackedVector2Array(-873, 1286, -1710, 1072, -1743, 952, -1701, 800, -1634, 724, -1595, 562, -1724, 129, -1831, 28, -1756, -73, -1700, -69, -1630, -143, -1535, -130, -1463, -192, -1306, -158, -1083, -208, -867, -229, -765, -215, -714, -118, -502, -165, -320, -160, -219, -107, 4, -189, 186, -326, 311, -467, 417, -626, 559, -690, 749, -666, 760, -140)
+
 [node name="SpecialCollisions" type="Node2D" parent="." unique_id=1489998859]
 
 [node name="RicketyBridge" type="Node2D" parent="SpecialCollisions" unique_id=1526434202]
@@ -462,7 +427,7 @@ impulse_multiplier = 0.1
 position = Vector2(-2254, 98.000015)
 
 [node name="StaticBody2D2" parent="SpecialCollisions/RicketyBridge/FirstBridge" index="1" unique_id=1044340548]
-position = Vector2(1575, 44.999992)
+position = Vector2(1338, -334.00003)
 
 [node name="SecondBridge" parent="SpecialCollisions/RicketyBridge" unique_id=931890035 instance=ExtResource("2_1y6fy")]
 position = Vector2(-8760, -349)
@@ -476,34 +441,6 @@ position = Vector2(-2449, -160)
 [node name="StaticBody2D2" parent="SpecialCollisions/RicketyBridge/SecondBridge" index="1" unique_id=1044340548]
 position = Vector2(1133.8823, 1483.5001)
 
-[node name="Monkey1" type="Sprite2D" parent="SpecialCollisions/RicketyBridge/SecondBridge" unique_id=886454512]
-position = Vector2(-2180, -286.00003)
-rotation = 1.3089969
-texture = ExtResource("14_5fty0")
-
-[node name="ProceduralBridge3" parent="SpecialCollisions/RicketyBridge" unique_id=866937570 instance=ExtResource("2_1y6fy")]
-scale = Vector2(0.9999999, 0.9999999)
-plank_count = 5
-impulse_multiplier = 0.1
-
-[node name="StaticBody2D" parent="SpecialCollisions/RicketyBridge/ProceduralBridge3" index="0" unique_id=398348427]
-position = Vector2(-13200.002, 4513.0005)
-
-[node name="StaticBody2D2" parent="SpecialCollisions/RicketyBridge/ProceduralBridge3" index="1" unique_id=1044340548]
-position = Vector2(-10476.002, 3732.0005)
-
-[node name="ProceduralBridge4" parent="SpecialCollisions/RicketyBridge" unique_id=1123006955 instance=ExtResource("2_1y6fy")]
-position = Vector2(-8796, 5561)
-scale = Vector2(0.9999999, 0.9999999)
-plank_count = 5
-impulse_multiplier = 0.1
-
-[node name="StaticBody2D" parent="SpecialCollisions/RicketyBridge/ProceduralBridge4" index="0" unique_id=398348427]
-position = Vector2(-893.0001, 239.00003)
-
-[node name="StaticBody2D2" parent="SpecialCollisions/RicketyBridge/ProceduralBridge4" index="1" unique_id=1044340548]
-position = Vector2(1731.0002, 752.00006)
-
 [node name="Trigger_Camera_Zoom" type="Area2D" parent="SpecialCollisions" unique_id=1818071892]
 visible = false
 position = Vector2(0, -3700)
@@ -512,6 +449,10 @@ script = ExtResource("9_1kuye")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpecialCollisions/Trigger_Camera_Zoom" unique_id=631724350]
 position = Vector2(-3770, -3140.379)
 shape = SubResource("RectangleShape2D_5oubu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpecialCollisions/Trigger_Camera_Zoom" unique_id=1831735024]
+position = Vector2(-2473.5, 3313)
+shape = SubResource("RectangleShape2D_u810j")
 
 [node name="Textures" type="Node2D" parent="." unique_id=2019596695]
 
@@ -554,11 +495,10 @@ scale = Vector2(10, -10)
 texture = ExtResource("5_235sh")
 
 [node name="Stairs2" type="Sprite2D" parent="Textures" unique_id=806757982]
-position = Vector2(3728.0002, 275.99988)
+position = Vector2(5233, 179.00014)
 rotation = -0.5893722
-scale = Vector2(-16.435, 16.435)
+scale = Vector2(-14.953462, 24.744812)
 texture = ExtResource("18_585fv")
-metadata/_edit_lock_ = true
 
 [node name="Cloud1" type="Sprite2D" parent="Textures" unique_id=1341667679]
 position = Vector2(6862.0005, 3647.0002)
@@ -722,13 +662,31 @@ rotation = 3.1415925
 scale = Vector2(4.292492, -4.292492)
 texture = ExtResource("13_7mgno")
 
+[node name="Monkey1" type="Sprite2D" parent="Textures" unique_id=886454512]
+position = Vector2(-10940, -635)
+rotation = 1.3089969
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("14_5fty0")
+
+[node name="Monkey2" type="Sprite2D" parent="Textures" unique_id=1789217633]
+z_index = -2
+position = Vector2(-11924.571, -1621.2197)
+rotation = -0.5235988
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("14_5fty0")
+
+[node name="Sign2" type="Sprite2D" parent="Textures" unique_id=53153368]
+z_index = -1
+position = Vector2(-3663, -1623.0001)
+rotation = 0.2617994
+scale = Vector2(0.66259307, 0.66259307)
+texture = ExtResource("44_qtugp")
+
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("26_6mwuc")]
-position = Vector2(-11572, -1527)
+position = Vector2(-15748, -3006)
 
 [connection signal="body_entered" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_exited"]
 
 [editable path="SpecialCollisions/RicketyBridge/FirstBridge"]
 [editable path="SpecialCollisions/RicketyBridge/SecondBridge"]
-[editable path="SpecialCollisions/RicketyBridge/ProceduralBridge3"]
-[editable path="SpecialCollisions/RicketyBridge/ProceduralBridge4"]
