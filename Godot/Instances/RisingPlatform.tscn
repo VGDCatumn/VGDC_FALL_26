@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bp81f4rrm1ak4"]
+
+[ext_resource type="Script" uid="uid://bbv6gsd6eqq1x" path="res://Instances/rising_platform.gd" id="1_h78xi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee4pc"]
+size = Vector2(2532, 361)
+
+[node name="RisingPlatform" type="AnimatableBody2D" unique_id=127202290]
+script = ExtResource("1_h78xi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433636072]
+shape = SubResource("RectangleShape2D_ee4pc")
+metadata/_edit_lock_ = true

@@ -290,12 +290,14 @@ z_index = 1
 script = ExtResource("1_jd1fq")
 
 [node name="ball_sprite" type="Sprite2D" parent="." unique_id=1196626458]
+visible = false
 z_index = 1
 position = Vector2(0, -1)
 scale = Vector2(0.1769723, 0.17636023)
 texture = ExtResource("2_k2awd")
 
 [node name="man_sprite" type="Sprite2D" parent="." unique_id=357147493]
+visible = false
 z_index = 1
 position = Vector2(-1.999999, -77.875)
 scale = Vector2(0.18995097, 0.19648694)

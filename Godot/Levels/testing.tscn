@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chueiu70q7l41" path="res://Instances/procedural bridge/plank.tscn" id="6_2xqxn"]
 [ext_resource type="PackedScene" uid="uid://bfyxkypka7bm5" path="res://UI/ui_stats.tscn" id="6_ymqfe"]
 [ext_resource type="PackedScene" uid="uid://sxe4mpjeqxv6" path="res://Instances/platform_chandelier.tscn" id="7_2xqxn"]
+[ext_resource type="PackedScene" uid="uid://bp81f4rrm1ak4" path="res://Instances/RisingPlatform.tscn" id="8_1yoly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -569,7 +570,7 @@ shape = SubResource("RectangleShape2D_468tx")
 
 [node name="CollisionShape2D66" type="CollisionShape2D" parent="StaticBody2D" unique_id=1188702130]
 position = Vector2(-992, -1289.0001)
-rotation = -0.6981317
+rotation = -0.7679449
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_468tx")
 
@@ -595,7 +596,7 @@ rotation = -1.5708275
 position = Vector2(-6408, -1348)
 
 [node name="EBM" parent="." unique_id=742937550 instance=ExtResource("6_1yoly")]
-position = Vector2(-2246, 90)
+position = Vector2(-1869, -1429)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=377553230]
 position = Vector2(-1490, 93)
@@ -604,3 +605,6 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1557936199]
 shape = SubResource("CircleShape2D_2xqxn")
 metadata/_edit_lock_ = true
+
+[node name="RisingPlatform" parent="." unique_id=127202290 instance=ExtResource("8_1yoly")]
+position = Vector2(-5939, -1373)

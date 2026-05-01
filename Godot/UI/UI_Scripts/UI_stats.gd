@@ -2,7 +2,7 @@ extends CanvasLayer
 
 # Connect update_stats signal from player
 func _ready() -> void:
-	var player = get_parent().get_node("BallMan")
+	var player = get_parent().get_node("EBM")
 	player.update_stats.connect(on_update_stats)
 
 # Change Label text to reflect a stats update

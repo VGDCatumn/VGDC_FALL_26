@@ -13,11 +13,11 @@ This leads the following advantages and disadvantages:
 				functionality. This is why after running move_and_slide() velocity was
 				being set to zero or near zero.
 				- The move_and_slide() moved the player into
-				the ground and once it could no longer move downward it moved the character the rest
+				the ground and once it could no longer move_and_set_flags downward it moved the character the rest
 				of the delta*velocity distance along the surface. As we are trying to bounce
 				the character on collision rather than slide them, this functionality is 
 				counterintuitive even though it is difficult to notice. 
-				- By using move_and_collide() we move the player without altering it's
+				- By using move_and_collide() we move_and_set_flags the player without altering it's
 				velocity and use the returned KinematicCollision2D to determine exactly how
 				WE want to modify the velocity rather than letting the system assume we want
 				to slide / come to a stop. without this assumption we can still know the velocity right before
@@ -123,11 +123,11 @@ func _physics_process(delta: float) -> void:
 	emit_signal("update_stats", position, velocity, start_fall_height, end_fall_height)
 	
 
-# dev tool to move omnidirectionally
+# dev tool to move_and_set_flags omnidirectionally
 func dev_movement_mode(delta):
 	var move_speed = 1000 * delta
 	
-	# handle WASD movement to move omnidirectionally
+	# handle WASD movement to move_and_set_flags omnidirectionally
 	if Input.is_action_pressed("move_up"):
 		position.y -= move_speed
 	if Input.is_action_pressed("move_down"):
@@ -149,16 +149,9 @@ func regular_movement_mode(delta):
 	if cap_velocity:
 		clamp_velocity()
 	
-	if debugging: print("Snap 1")
-	snap_to_surface()
-
 	# store the result of move_and_collide to set flags and alter velocity
-	collision = move_and_collide(velocity * delta)
-	# set floor_bounce and surface_bounce
-	set_flags()
-	# manually snap to surface if nessesary
-	if debugging: print("Snap 2")
-	snap_to_surface()
+	move_and_set_flags(delta)
+
 	# if we would stop too soon (e.g. we hit a steep sloop that's not a wall)
 	handle_clipping(delta)
 
@@ -177,17 +170,33 @@ func regular_movement_mode(delta):
 
 ### CUSTOM MOVEMENT FUNCTIONS
 
-# logic is the exact same as how move_and_slide() set's it's 3 flags but for our 2
-func set_flags():
+
+func move_and_set_flags(delta):
+	# Upward Snap
+	snap_to_surface()
+
+	# Move and get collision
+	collision = move_and_collide(velocity * delta)
+
+	# Set flags
 	if collision:
 		on_surface = true
 		if collision.get_angle() <= floor_max_angle + 0.01:
 			on_floor = true
 		else:
 			on_floor = false
+
+		# Snap back along collision normal
+		var offset = collision.get_normal().normalized() * collision.get_depth()
+		if debugging:
+			print("\nSNAPPING")
+			print("\tOffset:\t", offset)
+			print("\tOffset Dist:\t", offset.length())
+		position += offset
 	else:
 		on_floor = false
 		on_surface = false
+
 
 # Handles logic to apply velocity in the positive y direction (downwards)
 # Called every frame that that player is not colliding with a surface
@@ -248,7 +257,7 @@ func snap_to_surface():
 			print("\tOffset Dist:\t", offset.length())
 		position += offset
 
-# if character couldn't move we override the bounce angle and move at an increased angle
+# if character couldn't move_and_set_flags we override the bounce angle and move_and_set_flags at an increased angle
 func handle_clipping(delta):
 	if on_surface and collision.get_travel().length() < 1 and collision.get_remainder().length() > 20:
 		var theta = sign(velocity.x) * collision.get_angle() * 0.95
@@ -263,8 +272,7 @@ func handle_clipping(delta):
 		if debugging:
 			print("\tVelocity:\t\t", velocity)
 			print("\tVelocity Angle (deg):\t", rad_to_deg((velocity.angle())))
-		collision = move_and_collide(velocity * delta)
-		set_flags()
+		move_and_set_flags(delta)
 
 
 # Print bounce info to output
