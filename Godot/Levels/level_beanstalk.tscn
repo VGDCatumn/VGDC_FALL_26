@@ -411,7 +411,7 @@ polygon = PackedVector2Array(-925, 397, -1016, 263, -964, 138, -726, 100, -558, 
 
 [node name="squirrel" type="CollisionPolygon2D" parent="SpriteCollisions" unique_id=1192460201]
 position = Vector2(-6193, 51)
-polygon = PackedVector2Array(-873, 1286, -1710, 1072, -1743, 952, -1701, 800, -1634, 724, -1595, 562, -1724, 129, -1831, 28, -1756, -73, -1700, -69, -1630, -143, -1535, -130, -1463, -192, -1306, -158, -1083, -208, -867, -229, -765, -215, -714, -118, -502, -165, -320, -160, -219, -107, 4, -189, 186, -326, 311, -467, 417, -626, 559, -690, 749, -666, 760, -140)
+polygon = PackedVector2Array(-873, 1286, -1710, 1072, -1743, 952, -1701, 800, -1634, 724, -1595, 562, -1724, 129, -1831, 28, -1756, -73, -1700, -69, -1630, -143, -1535, -130, -1463, -192, -1306, -158, -1083, -208, -867, -229, -765, -215, -714, -118, -502, -165, -320, -160, -219, -107, 4, -189, 186, -326, 310, -516, 437, -594, 574, -655, 749, -666, 760, -140)
 
 [node name="SpecialCollisions" type="Node2D" parent="." unique_id=1489998859]
 
@@ -499,6 +499,7 @@ position = Vector2(5233, 179.00014)
 rotation = -0.5893722
 scale = Vector2(-14.953462, 24.744812)
 texture = ExtResource("18_585fv")
+metadata/_edit_lock_ = true
 
 [node name="Cloud1" type="Sprite2D" parent="Textures" unique_id=1341667679]
 position = Vector2(6862.0005, 3647.0002)
@@ -640,7 +641,7 @@ texture = ExtResource("43_6s02x")
 
 [node name="Chain3" type="Sprite2D" parent="Textures" unique_id=1113542364]
 z_index = -1
-position = Vector2(-4188.1177, -3018.5)
+position = Vector2(-4180, -3215)
 rotation = -1.5707964
 texture = ExtResource("43_6s02x")
 
