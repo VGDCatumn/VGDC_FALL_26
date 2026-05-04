@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce36p74onqrda"
-path="res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"
+uid="uid://cq2usilxpxcpw"
+path="res://.godot/imported/Impostor.png-fb169730961f2d7d59fe11d4422eec26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mushroom.png"
-dest_files=["res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"]
+source_file="res://Sprites/Impostor.png"
+dest_files=["res://.godot/imported/Impostor.png-fb169730961f2d7d59fe11d4422eec26.ctex"]
 
 [params]
 

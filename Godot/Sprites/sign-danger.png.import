@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce36p74onqrda"
-path="res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"
+uid="uid://b1bjkn4kkjv8w"
+path="res://.godot/imported/sign-danger.png-ca70722a7481fb2e2ed6ff791d57175b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mushroom.png"
-dest_files=["res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"]
+source_file="res://Sprites/sign-danger.png"
+dest_files=["res://.godot/imported/sign-danger.png-ca70722a7481fb2e2ed6ff791d57175b.ctex"]
 
 [params]
 

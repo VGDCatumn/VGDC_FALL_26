@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_rkulv"]
 [ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="6_uj8wd"]
 [ext_resource type="Texture2D" uid="uid://bij454oaejatf" path="res://Sprites/grumpy-cat.jpg" id="7_6fori"]
-[ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/banana-peel.png" id="9_1vapn"]
+[ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/banana-2.png" id="9_1vapn"]
 [ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
 [ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/tools/ambient_light_chasm.gd" id="12_7s22q"]

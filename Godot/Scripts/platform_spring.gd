@@ -13,7 +13,9 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
 		player_ref = body
-		
+		if player_ref.get_node("SpriteColorChange").current_animation == "TurnToRed":
+			player_ref.get_node("SpriteColorChange").play("Cooldown")
+			player_ref.get_node("Fire").emitting = false
 		$AnimationPlayer.play("boing")
 		$AudioStreamPlayer.play()
 		prev_max_velocity = body.max_y_velocity #stores Player's current max y velocity 

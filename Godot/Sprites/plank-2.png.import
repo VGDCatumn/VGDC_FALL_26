@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce36p74onqrda"
-path="res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"
+uid="uid://ycurue78p28i"
+path="res://.godot/imported/plank-2.png-ca3050552f01f562db84237e1348d899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mushroom.png"
-dest_files=["res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"]
+source_file="res://Sprites/plank-2.png"
+dest_files=["res://.godot/imported/plank-2.png-ca3050552f01f562db84237e1348d899.ctex"]
 
 [params]
 

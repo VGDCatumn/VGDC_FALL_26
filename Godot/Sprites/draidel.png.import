@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce36p74onqrda"
-path="res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"
+uid="uid://cg68ha1edv3kb"
+path="res://.godot/imported/draidel.png-f9a3f7c203aca8f8d7254f453d7ca36c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mushroom.png"
-dest_files=["res://.godot/imported/mushroom.png-318539735d748ab4295e9cc577ec50fd.ctex"]
+source_file="res://Sprites/draidel.png"
+dest_files=["res://.godot/imported/draidel.png-f9a3f7c203aca8f8d7254f453d7ca36c.ctex"]
 
 [params]
 

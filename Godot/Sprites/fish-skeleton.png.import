@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwo5mxproucdr"
-path="res://.godot/imported/pngtree-domestic-bird-rooster-png-image_11918833.png-611302ad0352ed00904463e6b75cfcaa.ctex"
+uid="uid://lg4xit3iuwqs"
+path="res://.godot/imported/fish-skeleton.png-961045c7487ae70204b5c0e55fec4eef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pngtree-domestic-bird-rooster-png-image_11918833.png"
-dest_files=["res://.godot/imported/pngtree-domestic-bird-rooster-png-image_11918833.png-611302ad0352ed00904463e6b75cfcaa.ctex"]
+source_file="res://Sprites/fish-skeleton.png"
+dest_files=["res://.godot/imported/fish-skeleton.png-961045c7487ae70204b5c0e55fec4eef.ctex"]
 
 [params]
 

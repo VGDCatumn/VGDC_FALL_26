@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvxtd17oyq8s6"]
 
 [ext_resource type="Script" uid="uid://cwdrjnqq8de7" path="res://Scripts/platform_piano.gd" id="1_6ss62"]
-[ext_resource type="Texture2D" uid="uid://bua0lgukn6cbs" path="res://Sprites/piano_1.png" id="2_2k15s"]
+[ext_resource type="Texture2D" uid="uid://bua0lgukn6cbs" path="res://Sprites/piano-1.png" id="2_2k15s"]
 [ext_resource type="AudioStream" uid="uid://c8wilbnvwgu8y" path="res://Audio/piano_note0.mp3" id="3_3w1m6"]
 [ext_resource type="AudioStream" uid="uid://5rjt5u3ikrhg" path="res://Audio/piano_note8.mp3" id="4_21gns"]
 [ext_resource type="AudioStream" uid="uid://4y3sig3j1s4n" path="res://Audio/piano_note!.mp3" id="5_gewfa"]
