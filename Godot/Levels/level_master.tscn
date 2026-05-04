@@ -119,12 +119,13 @@ size = Vector2(16194, 15044)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(6668, -15409)
+position = Vector2(-4839, -1408)
 
 [node name="LevelChasmV2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
-position = Vector2(711, 79)
+position = Vector2(769, -1523)
 
 [node name="LevelMountian" parent="." unique_id=847851098 instance=ExtResource("2_hxsbd")]
+visible = false
 position = Vector2(-1053, -4779)
 
 [node name="LevelVillage" parent="." unique_id=763794867 instance=ExtResource("3_hxsbd")]
