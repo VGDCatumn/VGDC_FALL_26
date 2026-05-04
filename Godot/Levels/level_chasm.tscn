@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bij454oaejatf" path="res://Sprites/grumpy-cat.jpg" id="7_6fori"]
 [ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/banana-2.png" id="9_1vapn"]
 [ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
-[ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
 [ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/tools/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
 [ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="13_jt8vq"]
@@ -272,12 +271,6 @@ width_curve = SubResource("Curve_870hm")
 default_color = Color(0.8156863, 1, 1, 1)
 gradient = SubResource("Gradient_870hm")
 antialiased = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1565946089]
-stream = ExtResource("12_1vapn")
-volume_db = -15.0
-autoplay = true
-parameters/looping = true
 
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3

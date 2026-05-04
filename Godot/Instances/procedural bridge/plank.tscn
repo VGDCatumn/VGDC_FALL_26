@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://chueiu70q7l41"]
 
 [ext_resource type="Script" uid="uid://d04r2dj2orpxf" path="res://Instances/procedural bridge/plank.gd" id="1_1u1gj"]
+[ext_resource type="Texture2D" uid="uid://c670kxo2kt2gv" path="res://Sprites/monkey-1.png" id="2_1u1gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1gj"]
-size = Vector2(342.5, 55.5)
+size = Vector2(390, 55.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1nfl"]
+size = Vector2(382.5243, 55.5)
 
 [node name="plank" type="RigidBody2D" unique_id=1782918330]
 script = ExtResource("1_1u1gj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992162990]
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_1u1gj")
 metadata/_edit_lock_ = true
 
@@ -16,8 +21,14 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=902048552]
+position = Vector2(-4.000012, 0)
 scale = Vector2(1.03, 1.5)
-shape = SubResource("RectangleShape2D_1u1gj")
+shape = SubResource("RectangleShape2D_l1nfl")
+
+[node name="Monkey1" type="Sprite2D" parent="." unique_id=1134237546]
+z_index = 1
+position = Vector2(16, 20)
+texture = ExtResource("2_1u1gj")
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
