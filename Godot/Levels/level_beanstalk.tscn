@@ -7,11 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dwp82rtqnxdv2" path="res://Sprites/branch-7.png" id="6_4xpbj"]
 [ext_resource type="Texture2D" uid="uid://dae4notstf8tk" path="res://Sprites/harp-2.png" id="7_f1rbo"]
 [ext_resource type="Texture2D" uid="uid://ca1pi4f6hn7lc" path="res://Sprites/branch-5.png" id="8_hhv64"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="9_1kuye"]
+[ext_resource type="Script" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="9_1kuye"]
 [ext_resource type="Texture2D" uid="uid://chsepmgbbmhp5" path="res://Sprites/glasses-2.png" id="10_dcoq0"]
 [ext_resource type="Texture2D" uid="uid://ddm6l04yhechm" path="res://Sprites/camera_sign.png" id="10_doqjc"]
 [ext_resource type="Texture2D" uid="uid://ytvys5bkss88" path="res://Sprites/birdcage-10.png" id="13_7mgno"]
-[ext_resource type="Texture2D" uid="uid://ecr4d6e5y2qy" path="res://Sprites/cloud-1.png" id="13_efpkb"]
 [ext_resource type="Texture2D" uid="uid://cianp2qpvfyy5" path="res://Sprites/branch-2.png" id="13_f1rbo"]
 [ext_resource type="Texture2D" uid="uid://c670kxo2kt2gv" path="res://Sprites/monkey-1.png" id="14_5fty0"]
 [ext_resource type="Texture2D" uid="uid://w3rndg8nc53f" path="res://Sprites/apple.png" id="14_8gjwh"]
@@ -38,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bo3fpw0y330bu" path="res://Sprites/teacup-7.png" id="34_585fv"]
 [ext_resource type="Texture2D" uid="uid://beg0tubj0ch72" path="res://Sprites/teacup-8.png" id="35_qwnq4"]
 [ext_resource type="Texture2D" uid="uid://bpgowtm2chc4e" path="res://Sprites/note-7.png" id="37_fwamo"]
-[ext_resource type="Texture2D" uid="uid://g534u63h081e" path="res://Sprites/birdcage-3.png" id="39_6s02x"]
+[ext_resource type="Texture2D" path="res://Sprites/birdcage-3.png" id="39_6s02x"]
 [ext_resource type="Texture2D" uid="uid://b46fm85mqn5h6" path="res://Sprites/squirrel.png" id="39_o0tcx"]
 [ext_resource type="Texture2D" uid="uid://b15ulbmh04iqq" path="res://Sprites/ladder.png" id="39_qwnq4"]
 [ext_resource type="Texture2D" uid="uid://cuy2x31uh78ry" path="res://Sprites/birdcage-2.png" id="41_qtugp"]
@@ -505,7 +504,7 @@ metadata/_edit_lock_ = true
 position = Vector2(6862.0005, 3647.0002)
 rotation = 0.09468773
 scale = Vector2(-11.667, 11.667)
-texture = ExtResource("13_efpkb")
+texture = ExtResource("24_585fv")
 metadata/_edit_lock_ = true
 
 [node name="Tree3" type="Sprite2D" parent="Textures" unique_id=1374542270]
