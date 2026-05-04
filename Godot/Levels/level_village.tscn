@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bphbftddarv4d"]
 
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="2_axhnk"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_lened"]
 [ext_resource type="Texture2D" uid="uid://ejv2vhrcs7fq" path="res://Sprites/5Ball.png" id="4_2tuqh"]
 [ext_resource type="PackedScene" uid="uid://iqwbcxtt8hlr" path="res://Instances/platform_no_bounce.tscn" id="4_fhmwh"]
 [ext_resource type="Texture2D" uid="uid://cxusdj4ia1qub" path="res://Sprites/down_arrow_sign_1.png" id="5_8sb6b"]
@@ -433,7 +432,7 @@ size = Vector2(189.02814, 140.78436)
 size = Vector2(493.4252, 126.4687)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3y4f"]
-size = Vector2(3095.196, 60.753704)
+size = Vector2(3673.6665, 60.753704)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv120"]
 size = Vector2(1645.6138, 47.46328)
@@ -453,9 +452,6 @@ size = Vector2(53.90508, 8.917877)
 load_path = "res://.godot/imported/Snow0205_6_350.webp-f66e751fa0c0876d4b37ea13e985ef01.ctex"
 
 [node name="LevelVillage" type="Node2D" unique_id=763794867]
-
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_lened")]
-position = Vector2(4912, -14191)
 
 [node name="Collisions" type="Node2D" parent="." unique_id=794495771]
 
@@ -1417,14 +1413,14 @@ scale = Vector2(2.149529, 3.983785)
 shape = SubResource("RectangleShape2D_x0rob")
 
 [node name="CollisionShape2D98" type="CollisionShape2D" parent="Collisions/Sky_Island_3" unique_id=1797654003]
-position = Vector2(3939.0532, -1691.543)
+position = Vector2(3951.5342, -1069.9492)
 rotation = 1.5507205
 scale = Vector2(2.149529, 3.9837854)
 shape = SubResource("RectangleShape2D_t3y4f")
 
 [node name="CollisionShape2D99" type="CollisionShape2D" parent="Collisions/Sky_Island_3" unique_id=266452119]
-position = Vector2(2385.543, 1916.9971)
-rotation = 2.969416
+position = Vector2(2393, 2478)
+rotation = 3.2988062
 scale = Vector2(2.149529, 3.9837854)
 shape = SubResource("RectangleShape2D_jv120")
 
@@ -1810,7 +1806,7 @@ polygon = PackedVector2Array(1040, -486, -1048, -486, -1047, 328, 2323, 328, 221
 z_index = 1
 texture_repeat = 2
 texture = ExtResource("8_cknu2")
-polygon = PackedVector2Array(6009, -17509, 6094, -17281, 6228, -17297, 6507, -17036, 6653, -16062, 6982, -14783, 6152, -14452, 6240, -14227, 6233, -14209, 6971, -13938, 7069, -12744, 6675, -11361, 6345, -10834, 4761, -10277, 4395, -9562, 4774, -9360, 4855, -9205, 8344, -9802, 8208, -16537, 8523, -17509, 8513, -17933, 7763, -17884, 7013, -17892)
+polygon = PackedVector2Array(6009, -17509, 6094, -17281, 6228, -17297, 6507, -17036, 6653, -16062, 6982, -14783, 6152, -14452, 6240, -14227, 6233, -14209, 6971, -13938, 7069, -12744, 6675, -11361, 6345, -10834, 4761, -10277, 4395, -9562, 4774, -9360, 4855, -9205, 8333, -8640, 8515, -10553, 8208, -16537, 8523, -17509, 8513, -17933, 7763, -17884, 7013, -17892)
 
 [node name="Polygon2D12" type="Polygon2D" parent="Textures_Polygons" unique_id=973943992]
 texture_repeat = 2

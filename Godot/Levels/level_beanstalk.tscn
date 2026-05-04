@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://b6slrujmdu3ou" path="res://Sprites/note-6.png" id="22_ftoq5"]
 [ext_resource type="Texture2D" uid="uid://bk713h1mknlvw" path="res://Sprites/branch-8.png" id="24_4xpbj"]
 [ext_resource type="Texture2D" uid="uid://c0t3vh0j3hhnm" path="res://Sprites/cloud-2.png" id="24_585fv"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="26_6mwuc"]
 [ext_resource type="Texture2D" uid="uid://syjnsn5l0jth" path="res://Sprites/dart-1.png" id="27_qpr4f"]
 [ext_resource type="Texture2D" uid="uid://cw2q2krd3yr6v" path="res://Sprites/mantis-1.png" id="28_fwamo"]
 [ext_resource type="Texture2D" uid="uid://mjaxxi6mi0cs" path="res://Sprites/arm-1.png" id="32_efpkb"]
@@ -358,6 +357,22 @@ texture = ExtResource("28_fwamo")
 position = Vector2(871, 2546)
 polygon = PackedVector2Array(-3188, 1936, -2911, 1100, -2768, 990, -2828, 666, -2702, 602, -2796, 127, -2406, -7, -2072, 61, -2051, -145, -1858, -217, -1884, -427, -1780, -481, -1780, -652, -1673, -700, -1666, -965, -1202, -975, -1278, -1227, -1007, -1229, -1011, -1347, -665, -1373, -683, -1592, -169, -1588, -187, -1726, 210, -1796, 160, -2042, 948, -1986, 1290, -1954, 1719, -2044, 1692, 4774)
 
+[node name="ColorRect" type="ColorRect" parent="SpriteCollisions/stairs" unique_id=1692840038]
+offset_left = -628.0
+offset_top = 1829.0
+offset_right = 3590.2993
+offset_bottom = 4887.056
+rotation = 0.5235988
+color = Color(0.12941177, 0.14117648, 0.16862746, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="SpriteCollisions/stairs" unique_id=1430009881]
+offset_left = 1552.0001
+offset_top = 3563.0
+offset_right = 7789.8115
+offset_bottom = 6621.056
+rotation = 0.014836535
+color = Color(0.12941177, 0.14117648, 0.16862746, 1)
+
 [node name="Stairs1" type="Sprite2D" parent="SpriteCollisions/stairs" unique_id=1215206538]
 position = Vector2(898.99994, 1164)
 scale = Vector2(16.43532, 16.43532)
@@ -674,9 +689,6 @@ position = Vector2(-3663, -1623.0001)
 rotation = 0.2617994
 scale = Vector2(0.66259307, 0.66259307)
 texture = ExtResource("44_qtugp")
-
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("26_6mwuc")]
-position = Vector2(-15748, -3006)
 
 [connection signal="body_entered" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_entered"]
 [connection signal="body_exited" from="SpecialCollisions/Trigger_Camera_Zoom" to="SpecialCollisions/Trigger_Camera_Zoom" method="_on_body_exited"]

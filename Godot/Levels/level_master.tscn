@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpbyfevspkhhv"]
 
-[ext_resource type="PackedScene" uid="uid://dgjc4wsslmwwq" path="res://Levels/level_chasm.tscn" id="1_q24hh"]
+[ext_resource type="PackedScene" uid="uid://cdutx8mocx77o" path="res://Levels/level_chasm.tscn" id="1_q24hh"]
 [ext_resource type="PackedScene" uid="uid://bwffcab06wreq" path="res://Levels/level_mountian.tscn" id="2_hxsbd"]
 [ext_resource type="PackedScene" uid="uid://bphbftddarv4d" path="res://Levels/level_village.tscn" id="3_hxsbd"]
 [ext_resource type="PackedScene" uid="uid://m17y1bugpkr3" path="res://Levels/level_beanstalk.tscn" id="4_ybcgk"]
@@ -68,7 +68,7 @@ position = Vector2(-13861, -10597)
 position = Vector2(-1053, -4779)
 
 [node name="LevelVillage" parent="." unique_id=763794867 instance=ExtResource("3_hxsbd")]
-position = Vector2(-13826, -8746)
+position = Vector2(-16066, -10879)
 
 [node name="LevelBeanstalk" parent="." unique_id=203127601 instance=ExtResource("4_ybcgk")]
 position = Vector2(8246, -17678)
@@ -173,7 +173,7 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="VillageBackground" unique_id=728539310]
-offset_left = -16626.0
+offset_left = -22654.0
 offset_top = -327.0
 offset_right = 15003.0
 offset_bottom = 5635.0
