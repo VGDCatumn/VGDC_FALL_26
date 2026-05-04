@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://disvbnbt5b38s"
-path="res://.godot/imported/rock-1.jpg-2be670ac34067f474d14b8c4801a5e1b.ctex"
+uid="uid://b5pnu3wabfdle"
+path="res://.godot/imported/sign-exit-1.png-0150a76052f8f0b28c0c6bccf1a67a7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Textures/rock-1.jpg"
-dest_files=["res://.godot/imported/rock-1.jpg-2be670ac34067f474d14b8c4801a5e1b.ctex"]
+source_file="res://Sprites/Chasm/sign-exit-1.png"
+dest_files=["res://.godot/imported/sign-exit-1.png-0150a76052f8f0b28c0c6bccf1a67a7b.ctex"]
 
 [params]
 

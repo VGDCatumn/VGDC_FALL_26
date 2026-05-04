@@ -119,13 +119,12 @@ size = Vector2(16194, 15044)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(238, -31439)
+position = Vector2(-4783, 309)
 
 [node name="LevelChasmV2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
-position = Vector2(769, -1523)
+position = Vector2(683, 38)
 
 [node name="LevelMountian" parent="." unique_id=847851098 instance=ExtResource("2_hxsbd")]
-visible = false
 position = Vector2(-1053, -4779)
 
 [node name="LevelVillage" parent="." unique_id=763794867 instance=ExtResource("3_hxsbd")]
@@ -172,7 +171,7 @@ offset_bottom = 103.39453
 texture = SubResource("GradientTexture2D_3ot5d")
 
 [node name="ChasmParallax" type="Node2D" parent="ParallaxBackground/ChasmBackground" unique_id=1847790542]
-position = Vector2(-1671, -391)
+position = Vector2(1790, 578)
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax" unique_id=456117880]
 z_index = -4096
@@ -357,7 +356,7 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="MountainParallax" type="Node2D" parent="ParallaxBackground/MountainBackground" unique_id=1879458216]
-position = Vector2(0, -5424)
+position = Vector2(342, -6364)
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=1039461639]
 scale = Vector2(12, 12)
@@ -630,6 +629,7 @@ texture = ExtResource("24_arple")
 
 [node name="AmbientSFX" type="Node2D" parent="." unique_id=2011485254]
 visible = false
+metadata/_edit_group_ = true
 
 [node name="BallMan" parent="AmbientSFX" unique_id=26257663 instance=ExtResource("5_lachh")]
 position = Vector2(-4415, -346)
@@ -870,11 +870,6 @@ offset_right = -2083.0
 offset_bottom = 752.0
 theme_override_font_sizes/font_size = 128
 text = "PRESS TAB!"
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1570516456]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.78039217, 0.85882354, 0.87058824, 1)
 
 [connection signal="body_entered" from="AmbientSFX/Cave_Noise_Zone" to="AmbientSFX/Cave_Noise_Zone" method="_on_body_entered"]
 [connection signal="body_exited" from="AmbientSFX/Cave_Noise_Zone" to="AmbientSFX/Cave_Noise_Zone" method="_on_body_exited"]
