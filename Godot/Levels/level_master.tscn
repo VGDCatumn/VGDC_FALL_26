@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpbyfevspkhhv"]
 
-[ext_resource type="PackedScene" uid="uid://cdutx8mocx77o" path="res://Levels/level_chasm.tscn" id="1_q24hh"]
 [ext_resource type="PackedScene" uid="uid://bwffcab06wreq" path="res://Levels/level_mountian.tscn" id="2_hxsbd"]
+[ext_resource type="PackedScene" uid="uid://u001ljw76y5g" path="res://Levels/level_chasm_v2.tscn" id="2_o0667"]
 [ext_resource type="PackedScene" uid="uid://bphbftddarv4d" path="res://Levels/level_village.tscn" id="3_hxsbd"]
 [ext_resource type="PackedScene" uid="uid://m17y1bugpkr3" path="res://Levels/level_beanstalk.tscn" id="4_ybcgk"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="5_lachh"]
@@ -60,9 +60,10 @@ fill_to = Vector2(0, 1)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(-13861, -10597)
+position = Vector2(6668, -15409)
 
-[node name="LevelChasm" parent="." unique_id=488097887 instance=ExtResource("1_q24hh")]
+[node name="LevelChasm2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
+position = Vector2(716, 97)
 
 [node name="LevelMountian" parent="." unique_id=847851098 instance=ExtResource("2_hxsbd")]
 position = Vector2(-1053, -4779)

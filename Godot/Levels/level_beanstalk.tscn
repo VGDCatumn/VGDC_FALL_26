@@ -284,8 +284,8 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_tkc8o")
 
 [node name="note3-double" type="StaticBody2D" parent="SpriteCollisions" unique_id=1890245081]
-position = Vector2(1433.0001, -3140)
-rotation = 0.6419906
+position = Vector2(1405, -3105)
+rotation = 0.9090186
 metadata/_edit_group_ = true
 
 [node name="note3" type="CollisionPolygon2D" parent="SpriteCollisions/note3-double" unique_id=346057199]

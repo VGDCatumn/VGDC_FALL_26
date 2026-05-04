@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://d13xql51n7hiv"]
+
+[ext_resource type="Script" uid="uid://bsedi0u1arf0i" path="res://Scripts/cave_noise_zone.gd" id="2_7tn42"]
+[ext_resource type="AudioStream" uid="uid://4g6aeygk1lqn" path="res://Audio/Ambient-SFX/cave_noise.mp3" id="3_3grpp"]
+[ext_resource type="AudioStream" uid="uid://csh6ctvyisv2a" path="res://Audio/Ambient-SFX/cave_water.mp3" id="3_7cikj"]
+[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="3_thasd"]
+[ext_resource type="AudioStream" uid="uid://cibc0quc0go7b" path="res://Audio/Ambient-SFX/jingle_2.mp3" id="4_bqwqi"]
+[ext_resource type="AudioStream" uid="uid://dtb7pd74yv2v4" path="res://Audio/Ambient-SFX/cave_noise_2.mp3" id="4_iax5b"]
+[ext_resource type="Script" uid="uid://bgrwteo25150h" path="res://Scripts/village_noise_zone.gd" id="4_r3vka"]
+[ext_resource type="Script" path="res://Scripts/mountain_noise_zone.gd" id="4_thasd"]
+[ext_resource type="Script" uid="uid://cnlcprsfc2hiq" path="res://Scripts/bridge_noise_zone.gd" id="5_oqq44"]
+[ext_resource type="AudioStream" uid="uid://cxi1p65qynonu" path="res://Audio/Ambient-SFX/crow.mp3" id="5_x6dc6"]
+[ext_resource type="AudioStream" uid="uid://b8iy2iaddr5fn" path="res://Audio/Ambient-SFX/wind-normal.mp3" id="6_10pl2"]
+[ext_resource type="Script" uid="uid://dhhifxg8dakh0" path="res://Scripts/clouds_noise_zone.gd" id="6_oqq44"]
+[ext_resource type="AudioStream" uid="uid://dc4fjhfwp2ofs" path="res://Audio/Ambient-SFX/long_snowgrave.mp3" id="7_7cikj"]
+[ext_resource type="Script" uid="uid://bcoxiu6f0rm4o" path="res://Scripts/moon_noise_zone.gd" id="8_bqwqi"]
+[ext_resource type="AudioStream" uid="uid://bq5dx3u60ayr0" path="res://Audio/Ambient-SFX/villager.mp3" id="8_cbu31"]
+[ext_resource type="AudioStream" uid="uid://dfuapos1cu86a" path="res://Audio/Ambient-SFX/jingle.mp3" id="8_fmbft"]
+[ext_resource type="AudioStream" uid="uid://dev4j01mrnw5n" path="res://Audio/Ambient-SFX/wind-strong.mp3" id="11_4i07y"]
+[ext_resource type="AudioStream" uid="uid://dkbekvnb44suf" path="res://Audio/Ambient-SFX/wind-weak.mp3" id="12_fmbft"]
+[ext_resource type="AudioStream" uid="uid://ci84wc232vqbl" path="res://Audio/Ambient-SFX/choir.mp3" id="13_vgtlp"]
+[ext_resource type="AudioStream" uid="uid://ccgqlx7bwkusf" path="res://Audio/Ambient-SFX/birds.mp3" id="14_4i07y"]
+[ext_resource type="AudioStream" uid="uid://de588t6c153x4" path="res://Audio/Ambient-SFX/space.mp3" id="14_iax5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfmia"]
+size = Vector2(1911.375, 808.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3vka"]
+size = Vector2(1105.9375, 813.5625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqq44"]
+size = Vector2(1537.9375, 733.65625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6dc6"]
+size = Vector2(838.8125, 570.5625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqwqi"]
+size = Vector2(919, 659)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqo2q"]
+size = Vector2(1177.6094, 939.8828)
+
+[node name="Node2D" type="Node2D" unique_id=2011485254]
+
+[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("3_thasd")]
+position = Vector2(-4415, -346)
+
+[node name="Cave_Noise_Zone" type="Area2D" parent="." unique_id=1508503752]
+script = ExtResource("2_7tn42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_Noise_Zone" unique_id=2010051618]
+position = Vector2(-3040.3125, -413.75)
+shape = SubResource("RectangleShape2D_kfmia")
+
+[node name="Cave_Ambience" type="AudioStreamPlayer" parent="Cave_Noise_Zone" unique_id=472788024]
+stream = ExtResource("3_7cikj")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Cave_Noise_Zone" unique_id=506068004]
+wait_time = 45.0
+autostart = true
+
+[node name="Random_1" type="AudioStreamPlayer" parent="Cave_Noise_Zone" unique_id=1146783570]
+stream = ExtResource("3_3grpp")
+volume_db = -80.0
+
+[node name="Random_2" type="AudioStreamPlayer" parent="Cave_Noise_Zone" unique_id=144433934]
+stream = ExtResource("4_iax5b")
+volume_db = -80.0
+
+[node name="Mountain_Noise_Zone" type="Area2D" parent="." unique_id=1819636255]
+script = ExtResource("4_thasd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mountain_Noise_Zone" unique_id=2009826656]
+position = Vector2(-5293, -399)
+shape = SubResource("RectangleShape2D_r3vka")
+
+[node name="Mountain_Ambience" type="AudioStreamPlayer" parent="Mountain_Noise_Zone" unique_id=904472944]
+stream = ExtResource("6_10pl2")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Mountain_Noise_Zone" unique_id=1956195413]
+wait_time = 120.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Mountain_Noise_Zone" unique_id=1012855230]
+autostart = true
+
+[node name="mountain_random_1" type="AudioStreamPlayer" parent="Mountain_Noise_Zone" unique_id=1223564485]
+stream = ExtResource("7_7cikj")
+volume_db = -80.0
+autoplay = true
+
+[node name="mountain_random_2" type="AudioStreamPlayer" parent="Mountain_Noise_Zone" unique_id=1169346147]
+stream = ExtResource("8_fmbft")
+volume_db = -80.0
+
+[node name="mountian_random_3" type="AudioStreamPlayer" parent="Mountain_Noise_Zone" unique_id=963683407]
+stream = ExtResource("4_bqwqi")
+volume_db = -80.0
+
+[node name="Village_Noise_Zone" type="Area2D" parent="." unique_id=1149839326]
+script = ExtResource("4_r3vka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Village_Noise_Zone" unique_id=381719837]
+position = Vector2(-6876, -364)
+shape = SubResource("RectangleShape2D_oqq44")
+
+[node name="Village_Ambience" type="AudioStreamPlayer" parent="Village_Noise_Zone" unique_id=824320555]
+stream = ExtResource("12_fmbft")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Village_Noise_Zone" unique_id=987435086]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Village_Noise_Zone" unique_id=280255653]
+wait_time = 5.0
+autostart = true
+
+[node name="village_random_1" type="AudioStreamPlayer" parent="Village_Noise_Zone" unique_id=60147619]
+stream = ExtResource("5_x6dc6")
+volume_db = -80.0
+autoplay = true
+
+[node name="village_random_2" type="AudioStreamPlayer" parent="Village_Noise_Zone" unique_id=1555428484]
+stream = ExtResource("8_cbu31")
+volume_db = -80.0
+
+[node name="Bridge_Noise_Zone" type="Area2D" parent="." unique_id=2055909510]
+script = ExtResource("5_oqq44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge_Noise_Zone" unique_id=824100188]
+position = Vector2(-8295.594, -258)
+shape = SubResource("RectangleShape2D_x6dc6")
+
+[node name="Bridge_Ambience" type="AudioStreamPlayer" parent="Bridge_Noise_Zone" unique_id=1670411171]
+stream = ExtResource("11_4i07y")
+volume_db = -80.0
+autoplay = true
+
+[node name="bridge_random_1" type="AudioStreamPlayer" parent="Bridge_Noise_Zone" unique_id=1584446046]
+
+[node name="Clouds_Noise_Zone" type="Area2D" parent="." unique_id=899994504]
+script = ExtResource("6_oqq44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds_Noise_Zone" unique_id=1886080462]
+position = Vector2(933, -327)
+shape = SubResource("RectangleShape2D_bqwqi")
+
+[node name="Clouds_Ambience" type="AudioStreamPlayer" parent="Clouds_Noise_Zone" unique_id=64269378]
+stream = ExtResource("13_vgtlp")
+volume_db = -80.0
+autoplay = true
+
+[node name="Clouds_Ambience2" type="AudioStreamPlayer" parent="Clouds_Noise_Zone" unique_id=1615753853]
+stream = ExtResource("14_4i07y")
+volume_db = -80.0
+autoplay = true
+
+[node name="Moon_Noise_Zone" type="Area2D" parent="." unique_id=615611730]
+script = ExtResource("8_bqwqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon_Noise_Zone" unique_id=290355111]
+position = Vector2(-444.8047, -437.0586)
+shape = SubResource("RectangleShape2D_pqo2q")
+
+[node name="Moon_Ambience" type="AudioStreamPlayer" parent="Moon_Noise_Zone" unique_id=1748308836]
+stream = ExtResource("14_iax5b")
+volume_db = -80.0
+autoplay = true
+
+[node name="Ambient Labels" type="Control" parent="." unique_id=1262481805]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Ambient Labels" unique_id=825885133]
+layout_mode = 0
+offset_left = -3281.0
+offset_top = -565.0
+offset_right = -1962.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 128
+text = "Chasm"
+
+[node name="Label2" type="Label" parent="Ambient Labels" unique_id=157416563]
+layout_mode = 0
+offset_left = -5869.0
+offset_top = -982.0
+offset_right = -4550.0
+offset_bottom = -170.0
+theme_override_font_sizes/font_size = 128
+text = "Mountain"
+
+[node name="Label3" type="Label" parent="Ambient Labels" unique_id=567748107]
+layout_mode = 0
+offset_left = -7089.0
+offset_top = -693.0
+offset_right = -5770.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 128
+text = "Village"
+
+[node name="Label4" type="Label" parent="Ambient Labels" unique_id=2114822177]
+layout_mode = 0
+offset_left = -8515.0
+offset_top = -550.0
+offset_right = -7196.0
+offset_bottom = 262.0
+theme_override_font_sizes/font_size = 128
+text = "bridge"
+
+[node name="Label5" type="Label" parent="Ambient Labels" unique_id=1311459270]
+layout_mode = 0
+offset_left = 592.0
+offset_top = -665.0
+offset_right = 1911.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 128
+text = "Clouds"
+
+[node name="Label6" type="Label" parent="Ambient Labels" unique_id=1084898666]
+layout_mode = 0
+offset_left = -662.0
+offset_top = -721.0
+offset_right = 657.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 128
+text = "Moon"
+
+[node name="Label7" type="Label" parent="Ambient Labels" unique_id=1145121347]
+layout_mode = 0
+offset_left = -4748.0
+offset_top = 179.0
+offset_right = -3429.0
+offset_bottom = 991.0
+theme_override_font_sizes/font_size = 128
+text = "PRESS TAB!"
+
+[connection signal="body_entered" from="Cave_Noise_Zone" to="Cave_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="Cave_Noise_Zone" to="Cave_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="Cave_Noise_Zone/Timer" to="Cave_Noise_Zone" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Mountain_Noise_Zone" to="Mountain_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="Mountain_Noise_Zone" to="Mountain_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="Mountain_Noise_Zone/Timer" to="Mountain_Noise_Zone" method="_on_timer_timeout"]
+[connection signal="timeout" from="Mountain_Noise_Zone/Timer2" to="Mountain_Noise_Zone" method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="Village_Noise_Zone" to="Village_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="Village_Noise_Zone" to="Village_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="Village_Noise_Zone/Timer" to="Village_Noise_Zone" method="_on_timer_timeout"]
+[connection signal="timeout" from="Village_Noise_Zone/Timer2" to="Village_Noise_Zone" method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="Bridge_Noise_Zone" to="Bridge_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="Bridge_Noise_Zone" to="Bridge_Noise_Zone" method="_on_body_exited"]
+[connection signal="body_entered" from="Clouds_Noise_Zone" to="Clouds_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="Clouds_Noise_Zone" to="Clouds_Noise_Zone" method="_on_body_exited"]
+[connection signal="body_entered" from="Moon_Noise_Zone" to="Moon_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="Moon_Noise_Zone" to="Moon_Noise_Zone" method="_on_body_exited"]
