@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_846ck"]
 [ext_resource type="Script" path="res://Scripts/tools/ambient_light_chasm.gd" id="2_ptu5s"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="3_7i7e6"]
-[ext_resource type="Script" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="4_t70lx"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_emsxw"]
 [ext_resource type="Texture2D" uid="uid://b7xnomaxuingg" path="res://Sprites/Textures/rock-5.png" id="6_lwio0"]
 [ext_resource type="Texture2D" uid="uid://d3sucg7jut4g3" path="res://Sprites/Textures/rock-6.png" id="7_45die"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtfw4omei1vb" path="res://Sprites/Chasm/cauldron.png" id="12_mrham"]
 [ext_resource type="Texture2D" uid="uid://b13pj1ujkmgjx" path="res://Sprites/Chasm/pickaxe-1.png" id="13_vyxid"]
 [ext_resource type="Texture2D" uid="uid://cfnyehq5knmpl" path="res://Sprites/Chasm/sofa-1.png" id="14_lcw2s"]
+[ext_resource type="Texture2D" uid="uid://b7dlp24okeci0" path="res://Sprites/Chasm/tennis-ball-2.png" id="14_lwio0"]
 [ext_resource type="Texture2D" uid="uid://dm56jrjvuvmfq" path="res://Sprites/Chasm/claw-3.png" id="14_wxmfb"]
 [ext_resource type="Texture2D" uid="uid://det6umna456ih" path="res://Sprites/Chasm/rubble-1.png" id="16_mrham"]
 [ext_resource type="Texture2D" uid="uid://dlf3pali0kf6m" path="res://Sprites/Chasm/trash-2.png" id="16_u2xky"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://sytxci0eq3q7" path="res://Sprites/Chasm/hydrant.png" id="23_h5esc"]
 [ext_resource type="Texture2D" uid="uid://b2v5xymnut03b" path="res://Sprites/Chasm/lightbulb.png" id="24_bek5g"]
 [ext_resource type="Texture2D" uid="uid://bq65miijy0cgh" path="res://Sprites/Chasm/umbrella.png" id="25_b8vyx"]
-[ext_resource type="Texture2D" uid="uid://deeftawirrv5d" path="res://Sprites/Chasm/tennis-ball.png" id="26_h5esc"]
 [ext_resource type="Texture2D" uid="uid://b5pnu3wabfdle" path="res://Sprites/Chasm/sign-exit-1.png" id="27_45die"]
 [ext_resource type="Texture2D" uid="uid://dxhedi7fisk66" path="res://Sprites/Chasm/trash-3.png" id="28_nf3ys"]
 [ext_resource type="Texture2D" uid="uid://b8iusyebilqw6" path="res://Sprites/Chasm/piano.png" id="30_45die"]
@@ -34,9 +33,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdhgj"]
 size = Vector2(8722.896, 6853.9883)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkd8"]
-size = Vector2(6110.5415, 2743.1304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45die"]
 size = Vector2(2083, 1340.0001)
@@ -186,17 +182,6 @@ visible = false
 position = Vector2(-1234.8417, -1876.2329)
 rotation = 0.036861345
 shape = SubResource("RectangleShape2D_fdhgj")
-
-[node name="Trigger_Camera_Zoom" type="Area2D" parent="." unique_id=1816445527]
-visible = false
-position = Vector2(0, -3700)
-script = ExtResource("4_t70lx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Camera_Zoom" unique_id=208824531]
-position = Vector2(-869.4666, -328.6704)
-rotation = 0.30864188
-shape = SubResource("RectangleShape2D_8mkd8")
-metadata/_edit_lock_ = true
 
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3
@@ -374,21 +359,25 @@ rotation = -0.317163
 [node name="Textures_Polygon" type="Node2D" parent="." unique_id=1570680729]
 z_index = -1
 
+[node name="Rock_Floor" type="Polygon2D" parent="Textures_Polygon" unique_id=1614185440]
+texture_repeat = 2
+texture = ExtResource("7_45die")
+texture_scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-6631, 448, -4938, 440, -4469, 337, -2765, 340, -2756, 157, -1788, 394, -1140, 329, -1057, 1053, 620, 1414, 1040, 1427, 1908, 1095, 2245, 798, 2518, 792, 3201, 773, 3141, 213, 4210, 217, 5467, -825, 5945, -829, 5953, 2237, -6688, 2066)
+
 [node name="Rock_Foundation" type="Polygon2D" parent="Textures_Polygon" unique_id=254722450]
-visible = false
 texture_repeat = 2
 position = Vector2(-2747, 695)
 texture = ExtResource("6_lwio0")
 texture_scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(6241, 1338, 8146, 258, 7167, -2609, 6065, -2887, 5652, -4279, 5656, -4423, 5445, -4593, 5401, -4587, 5403, -4708, 9213, -4711, 9117, 2103, -5962, 2066, -6000, -5746, -2258, -5757, -2530, -4938, -2247, -3475, -3134, -1609, -3075, 1284)
+polygon = PackedVector2Array(7862, -1216, 7418, -2274, 6611, -2406, 5982, -2845, 5641, -4028, 5656, -4423, 5445, -4593, 5401, -4587, 5403, -4708, 9213, -4711, 9117, 2103, -5962, 2066, -6000, -5746, -2428, -6146, -2401, -5283, -3159, -3332, -3808, -2630, -3909, -1471, -3720, -262, -3398, 460, 927, 418, 931, 1139, 4952, 1179, 7974, 1189)
 
-[node name="Rock_Floor" type="Polygon2D" parent="Textures_Polygon" unique_id=1614185440]
-visible = false
+[node name="Rock_Foundation2" type="Polygon2D" parent="Textures_Polygon" unique_id=1763504129]
 texture_repeat = 2
-position = Vector2(-2734, -135)
-texture = ExtResource("7_45die")
+position = Vector2(-2254, -1678)
+texture = ExtResource("6_lwio0")
 texture_scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(6241, 1338, 8146, 258, 9108, 274, 9117, 2103, -5962, 2066, -6033, 1346, -3075, 1284)
+polygon = PackedVector2Array(-852, -119, 686, -119, 839, -167, 1057, -93, 1044, -24, 627, 489, 205, 358, -244.79468, 261.91577, -544, 198, -860, 205, -1038, 16)
 
 [node name="Wood_8" type="Polygon2D" parent="Textures_Polygon" unique_id=1521532284]
 texture_repeat = 2
@@ -406,60 +395,73 @@ texture = ExtResource("8_mrham")
 texture_repeat = 2
 texture = ExtResource("8_mrham")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=845060262]
+[node name="Trash5" type="Sprite2D" parent="." unique_id=502586686]
+position = Vector2(116.99999, 1228)
+rotation = -3.1311326
+scale = Vector2(1.9859998, -1.9859998)
+texture = ExtResource("30_lwio0")
+
+[node name="Skull" type="StaticBody2D" parent="." unique_id=845060262]
 position = Vector2(4209, 36.000004)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=132338212]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Skull" unique_id=132338212]
 polygon = PackedVector2Array(-628, -5.000004, -573, -69, -553, -58.000004, -510, 2.9999962, -471, 20.999996, -425, 25.999996, -377, 21.999996, -320, -13.000004, -276, -68, -167, -267, -102, -330, 19, -339, 72, -282, 71, -235, 105, -215, 157, -221, 184, -275, 209, -292, 337, -303, 407, -262, 487, -210, 578, -90, 665, 76, 661, 182, 449, 332, 356, 265, -215, 273, -446, 159, -546, 94)
 
-[node name="Bones1" type="Sprite2D" parent="StaticBody2D2/CollisionPolygon2D" unique_id=595731147]
+[node name="Bones1" type="Sprite2D" parent="Skull/CollisionPolygon2D" unique_id=595731147]
 rotation = 3.1415925
 scale = Vector2(2.137, -2.137)
 texture = ExtResource("8_t70lx")
 
-[node name="Bones2" type="Sprite2D" parent="." unique_id=1436953206]
-position = Vector2(-2894.0503, -2632.711)
-rotation = 1.1043447
-scale = Vector2(2.403044, 2.403044)
-texture = ExtResource("9_emsxw")
+[node name="Wrench" type="StaticBody2D" parent="." unique_id=1145838504]
+position = Vector2(191, -942)
 
-[node name="Lightbulb" type="Sprite2D" parent="." unique_id=470813729]
-position = Vector2(935, -613.99994)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wrench" unique_id=949619792]
+polygon = PackedVector2Array(-1323, -69, -1361, -171, -1325, -251, -1260, -284, -1217, -389, -1137, -408, -1062, -497, -848, -513, -656, -498, -571, -399, -313, -332, -282, -246, -274, -128, -151, -106, 36, -149, 243, -213, 362, -140, 362, -139, 404, -70, 596, 26, 658, 17, 762, 53, 927, 48, 1113, 78, 1252, 200, 1307, 337, 1309, 467, 1251, 590, 1148, 698, 914, 762, 697, 657, 469, 381, 260, 250, 38, 226, -193, 53)
+
+[node name="Lightbulb" type="Sprite2D" parent="Wrench/CollisionPolygon2D" unique_id=470813729]
+position = Vector2(735.5215, 285.1364)
 rotation = 2.0551732
 scale = Vector2(1.8406543, 1.8406543)
 texture = ExtResource("24_bek5g")
 
-[node name="Wrench" type="Sprite2D" parent="." unique_id=1787455308]
-position = Vector2(-249.00002, -949.00006)
+[node name="Wrench" type="Sprite2D" parent="Wrench/CollisionPolygon2D" unique_id=1787455308]
+position = Vector2(-448.47852, -49.86383)
 rotation = -0.2837564
-scale = Vector2(2.7042863, 2.7042863)
+scale = Vector2(2.704286, 2.704286)
 texture = ExtResource("11_lwio0")
 
-[node name="Car1" type="Sprite2D" parent="." unique_id=1155075971]
-position = Vector2(-536.0775, -1195.7856)
+[node name="Car1" type="Sprite2D" parent="Wrench/CollisionPolygon2D" unique_id=1155075971]
+position = Vector2(-735.556, -296.6493)
 scale = Vector2(1.9830843, 1.9870133)
 texture = ExtResource("11_u2xky")
 
-[node name="TennisBall" type="Sprite2D" parent="." unique_id=81154129]
-position = Vector2(-1739.135, -1984.8083)
-texture = ExtResource("26_h5esc")
+[node name="Cauldron" type="StaticBody2D" parent="." unique_id=1976062909]
+position = Vector2(-2753, -2206)
+metadata/_edit_group_ = true
 
-[node name="Claw3" type="Sprite2D" parent="." unique_id=1639034125]
-position = Vector2(-1990.1348, -2119.8083)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cauldron" unique_id=953057411]
+polygon = PackedVector2Array(-380, 294, -245, 392, 4, 429, 261, 401, 424, 283, 485, 123, 598, 112, 735, 199, 732, 297, 764, 363, 864, 399, 973, 429, 1083, 399, 1150, 333, 1180, 230, 1159, 123, 1088, 44, 999, -24, 945, -55, 875, -41, 839, 0, 809, 20, 785, 58, 718, 57, 665, 38, 612, 44, 582, 8, 488, -12, 456, -118, 401, -202, 406, -276, 456, -315, 458, -341, 399, -357, 128, -363, 130, -449, 105, -467, 54, -462, -56, -708, -128, -752, -190, -764, -298, -766, -358, -754, -406, -776, -658, -775, -680, -762, -691, -726, -630, -620, -572, -559, -550, -518, -573, -431, -561, -347, -511, -291, -448, -314, -374, -302, -345, -215, -406, -113, -440, 25, -437, 143)
+
+[node name="Bones2" type="Sprite2D" parent="Cauldron/CollisionPolygon2D" unique_id=1436953206]
+position = Vector2(-183.0503, -418.71094)
+rotation = 1.1043447
+scale = Vector2(2.403044, 2.403044)
+texture = ExtResource("9_emsxw")
+
+[node name="TennisBall" type="Sprite2D" parent="Cauldron/CollisionPolygon2D" unique_id=81154129]
+position = Vector2(971.865, 229.19165)
+texture = ExtResource("14_lwio0")
+
+[node name="Claw3" type="Sprite2D" parent="Cauldron/CollisionPolygon2D" unique_id=1639034125]
+position = Vector2(720.865, 94.19141)
 rotation = -1.2131691
 scale = Vector2(1.4247019, 1.4247019)
 texture = ExtResource("14_wxmfb")
 
-[node name="Cauldron" type="Sprite2D" parent="." unique_id=1971173864]
-position = Vector2(-2683.4854, -2201.4224)
+[node name="Cauldron" type="Sprite2D" parent="Cauldron/CollisionPolygon2D" unique_id=1971173864]
+position = Vector2(27.514648, 12.577637)
 scale = Vector2(1.3775351, 1.3775351)
 texture = ExtResource("12_mrham")
-
-[node name="Trash5" type="Sprite2D" parent="." unique_id=502586686]
-position = Vector2(116.99999, 1228)
-rotation = 0.010459982
-scale = Vector2(-1.986, 1.986)
-texture = ExtResource("30_lwio0")
 
 [node name="Tires" type="StaticBody2D" parent="." unique_id=1278737960]
 position = Vector2(-3784, 156)
@@ -501,20 +503,32 @@ polygon = PackedVector2Array(-719, 46, -798, -43, -784, -140, -664, -334, -334, 
 scale = Vector2(3, -3)
 texture = ExtResource("17_vyxid")
 
-[node name="Button1" type="Sprite2D" parent="." unique_id=451131470]
+[node name="Star" type="StaticBody2D" parent="." unique_id=1185620159]
 position = Vector2(1540, -3592)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Star" unique_id=243595000]
+polygon = PackedVector2Array(151, 566, 473, 608, 605, 592, 675, 500, 578, 95, 726, -242, 715, -349, 671, -406, 573, -434, 230, -439, -46, -700, -115, -721, -197, -708, -248, -663, -293, -514, -347, -310, -711, -136, -764, -71, -771, 5, -737, 96, -442, 324, -369, 670, -312, 759, -215, 780, -109, 737)
+
+[node name="Button1" type="Sprite2D" parent="Star/CollisionPolygon2D" unique_id=451131470]
 rotation = -0.14728329
 scale = Vector2(3.2611148, 3.2611148)
 texture = ExtResource("20_2jcq5")
 
-[node name="Umbrella" type="Sprite2D" parent="." unique_id=844777244]
+[node name="Umbrella" type="StaticBody2D" parent="." unique_id=1694948471]
 position = Vector2(2647.0002, -1092)
-rotation = 6.72307
-scale = Vector2(-4.122892, -4.122892)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Umbrella" unique_id=1631508329]
+polygon = PackedVector2Array(-782.00024, 42, -684.00024, 20, -636.00024, -72, -437.00024, -64, -238.00024, -118, 2.9997559, -87, 252.99976, -124, 426.99976, -73, 648.99976, -89, 686.99976, -12, 763.99976, 23, 734.99976, 73, 469.99976, 328, 94.999756, 468, -202.00024, 448, -483.00024, 301, -657.00024, 162)
+
+[node name="Umbrella" type="Sprite2D" parent="Umbrella/CollisionPolygon2D" unique_id=844777244]
+rotation = -2.7017078
+scale = Vector2(4.122892, 4.122892)
 texture = ExtResource("25_b8vyx")
 
 [node name="Rubble" type="StaticBody2D" parent="." unique_id=1525459538]
 position = Vector2(1435, 1173)
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rubble" unique_id=1620467562]
 polygon = PackedVector2Array(-447, 252, 478, 137, 436, -9, 480, -91, 211, -243, 225, -377, 119, -285, 82, -264, 32, -304, -122, -302, -134, -271, -126, -246, -158, -226, -160, -192, -192, -166, -195, -146, -185, -115, -209, -82, -244, -44, -279, -17, -284, 9, -320, 35, -344, 32, -374, 14, -431, 36, -446, 65, -443, 97, -432, 121, -466, 142, -478, 174, -470, 197)
@@ -537,29 +551,31 @@ rotation = -0.18381466
 scale = Vector2(0.72736734, 0.72736734)
 texture = ExtResource("19_vyxid")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1246062010]
-position = Vector2(-767, -98)
-metadata/_edit_group_ = true
+[node name="TrashBin" type="StaticBody2D" parent="." unique_id=373182862]
+position = Vector2(-626, -2972)
 
-[node name="SignExit1" type="Sprite2D" parent="Node2D" unique_id=2097221249]
-position = Vector2(10.999996, -2782)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TrashBin" unique_id=1291698770]
+polygon = PackedVector2Array(-676, -140, -660, -170, -621, -195, 124, -196, 165, -172, 185, -137, 190, -107, 404, -102, 405, -174, 379, -252, 372, -267, 339, -277, 332, -293, 344, -316, 386, -328, 384, -412, 422, -417, 429, -439, 452, -439, 456, -473, 495, -479, 558, -485, 563, -531, 474, -610, 470, -672, 534, -685, 564, -700, 584, -769, 625, -800, 632, -850, 696, -891, 760, -896, 814, -868, 832, -850, 843, -799, 882, -773, 902, -712, 923, -710, 929, -701, 995, -691, 998, -630, 921, -550, 924, -501, 1022, -498, 1035, -475, 1035, -457, 1055, -459, 1063, -441, 1102, -440, 1104, -398, 1107, -363, 1170, -341, 1181, -324, 1174, -309, 1145, -292, 1118, -205, 1116, 702, 1090, 782, 1008, 848, 826, 887, 615, 867, 477, 788, 453, 726, 440, 326, 189, 324, 125, 382, -618, 380, -658, 355, -679, 315)
+
+[node name="SignExit1" type="Sprite2D" parent="TrashBin/CollisionPolygon2D" unique_id=2097221249]
+position = Vector2(-110.972275, 92.690544)
 scale = Vector2(1.4200693, 1.4200693)
 texture = ExtResource("27_45die")
 
-[node name="Trash3" type="Sprite2D" parent="Node2D" unique_id=660281241]
-position = Vector2(892.9999, -2606)
+[node name="Trash3" type="Sprite2D" parent="TrashBin/CollisionPolygon2D" unique_id=660281241]
+position = Vector2(771.0276, 268.6908)
 rotation = -0.028047793
 scale = Vector2(2.7396643, 2.7396643)
 texture = ExtResource("28_nf3ys")
 
-[node name="Hydrant" type="Sprite2D" parent="Node2D" unique_id=29815935]
-position = Vector2(858, -3162.0002)
+[node name="Hydrant" type="Sprite2D" parent="TrashBin/CollisionPolygon2D" unique_id=29815935]
+position = Vector2(736.0277, -287.3097)
 rotation = -0.029543344
 scale = Vector2(3.633388, 3.633388)
 texture = ExtResource("23_h5esc")
 
-[node name="Trash3Top" type="Sprite2D" parent="Node2D" unique_id=1877188495]
-position = Vector2(892.99976, -2606)
+[node name="Trash3Top" type="Sprite2D" parent="TrashBin/CollisionPolygon2D" unique_id=1877188495]
+position = Vector2(771.02747, 268.6908)
 rotation = -0.028047793
 scale = Vector2(2.7396643, 2.7396643)
 texture = ExtResource("30_a4qc0")
@@ -578,5 +594,3 @@ texture = ExtResource("30_45die")
 
 [connection signal="body_entered" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_entered"]
 [connection signal="body_exited" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_exited"]
-[connection signal="body_entered" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_entered"]
-[connection signal="body_exited" from="Trigger_Camera_Zoom" to="Trigger_Camera_Zoom" method="_on_body_exited"]

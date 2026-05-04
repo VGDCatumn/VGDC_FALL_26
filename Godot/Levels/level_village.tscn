@@ -76,6 +76,9 @@ size = Vector2(377.99796, 98.03827)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_728lr"]
 size = Vector2(426.80026, 87.10063)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccmpo"]
+size = Vector2(426.80026, 354.091)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qy5i8"]
 size = Vector2(1706.4717, 306.38574)
 
@@ -532,6 +535,18 @@ position = Vector2(10461.001, 296.99994)
 rotation = -0.08202824
 scale = Vector2(4.887336, 7.418384)
 shape = SubResource("RectangleShape2D_728lr")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1061600392]
+position = Vector2(10846.567, 1366.3174)
+rotation = -0.0015838072
+scale = Vector2(4.887336, 7.418384)
+shape = SubResource("RectangleShape2D_ccmpo")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=1889334268]
+position = Vector2(10718, 3694.9998)
+rotation = 0.09870848
+scale = Vector2(4.887336, 7.418384)
+shape = SubResource("RectangleShape2D_ccmpo")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Collisions/ground_level" unique_id=764896342]
 position = Vector2(2905.9998, 978.0001)
@@ -1795,7 +1810,8 @@ polygon = PackedVector2Array(-1188, -3344, -1239, -3254, -508, -2817, -478, -276
 [node name="Polygon2D9" type="Polygon2D" parent="Textures_Polygons" unique_id=256755624]
 texture_repeat = 2
 texture = ExtResource("8_cknu2")
-polygon = PackedVector2Array(-3570, -2725, -3472, -2629, -3271, -2602, -3240, -2561, -2785, -2510, -2760, -2539, -2654, -2519, -2427, -2275, -2400, -2208, -2375, -2138, -2278, -2094, -2147, -1973, -1312, -1818, -1351, -1609, -1631, -1362, -1982, -1319, -2213, -240, -2097, 1402, -745, 2070, 811, 2008, 2038, 1559, 3642, 1437, 6351, 1403, 6896, 1354, 7091, 1328, 7979, 1233, 8553, 1171, 9078, 929, 9387, 742, 10834.172, 619.0675, 11918, 527, 11897, 1355, 11545, 2495, 7911, 2354, 6080, 2237, 2482, 2776, 942, 3271, -3620, 3454, -4304, 3303, -4779, -1420, -5135.8413, -8811.542, -5345, -13144, -4282, -13213)
+texture_scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(-3570, -2725, -3472, -2629, -3271, -2602, -3240, -2561, -2785, -2510, -2760, -2539, -2654, -2519, -2427, -2275, -2400, -2208, -2375, -2138, -2278, -2094, -2147, -1973, -1312, -1818, -1351, -1609, -1631, -1362, -1982, -1319, -2213, -240, -2097, 1402, -745, 2070, 811, 2008, 2038, 1559, 3642, 1437, 6351, 1403, 6896, 1354, 7091, 1328, 7979, 1233, 8553, 1171, 9078, 929, 9387, 742, 10834.172, 619.0675, 11918, 527, 11897, 1355, 11891, 3376, 11589, 6461, -8494, 6472, -8514, -13134, -4282, -13213)
 
 [node name="Polygon2D10" type="Polygon2D" parent="Textures_Polygons" unique_id=795525449]
 texture_repeat = 2

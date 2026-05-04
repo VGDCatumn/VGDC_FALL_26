@@ -51,6 +51,9 @@ size = Vector2(178.10236, 513.7572)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xprl"]
 size = Vector2(538.1332, 358.7492)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu0tp"]
+size = Vector2(7225.924, 358.7492)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3w50"]
 size = Vector2(208.01778, 640.46063)
 
@@ -153,6 +156,12 @@ position = Vector2(7946.0005, -1733.0001)
 rotation = -1.8698193
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_7xprl")
+
+[node name="CollisionShape2D124" type="CollisionShape2D" parent="Platforms_Static" unique_id=169377380]
+position = Vector2(8951.526, -5297.9873)
+rotation = -1.2639211
+scale = Vector2(0.99999934, 0.99999934)
+shape = SubResource("RectangleShape2D_pu0tp")
 
 [node name="CollisionShape2D125" type="CollisionShape2D" parent="Platforms_Static" unique_id=885553567]
 position = Vector2(7896.3594, -1522.0881)
@@ -324,7 +333,8 @@ texture = ExtResource("19_l75dm")
 texture_repeat = 2
 position = Vector2(3326, 2041)
 texture = ExtResource("4_tta0r")
-polygon = PackedVector2Array(1101, -1102, 2360, -1106, 3041, -1107, 4247, -1112, 4991, -923, 5044, -4036, 4719, -4068, 4709, -4080, 4373, -3976, 4266, -3719, 4284, -3709, 4715, -3261, 4718, -3262, 4724, -1168, 4278, -1277, 3968, -1274, 3457, -1405, 3287, -1751, 3231, -1819, 2891, -1447, 2956, -1386, 2955, -1271, 2803, -1271, 2808, -1296, 2332, -1435, 2308, -1345, 1942, -1309, 1946.6812, -1276.5548, 1101, -1272)
+texture_scale = Vector2(0.3, 0.3)
+polygon = PackedVector2Array(1101, -1102, 1362, -191, 1696, 663, 2469, 1138, 4821, 1347, 15124, 1298, 15095, -10800, 6599, -10888, 4399, -3974, 4284, -3709, 4715, -3261, 4718, -3262, 4724, -1168, 4278, -1277, 3968, -1274, 3457, -1405, 3287, -1751, 3231, -1819, 2891, -1447, 2956, -1386, 2955, -1271, 2803, -1271, 2808, -1296, 2332, -1435, 2308, -1345, 1942, -1309, 1946.6812, -1276.5548, 1101, -1272)
 
 [node name="Rock_2" type="Polygon2D" parent="Textures_Polygon" unique_id=1178683719]
 texture_repeat = 2

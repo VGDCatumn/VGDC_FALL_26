@@ -60,13 +60,6 @@
 [ext_resource type="Script" uid="uid://bcoxiu6f0rm4o" path="res://Scripts/moon_noise_zone.gd" id="58_shy5i"]
 [ext_resource type="AudioStream" uid="uid://de588t6c153x4" path="res://Audio/Ambient-SFX/space.mp3" id="59_0pxjh"]
 
-[sub_resource type="Gradient" id="Gradient_fkt0n"]
-colors = PackedColorArray(0.18431373, 0.19215687, 0.3529412, 1, 0.03529412, 0.047058824, 0.050980393, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ot5d"]
-gradient = SubResource("Gradient_fkt0n")
-fill_to = Vector2(0, 1)
-
 [sub_resource type="Gradient" id="Gradient_rwlr2"]
 offsets = PackedFloat32Array(0, 0.4670487, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.69411767, 0.7607843, 0.8039216, 1, 0.78039217, 0.85882354, 0.8666667, 1)
@@ -161,14 +154,6 @@ offset_right = 3866.3965
 offset_bottom = -2953.7114
 rotation = 0.5828297
 color = Color(0.03529412, 0.047058824, 0.050980393, 1)
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ChasmBackground/ColorRect2" unique_id=119628664]
-layout_mode = 0
-offset_left = 1043.8264
-offset_top = -180.25928
-offset_right = 7729.1914
-offset_bottom = 103.39453
-texture = SubResource("GradientTexture2D_3ot5d")
 
 [node name="ChasmParallax" type="Node2D" parent="ParallaxBackground/ChasmBackground" unique_id=1847790542]
 position = Vector2(1790, 578)
@@ -509,8 +494,8 @@ metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/WindmillBackground" unique_id=349794507]
 z_index = -4096
-offset_left = -17157.0
-offset_top = -6666.0
+offset_left = -24475.0
+offset_top = -8610.0
 offset_right = 14762.0
 offset_bottom = 56.0
 color = Color(0.78039217, 0.85882354, 0.8666667, 1)
