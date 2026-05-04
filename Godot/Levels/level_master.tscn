@@ -39,6 +39,26 @@
 [ext_resource type="Texture2D" uid="uid://l50pc1fx0x7i" path="res://Sprites/Parallax/Mountain-Parallax/13_mountains1day.png" id="29_uirrl"]
 [ext_resource type="Texture2D" uid="uid://dtlvp0ifcaxnr" path="res://Sprites/Parallax/Mountain-Parallax/14_mountains1day.png" id="30_u5jcx"]
 [ext_resource type="Texture2D" uid="uid://tm6rd73uo25n" path="res://Sprites/Parallax/Mountain-Parallax/15_mountains1day.png" id="31_w1scw"]
+[ext_resource type="Script" uid="uid://bsedi0u1arf0i" path="res://Scripts/cave_noise_zone.gd" id="40_s5x6s"]
+[ext_resource type="AudioStream" uid="uid://csh6ctvyisv2a" path="res://Audio/Ambient-SFX/cave_water.mp3" id="41_10aij"]
+[ext_resource type="AudioStream" uid="uid://4g6aeygk1lqn" path="res://Audio/Ambient-SFX/cave_noise.mp3" id="42_osbgn"]
+[ext_resource type="AudioStream" uid="uid://dtb7pd74yv2v4" path="res://Audio/Ambient-SFX/cave_noise_2.mp3" id="43_l75dw"]
+[ext_resource type="Script" path="res://Scripts/mountain_noise_zone.gd" id="44_4mwd6"]
+[ext_resource type="AudioStream" uid="uid://b8iy2iaddr5fn" path="res://Audio/Ambient-SFX/wind-normal.mp3" id="45_yceal"]
+[ext_resource type="AudioStream" uid="uid://dc4fjhfwp2ofs" path="res://Audio/Ambient-SFX/long_snowgrave.mp3" id="46_1dx25"]
+[ext_resource type="AudioStream" uid="uid://dfuapos1cu86a" path="res://Audio/Ambient-SFX/jingle.mp3" id="47_mu5il"]
+[ext_resource type="AudioStream" uid="uid://cibc0quc0go7b" path="res://Audio/Ambient-SFX/jingle_2.mp3" id="48_01ehd"]
+[ext_resource type="Script" uid="uid://bgrwteo25150h" path="res://Scripts/village_noise_zone.gd" id="49_qdh7a"]
+[ext_resource type="AudioStream" uid="uid://dkbekvnb44suf" path="res://Audio/Ambient-SFX/wind-weak.mp3" id="50_yownx"]
+[ext_resource type="AudioStream" uid="uid://cxi1p65qynonu" path="res://Audio/Ambient-SFX/crow.mp3" id="51_5agqn"]
+[ext_resource type="AudioStream" uid="uid://bq5dx3u60ayr0" path="res://Audio/Ambient-SFX/villager.mp3" id="52_wnp2b"]
+[ext_resource type="Script" uid="uid://cnlcprsfc2hiq" path="res://Scripts/bridge_noise_zone.gd" id="53_mcu08"]
+[ext_resource type="AudioStream" uid="uid://dev4j01mrnw5n" path="res://Audio/Ambient-SFX/wind-strong.mp3" id="54_dsso1"]
+[ext_resource type="Script" uid="uid://dhhifxg8dakh0" path="res://Scripts/clouds_noise_zone.gd" id="55_pw55c"]
+[ext_resource type="AudioStream" uid="uid://ci84wc232vqbl" path="res://Audio/Ambient-SFX/choir.mp3" id="56_hq3mb"]
+[ext_resource type="AudioStream" uid="uid://ccgqlx7bwkusf" path="res://Audio/Ambient-SFX/birds.mp3" id="57_h5o6m"]
+[ext_resource type="Script" uid="uid://bcoxiu6f0rm4o" path="res://Scripts/moon_noise_zone.gd" id="58_shy5i"]
+[ext_resource type="AudioStream" uid="uid://de588t6c153x4" path="res://Audio/Ambient-SFX/space.mp3" id="59_0pxjh"]
 
 [sub_resource type="Gradient" id="Gradient_fkt0n"]
 colors = PackedColorArray(0.18431373, 0.19215687, 0.3529412, 1, 0.03529412, 0.047058824, 0.050980393, 1)
@@ -57,12 +77,51 @@ width = 1080
 height = 1080
 fill_to = Vector2(0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfmia"]
+size = Vector2(11390.6875, 7404)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5x6s"]
+size = Vector2(4280, 6733)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3vka"]
+size = Vector2(3805.9688, 1621.7813)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10aij"]
+size = Vector2(11498, 7690)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yceal"]
+size = Vector2(9906, 3772)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqq44"]
+size = Vector2(16258, 9538)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osbgn"]
+size = Vector2(12334, 15494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6dc6"]
+size = Vector2(14121.5, 3582.0645)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dx25"]
+size = Vector2(10214.5, 5418)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l75dw"]
+size = Vector2(10409.5, 2300.0322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqwqi"]
+size = Vector2(10055.25, 15182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mwd6"]
+size = Vector2(4504, 5507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqo2q"]
+size = Vector2(16194, 15044)
+
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
 position = Vector2(6668, -15409)
 
-[node name="LevelChasm2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
+[node name="LevelChasmV2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
 position = Vector2(716, 97)
 
 [node name="LevelMountian" parent="." unique_id=847851098 instance=ExtResource("2_hxsbd")]
@@ -77,12 +136,16 @@ position = Vector2(8246, -17678)
 [node name="LevelMoonV2" parent="." unique_id=1292622103 instance=ExtResource("6_jty1k")]
 position = Vector2(0, -26489)
 
-[node name="ChasmBackground" type="Node2D" parent="." unique_id=1904935496]
+[node name="ParallaxBackground" type="Node2D" parent="." unique_id=301495713]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="ChasmBackground" type="Node2D" parent="ParallaxBackground" unique_id=1904935496]
 position = Vector2(759, -194)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="ColorRect" type="ColorRect" parent="ChasmBackground" unique_id=984836037]
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ChasmBackground" unique_id=984836037]
 z_index = -4096
 offset_left = -17414.0
 offset_top = -7191.0
@@ -90,7 +153,7 @@ offset_right = 14300.0
 offset_bottom = 1928.2393
 color = Color(0.03529412, 0.047058824, 0.050980393, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ChasmBackground" unique_id=163127462]
+[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground/ChasmBackground" unique_id=163127462]
 z_index = -4096
 offset_left = -4213.3066
 offset_top = -7842.2695
@@ -99,7 +162,7 @@ offset_bottom = -2953.7114
 rotation = 0.5828297
 color = Color(0.03529412, 0.047058824, 0.050980393, 1)
 
-[node name="TextureRect" type="TextureRect" parent="ChasmBackground/ColorRect2" unique_id=119628664]
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ChasmBackground/ColorRect2" unique_id=119628664]
 layout_mode = 0
 offset_left = 1043.8264
 offset_top = -180.25928
@@ -107,10 +170,10 @@ offset_right = 7729.1914
 offset_bottom = 103.39453
 texture = SubResource("GradientTexture2D_3ot5d")
 
-[node name="ChasmParallax" type="Node2D" parent="ChasmBackground" unique_id=1847790542]
+[node name="ChasmParallax" type="Node2D" parent="ParallaxBackground/ChasmBackground" unique_id=1847790542]
 position = Vector2(-1671, -391)
 
-[node name="Parallax2D" type="Parallax2D" parent="ChasmBackground/ChasmParallax" unique_id=456117880]
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax" unique_id=456117880]
 z_index = -4096
 texture_filter = 1
 scale = Vector2(9, 9)
@@ -120,11 +183,11 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="ChasmBackground/ChasmParallax/Parallax2D" unique_id=1531193844]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax/Parallax2D" unique_id=1531193844]
 position = Vector2(-62.444447, -86.55556)
 texture = ExtResource("13_nn855")
 
-[node name="Parallax2D2" type="Parallax2D" parent="ChasmBackground/ChasmParallax" unique_id=285282432]
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax" unique_id=285282432]
 z_index = -4096
 texture_filter = 1
 scale = Vector2(9, 9)
@@ -134,11 +197,11 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="ChasmBackground/ChasmParallax/Parallax2D2" unique_id=2051564436]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax/Parallax2D2" unique_id=2051564436]
 position = Vector2(-62.444447, -86.55556)
 texture = ExtResource("14_y0lrq")
 
-[node name="Parallax2D3" type="Parallax2D" parent="ChasmBackground/ChasmParallax" unique_id=784498436]
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax" unique_id=784498436]
 z_index = -4096
 texture_filter = 1
 scale = Vector2(9, 9)
@@ -148,11 +211,11 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="ChasmBackground/ChasmParallax/Parallax2D3" unique_id=316282704]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax/Parallax2D3" unique_id=316282704]
 position = Vector2(-62.444447, -86.55556)
 texture = ExtResource("15_gokxg")
 
-[node name="Parallax2D4" type="Parallax2D" parent="ChasmBackground/ChasmParallax" unique_id=229333160]
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax" unique_id=229333160]
 z_index = -4096
 texture_filter = 1
 scale = Vector2(9, 9)
@@ -162,25 +225,25 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="ChasmBackground/ChasmParallax/Parallax2D4" unique_id=1591088070]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ChasmBackground/ChasmParallax/Parallax2D4" unique_id=1591088070]
 position = Vector2(-62.444447, -86.55556)
 texture = ExtResource("16_p7gp7")
 
-[node name="VillageBackground" type="Node2D" parent="." unique_id=858262311]
+[node name="VillageBackground" type="Node2D" parent="ParallaxBackground" unique_id=858262311]
 z_index = -4096
 texture_filter = 1
 position = Vector2(401, -12175)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="ColorRect" type="ColorRect" parent="VillageBackground" unique_id=728539310]
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/VillageBackground" unique_id=728539310]
 offset_left = -22654.0
 offset_top = -327.0
 offset_right = 15003.0
 offset_bottom = 5635.0
 color = Color(0.18431373, 0.19215687, 0.3529412, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="VillageBackground" unique_id=173368520]
+[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground/VillageBackground" unique_id=173368520]
 z_index = -4096
 offset_left = -16883.0
 offset_top = -9014.0
@@ -188,9 +251,9 @@ offset_right = 15036.0
 offset_bottom = -3889.0
 color = Color(0.45490196, 0.5529412, 0.63529414, 1)
 
-[node name="VillageParallax" type="Node2D" parent="VillageBackground" unique_id=1277511355]
+[node name="VillageParallax" type="Node2D" parent="ParallaxBackground/VillageBackground" unique_id=1277511355]
 
-[node name="Parallax2D" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=92483833]
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=92483833]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0, 0)
 scroll_offset = Vector2(-26, -2600)
@@ -198,10 +261,10 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D" unique_id=400324203]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D" unique_id=400324203]
 texture = ExtResource("13_msce5")
 
-[node name="Parallax2D2" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=845760938]
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=845760938]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.01, 0)
 scroll_offset = Vector2(0, -1444)
@@ -209,10 +272,10 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D2" unique_id=527278971]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D2" unique_id=527278971]
 texture = ExtResource("14_7wxps")
 
-[node name="Parallax2D3" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=745732599]
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=745732599]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.015, 0)
 scroll_offset = Vector2(-655, -1575)
@@ -220,10 +283,10 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D3" unique_id=1130338434]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D3" unique_id=1130338434]
 texture = ExtResource("15_bm11b")
 
-[node name="Parallax2D4" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=142967195]
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=142967195]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.02, 0)
 scroll_offset = Vector2(-2478, -1124)
@@ -231,10 +294,10 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D4" unique_id=70756892]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D4" unique_id=70756892]
 texture = ExtResource("16_bdnvx")
 
-[node name="Parallax2D6" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=34236809]
+[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=34236809]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.002, 0)
 scroll_offset = Vector2(0, -996)
@@ -242,17 +305,17 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="big-mountain" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D6" unique_id=451212087]
+[node name="big-mountain" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D6" unique_id=451212087]
 texture = ExtResource("17_75sy4")
 
-[node name="ColorRect" type="ColorRect" parent="VillageBackground/VillageParallax/Parallax2D6" unique_id=1732660402]
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D6" unique_id=1732660402]
 offset_top = 151.22221
 offset_right = 638.2222
 offset_bottom = 259.22223
 color = Color(0.18431373, 0.19215687, 0.3529412, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Parallax2D7" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=367288088]
+[node name="Parallax2D7" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=367288088]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.005, 0)
 scroll_offset = Vector2(0, 534)
@@ -260,10 +323,10 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D7" unique_id=239439465]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D7" unique_id=239439465]
 texture = ExtResource("18_joqc8")
 
-[node name="Parallax2D5" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=477013604]
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=477013604]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.02, 0)
 scroll_offset = Vector2(0, 813)
@@ -271,10 +334,10 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="small-clouds" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D5" unique_id=390234220]
+[node name="small-clouds" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D5" unique_id=390234220]
 texture = ExtResource("19_0hsgl")
 
-[node name="Parallax2D8" type="Parallax2D" parent="VillageBackground/VillageParallax" unique_id=58581265]
+[node name="Parallax2D8" type="Parallax2D" parent="ParallaxBackground/VillageBackground/VillageParallax" unique_id=58581265]
 scale = Vector2(9, 9)
 scroll_scale = Vector2(0.01, 0)
 scroll_offset = Vector2(0, 1261)
@@ -282,20 +345,20 @@ repeat_size = Vector2(640, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="VillageBackground/VillageParallax/Parallax2D8" unique_id=1822727803]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/VillageBackground/VillageParallax/Parallax2D8" unique_id=1822727803]
 texture = ExtResource("20_o0667")
 
-[node name="MountainBackground" type="Node2D" parent="." unique_id=113765634]
+[node name="MountainBackground" type="Node2D" parent="ParallaxBackground" unique_id=113765634]
 z_index = -4096
 texture_filter = 1
 position = Vector2(-803, -321)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="MountainParallax" type="Node2D" parent="MountainBackground" unique_id=1879458216]
+[node name="MountainParallax" type="Node2D" parent="ParallaxBackground/MountainBackground" unique_id=1879458216]
 position = Vector2(0, -5424)
 
-[node name="Parallax2D" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1039461639]
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=1039461639]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.015, 0)
 scroll_offset = Vector2(-92, -3751)
@@ -303,10 +366,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D" unique_id=550979111]
+[node name="cloud" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D" unique_id=550979111]
 texture = ExtResource("19_o0667")
 
-[node name="Parallax2D3" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=100188122]
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=100188122]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.01, 0)
 scroll_offset = Vector2(1489, -2604)
@@ -314,10 +377,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="big-cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D3" unique_id=2011086658]
+[node name="big-cloud" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D3" unique_id=2011086658]
 texture = ExtResource("20_fk5gx")
 
-[node name="Parallax2D4" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1014139432]
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=1014139432]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.016, 0)
 scroll_offset = Vector2(-420, -3608)
@@ -325,11 +388,11 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D4" unique_id=1854127298]
+[node name="cloud" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D4" unique_id=1854127298]
 position = Vector2(-44, 7)
 texture = ExtResource("21_oyd4v")
 
-[node name="Parallax2D5" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=239730913]
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=239730913]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.018, 0)
 scroll_offset = Vector2(-810, -2792)
@@ -337,10 +400,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D5" unique_id=1252212456]
+[node name="cloud" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D5" unique_id=1252212456]
 texture = ExtResource("22_orre3")
 
-[node name="Parallax2D7" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=2050258684]
+[node name="Parallax2D7" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=2050258684]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.005, 0)
 scroll_offset = Vector2(-2211, -2454)
@@ -348,10 +411,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="back-mountain" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D7" unique_id=1666920331]
+[node name="back-mountain" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D7" unique_id=1666920331]
 texture = ExtResource("23_7ore4")
 
-[node name="Parallax2D8" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=1118454193]
+[node name="Parallax2D8" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=1118454193]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.01, 0)
 scroll_offset = Vector2(-2211, -1862)
@@ -359,10 +422,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="back-mountain" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D8" unique_id=517207093]
+[node name="back-mountain" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D8" unique_id=517207093]
 texture = ExtResource("26_ouvjf")
 
-[node name="Parallax2D6" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=540969148]
+[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=540969148]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.015, 0)
 scroll_offset = Vector2(-39, -1749)
@@ -370,10 +433,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="big-cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D6" unique_id=2108205712]
+[node name="big-cloud" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D6" unique_id=2108205712]
 texture = ExtResource("24_7s085")
 
-[node name="Parallax2D2" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=240670229]
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=240670229]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.02, 0)
 scroll_offset = Vector2(-2163, -2923)
@@ -381,10 +444,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="small-cloud" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D2" unique_id=2029072516]
+[node name="small-cloud" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D2" unique_id=2029072516]
 texture = ExtResource("25_yx7na")
 
-[node name="Parallax2D9" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=438667749]
+[node name="Parallax2D9" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=438667749]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.015, 0)
 scroll_offset = Vector2(-2211, -1275)
@@ -392,10 +455,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D9" unique_id=2111563612]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D9" unique_id=2111563612]
 texture = ExtResource("27_flq3i")
 
-[node name="Parallax2D10" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=2092769670]
+[node name="Parallax2D10" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=2092769670]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.02, 0)
 scroll_offset = Vector2(-2211, -755)
@@ -403,10 +466,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D10" unique_id=1644051398]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D10" unique_id=1644051398]
 texture = ExtResource("28_vsdvh")
 
-[node name="Parallax2D11" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=470551426]
+[node name="Parallax2D11" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=470551426]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.025, 0)
 scroll_offset = Vector2(-2211, -304)
@@ -414,10 +477,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D11" unique_id=1297179280]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D11" unique_id=1297179280]
 texture = ExtResource("29_uirrl")
 
-[node name="Parallax2D12" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=377845177]
+[node name="Parallax2D12" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=377845177]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.03, 0)
 scroll_offset = Vector2(-2211, -62)
@@ -425,10 +488,10 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D12" unique_id=2054812444]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D12" unique_id=2054812444]
 texture = ExtResource("30_u5jcx")
 
-[node name="Parallax2D13" type="Parallax2D" parent="MountainBackground/MountainParallax" unique_id=466219182]
+[node name="Parallax2D13" type="Parallax2D" parent="ParallaxBackground/MountainBackground/MountainParallax" unique_id=466219182]
 scale = Vector2(12, 12)
 scroll_scale = Vector2(0.04, 0)
 scroll_offset = Vector2(-2211, 248)
@@ -436,15 +499,15 @@ repeat_size = Vector2(480, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MountainBackground/MountainParallax/Parallax2D13" unique_id=386643330]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MountainBackground/MountainParallax/Parallax2D13" unique_id=386643330]
 texture = ExtResource("31_w1scw")
 
-[node name="WindmillBackground" type="Node2D" parent="." unique_id=521253308]
+[node name="WindmillBackground" type="Node2D" parent="ParallaxBackground" unique_id=521253308]
 position = Vector2(27, -20000)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="ColorRect" type="ColorRect" parent="WindmillBackground" unique_id=349794507]
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/WindmillBackground" unique_id=349794507]
 z_index = -4096
 offset_left = -17157.0
 offset_top = -6666.0
@@ -452,11 +515,11 @@ offset_right = 14762.0
 offset_bottom = 56.0
 color = Color(0.78039217, 0.85882354, 0.8666667, 1)
 
-[node name="WindmillParallax" type="Node2D" parent="WindmillBackground" unique_id=1498692477]
+[node name="WindmillParallax" type="Node2D" parent="ParallaxBackground/WindmillBackground" unique_id=1498692477]
 z_index = -4096
 texture_filter = 1
 
-[node name="Parallax2D" type="Parallax2D" parent="WindmillBackground/WindmillParallax" unique_id=1987785270]
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax" unique_id=1987785270]
 scale = Vector2(11.25, 11.25)
 scroll_scale = Vector2(0, 0)
 scroll_offset = Vector2(-422, 393)
@@ -464,10 +527,10 @@ repeat_size = Vector2(512, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="WindmillBackground/WindmillParallax/Parallax2D" unique_id=444221098]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax/Parallax2D" unique_id=444221098]
 texture = ExtResource("17_07lch")
 
-[node name="Parallax2D2" type="Parallax2D" parent="WindmillBackground/WindmillParallax" unique_id=498998853]
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax" unique_id=498998853]
 scale = Vector2(11.25, 11.25)
 scroll_scale = Vector2(0.02, 0)
 scroll_offset = Vector2(0, 708)
@@ -475,10 +538,10 @@ repeat_size = Vector2(512, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="WindmillBackground/WindmillParallax/Parallax2D2" unique_id=1134685871]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax/Parallax2D2" unique_id=1134685871]
 texture = ExtResource("18_uoqpl")
 
-[node name="Parallax2D3" type="Parallax2D" parent="WindmillBackground/WindmillParallax" unique_id=1445384335]
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax" unique_id=1445384335]
 scale = Vector2(11.25, 11.25)
 scroll_scale = Vector2(0.04, 0)
 scroll_offset = Vector2(0, 1311)
@@ -486,21 +549,21 @@ repeat_size = Vector2(512, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="WindmillBackground/WindmillParallax/Parallax2D3" unique_id=972344271]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax/Parallax2D3" unique_id=972344271]
 texture = ExtResource("19_arple")
 
-[node name="Parallax2D4" type="Parallax2D" parent="WindmillBackground/WindmillParallax" unique_id=1169636931]
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax" unique_id=1169636931]
 scale = Vector2(11.25, 11.25)
 scroll_scale = Vector2(0.06, 0)
 repeat_size = Vector2(512, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="WindmillBackground/WindmillParallax/Parallax2D4" unique_id=721289344]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax/Parallax2D4" unique_id=721289344]
 visible = false
 texture = ExtResource("20_dqei3")
 
-[node name="Parallax2D5" type="Parallax2D" parent="WindmillBackground/WindmillParallax" unique_id=75010809]
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax" unique_id=75010809]
 scale = Vector2(11.25, 11.25)
 scroll_scale = Vector2(0.08, 0)
 scroll_offset = Vector2(346, 2261)
@@ -508,58 +571,318 @@ repeat_size = Vector2(512, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="WindmillBackground/WindmillParallax/Parallax2D5" unique_id=1365831099]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax/Parallax2D5" unique_id=1365831099]
 texture = ExtResource("21_rwlr2")
 
-[node name="Parallax2D6" type="Parallax2D" parent="WindmillBackground/WindmillParallax" unique_id=1346912354]
+[node name="Parallax2D6" type="Parallax2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax" unique_id=1346912354]
 scale = Vector2(11.25, 11.25)
 scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(512, 0)
 repeat_times = 6
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="WindmillBackground/WindmillParallax/Parallax2D6" unique_id=627952024]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/WindmillBackground/WindmillParallax/Parallax2D6" unique_id=627952024]
 visible = false
 texture = ExtResource("22_fkt0n")
 
-[node name="MoonBackground" type="Node2D" parent="." unique_id=1466517191]
+[node name="MoonBackground" type="Node2D" parent="ParallaxBackground" unique_id=1466517191]
 z_index = -4096
 texture_filter = 1
 position = Vector2(21, -32899)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="MoonBackground" unique_id=1170917469]
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/MoonBackground" unique_id=1170917469]
 offset_left = -17155.0
 offset_top = 3285.0
 offset_right = 13691.0
 offset_bottom = 6269.0
 texture = SubResource("GradientTexture2D_fkt0n")
 
-[node name="ColorRect" type="ColorRect" parent="MoonBackground" unique_id=1574427280]
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/MoonBackground" unique_id=1574427280]
 offset_left = -17203.0
 offset_top = -20550.0
 offset_right = 13640.0
 offset_bottom = 3353.0
 color = Color(0, 0, 0, 1)
 
-[node name="MoonParallax" type="Node2D" parent="MoonBackground" unique_id=1655761021]
+[node name="MoonParallax" type="Node2D" parent="ParallaxBackground/MoonBackground" unique_id=1655761021]
 position = Vector2(-5874, -8669)
 
-[node name="Parallax2D" type="Parallax2D" parent="MoonBackground/MoonParallax" unique_id=2015124437]
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/MoonBackground/MoonParallax" unique_id=2015124437]
 scale = Vector2(10, 10)
 scroll_scale = Vector2(0.01, 0)
 repeat_size = Vector2(2560, 0)
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MoonBackground/MoonParallax/Parallax2D" unique_id=2037316198]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MoonBackground/MoonParallax/Parallax2D" unique_id=2037316198]
 texture = ExtResource("23_uoqpl")
 
-[node name="Parallax2D2" type="Parallax2D" parent="MoonBackground/MoonParallax" unique_id=1780083968]
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground/MoonBackground/MoonParallax" unique_id=1780083968]
 scale = Vector2(10, 10)
 scroll_scale = Vector2(0.02, 0)
 repeat_size = Vector2(2560, 0)
 follow_viewport = false
 
-[node name="Sprite2D" type="Sprite2D" parent="MoonBackground/MoonParallax/Parallax2D2" unique_id=70368200]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MoonBackground/MoonParallax/Parallax2D2" unique_id=70368200]
 texture = ExtResource("24_arple")
+
+[node name="AmbientSFX" type="Node2D" parent="." unique_id=2011485254]
+
+[node name="BallMan" parent="AmbientSFX" unique_id=26257663 instance=ExtResource("5_lachh")]
+position = Vector2(-4415, -346)
+
+[node name="Cave_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=1508503752]
+script = ExtResource("40_s5x6s")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Cave_Noise_Zone" unique_id=2010051618]
+position = Vector2(-2333.3438, -930)
+shape = SubResource("RectangleShape2D_kfmia")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AmbientSFX/Cave_Noise_Zone" unique_id=1242967118]
+position = Vector2(3719, -497.5)
+shape = SubResource("RectangleShape2D_s5x6s")
+
+[node name="Cave_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Cave_Noise_Zone" unique_id=472788024]
+stream = ExtResource("41_10aij")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="AmbientSFX/Cave_Noise_Zone" unique_id=506068004]
+wait_time = 45.0
+autostart = true
+
+[node name="Random_1" type="AudioStreamPlayer" parent="AmbientSFX/Cave_Noise_Zone" unique_id=1146783570]
+stream = ExtResource("42_osbgn")
+volume_db = -80.0
+
+[node name="Random_2" type="AudioStreamPlayer" parent="AmbientSFX/Cave_Noise_Zone" unique_id=144433934]
+stream = ExtResource("43_l75dw")
+volume_db = -80.0
+
+[node name="Mountain_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=1819636255]
+position = Vector2(30959, -1954)
+script = ExtResource("44_4mwd6")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=2009826656]
+position = Vector2(-25665.984, -2738.1094)
+shape = SubResource("RectangleShape2D_r3vka")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=1079816651]
+position = Vector2(-29550, -6560)
+shape = SubResource("RectangleShape2D_10aij")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=589308397]
+position = Vector2(-30346, -12322)
+shape = SubResource("RectangleShape2D_yceal")
+
+[node name="Mountain_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=904472944]
+stream = ExtResource("45_yceal")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=1956195413]
+wait_time = 120.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=1012855230]
+autostart = true
+
+[node name="mountain_random_1" type="AudioStreamPlayer" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=1223564485]
+stream = ExtResource("46_1dx25")
+volume_db = -80.0
+autoplay = true
+
+[node name="mountain_random_2" type="AudioStreamPlayer" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=1169346147]
+stream = ExtResource("47_mu5il")
+volume_db = -80.0
+
+[node name="mountian_random_3" type="AudioStreamPlayer" parent="AmbientSFX/Mountain_Noise_Zone" unique_id=963683407]
+stream = ExtResource("48_01ehd")
+volume_db = -80.0
+
+[node name="Village_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=1149839326]
+position = Vector2(-11661, -12828)
+script = ExtResource("49_qdh7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Village_Noise_Zone" unique_id=381719837]
+position = Vector2(-727, -756)
+shape = SubResource("RectangleShape2D_oqq44")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AmbientSFX/Village_Noise_Zone" unique_id=559695659]
+position = Vector2(-2689, -10265)
+shape = SubResource("RectangleShape2D_osbgn")
+
+[node name="Village_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Village_Noise_Zone" unique_id=824320555]
+stream = ExtResource("50_yownx")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="AmbientSFX/Village_Noise_Zone" unique_id=987435086]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="AmbientSFX/Village_Noise_Zone" unique_id=280255653]
+wait_time = 5.0
+autostart = true
+
+[node name="village_random_1" type="AudioStreamPlayer" parent="AmbientSFX/Village_Noise_Zone" unique_id=60147619]
+stream = ExtResource("51_5agqn")
+volume_db = -80.0
+autoplay = true
+
+[node name="village_random_2" type="AudioStreamPlayer" parent="AmbientSFX/Village_Noise_Zone" unique_id=1555428484]
+stream = ExtResource("52_wnp2b")
+volume_db = -80.0
+
+[node name="Bridge_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=2055909510]
+position = Vector2(437, -20416)
+script = ExtResource("53_mcu08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=824100188]
+position = Vector2(-1540.75, 239)
+shape = SubResource("RectangleShape2D_x6dc6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=1996213222]
+position = Vector2(-3494.25, -4273)
+shape = SubResource("RectangleShape2D_1dx25")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=353445663]
+position = Vector2(306.25, 3187.9844)
+shape = SubResource("RectangleShape2D_l75dw")
+
+[node name="Bridge_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=1670411171]
+stream = ExtResource("54_dsso1")
+volume_db = -80.0
+autoplay = true
+
+[node name="bridge_random_1" type="AudioStreamPlayer" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=1584446046]
+
+[node name="Clouds_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=899994504]
+position = Vector2(11867, -17557)
+script = ExtResource("55_pw55c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Clouds_Noise_Zone" unique_id=1886080462]
+position = Vector2(-1384.375, -2352)
+shape = SubResource("RectangleShape2D_bqwqi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AmbientSFX/Clouds_Noise_Zone" unique_id=823726790]
+position = Vector2(-7524, -7174.5)
+shape = SubResource("RectangleShape2D_4mwd6")
+
+[node name="Clouds_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Clouds_Noise_Zone" unique_id=64269378]
+stream = ExtResource("56_hq3mb")
+volume_db = -80.0
+autoplay = true
+
+[node name="Clouds_Ambience2" type="AudioStreamPlayer" parent="AmbientSFX/Clouds_Noise_Zone" unique_id=1615753853]
+stream = ExtResource("57_h5o6m")
+volume_db = -80.0
+autoplay = true
+
+[node name="Moon_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=615611730]
+position = Vector2(31, -32854)
+script = ExtResource("58_shy5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Moon_Noise_Zone" unique_id=290355111]
+position = Vector2(912, -2157)
+shape = SubResource("RectangleShape2D_pqo2q")
+
+[node name="Moon_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Moon_Noise_Zone" unique_id=1748308836]
+stream = ExtResource("59_0pxjh")
+volume_db = -80.0
+autoplay = true
+
+[node name="Ambient Labels" type="Control" parent="AmbientSFX" unique_id=1262481805]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31023.0
+offset_top = -2296.0
+offset_right = 31063.0
+offset_bottom = -2256.0
+
+[node name="Label" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=825885133]
+layout_mode = 0
+offset_left = -3281.0
+offset_top = -565.0
+offset_right = -1962.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 128
+text = "Chasm"
+
+[node name="Label2" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=157416563]
+layout_mode = 0
+offset_left = -5662.0
+offset_top = -815.0
+offset_right = -4343.0
+offset_bottom = -3.0
+theme_override_font_sizes/font_size = 128
+text = "Mountain"
+
+[node name="Label3" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=567748107]
+layout_mode = 0
+offset_left = -7089.0
+offset_top = -693.0
+offset_right = -5770.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 128
+text = "Village"
+
+[node name="Label4" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=2114822177]
+layout_mode = 0
+offset_left = -8579.0
+offset_top = -486.0
+offset_right = -7260.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 128
+text = "bridge"
+
+[node name="Label5" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=1311459270]
+layout_mode = 0
+offset_left = 592.0
+offset_top = -665.0
+offset_right = 1911.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 128
+text = "Clouds"
+
+[node name="Label6" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=1084898666]
+layout_mode = 0
+offset_left = -702.0
+offset_top = -872.0
+offset_right = 617.0
+offset_bottom = -60.0
+theme_override_font_sizes/font_size = 128
+text = "Moon"
+
+[node name="Label7" type="Label" parent="AmbientSFX/Ambient Labels" unique_id=1145121347]
+layout_mode = 0
+offset_left = -3402.0
+offset_top = -60.0
+offset_right = -2083.0
+offset_bottom = 752.0
+theme_override_font_sizes/font_size = 128
+text = "PRESS TAB!"
+
+[connection signal="body_entered" from="AmbientSFX/Cave_Noise_Zone" to="AmbientSFX/Cave_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="AmbientSFX/Cave_Noise_Zone" to="AmbientSFX/Cave_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="AmbientSFX/Cave_Noise_Zone/Timer" to="AmbientSFX/Cave_Noise_Zone" method="_on_timer_timeout"]
+[connection signal="body_entered" from="AmbientSFX/Mountain_Noise_Zone" to="AmbientSFX/Mountain_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="AmbientSFX/Mountain_Noise_Zone" to="AmbientSFX/Mountain_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="AmbientSFX/Mountain_Noise_Zone/Timer" to="AmbientSFX/Mountain_Noise_Zone" method="_on_timer_timeout"]
+[connection signal="timeout" from="AmbientSFX/Mountain_Noise_Zone/Timer2" to="AmbientSFX/Mountain_Noise_Zone" method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="AmbientSFX/Village_Noise_Zone" to="AmbientSFX/Village_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="AmbientSFX/Village_Noise_Zone" to="AmbientSFX/Village_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="AmbientSFX/Village_Noise_Zone/Timer" to="AmbientSFX/Village_Noise_Zone" method="_on_timer_timeout"]
+[connection signal="timeout" from="AmbientSFX/Village_Noise_Zone/Timer2" to="AmbientSFX/Village_Noise_Zone" method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="AmbientSFX/Bridge_Noise_Zone" to="AmbientSFX/Bridge_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="AmbientSFX/Bridge_Noise_Zone" to="AmbientSFX/Bridge_Noise_Zone" method="_on_body_exited"]
+[connection signal="body_entered" from="AmbientSFX/Clouds_Noise_Zone" to="AmbientSFX/Clouds_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="AmbientSFX/Clouds_Noise_Zone" to="AmbientSFX/Clouds_Noise_Zone" method="_on_body_exited"]
+[connection signal="body_entered" from="AmbientSFX/Moon_Noise_Zone" to="AmbientSFX/Moon_Noise_Zone" method="_on_body_entered"]
+[connection signal="body_exited" from="AmbientSFX/Moon_Noise_Zone" to="AmbientSFX/Moon_Noise_Zone" method="_on_body_exited"]
