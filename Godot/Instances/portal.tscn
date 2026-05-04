@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cxescjus6uf28"]
 
-[ext_resource type="Texture2D" uid="uid://rxudfgi8r3m8" path="res://Sprites/Moon/portal-1.png" id="1_dyupq"]
 [ext_resource type="Script" uid="uid://bq1ysuuc817fl" path="res://Scripts/portal.gd" id="1_fyb5k"]
-[ext_resource type="Texture2D" uid="uid://x5o33f477e31" path="res://Sprites/Moon/portal-2.png" id="2_fyb5k"]
+[ext_resource type="Texture2D" uid="uid://ev52b5l1iyor" path="res://Sprites/Moon/portal-1-color.png" id="2_nnusq"]
 [ext_resource type="AudioStream" uid="uid://didkhbkkjlof6" path="res://Audio/portal_enter1.wav" id="3_netlt"]
 [ext_resource type="AudioStream" uid="uid://0t3nujg1fpgk" path="res://Audio/portal_exit1.wav" id="4_xmpts"]
+[ext_resource type="Texture2D" uid="uid://crcaot7n2uta5" path="res://Sprites/Moon/portal-2-color.png" id="5_netlt"]
 [ext_resource type="AudioStream" uid="uid://1v8hnrel5khg" path="res://Audio/portal_enter2.wav" id="6_vdwmj"]
 [ext_resource type="AudioStream" uid="uid://8et447td77xr" path="res://Audio/portal_exit2.wav" id="7_kvmvt"]
 
@@ -22,7 +22,7 @@ metadata/_edit_group_ = true
 
 [node name="Portal1" type="Sprite2D" parent="Portal1" unique_id=1574845539]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_dyupq")
+texture = ExtResource("2_nnusq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal1" unique_id=122321896]
 shape = SubResource("CapsuleShape2D_ewdiv")
@@ -40,7 +40,7 @@ metadata/_edit_group_ = true
 
 [node name="Portal1" type="Sprite2D" parent="Portal2" unique_id=1627753802]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_fyb5k")
+texture = ExtResource("5_netlt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2" unique_id=944492220]
 shape = SubResource("CapsuleShape2D_ewdiv")

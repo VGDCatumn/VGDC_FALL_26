@@ -192,8 +192,6 @@ func handle_ceiling_bounce():
 	var normal = collision.get_normal()
 	velocity = prev_velocity.bounce(normal) * ceiling_bounce_multiplier
 	
-	$AnimationPlayer.play("Ceiling_animation") # Plays ball bounce animation
-	
 	emit_signal("send_bounce", velocity)
 
 # Print bounce info to output

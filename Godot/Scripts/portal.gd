@@ -25,7 +25,7 @@ func _on_portal_1_body_entered(body: Node2D) -> void:
 		
 		# set new values
 		canTeleport = false
-		body.position = Portal2.position
+		body.global_position = Portal2.global_position
 		body.velocity = body.velocity.rotated(rotation_angle)
 
 func _on_portal_1_body_exited(body: Node2D) -> void:
@@ -44,7 +44,7 @@ func _on_portal_2_body_entered(body: Node2D) -> void:
 		
 		# set new values
 		canTeleport = false
-		body.position = Portal1.position
+		body.global_position = Portal1.global_position
 		body.velocity = body.velocity.rotated(rotation_angle)
 
 

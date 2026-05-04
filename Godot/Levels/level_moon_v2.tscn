@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cdb72oouerh1f" path="res://Sprites/Moon/space-probe-1.png" id="16_wo131"]
 [ext_resource type="Texture2D" uid="uid://ctbqsrwfair5w" path="res://Sprites/Moon/saturn-2.png" id="19_t201x"]
 [ext_resource type="Texture2D" uid="uid://duu1yxxulpibj" path="res://Sprites/Moon/jupiter-outer.png" id="22_23p15"]
+[ext_resource type="PackedScene" uid="uid://cxescjus6uf28" path="res://Instances/portal.tscn" id="23_23p15"]
 [ext_resource type="Texture2D" uid="uid://jj8qjo6yufgb" path="res://Sprites/Moon/jupiter-inner-2.png" id="23_f0kkj"]
 [ext_resource type="Texture2D" uid="uid://b7yhq8gwkrnga" path="res://Sprites/Moon/ufo-beam-3.png" id="26_7crhs"]
 
@@ -669,9 +670,21 @@ position = Vector2(24.718872, -19265)
 scale = Vector2(1.8824556, 3.1383715)
 texture = ExtResource("26_7crhs")
 
+[node name="Portal" parent="." unique_id=1434789367 instance=ExtResource("23_23p15")]
+
+[node name="Portal1" parent="Portal" index="0" unique_id=2124438411]
+position = Vector2(4377, 2363.0002)
+rotation = 0.43868956
+
+[node name="Portal2" parent="Portal" index="1" unique_id=271205823]
+position = Vector2(1450, -4780)
+rotation = 0.49877363
+
 [connection signal="body_entered" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_exited"]
 [connection signal="body_entered" from="MiddleSection/JuptierCollision/Area2D" to="MiddleSection/JuptierCollision" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="MiddleSection/JuptierCollision/Area2D" to="MiddleSection/JuptierCollision" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="UFO/ReverseGravity" to="." method="_on_reverse_gravity_body_entered"]
 [connection signal="body_exited" from="UFO/ReverseGravity" to="." method="_on_reverse_gravity_body_exited"]
+
+[editable path="Portal"]

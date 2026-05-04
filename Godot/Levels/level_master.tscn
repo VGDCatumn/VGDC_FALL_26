@@ -119,7 +119,7 @@ size = Vector2(16194, 15044)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(-4839, -1408)
+position = Vector2(238, -31439)
 
 [node name="LevelChasmV2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
 position = Vector2(769, -1523)
@@ -870,6 +870,11 @@ offset_right = -2083.0
 offset_bottom = 752.0
 theme_override_font_sizes/font_size = 128
 text = "PRESS TAB!"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1570516456]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.78039217, 0.85882354, 0.87058824, 1)
 
 [connection signal="body_entered" from="AmbientSFX/Cave_Noise_Zone" to="AmbientSFX/Cave_Noise_Zone" method="_on_body_entered"]
 [connection signal="body_exited" from="AmbientSFX/Cave_Noise_Zone" to="AmbientSFX/Cave_Noise_Zone" method="_on_body_exited"]
