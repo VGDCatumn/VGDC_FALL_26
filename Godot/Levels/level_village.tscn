@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://bs5ic50ihsxtq" path="res://Sprites/Crypt.png" id="25_vks57"]
 [ext_resource type="Texture2D" uid="uid://cxn230sg58urb" path="res://Sprites/Kite.png" id="26_rim84"]
 [ext_resource type="Texture2D" uid="uid://ctvqscbaievq1" path="res://Sprites/2Ball.png" id="28_esht3"]
+[ext_resource type="Texture2D" uid="uid://bfme1bodiufwf" path="res://Sprites/Pinwheel.png" id="29_esht3"]
 [ext_resource type="Texture2D" uid="uid://detuudedwxyck" path="res://Sprites/house2.5.png" id="30_5qhkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cy8gr"]
@@ -324,10 +325,10 @@ size = Vector2(810.4643, 454.5327)
 size = Vector2(866.25256, 131.31332)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e0ab"]
-size = Vector2(304.25674, 27.501877)
+size = Vector2(304.25674, 13.499962)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhdcv"]
-size = Vector2(325.5541, 27.501877)
+size = Vector2(325.5541, 5.851036)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u4wd"]
 size = Vector2(396.68744, 84.71672)
@@ -1166,12 +1167,12 @@ scale = Vector2(2.149529, 3.9837847)
 shape = SubResource("RectangleShape2D_yf3dr")
 
 [node name="CollisionShape2D58" type="CollisionShape2D" parent="Collisions/Sky_Island_3" unique_id=937362206]
-position = Vector2(189.99512, -732)
+position = Vector2(189.99512, -759.8906)
 scale = Vector2(2.149529, 3.9837847)
 shape = SubResource("RectangleShape2D_8e0ab")
 
 [node name="CollisionShape2D59" type="CollisionShape2D" parent="Collisions/Sky_Island_3" unique_id=2026198567]
-position = Vector2(169.99951, -621)
+position = Vector2(158.7207, -662.625)
 rotation = -0.26460403
 scale = Vector2(2.149529, 3.9837847)
 shape = SubResource("RectangleShape2D_yhdcv")
@@ -1466,10 +1467,13 @@ rotation = -0.8395387
 polygon = PackedVector2Array(1716.6191, -1752.3945, 1532.8936, -1524.4155, 2080.915, -1326.8862, 2003.0967, -1759.5303)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Sky_Island_3" unique_id=1788242361]
-position = Vector2(-1528.0005, 976)
+position = Vector2(-1528.0005, 1013)
 rotation = 0.009446725
 scale = Vector2(14.426428, 14.426428)
 shape = SubResource("CircleShape2D_gveq3")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collisions/Sky_Island_3" unique_id=107172124]
+polygon = PackedVector2Array(192.99951, -3360, 59.99951, -3407, 20.999512, -3437, -56.00049, -3544, -177.00049, -3460, -150.00049, -3555, -134.00049, -3590, -14.000488, -3695, -105.00049, -3807, -43.00049, -3791, 118.99951, -3710, 282.9995, -3729, 229.99951, -3573, 108.99951, -3496, 194.99951, -3363)
 
 [node name="Textures" type="Node2D" parent="." unique_id=1384029984]
 
@@ -1725,9 +1729,15 @@ scale = Vector2(2.1964664, 1.737655)
 texture = ExtResource("26_rim84")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Textures" unique_id=426919755]
-position = Vector2(2659, -10538.001)
-rotation = 0.7068848
+position = Vector2(2657.999, -10503.999)
+rotation = 0.990083
 texture = ExtResource("28_esht3")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Textures" unique_id=1780939396]
+position = Vector2(3873.0002, -15424.001)
+rotation = -2.936418
+scale = Vector2(1.5176523, 1.5176523)
+texture = ExtResource("29_esht3")
 
 [node name="Textures_Polygons" type="Node2D" parent="." unique_id=734272800]
 
