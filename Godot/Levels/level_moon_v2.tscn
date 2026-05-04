@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dfmfim0rqcxlw" path="res://Sprites/space-probe-2.png" id="6_txhar"]
 [ext_resource type="Texture2D" uid="uid://hen681fi0on7" path="res://Sprites/alien-1.png" id="7_txhar"]
 [ext_resource type="Texture2D" uid="uid://d3swev05ubggd" path="res://Sprites/ufo-2.png" id="8_5hlyp"]
-[ext_resource type="Script" uid="uid://cntencchpwmu1" path="res://Scripts/juptier_collision.gd" id="8_iox3k"]
+[ext_resource type="Script" path="res://Scripts/juptier_collision.gd" id="8_iox3k"]
 [ext_resource type="Texture2D" uid="uid://r84fhb7w7fw2" path="res://Sprites/radio.png" id="9_24efb"]
 [ext_resource type="Texture2D" uid="uid://g5etdfa8jhmk" path="res://Sprites/uranus.png" id="9_lyyhm"]
 [ext_resource type="Texture2D" uid="uid://snt2lck5q8j1" path="res://Sprites/alien-2.png" id="9_pgbx3"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://ctbqsrwfair5w" path="res://Sprites/saturn-2.png" id="19_t201x"]
 [ext_resource type="Texture2D" uid="uid://duu1yxxulpibj" path="res://Sprites/jupiter-outer.png" id="22_23p15"]
 [ext_resource type="Texture2D" uid="uid://jj8qjo6yufgb" path="res://Sprites/jupiter-inner-2.png" id="23_f0kkj"]
-[ext_resource type="Texture2D" uid="uid://h1t6lcw87tf6" path="res://Sprites/jupiter-inner.png" id="23_t201x"]
 [ext_resource type="Texture2D" uid="uid://b7yhq8gwkrnga" path="res://Sprites/ufo-beam-3.png" id="26_7crhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otmkg"]
@@ -424,11 +423,6 @@ shape = SubResource("RectangleShape2D_0fivh")
 position = Vector2(1200, 242)
 rotation = 0.15694791
 shape = SubResource("CapsuleShape2D_beice")
-
-[node name="JupiterInner" type="Sprite2D" parent="MiddleSection" unique_id=643409726]
-position = Vector2(-432.99988, -243)
-scale = Vector2(2.7735271, 2.7735271)
-texture = ExtResource("23_t201x")
 
 [node name="JupiterInner2" type="Sprite2D" parent="MiddleSection" unique_id=772440422]
 position = Vector2(-432.99988, -243)

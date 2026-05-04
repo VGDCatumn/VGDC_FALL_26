@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bwffcab06wreq"]
 
-[ext_resource type="Script" uid="uid://cwj1lbvaqiyt" path="res://Scripts/level_mountian.gd" id="1_nv01e"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="1_3745l"]
+[ext_resource type="Script" path="res://Scripts/level_mountian.gd" id="1_nv01e"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="2_0j81s"]
 [ext_resource type="Script" uid="uid://cswex5v20fyms" path="res://Scripts/wall_bouncy.gd" id="3_0j81s"]
 [ext_resource type="Texture2D" uid="uid://b1btuec21ow6m" path="res://Sprites/Snow0205_6_350.webp" id="4_tta0r"]
@@ -11,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://csnummn5poisk" path="res://Sprites/bauble-1.webp" id="8_cheau"]
 [ext_resource type="Texture2D" uid="uid://x2xcolvqrwr2" path="res://Sprites/Reindeer.png" id="9_pu0tp"]
 [ext_resource type="Texture2D" uid="uid://djiwfxedxpeyv" path="res://Sprites/christmas-tree.png" id="9_tq4qj"]
-[ext_resource type="Texture2D" uid="uid://dcwfocno1iku4" path="res://Sprites/wreath.png" id="11_msctx"]
+[ext_resource type="Texture2D" uid="uid://dcwfocno1iku4" path="res://Sprites/Wreath.png" id="11_msctx"]
 [ext_resource type="Texture2D" uid="uid://y2r2xwnr51jx" path="res://Sprites/nutcracker-1.png" id="12_7erb0"]
 [ext_resource type="Texture2D" uid="uid://ccxq11sxv18jp" path="res://Sprites/menorah-1.png" id="12_8kyku"]
 [ext_resource type="Texture2D" uid="uid://8mpj75jc10yg" path="res://Sprites/sled.png" id="14_qgcba"]
-[ext_resource type="Texture2D" uid="uid://ct3k68v7ncjdp" path="res://Sprites/nutcracker.png" id="15_jnnq5"]
+[ext_resource type="Texture2D" uid="uid://ct3k68v7ncjdp" path="res://Sprites/Nutcracker.png" id="15_jnnq5"]
+[ext_resource type="Texture2D" uid="uid://ctwb24wb1kvqa" path="res://Sprites/ice-skate.png" id="17_5vpjl"]
 [ext_resource type="Texture2D" uid="uid://bka41ca3dye7e" path="res://Sprites/elf.png" id="17_bog6c"]
 [ext_resource type="Texture2D" uid="uid://dk8jtw4nrm3od" path="res://Sprites/stocking.png" id="17_jnnq5"]
 [ext_resource type="Texture2D" uid="uid://cg68ha1edv3kb" path="res://Sprites/draidel.png" id="19_43dke"]
@@ -92,10 +92,6 @@ radius = 126.00397
 size = Vector2(49, 1064)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5vpjl"]
-load_path = "res://.godot/imported/shelf (1).png-b50c47f950c057c6eb4d7b4520df5b3c.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l4qi1"]
-load_path = "res://.godot/imported/Ice_skate-removebg-preview (1).png-77613aa73c9d6a571f5ba0159752126d.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dshhh"]
 radius = 176.55594
@@ -340,7 +336,6 @@ texture = ExtResource("4_tta0r")
 polygon = PackedVector2Array(5999, -2184, 6258, -2207, 6275.258, -2150.098, 6295, -2085, 6247, -2055, 5990, -2034, 5947, -2066, 5950, -2153)
 
 [node name="Wood3" type="Sprite2D" parent="Textures_Polygon" unique_id=1205301902]
-
 position = Vector2(6723.4053, -819.595)
 rotation = -0.22689278
 scale = Vector2(0.2, 0.2)
@@ -413,11 +408,11 @@ position = Vector2(6320, -1516)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("11_msctx")
 
-[node name="IceSkateRemovebgPreview(1)" type="Sprite2D" parent="Textures_Polygon" unique_id=256586221]
+[node name="IceSkate" type="Sprite2D" parent="Textures_Polygon" unique_id=256586221]
 position = Vector2(5288.0005, -2628)
 rotation = -0.23038344
 scale = Vector2(3.0000002, 3.0000002)
-texture = SubResource("CompressedTexture2D_l4qi1")
+texture = ExtResource("17_5vpjl")
 
 [node name="DraidelRemovebgPreview" type="Sprite2D" parent="Textures_Polygon" unique_id=375582150]
 position = Vector2(5615, -1380.9998)

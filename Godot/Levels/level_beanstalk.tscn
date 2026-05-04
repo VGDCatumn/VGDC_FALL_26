@@ -37,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://bo3fpw0y330bu" path="res://Sprites/teacup-7.png" id="34_585fv"]
 [ext_resource type="Texture2D" uid="uid://beg0tubj0ch72" path="res://Sprites/teacup-8.png" id="35_qwnq4"]
 [ext_resource type="Texture2D" uid="uid://bpgowtm2chc4e" path="res://Sprites/note-7.png" id="37_fwamo"]
-[ext_resource type="Texture2D" path="res://Sprites/birdcage-3.png" id="39_6s02x"]
 [ext_resource type="Texture2D" uid="uid://b46fm85mqn5h6" path="res://Sprites/squirrel.png" id="39_o0tcx"]
 [ext_resource type="Texture2D" uid="uid://b15ulbmh04iqq" path="res://Sprites/ladder.png" id="39_qwnq4"]
 [ext_resource type="Texture2D" uid="uid://cuy2x31uh78ry" path="res://Sprites/birdcage-2.png" id="41_qtugp"]
@@ -609,12 +608,6 @@ position = Vector2(-15508.1, -1918.9978)
 rotation = -0.14260677
 scale = Vector2(2.0131683, 2.0131683)
 texture = ExtResource("39_qwnq4")
-
-[node name="Birdcage3" type="Sprite2D" parent="Textures" unique_id=221776513]
-visible = false
-position = Vector2(-6885, -195)
-scale = Vector2(1.6968094, 1.6968094)
-texture = ExtResource("39_6s02x")
 
 [node name="Monkey4" type="Sprite2D" parent="Textures" unique_id=676383003]
 position = Vector2(-7253.118, 455.50006)
