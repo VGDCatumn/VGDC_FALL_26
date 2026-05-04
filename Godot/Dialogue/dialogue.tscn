@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6ytgwwmrmlbe"]
 
 [ext_resource type="Script" uid="uid://c12ttj22cqd3f" path="res://Dialogue/dialoguenpc.gd" id="1_je2oo"]
-[ext_resource type="Texture2D" uid="uid://dor7lafughopj" path="res://Sprites/speech_sprite.png.png" id="2_jx425"]
+[ext_resource type="Texture2D" uid="uid://dor7lafughopj" path="res://Sprites/npc-bubble.png" id="2_jx425"]
 
 [node name="Dialogue" type="Control" unique_id=806464691]
 layout_mode = 3

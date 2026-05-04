@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bi1y5jywamacu"]
 
 [ext_resource type="Script" uid="uid://cmyf4bijry20b" path="res://Scripts/platform_trampoline.gd" id="1_tesa8"]
-[ext_resource type="Texture2D" uid="uid://c7vxoomytx2yi" path="res://Sprites/woolTexture.png" id="1_ukaof"]
+[ext_resource type="Texture2D" uid="uid://c7vxoomytx2yi" path="res://Sprites/Textures/wool.png" id="1_ukaof"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tesa8"]
 size = Vector2(225, 149)

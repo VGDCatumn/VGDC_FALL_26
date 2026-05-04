@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chueiu70q7l41"]
 
 [ext_resource type="Script" uid="uid://d04r2dj2orpxf" path="res://Instances/procedural bridge/plank.gd" id="1_1u1gj"]
-[ext_resource type="Texture2D" uid="uid://c670kxo2kt2gv" path="res://Sprites/monkey-1.png" id="2_1u1gj"]
+[ext_resource type="Texture2D" uid="uid://c670kxo2kt2gv" path="res://Sprites/Beanstalk/monkey-1.png" id="2_1u1gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1gj"]
 size = Vector2(390, 55.5)
