@@ -115,7 +115,7 @@ func regular_movement_mode(delta):
 	print_bounce_info() # debugging tool to print bounce stats
 	handle_aerial_movement(delta) # give player air control
 	# Give player an opportunity to shoot up if they fall down a great distance
-	if (has_recovery_bounce): handle_recovery_bounce()
+	
 
 ### CUSTOM MOVEMENT FUNCTIONS
 
@@ -290,13 +290,7 @@ func calculate_fall_height():
 	end_fall_height = position.y 
 	var fall_height = end_fall_height - start_fall_height
 	# Store last_fall_height on floor bounce
-	if fall_height > recovery_fall_threshold:
-		$SpriteColorChange.play("TurnToRed")
-		$Fire.emitting = true
 	if is_on_floor():
-		if $SpriteColorChange.current_animation == "TurnToRed":
-			$SpriteColorChange.play("Cooldown")
-			$Fire.emitting = false
 		if (fall_height > 0): 
 			last_fall_height = fall_height 
 		start_fall_height = position.y # Reset jump height

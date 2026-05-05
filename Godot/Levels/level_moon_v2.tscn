@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://duu1yxxulpibj" path="res://Sprites/Moon/jupiter-outer.png" id="22_23p15"]
 [ext_resource type="PackedScene" uid="uid://cxescjus6uf28" path="res://Instances/portal.tscn" id="23_23p15"]
 [ext_resource type="Texture2D" uid="uid://jj8qjo6yufgb" path="res://Sprites/Moon/jupiter-inner-2.png" id="23_f0kkj"]
+[ext_resource type="Script" uid="uid://utw8tuoiafof" path="res://Scripts/credits_scroll.gd" id="24_t201x"]
 [ext_resource type="Texture2D" uid="uid://b7yhq8gwkrnga" path="res://Sprites/Moon/ufo-beam-3.png" id="26_7crhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otmkg"]
@@ -679,6 +680,58 @@ rotation = 0.43868956
 [node name="Portal2" parent="Portal" index="1" unique_id=271205823]
 position = Vector2(1450, -4780)
 rotation = 0.49877363
+
+[node name="Control" type="Control" parent="." unique_id=2035981866]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2484.0
+offset_top = -20852.0
+offset_right = -2444.0
+offset_bottom = -20812.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=944706761]
+layout_mode = 0
+offset_left = 782.0
+offset_top = -109.0
+offset_right = 2372.0
+offset_bottom = 1634.0
+theme_override_font_sizes/normal_font_size = 100
+text = "
+
+
+
+
+
+
+
+
+
+Level Design		Ben
+							Leo
+							Marcy
+							Nick
+							Tomas
+
+Programming		Ben
+							Leo
+							Luke
+							Marcy
+							Nick
+
+Animations			Marcy
+							Nick
+
+Sound Effects		Ben
+							Leo
+							Marcy
+
+Assets					Ben
+							Leo
+							Marcy
+							Nick
+							"
+scroll_active = false
+script = ExtResource("24_t201x")
 
 [connection signal="body_entered" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_exited"]
