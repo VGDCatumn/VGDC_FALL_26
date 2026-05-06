@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://b7dlp24okeci0" path="res://Sprites/Chasm/tennis-ball-2.png" id="14_lwio0"]
 [ext_resource type="Texture2D" uid="uid://dm56jrjvuvmfq" path="res://Sprites/Chasm/claw-3.png" id="14_wxmfb"]
 [ext_resource type="Texture2D" uid="uid://det6umna456ih" path="res://Sprites/Chasm/rubble-1.png" id="16_mrham"]
-[ext_resource type="Texture2D" uid="uid://dlf3pali0kf6m" path="res://Sprites/Chasm/trash-2.png" id="16_u2xky"]
 [ext_resource type="Texture2D" uid="uid://dg7u5ryjtu8xc" path="res://Sprites/Chasm/banana-1.png" id="17_vyxid"]
+[ext_resource type="Texture2D" uid="uid://dgyabmbc6itsb" path="res://Sprites/Chasm/trash-4.png" id="19_lwio0"]
 [ext_resource type="Texture2D" uid="uid://nb4vc6c5ck71" path="res://Sprites/Chasm/bear.png" id="19_vyxid"]
 [ext_resource type="Texture2D" uid="uid://calvq3515dlg5" path="res://Sprites/Chasm/button-1.png" id="20_2jcq5"]
 [ext_resource type="Texture2D" uid="uid://sytxci0eq3q7" path="res://Sprites/Chasm/hydrant.png" id="23_h5esc"]
@@ -353,8 +353,8 @@ position = Vector2(-2455.0002, -2652)
 rotation = 0.34264827
 
 [node name="Spring5" parent="Platforms_Special" unique_id=261987189 instance=ExtResource("5_emsxw")]
-position = Vector2(4463, -382.99997)
-rotation = -0.317163
+position = Vector2(4727, -381.0001)
+rotation = -0.5824606
 
 [node name="Textures_Polygon" type="Node2D" parent="." unique_id=1570680729]
 z_index = -1
@@ -363,14 +363,14 @@ z_index = -1
 texture_repeat = 2
 texture = ExtResource("7_45die")
 texture_scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-6631, 448, -4938, 440, -4469, 337, -2765, 340, -2756, 157, -1788, 394, -1140, 329, -1057, 1053, 620, 1414, 1040, 1427, 1908, 1095, 2245, 798, 2518, 792, 3201, 773, 3141, 213, 4210, 217, 5467, -825, 5945, -829, 5953, 2237, -6688, 2066)
+polygon = PackedVector2Array(-6631, 448, -4938, 440, -4469, 337, -2765, 340, -2756, 157, -1788, 394, -1140, 329, -1057, 1053, 620, 1414, 1040, 1427, 1908, 1095, 2245, 798, 2518, 792, 2777, 393, 3141, 213, 4210, 217, 5467, -825, 5945, -829, 5953, 2237, -6688, 2066)
 
 [node name="Rock_Foundation" type="Polygon2D" parent="Textures_Polygon" unique_id=254722450]
 texture_repeat = 2
 position = Vector2(-2747, 695)
 texture = ExtResource("6_lwio0")
 texture_scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(7862, -1216, 7418, -2274, 6611, -2406, 5982, -2845, 5641, -4028, 5656, -4423, 5445, -4593, 5401, -4587, 5403, -4708, 9213, -4711, 9117, 2103, -5962, 2066, -6000, -5746, -2428, -6146, -2401, -5283, -3159, -3332, -3808, -2630, -3909, -1471, -3720, -262, -3398, 460, 927, 418, 931, 1139, 4952, 1179, 7974, 1189)
+polygon = PackedVector2Array(7862, -1216, 7418, -2274, 6611, -2406, 5982, -2845, 5641, -4028, 5656, -4423, 5445, -4593, 5401, -4587, 5403, -4708, 10910, -4699, 10910, 2037, -5962, 2066, -6000, -5746, -2428, -6146, -2401, -5283, -3159, -3332, -3808, -2630, -3909, -1471, -3720, -262, -3398, 460, 927, 418, 931, 1139, 4952, 1179, 7974, 1189)
 
 [node name="Rock_Foundation2" type="Polygon2D" parent="Textures_Polygon" unique_id=1763504129]
 texture_repeat = 2
@@ -402,7 +402,9 @@ scale = Vector2(1.9859998, -1.9859998)
 texture = ExtResource("30_lwio0")
 
 [node name="Skull" type="StaticBody2D" parent="." unique_id=845060262]
-position = Vector2(4209, 36.000004)
+position = Vector2(4285, 64.99988)
+rotation = 0.28895706
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Skull" unique_id=132338212]
 polygon = PackedVector2Array(-628, -5.000004, -573, -69, -553, -58.000004, -510, 2.9999962, -471, 20.999996, -425, 25.999996, -377, 21.999996, -320, -13.000004, -276, -68, -167, -267, -102, -330, 19, -339, 72, -282, 71, -235, 105, -215, 157, -221, 184, -275, 209, -292, 337, -303, 407, -262, 487, -210, 578, -90, 665, 76, 661, 182, 449, 332, 356, 265, -215, 273, -446, 159, -546, 94)
@@ -478,7 +480,7 @@ texture = ExtResource("30_wxmfb")
 position = Vector2(-2618, 104)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sofa" unique_id=572566135]
-polygon = PackedVector2Array(-348, 241, -364, 217, -376, 5, -409, -19, -412, -36, -395, -52, -395, -72, -352, -92, -296, -98, -226, -98, -172, -94, -124, -80, -100, -123, -62, -185, -31, -189, -26, -212, -19, -229, 12, -244, 76, -226, 144, -149, 407, -84, 417, -24, 554, 41, 546, 233, -143, 221, -178, 251, -245, 262)
+polygon = PackedVector2Array(-364, 245, -364, 217, -376, 5, -416, -99, -391, -127, -259, -139, -153, -128, -105, -116, -62, -185, -31, -189, -26, -212, -19, -229, 12, -244, 76, -226, 144, -149, 407, -84, 417, -24, 554, 41, 546, 233, -143, 221, -178, 251, -256, 273)
 
 [node name="Sofa1" type="Sprite2D" parent="Sofa/CollisionPolygon2D" unique_id=1363310529]
 position = Vector2(219.13788, 42.45291)
@@ -486,10 +488,9 @@ rotation = 0.18295409
 scale = Vector2(1.3620455, 1.3620455)
 texture = ExtResource("14_lcw2s")
 
-[node name="Trash2" type="Sprite2D" parent="Sofa/CollisionPolygon2D" unique_id=1122469735]
-position = Vector2(-253.86243, 27.000015)
-scale = Vector2(1.4261463, 1.4261463)
-texture = ExtResource("16_u2xky")
+[node name="Trash4" type="Sprite2D" parent="Sofa/CollisionPolygon2D" unique_id=934755707]
+position = Vector2(-267, 56)
+texture = ExtResource("19_lwio0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=34674301]
 position = Vector2(-596, 854)
@@ -504,7 +505,9 @@ scale = Vector2(3, -3)
 texture = ExtResource("17_vyxid")
 
 [node name="Star" type="StaticBody2D" parent="." unique_id=1185620159]
-position = Vector2(1540, -3592)
+position = Vector2(1588, -3504)
+rotation = 0.2234251
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Star" unique_id=243595000]
 polygon = PackedVector2Array(151, 566, 473, 608, 605, 592, 675, 500, 578, 95, 726, -242, 715, -349, 671, -406, 573, -434, 230, -439, -46, -700, -115, -721, -197, -708, -248, -663, -293, -514, -347, -310, -711, -136, -764, -71, -771, 5, -737, 96, -442, 324, -369, 670, -312, 759, -215, 780, -109, 737)

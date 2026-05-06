@@ -67,6 +67,9 @@ height = 503.5879
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtugp"]
 size = Vector2(1618, 2382.0986)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0tcx"]
+size = Vector2(98.84253, 1038.9814)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6s02x"]
 size = Vector2(564.64014, 1245.9127)
 
@@ -157,6 +160,12 @@ shape = SubResource("CapsuleShape2D_6s02x")
 position = Vector2(-4626.1177, 49.54901)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_qtugp")
+
+[node name="CollisionShape2D116" type="CollisionShape2D" parent="BridgeCollisions" unique_id=582560625]
+position = Vector2(-3772.2864, 739.26605)
+rotation = -0.8015951
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_o0tcx")
 
 [node name="CollisionShape2D117" type="CollisionShape2D" parent="BridgeCollisions" unique_id=126853568]
 position = Vector2(-4910.045, -1291.3225)

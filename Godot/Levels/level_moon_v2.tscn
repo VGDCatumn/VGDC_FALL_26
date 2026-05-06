@@ -159,6 +159,12 @@ height = 1046.4746
 radius = 79.4043
 height = 862.64844
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3huw"]
+size = Vector2(371.84534, 186.45892)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lyc8"]
+size = Vector2(134.35333, 150.88269)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t201x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_beice"]
@@ -171,12 +177,6 @@ height = 1514.0001
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lyc8"]
 radius = 254.0
 height = 866.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3huw"]
-size = Vector2(371.84534, 186.45892)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lyc8"]
-size = Vector2(134.35333, 150.88269)
 
 [node name="LevelMoonV2" type="Node2D" unique_id=1292622103 node_paths=PackedStringArray("tractor_beam")]
 script = ExtResource("1_ahcuu")
@@ -214,6 +214,16 @@ shape = SubResource("RectangleShape2D_ahcuu")
 [node name="MoonCollision" type="CollisionShape2D" parent="Moon/MoonGravity" unique_id=1008056579]
 position = Vector2(5, -51)
 shape = SubResource("CircleShape2D_otmkg")
+
+[node name="Portal" parent="." unique_id=1434789367 instance=ExtResource("23_23p15")]
+
+[node name="Portal1" parent="Portal" index="0" unique_id=2124438411]
+position = Vector2(4377, 2363.0002)
+rotation = 0.43868956
+
+[node name="Portal2" parent="Portal" index="1" unique_id=271205823]
+position = Vector2(1450, -4780)
+rotation = 0.49877363
 
 [node name="SpaceShuttle" type="StaticBody2D" parent="." unique_id=1157142006]
 position = Vector2(2, -5692)
@@ -473,22 +483,25 @@ rotation = -3.0490613
 scale = Vector2(1, -1)
 texture = ExtResource("16_wo131")
 
-[node name="Ufo2Collision" type="CollisionPolygon2D" parent="RightSection" unique_id=2133556809]
+[node name="UFOPug" type="StaticBody2D" parent="RightSection" unique_id=1197645219]
+position = Vector2(-90, -276)
+
+[node name="Ufo2Collision" type="CollisionPolygon2D" parent="RightSection/UFOPug" unique_id=2133556809]
 position = Vector2(15, 2081)
 polygon = PackedVector2Array(65, -199, 200, -151, 333, -158, 462, -153, 457, -130, 165, 71, -64, 138, -270, 138, -458, 140, -457, 120, -374, 56, -249, -17, -160, -134, -61, -184)
 
-[node name="Ufo2" type="Sprite2D" parent="RightSection" unique_id=1599689673]
+[node name="Ufo2" type="Sprite2D" parent="RightSection/UFOPug" unique_id=1599689673]
 z_index = 1
 position = Vector2(16, 2081)
 scale = Vector2(2.0341177, 2.0341177)
 texture = ExtResource("8_5hlyp")
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="RightSection" unique_id=148630263]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="RightSection/UFOPug" unique_id=148630263]
 position = Vector2(-59, 1879)
 rotation = -0.24006371
 shape = SubResource("CapsuleShape2D_pgbx3")
 
-[node name="Alien1" type="Sprite2D" parent="RightSection" unique_id=1947534765]
+[node name="Alien1" type="Sprite2D" parent="RightSection/UFOPug" unique_id=1947534765]
 position = Vector2(-61, 1875)
 rotation = -0.33988306
 texture = ExtResource("7_txhar")
@@ -586,10 +599,45 @@ rotation = 2.7815318
 scale = Vector2(1.7451776, -1.7451776)
 texture = ExtResource("19_t201x")
 
-[node name="UFO" type="StaticBody2D" parent="." unique_id=567435384]
-position = Vector2(-12.999939, -19291)
+[node name="Mushroom" type="StaticBody2D" parent="Planetarium" unique_id=1682622986]
+position = Vector2(1876, -9154)
 scale = Vector2(0.99999994, 0.99999994)
-metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Planetarium/Mushroom" unique_id=726522189]
+position = Vector2(24.265562, 7691.787)
+rotation = 0.003021367
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_p3huw")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Planetarium/Mushroom" unique_id=1354684110]
+position = Vector2(-159.00005, 7695.166)
+rotation = -0.7147892
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_4lyc8")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Planetarium/Mushroom" unique_id=982819085]
+position = Vector2(205.31975, 7697)
+rotation = 0.73613286
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_4lyc8")
+
+[node name="Polygon2D8" type="Polygon2D" parent="Planetarium/Mushroom" unique_id=117586084]
+texture_repeat = 2
+position = Vector2(0.99993896, 7693)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_k7haq")
+polygon = PackedVector2Array(-165, 95, -264, -13, -162, -94, 203, -93, 303, -7, 205, 106)
+
+[node name="Spring" parent="Planetarium/Mushroom" unique_id=261987189 instance=ExtResource("6_4lyc8")]
+z_index = -1
+position = Vector2(23.319273, 7526)
+scale = Vector2(0.99999994, 0.99999994)
+spring_power = 2500
+
+[node name="UFO" type="StaticBody2D" parent="." unique_id=567435384]
+position = Vector2(-40, -18059)
+scale = Vector2(0.99999994, 0.99999994)
+metadata/_edit_group_ = true
 
 [node name="ReverseGravity" type="Area2D" parent="UFO" unique_id=1052064592]
 position = Vector2(29.98285, -1708)
@@ -647,58 +695,19 @@ stream = ExtResource("11_k7haq")
 max_distance = 4000.0
 attenuation = 0.35355362
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="UFO" unique_id=726522189]
-position = Vector2(24.265564, 7691.788)
-rotation = 0.003021367
-scale = Vector2(0.99999976, 0.99999976)
-shape = SubResource("RectangleShape2D_p3huw")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="UFO" unique_id=1354684110]
-position = Vector2(-159.00006, 7695.167)
-rotation = -0.7147892
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_4lyc8")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="UFO" unique_id=982819085]
-position = Vector2(205.31976, 7697)
-rotation = 0.73613286
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_4lyc8")
-
-[node name="Polygon2D8" type="Polygon2D" parent="UFO" unique_id=117586084]
-texture_repeat = 2
-position = Vector2(0.99993896, 7693)
-texture = ExtResource("13_k7haq")
-polygon = PackedVector2Array(-165, 95, -264, -13, -162, -94, 203, -93, 303, -7, 205, 106)
-
-[node name="Spring" parent="UFO" unique_id=261987189 instance=ExtResource("6_4lyc8")]
-z_index = -1
-position = Vector2(23.319275, 7526)
-spring_power = 2500
-
-[node name="UfoBeam3" type="Sprite2D" parent="." unique_id=708107034]
+[node name="UfoBeam3" type="Sprite2D" parent="UFO" unique_id=708107034]
 modulate = Color(0.90154254, 1.3596051, 0.9931552, 1)
-position = Vector2(24.718872, -19265)
+position = Vector2(37.71881, 26)
 scale = Vector2(1.8824556, 3.1383715)
 texture = ExtResource("26_7crhs")
-
-[node name="Portal" parent="." unique_id=1434789367 instance=ExtResource("23_23p15")]
-
-[node name="Portal1" parent="Portal" index="0" unique_id=2124438411]
-position = Vector2(4377, 2363.0002)
-rotation = 0.43868956
-
-[node name="Portal2" parent="Portal" index="1" unique_id=271205823]
-position = Vector2(1450, -4780)
-rotation = 0.49877363
 
 [node name="Control" type="Control" parent="." unique_id=2035981866]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 22.0
-offset_top = -20954.0
-offset_right = 62.0
-offset_bottom = -20914.0
+offset_left = -5.000065
+offset_top = -19722.0
+offset_right = 34.999935
+offset_bottom = -19682.0
 script = ExtResource("24_t201x")
 
 [node name="CreditsTitles" type="RichTextLabel" parent="Control" unique_id=944706761]

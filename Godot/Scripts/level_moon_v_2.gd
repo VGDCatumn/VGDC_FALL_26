@@ -22,11 +22,11 @@ func _process(delta):
 # MOON GRAVITY
 func _on_low_gravity_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
-		body.gravity *= 1.0 / 2.0
+		body.gravity *= 2.0 / 3.0
 
 func _on_low_gravity_body_exited(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
-		body.gravity *= 2.0
+		body.gravity *= 3.0 / 2.0
 
 
 # EARTH GRAVITY / GRAVITY WELL
