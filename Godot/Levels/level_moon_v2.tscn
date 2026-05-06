@@ -161,6 +161,9 @@ height = 862.64844
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t201x"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beice"]
+size = Vector2(1252.0002, 1799)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3huw"]
 radius = 164.0
 height = 1514.0001
@@ -605,6 +608,14 @@ scale = Vector2(3.8508236, 1.708585)
 texture = SubResource("CompressedTexture2D_t201x")
 offset = Vector2(-79, 378)
 
+[node name="RollCredits" type="Area2D" parent="UFO" unique_id=806771194]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UFO/RollCredits" unique_id=1691480886]
+position = Vector2(21.999928, -545.5)
+shape = SubResource("RectangleShape2D_beice")
+
 [node name="Radio" type="Sprite2D" parent="UFO" unique_id=1935176751]
 position = Vector2(629.98285, -1798)
 rotation = 0.26187912
@@ -691,10 +702,10 @@ offset_bottom = -20812.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=944706761]
 layout_mode = 0
-offset_left = 782.0
-offset_top = -109.0
-offset_right = 2372.0
-offset_bottom = 1634.0
+offset_left = 597.0
+offset_top = -286.0
+offset_right = 2187.0
+offset_bottom = 1457.0
 theme_override_font_sizes/normal_font_size = 100
 text = "
 
@@ -706,30 +717,55 @@ text = "
 
 
 
-Level Design		Ben
-							Leo
-							Marcy
-							Nick
-							Tomas
 
-Programming		Ben
-							Leo
-							Luke
-							Marcy
-							Nick
 
-Animations			Marcy
-							Nick
 
-Sound Effects		Ben
-							Leo
-							Marcy
+Level Design			Ben
+								Leo
+								Marcy
+								Nick
+								Tomas
 
-Assets					Ben
-							Leo
-							Marcy
-							Nick
-							"
+Programming			Ben
+								Leo
+								Luke
+								Marcy
+								Nick
+
+Animations				Marcy
+								Nick
+
+Sound Effects			Ben
+								Leo
+								Marcy
+
+Assets						Ben
+								Leo
+								Marcy
+								Nick
+
+Music						Matthew
+							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
 scroll_active = false
 script = ExtResource("24_t201x")
 
@@ -739,5 +775,6 @@ script = ExtResource("24_t201x")
 [connection signal="body_exited" from="MiddleSection/JuptierCollision/Area2D" to="MiddleSection/JuptierCollision" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="UFO/ReverseGravity" to="." method="_on_reverse_gravity_body_entered"]
 [connection signal="body_exited" from="UFO/ReverseGravity" to="." method="_on_reverse_gravity_body_exited"]
+[connection signal="body_entered" from="UFO/RollCredits" to="Control/RichTextLabel" method="_on_roll_credits_body_entered"]
 
 [editable path="Portal"]

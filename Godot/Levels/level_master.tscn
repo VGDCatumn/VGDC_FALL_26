@@ -107,12 +107,12 @@ size = Vector2(10055.25, 15182)
 size = Vector2(4504, 5507)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqo2q"]
-size = Vector2(16194, 15044)
+size = Vector2(16194, 16498)
 
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(-2375, -8916)
+position = Vector2(25, -39006)
 
 [node name="LevelChasmV2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
 position = Vector2(683, 38)
@@ -616,9 +616,6 @@ texture = ExtResource("24_arple")
 visible = false
 metadata/_edit_group_ = true
 
-[node name="BallMan" parent="AmbientSFX" unique_id=26257663 instance=ExtResource("5_lachh")]
-position = Vector2(-4415, -346)
-
 [node name="Cave_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=1508503752]
 script = ExtResource("40_s5x6s")
 metadata/_edit_lock_ = true
@@ -776,7 +773,7 @@ position = Vector2(31, -32854)
 script = ExtResource("58_shy5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AmbientSFX/Moon_Noise_Zone" unique_id=290355111]
-position = Vector2(912, -2157)
+position = Vector2(912, -2884)
 shape = SubResource("RectangleShape2D_pqo2q")
 
 [node name="Moon_Ambience" type="AudioStreamPlayer" parent="AmbientSFX/Moon_Noise_Zone" unique_id=1748308836]
