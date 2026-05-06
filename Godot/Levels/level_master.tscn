@@ -112,7 +112,7 @@ size = Vector2(16194, 16498)
 [node name="LevelMaster" type="Node2D" unique_id=1479141605]
 
 [node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("5_lachh")]
-position = Vector2(168, -38949)
+position = Vector2(-5042, 86)
 
 [node name="LevelChasmV2" parent="." unique_id=488097887 instance=ExtResource("2_o0667")]
 position = Vector2(683, 38)
