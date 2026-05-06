@@ -695,17 +695,18 @@ rotation = 0.49877363
 [node name="Control" type="Control" parent="." unique_id=2035981866]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -2484.0
-offset_top = -20852.0
-offset_right = -2444.0
-offset_bottom = -20812.0
+offset_left = 22.0
+offset_top = -20954.0
+offset_right = 62.0
+offset_bottom = -20914.0
+script = ExtResource("24_t201x")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=944706761]
+[node name="CreditsTitles" type="RichTextLabel" parent="Control" unique_id=944706761]
 layout_mode = 0
-offset_left = 597.0
-offset_top = -286.0
-offset_right = 2187.0
-offset_bottom = 1457.0
+offset_left = -1541.0
+offset_top = 5.0
+offset_right = 49.0
+offset_bottom = 1748.0
 theme_override_font_sizes/normal_font_size = 100
 text = "
 
@@ -720,38 +721,31 @@ text = "
 
 
 
-Level Design			Ben
-								Leo
-								Marcy
-								Nick
-								Tomas
-
-Programming			Ben
-								Leo
-								Luke
-								Marcy
-								Nick
-
-Animations				Marcy
-								Nick
-
-Sound Effects			Ben
-								Leo
-								Marcy
-
-Assets						Ben
-								Leo
-								Marcy
-								Nick
-
-Music						Matthew
-							
+Level Design
 
 
 
 
 
+Programming
 
+
+
+
+
+Animations
+
+
+Sound Design
+
+
+
+Assets
+
+
+
+
+Music
 
 
 
@@ -767,7 +761,76 @@ Music						Matthew
 
 "
 scroll_active = false
-script = ExtResource("24_t201x")
+
+[node name="CreditsNames" type="RichTextLabel" parent="Control" unique_id=626667732]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 5.0
+offset_right = 2517.0
+offset_bottom = 1748.0
+theme_override_font_sizes/normal_font_size = 100
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+Ben
+Leo
+Marcy
+Nick
+Tomas
+
+Ben
+Leo
+Luke
+Marcy
+Nick
+
+Marcy
+Nick
+
+Ben
+Leo
+Marcy
+
+Ben
+Leo
+Marcy
+Nick
+
+Matthew
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+scroll_active = false
+
+[node name="ThanksForPlaying" type="Label" parent="Control" unique_id=1654513019]
+layout_mode = 0
+offset_left = -1799.0
+offset_top = 545.0
+offset_right = 1922.0
+offset_bottom = 1405.0
+theme_override_font_sizes/font_size = 256
+text = "Thanks for playing our game!"
 
 [connection signal="body_entered" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_entered"]
 [connection signal="body_exited" from="Moon/MoonGravity" to="." method="_on_low_gravity_body_exited"]
@@ -775,6 +838,6 @@ script = ExtResource("24_t201x")
 [connection signal="body_exited" from="MiddleSection/JuptierCollision/Area2D" to="MiddleSection/JuptierCollision" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="UFO/ReverseGravity" to="." method="_on_reverse_gravity_body_entered"]
 [connection signal="body_exited" from="UFO/ReverseGravity" to="." method="_on_reverse_gravity_body_exited"]
-[connection signal="body_entered" from="UFO/RollCredits" to="Control/RichTextLabel" method="_on_roll_credits_body_entered"]
+[connection signal="body_entered" from="UFO/RollCredits" to="Control" method="_on_roll_credits_body_entered"]
 
 [editable path="Portal"]
