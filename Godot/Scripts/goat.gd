@@ -29,7 +29,6 @@ func _physics_process(delta: float) -> void:
 			if $Nearby_right.is_colliding():
 				
 				velocity.x = 0
-				state = 0
 	if player.position.x < position.x and side == 1:
 		switch_side(-1)
 	elif player.position.x > position.x and side == -1:

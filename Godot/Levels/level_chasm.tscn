@@ -1,25 +1,20 @@
-[gd_scene format=3 uid="uid://dgjc4wsslmwwq"]
+[gd_scene format=3 uid="uid://cdutx8mocx77o"]
 
 [ext_resource type="Script" uid="uid://cepu58cuc2x2a" path="res://Scripts/level_testing.gd" id="1_di1g1"]
-[ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_qhuka"]
-[ext_resource type="Texture2D" uid="uid://btycbjc8h7oi0" path="res://Sprites/rock-2.png" id="4_qxvo5"]
+[ext_resource type="Texture2D" uid="uid://btycbjc8h7oi0" path="res://Sprites/Textures/rock-2.png" id="4_qxvo5"]
 [ext_resource type="PackedScene" uid="uid://d2jwllqcv5r6g" path="res://Instances/platform_spring.tscn" id="5_rkulv"]
-[ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="6_uj8wd"]
-[ext_resource type="Texture2D" uid="uid://bij454oaejatf" path="res://Sprites/grumpy-cat.jpg" id="7_6fori"]
-[ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/banana-peel.png" id="9_1vapn"]
-[ext_resource type="Texture2D" uid="uid://dgmbhojaqqy1" path="res://Sprites/picture-frame.png" id="10_870hm"]
-[ext_resource type="AudioStream" uid="uid://b5tjfmtot7kik" path="res://Audio/soundtrack-chasm.mp3" id="12_1vapn"]
-[ext_resource type="Script" uid="uid://c04dpp7t1j182" path="res://Scripts/tools/ambient_light_chasm.gd" id="12_7s22q"]
+[ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/Textures/wood-2.png" id="6_uj8wd"]
+[ext_resource type="Texture2D" uid="uid://bojh4h1i16ncc" path="res://Sprites/Chasm/banana-2.png" id="9_1vapn"]
+[ext_resource type="Script" path="res://Scripts/tools/ambient_light_chasm.gd" id="12_7s22q"]
 [ext_resource type="PackedScene" uid="uid://b4anoj2hvgqbq" path="res://Instances/platform_trapdoor.tscn" id="13_870hm"]
-[ext_resource type="Script" uid="uid://vnb2ueuuk76v" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="13_jt8vq"]
+[ext_resource type="Script" path="res://Scripts/tools/trigger_chasm_zoom.gd" id="13_jt8vq"]
 [ext_resource type="PackedScene" uid="uid://cgqovkrysu1fw" path="res://Instances/torch.tscn" id="14_7s22q"]
 
-[sub_resource type="Curve" id="Curve_870hm"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdhgj"]
+size = Vector2(8722.896, 6853.9883)
 
-[sub_resource type="Gradient" id="Gradient_870hm"]
-colors = PackedColorArray(1, 1, 1, 0, 0.84313726, 1, 1, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkd8"]
+size = Vector2(6110.5415, 2743.1304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enxv6"]
 size = Vector2(1120.5, 124)
@@ -194,9 +189,6 @@ size = Vector2(264.79126, 151.93677)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hiu35"]
 size = Vector2(173.19281, 172.30222)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_23em2"]
-size = Vector2(145.98859, 53.11911)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_870hm"]
 size = Vector2(53.793655, 103.05699)
 
@@ -254,30 +246,90 @@ size = Vector2(364.62012, 171.91528)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nngh"]
 size = Vector2(441.75, 696.6643)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdhgj"]
-size = Vector2(8722.896, 6853.9883)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkd8"]
-size = Vector2(6110.5415, 2743.1304)
-
 [node name="LevelChasm" type="Node2D" unique_id=488097887]
 script = ExtResource("1_di1g1")
 
-[node name="BallMan" parent="." unique_id=742937550 instance=ExtResource("2_qhuka")]
-position = Vector2(-3857, -2582)
+[node name="Lighting" type="Node2D" parent="." unique_id=401589430]
+visible = false
 
-[node name="Line2D" type="Line2D" parent="." unique_id=332287160]
-width = 30.0
-width_curve = SubResource("Curve_870hm")
-default_color = Color(0.8156863, 1, 1, 1)
-gradient = SubResource("Gradient_870hm")
-antialiased = true
+[node name="DirectionalLight_Darkness" type="DirectionalLight2D" parent="Lighting" unique_id=1019431545]
+color = Color(0.9856015, 0.8393236, 0.7695522, 1)
+energy = 0.0
+blend_mode = 1
+script = ExtResource("12_7s22q")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1565946089]
-stream = ExtResource("12_1vapn")
-volume_db = -15.0
-autoplay = true
-parameters/looping = true
+[node name="ColorRect_Background" type="ColorRect" parent="Lighting" unique_id=872672583]
+z_index = -10
+offset_left = -5968.0
+offset_top = -5047.0
+offset_right = 3449.0
+offset_bottom = 1740.0
+color = Color(0.078431375, 0.078431375, 0.10980392, 1)
+metadata/_edit_lock_ = true
+
+[node name="Torch" parent="Lighting" unique_id=1613385677 instance=ExtResource("14_7s22q")]
+position = Vector2(-812.00006, 633.00006)
+rotation = 0.57828945
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch2" parent="Lighting" unique_id=1065431374 instance=ExtResource("14_7s22q")]
+position = Vector2(1557.0001, -560.9999)
+rotation = 0.50436157
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch4" parent="Lighting" unique_id=751080555 instance=ExtResource("14_7s22q")]
+position = Vector2(48.999878, -1388.0001)
+rotation = 0.13002837
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch5" parent="Lighting" unique_id=113312753 instance=ExtResource("14_7s22q")]
+position = Vector2(-2574.0002, -954.00006)
+rotation = 0.40692377
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch6" parent="Lighting" unique_id=1141834236 instance=ExtResource("14_7s22q")]
+position = Vector2(-1887.0002, -2151.9998)
+rotation = 0.2952337
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch7" parent="Lighting" unique_id=1228168018 instance=ExtResource("14_7s22q")]
+position = Vector2(-312, -2359)
+rotation = -0.6303235
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch9" parent="Lighting" unique_id=34821706 instance=ExtResource("14_7s22q")]
+position = Vector2(-1526, -3460)
+rotation = 0.003525436
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch8" parent="Lighting" unique_id=1929910136 instance=ExtResource("14_7s22q")]
+position = Vector2(1409.0001, -2977)
+rotation = -0.1102708
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Torch3" parent="Lighting" unique_id=1144969547 instance=ExtResource("14_7s22q")]
+position = Vector2(2860.0002, -959)
+rotation = -0.39476323
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Trigger_Chasm_Lighting" type="Area2D" parent="." unique_id=305317851]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Chasm_Lighting" unique_id=504903081]
+position = Vector2(-1234.8417, -1876.2329)
+rotation = 0.036861345
+shape = SubResource("RectangleShape2D_fdhgj")
+
+[node name="Trigger_Camera_Zoom" type="Area2D" parent="." unique_id=1816445527]
+visible = false
+position = Vector2(0, -3700)
+script = ExtResource("13_jt8vq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Camera_Zoom" unique_id=208824531]
+position = Vector2(-869.4666, -328.6704)
+rotation = 0.30864188
+shape = SubResource("RectangleShape2D_8mkd8")
+metadata/_edit_lock_ = true
 
 [node name="Platforms_Static" type="StaticBody2D" parent="." unique_id=247718308 groups=["Physical"]]
 collision_layer = 3
@@ -594,12 +646,6 @@ position = Vector2(-1984.9998, -2249)
 rotation = 0.0033801459
 shape = SubResource("RectangleShape2D_hiu35")
 
-[node name="CollisionShape2D69" type="CollisionShape2D" parent="Platforms_Static" unique_id=1465489495]
-position = Vector2(-2536, -1695.9999)
-rotation = -0.18552479
-scale = Vector2(1.5530893, 1.5530893)
-shape = SubResource("RectangleShape2D_23em2")
-
 [node name="CollisionShape2D79" type="CollisionShape2D" parent="Platforms_Static" unique_id=615616522]
 position = Vector2(-3002.7397, -1508)
 rotation = 1.5325648
@@ -841,105 +887,11 @@ uv = PackedVector2Array(81.16174, 83.61153, 224.6582, 53.49498, 265.4041, 152.70
 
 [node name="Textures_Sprite" type="Node2D" parent="." unique_id=1688272016]
 
-[node name="GrumpyCat" type="Sprite2D" parent="Textures_Sprite" unique_id=1750750901]
-position = Vector2(-2534.389, -1671.1852)
-rotation = -0.2097217
-scale = Vector2(0.15298413, 0.15298413)
-texture = ExtResource("7_6fori")
-
 [node name="BananaPeel" type="Sprite2D" parent="Textures_Sprite" unique_id=774395320]
 position = Vector2(-2012.0002, -3619.0005)
 rotation = -0.5721665
 scale = Vector2(0.2799976, 0.2799976)
 texture = ExtResource("9_1vapn")
-
-[node name="PictureFrame" type="Sprite2D" parent="Textures_Sprite" unique_id=1836089542]
-position = Vector2(-2533.5625, -1673.5382)
-rotation = -1.7533889
-scale = Vector2(0.48958203, 0.9497001)
-texture = ExtResource("10_870hm")
-
-[node name="Lighting" type="Node2D" parent="." unique_id=401589430]
-visible = false
-
-[node name="DirectionalLight_Darkness" type="DirectionalLight2D" parent="Lighting" unique_id=1019431545]
-color = Color(0.9856015, 0.8393236, 0.7695522, 1)
-energy = 0.0
-blend_mode = 1
-script = ExtResource("12_7s22q")
-
-[node name="ColorRect_Background" type="ColorRect" parent="Lighting" unique_id=872672583]
-z_index = -10
-offset_left = -5968.0
-offset_top = -5047.0
-offset_right = 3449.0
-offset_bottom = 1740.0
-color = Color(0.078431375, 0.078431375, 0.10980392, 1)
-metadata/_edit_lock_ = true
-
-[node name="Torch" parent="Lighting" unique_id=1613385677 instance=ExtResource("14_7s22q")]
-position = Vector2(-812.00006, 633.00006)
-rotation = 0.57828945
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch2" parent="Lighting" unique_id=1065431374 instance=ExtResource("14_7s22q")]
-position = Vector2(1557.0001, -560.9999)
-rotation = 0.50436157
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch4" parent="Lighting" unique_id=751080555 instance=ExtResource("14_7s22q")]
-position = Vector2(48.999878, -1388.0001)
-rotation = 0.13002837
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch5" parent="Lighting" unique_id=113312753 instance=ExtResource("14_7s22q")]
-position = Vector2(-2574.0002, -954.00006)
-rotation = 0.40692377
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch6" parent="Lighting" unique_id=1141834236 instance=ExtResource("14_7s22q")]
-position = Vector2(-1887.0002, -2151.9998)
-rotation = 0.2952337
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch7" parent="Lighting" unique_id=1228168018 instance=ExtResource("14_7s22q")]
-position = Vector2(-312, -2359)
-rotation = -0.6303235
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch9" parent="Lighting" unique_id=34821706 instance=ExtResource("14_7s22q")]
-position = Vector2(-1526, -3460)
-rotation = 0.003525436
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch8" parent="Lighting" unique_id=1929910136 instance=ExtResource("14_7s22q")]
-position = Vector2(1409.0001, -2977)
-rotation = -0.1102708
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Torch3" parent="Lighting" unique_id=1144969547 instance=ExtResource("14_7s22q")]
-position = Vector2(2860.0002, -959)
-rotation = -0.39476323
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Trigger_Chasm_Lighting" type="Area2D" parent="." unique_id=305317851]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Chasm_Lighting" unique_id=504903081]
-position = Vector2(-1234.8417, -1876.2329)
-rotation = 0.036861345
-shape = SubResource("RectangleShape2D_fdhgj")
-
-[node name="Trigger_Camera_Zoom" type="Area2D" parent="." unique_id=1816445527]
-visible = false
-position = Vector2(0, -3700)
-script = ExtResource("13_jt8vq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Camera_Zoom" unique_id=208824531]
-position = Vector2(-869.4666, -328.6704)
-rotation = 0.30864188
-shape = SubResource("RectangleShape2D_8mkd8")
-metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_entered"]
 [connection signal="body_exited" from="Trigger_Chasm_Lighting" to="Lighting/DirectionalLight_Darkness" method="_on_trigger_chasm_lighting_body_exited"]

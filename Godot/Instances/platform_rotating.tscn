@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cu3gpl8nth35v"]
 
 [ext_resource type="Script" path="res://Scripts/platform_rotating.gd" id="1_s8fd4"]
-[ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/wood-2.png" id="2_inhej"]
+[ext_resource type="Texture2D" uid="uid://cnu48qntaplek" path="res://Sprites/Textures/wood-2.png" id="2_inhej"]
 [ext_resource type="PackedScene" uid="uid://duoojr5lkmj1k" path="res://Instances/player_ball_man.tscn" id="2_o6sxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iy68"]

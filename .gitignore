@@ -20,3 +20,4 @@ mono_crash.*.json
 testing.tscn
 Godot/Levels/testing.tscn
 .vscode/settings.json
+Builds

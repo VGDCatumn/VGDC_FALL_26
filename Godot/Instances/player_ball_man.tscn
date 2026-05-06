@@ -518,10 +518,6 @@ parameters/looping = true
 libraries/ = SubResource("AnimationLibrary_a7g5p")
 autoplay = &"bounce_animation"
 
-[node name="ParryCheck" type="RayCast2D" parent="." unique_id=1306554587]
-position = Vector2(1, 37)
-target_position = Vector2(2.0000246, 103)
-
 [node name="SpriteColorChange" type="AnimationPlayer" parent="." unique_id=1443131448]
 libraries/ = SubResource("AnimationLibrary_p00sv")
 
@@ -539,6 +535,10 @@ scale_amount_min = 25.0
 scale_amount_max = 25.0
 scale_amount_curve = SubResource("Curve_2gjm8")
 color_ramp = SubResource("Gradient_2sw1s")
+
+[node name="Parry_time" type="Timer" parent="." unique_id=610447999]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="send_bounce" from="." to="Audio_Bounce" method="_on_ball_man_send_bounce"]
 [connection signal="send_velocity_vector" from="." to="VectorArrow" method="_on_ball_man_send_velocity_vector"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgqovkrysu1fw"]
 
-[ext_resource type="Texture2D" uid="uid://bhr3pqe2f8jb6" path="res://Sprites/torch1.png" id="1_cptrj"]
+[ext_resource type="Texture2D" uid="uid://bhr3pqe2f8jb6" path="res://Sprites/torch.png" id="1_cptrj"]
 
 [sub_resource type="Gradient" id="Gradient_jeqkh"]
 offsets = PackedFloat32Array(0, 0.10240964, 0.63554215)
