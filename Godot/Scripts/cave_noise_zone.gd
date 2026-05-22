@@ -7,8 +7,8 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
 		player.volume_db = -15
-		player2.volume_db = 0
-		player3.volume_db = 0
+		player2.volume_db = -15
+		player3.volume_db = -15
 		
 
 

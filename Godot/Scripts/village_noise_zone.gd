@@ -7,8 +7,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
-		player.volume_db = 0
-		crows.volume_db = -25
+		player.volume_db = -15
+		crows.volume_db = -15
 		villager.volume_db = -10
 		
 
@@ -21,7 +21,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	crows.play()
-	$Timer.start(randi_range(15, 30))
+	$Timer.start(randi_range(10, 20))
 	
 	
 

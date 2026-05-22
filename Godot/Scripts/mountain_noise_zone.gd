@@ -9,10 +9,10 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("PLAYER"):
-		wind.volume_db = 0
-		snowgrave.volume_db = -20
-		jingle.volume_db = -10
-		jingle2.volume_db = -10
+		wind.volume_db = -15
+		snowgrave.volume_db = -15
+		jingle.volume_db = -15
+		jingle2.volume_db = -15
 
 
 func _on_body_exited(body: Node2D) -> void:
