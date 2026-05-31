@@ -156,7 +156,7 @@ autoplay = true
 script = ExtResource("6_oqq44")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clouds_Noise_Zone" unique_id=1886080462]
-position = Vector2(6181, -4052)
+position = Vector2(990, -394)
 shape = SubResource("RectangleShape2D_bqwqi")
 
 [node name="Clouds_Ambience" type="AudioStreamPlayer" parent="Clouds_Noise_Zone" unique_id=64269378]

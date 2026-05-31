@@ -55,6 +55,7 @@
 [ext_resource type="Script" uid="uid://cnlcprsfc2hiq" path="res://Scripts/bridge_noise_zone.gd" id="53_mcu08"]
 [ext_resource type="AudioStream" uid="uid://dev4j01mrnw5n" path="res://Audio/Ambient-SFX/wind-strong.mp3" id="54_dsso1"]
 [ext_resource type="Script" uid="uid://dhhifxg8dakh0" path="res://Scripts/clouds_noise_zone.gd" id="55_pw55c"]
+[ext_resource type="AudioStream" uid="uid://b5y1jiwodh1li" path="res://Audio/Ambient-SFX/eagle.mp3" id="55_s5x6s"]
 [ext_resource type="AudioStream" uid="uid://ccgqlx7bwkusf" path="res://Audio/Ambient-SFX/birds.mp3" id="57_h5o6m"]
 [ext_resource type="Script" uid="uid://bcoxiu6f0rm4o" path="res://Scripts/moon_noise_zone.gd" id="58_shy5i"]
 [ext_resource type="AudioStream" uid="uid://de588t6c153x4" path="res://Audio/Ambient-SFX/space.mp3" id="59_0pxjh"]
@@ -750,6 +751,12 @@ volume_db = -80.0
 autoplay = true
 
 [node name="bridge_random_1" type="AudioStreamPlayer" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=1584446046]
+stream = ExtResource("55_s5x6s")
+volume_db = -80.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="AmbientSFX/Bridge_Noise_Zone" unique_id=879902806]
+autostart = true
 
 [node name="Clouds_Noise_Zone" type="Area2D" parent="AmbientSFX" unique_id=899994504]
 position = Vector2(11867, -17557)
@@ -878,6 +885,7 @@ text = "PRESS TAB!"
 [connection signal="timeout" from="AmbientSFX/Village_Noise_Zone/Timer2" to="AmbientSFX/Village_Noise_Zone" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="AmbientSFX/Bridge_Noise_Zone" to="AmbientSFX/Bridge_Noise_Zone" method="_on_body_entered"]
 [connection signal="body_exited" from="AmbientSFX/Bridge_Noise_Zone" to="AmbientSFX/Bridge_Noise_Zone" method="_on_body_exited"]
+[connection signal="timeout" from="AmbientSFX/Bridge_Noise_Zone/Timer" to="AmbientSFX/Bridge_Noise_Zone" method="_on_timer_timeout"]
 [connection signal="body_entered" from="AmbientSFX/Clouds_Noise_Zone" to="AmbientSFX/Clouds_Noise_Zone" method="_on_body_entered"]
 [connection signal="body_exited" from="AmbientSFX/Clouds_Noise_Zone" to="AmbientSFX/Clouds_Noise_Zone" method="_on_body_exited"]
 [connection signal="timeout" from="AmbientSFX/Clouds_Noise_Zone/Timer" to="AmbientSFX/Clouds_Noise_Zone" method="_on_timer_timeout"]
