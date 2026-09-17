@@ -1,5 +1,6 @@
 # Hippo Ball
 Developed by a team of 10 in the Video Game Development Club at the University of Minnesota during Spring 2026
+
 Developed Using Godot
 
 # Instructions
